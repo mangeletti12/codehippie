@@ -1,0 +1,124 @@
+<mat-toolbar id="comp-toolbar" color="primary">
+    <mat-toolbar-row class="search-row">
+
+      <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" >
+        <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+
+      <button mat-button (click)="onCreate()">
+        <mat-icon title="Add User">add</mat-icon>
+      </button>
+
+      <button mat-button (click)="changeViews()">
+        <mat-icon title="Cards View">apps</mat-icon>
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menu">Actions</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Email Users</button>
+        <button mat-menu-item>Text/SMS Users</button>
+        <button mat-menu-item>Add to Team</button>
+        <button mat-menu-item>Add to Role</button>
+      </mat-menu>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="pageSize" [length]="totalLength" (page)="pageChanged($event)"></mat-paginator>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div id="tabViewUsers" [hidden]="users && isCardsView">
+  <mat-table [dataSource]="dataSource" matSort (matSortChange)="sortChanged($event)">
+
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="selectAllFiles($event)"
+          [checked]="bulkCheckbox">
+        </mat-checkbox>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+          (change)="selectRow(row, $event)"
+          [checked]="row.selected">
+        </mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="fullName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="birthYear">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Birth Year</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.birth_year}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Gender</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.gender}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="hairColor">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Hair Color</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.hair_color}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="height">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Height</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.height}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="onEdit(row, $event)"><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row, $event)"><mat-icon>delete_outline</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        Loading data...
+      </mat-footer-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        No data.
+      </mat-footer-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row, $event)" (dblclick)="onEdit(row, $event)"></mat-row>
+
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && dataSource.data.length==0)}"></mat-footer-row>
+  </mat-table>
+
+</div>
+
+<!-- card view -->
+
+<div id="cardViewUsers" [hidden]="users && !isCardsView">
+
+  <mat-card *ngFor="let item of users" [class.selectedCard]="item.selected" (click)="selectRow(item, $event)">
+    <h3>{{item.name}}</h3>
+    <mat-card-content>
+      {{item.gender}}
+    </mat-card-content>
+
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,11 @@
+.f-parent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.f-child {
+  width: 250px;
+  height: 250px;
+  background: #ccc;
+}

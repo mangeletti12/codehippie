@@ -1,0 +1,179 @@
+{
+  "is_scopemaster_used_by_budget": 1,
+  "line_items": [
+      {
+          "data": {
+              "item_parent": "0",
+              "is_leaf": false,
+              "_id": "5b7e3aefdaee48444c2ab6a0",
+              "name": " Tree Root",
+              "cost_code": "10 00 07",
+              "item_id": "1526031355"
+          },
+          "children": [
+              {
+                  "data": {
+                      "item_parent": "1526031355",
+                      "is_leaf": false,
+                      "_id": "5b7e3aefdaee48444c2ab6a1",
+                      "name": "Child1 of 1526031355",
+                      "cost_code": "10 00 08",
+                      "item_id": "1526031356"
+                  },
+                  "children": [
+                      {
+                          "data": {
+                              "item_parent": "1526031356",
+                              "is_leaf": false,
+                              "_id": "5b7e3aefdaee48444c2ab6a2",
+                              "name": "Child1 of 1526031356",
+                              "cost_code": "10 00 09",
+                              "item_id": "1526031357"
+                          },
+                          "children": [
+                              {
+                                  "data": {
+                                      "item_parent": "1526031357",
+                                      "is_leaf": true,
+                                      "_id": "5b7e3aefdaee48444c2ab6a3",
+                                      "name": "Child1 of 1526031357",
+                                      "cost_code": "10 00 10",
+                                      "item_id": "1526031358"
+                                  },
+                                  "children": [
+                                    {
+                                      "data": {
+                                        "item_parent": "1526031358",
+                                        "is_leaf": true,
+                                        "_id": "5b7e3aefdaee48444c2ab6a4",
+                                        "name": "Child1 of 1526031358",
+                                        "cost_code": "10 00 12",
+                                        "item_id": "A"
+                                    },
+                                    "children": [
+                                      {
+                                        "data": {
+                                          "item_parent": "A",
+                                          "is_leaf": true,
+                                          "_id": "5b7e3aefdaee48444c2ab6a4",
+                                          "name": "Child1 of A",
+                                          "cost_code": "10 00 11",
+                                          "item_id": "B"
+                                      },
+                                      "children": [
+                                        {
+                                          "data": {
+                                            "item_parent": "B",
+                                            "is_leaf": true,
+                                            "_id": "5b7e3aefdaee48444c2ab6a4",
+                                            "name": "Child1 of B",
+                                            "cost_code": "10 00 11",
+                                            "item_id": "C"
+                                        },
+                                        "children": [
+                                          {
+                                            "data": {
+                                              "item_parent": "C",
+                                              "is_leaf": true,
+                                              "_id": "5b7e3aefdaee48444c2ab6a4",
+                                              "name": "Child1 of C",
+                                              "cost_code": "10 00 11",
+                                              "item_id": "D"
+                                          },
+                                          "children": [
+                                            {
+                                              "data": {
+                                                "item_parent": "D",
+                                                "is_leaf": true,
+                                                "_id": "5b7e3aefdaee48444c2ab6a4",
+                                                "name": "Child1 of D",
+                                                "cost_code": "10 00 11",
+                                                "item_id": "E"
+                                            },
+                                            "children": []
+                                            }
+                                          ]
+                                          }
+                                        ]
+                                        }
+                                      ]
+                                      }
+                                    ]
+                                    }
+                                  ]
+                              },
+                              {
+                                  "data": {
+                                      "item_parent": "1526031357",
+                                      "is_leaf": true,
+                                      "_id": "5b7e3aefdaee48444c2ab6a4",
+                                      "name": "Child2 of 1526031357",
+                                      "cost_code": "10 00 11",
+                                      "item_id": "1526031359"
+                                  },
+                                  "children": []
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "data": {
+                      "item_parent": "1526031355",
+                      "is_leaf": true,
+                      "_id": "5b7e3aefdaee48444c2ab6a5",
+                      "name": "Child2 of 1526031355",
+                      "cost_code": "10 00 12",
+                      "item_id": "1526031360"
+                  },
+                  "children": []
+              },
+              {
+                  "data": {
+                      "item_parent": "1526031355",
+                      "is_leaf": true,
+                      "_id": "5b7e3aefdaee48444c2ab6a6",
+                      "name": "Child3 of 1526031355",
+                      "cost_code": "10 00 13",
+                      "item_id": "1526031361"
+                  },
+                  "children": []
+              }
+          ]
+      },
+      {
+          "data": {
+              "item_parent": "0",
+              "is_leaf": false,
+              "_id": "5b7e3aefdaee48444c2ab6a7",
+              "name": "Root 1526031362",
+              "cost_code": "10 00 14",
+              "item_id": "1526031362"
+          },
+          "children": [
+              {
+                  "data": {
+                      "item_parent": "1526031362",
+                      "is_leaf": true,
+                      "_id": "5b7e3aefdaee48444c2ab6a8",
+                      "name": "Child1 of 1526031362",
+                      "cost_code": "10 00 15",
+                      "item_id": "1526031363"
+                  },
+                  "children": []
+              },
+              {
+                  "data": {
+                      "item_parent": "1526031362",
+                      "is_leaf": true,
+                      "_id": "5b7e3aefdaee48444c2ab6a9",
+                      "name": "Child2 of 1526031362",
+                      "cost_code": "10 00 16",
+                      "item_id": "1526031364"
+                  },
+                  "children": []
+              }
+          ]
+      }
+  ]
+}

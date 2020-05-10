@@ -1,0 +1,72 @@
+<div class="container2">
+    <h2>Settings</h2>
+
+    <hr>
+
+    <label id="theme-radio-group-label">Themes</label>
+    <mat-radio-group aria-labelledby="theme-radio-group-label" class="k-radio-group" [(ngModel)]="theme"
+        (change)="onSetTheme($event.value)">
+        <mat-radio-button value="default-theme">
+            <span title="Primary" class="theme-circle theme-default-primary"></span>
+            <span title="Accent" class="theme-circle theme-default-accent"></span>
+            <span title="Background" class="theme-circle theme-default-bg"></span>
+        </mat-radio-button>
+        <mat-radio-button value="dark-theme">
+            <span title="Primary" class="theme-circle theme-dark-primary"></span>
+            <span title="Accent" class="theme-circle theme-dark-accent"></span>
+            <span title="Background" class="theme-circle theme-dark-bg"></span>
+        </mat-radio-button>
+        <!-- <mat-radio-button value="light-theme">
+            <span title="Primary" class="theme-circle theme-light-primary"></span>
+            <span title="Accent" class="theme-circle theme-light-accent"></span>
+            <span title="Background" class="theme-circle theme-light-bg"></span>
+        </mat-radio-button> -->
+    </mat-radio-group>
+
+    <hr>
+
+    <label id="theme-radio-group-label">Route Transitions</label>
+    <!--
+      <mat-radio-group
+      aria-labelledby="theme-radio-group-label"
+      class="k-radio-group"
+      [(ngModel)]="transition"
+      (change)="onSetTransition($event.value)"
+      >
+        <mat-radio-button class="example-radio-button" *ngFor="let trans of transitions" [value]="trans">
+          {{trans}}
+        </mat-radio-button>
+      </mat-radio-group>
+    -->
+
+    <mat-radio-group
+      aria-labelledby="theme-radio-group-label"
+      class="k-radio-group"
+      [(ngModel)]="transition"
+      (change)="onSetTransition($event.value)">
+        <mat-radio-button value="slideLeft">
+          Slider
+        </mat-radio-button>
+        <mat-radio-button value="fader">
+          Fader
+        </mat-radio-button>
+        <mat-radio-button value="off">
+          None
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <!-- <hr>
+
+    <label id="theme-radio-group-label">Navigation</label>
+    <mat-radio-group aria-labelledby="theme-radio-group-label" class="k-radio-group" [(ngModel)]="nav"
+        (change)="onSetNav($event.value)">
+        <mat-radio-button value="left">
+          Left side
+        </mat-radio-button>
+        <mat-radio-button value="right">
+          Right side
+        </mat-radio-button>
+
+    </mat-radio-group> -->
+
+</div>

@@ -1,0 +1,64 @@
+<h2>{{title}}</h2>
+
+<form [formGroup]="form" >
+  <mat-grid-list cols="1" rowHeight="645px" gutterSize="1px" >
+    <mat-grid-tile class="formColStandard">
+      <div class="controles-container ">
+
+        <mat-form-field>
+          <input matInput formControlName="actionDate" [matDatepicker]="picker" placeholder="Action Date*">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="corDate" [matDatepicker]="picker2" placeholder="COR Date*">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="amountQuoted" placeholder="Amount Quoted*" />
+          <mat-error *ngIf="form.controls['amountQuoted'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['amountQuoted'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="amountApproved" placeholder="Amount Approved*" />
+          <mat-error *ngIf="form.controls['amountApproved'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['amountApproved'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="equipmentCost" placeholder="Equipment Cost" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="laborCost" placeholder="Labor Cost" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="laborHours" placeholder="Labor Hours" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="otherCost" placeholder="Other Cost" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="comments" placeholder="Comments" />
+        </mat-form-field>
+
+        <div class="button-row">
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">Submit</button>
+            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+            <a [routerLink]="'/cors'"><button mat-raised-button>Cancel</button></a>
+        </div>
+
+      </div>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="b-container theme-dark-font">
+
+    <ng-container *ngFor="let team of teams">
+
+      <div class="team" (click)="viewTeam(team)">
+        <div class="team-flexer">
+          <div class="team-img" style="background-image: url(../../assets/images/{{team.image}});"></div>
+          <h5>{{ team.name }}</h5>
+          <span>Members: {{ team.members.length }}</span>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>
+</div>

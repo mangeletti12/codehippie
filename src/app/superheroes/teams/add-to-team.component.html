@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <span>Teams</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<mat-form-field>
+  <mat-label>Team</mat-label>
+  <mat-select (selectionChange)="changeTeam($event.value)" [(value)]="selectedTeam" >
+    <mat-option *ngFor="let team of teams" [value]="team.id">
+      {{ team.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+&nbsp;
+
+<button mat-raised-button color="primary" type="button" (click)="addToTeam()" >Submit</button>
+
+<ng-container *ngFor="let hero of passedInHeroes">
+  <div class="team">
+    {{ hero.name }}
+  </div>
+</ng-container>

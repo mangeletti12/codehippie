@@ -1,0 +1,43 @@
+.comp-header span {
+  margin: 0 10px;
+}
+
+.iNumber { position: absolute; top: 0; right: 5px; font-size: 10px; }
+
+.flex-parent {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  position: relative;
+}
+
+.iScrollViewport {
+  flex-grow: 1;
+}
+
+.iScrollItem {
+  margin: 5px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.list-item-details {
+  position: fixed;
+  top: 100px;
+  padding: 20px;
+}
+
+.titleLarge { font-weight: 700; margin-right: 15px; font-size: 20px; }
+.detailsHolder { padding: 15px; }
+
+mat-card { border: 2px solid transparent; cursor: pointer; }
+mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
+
+.mat-card > .mat-card-actions { position: absolute; bottom: 0; margin: 0; }
+.mat-card > .mat-card-actions button { font-size: 16px; margin-right: 10px; }
+.mat-card > .mat-card-actions button .mat-icon { font-size: 16px; }

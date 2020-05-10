@@ -1,0 +1,1984 @@
+{
+  "HttpStatusCode":200,
+  "RetryAfterHeader":null,
+  "groupBy":"0,1,2",
+  "items":[
+     {
+        "commands":"ar,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+        "commentCount":0,
+        "creationDate":636132064106300000,
+        "creatorCid":"51EF7D86B3568238",
+        "creatorName":"Mark Angeletti",
+        "dateModifiedOnClient":636132064106300000,
+        "displayCreationDate":"10\/27\/2016",
+        "displayModifiedDate":"10\/27\/2016",
+        "displayQuotaExceeded":"0 bytes",
+        "displayQuotaRemaining":"189 MB",
+        "displayQuotaTotal":"5 GB",
+        "displayQuotaUsed":"4.81 GB",
+        "displaySize":"310 MB",
+        "eTag":"51EF7D86B3568238!438.0",
+        "folder":{
+           "category":0,
+           "childCount":33,
+           "children":[
+              {
+                 "commands":"cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636697209990300000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636697209950000000,
+                 "displayCreationDate":"8\/13\/2018",
+                 "displayModifiedDate":"8\/13\/2018",
+                 "displaySize":"0 bytes",
+                 "eTag":"51EF7D86B3568238!5611.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":1,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":1
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!5611",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636697210000930000,
+                 "name":"Apowersoft",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"0",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!5611&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"ar,1,cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636379959815600000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636379959780000000,
+                 "displayCreationDate":"8\/10\/2017",
+                 "displayModifiedDate":"8\/10\/2017",
+                 "displaySize":"87.5 KB",
+                 "eTag":"51EF7D86B3568238!1606.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":2,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":2
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1606",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636970028063470000,
+                 "name":"Fax",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"89549",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1606&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636473142281930000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636473141890000000,
+                 "displayCreationDate":"11\/26\/2017",
+                 "displayModifiedDate":"11\/26\/2017",
+                 "displaySize":"0 bytes",
+                 "eTag":"51EF7D86B3568238!1902.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":0,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":0
+                 },
+                 "group":0,
+                 "iconType":"EmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1902",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636473142281930000,
+                 "name":"FeedbackHub",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"0",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1902&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"ar,1,cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636366820100930000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636366820080000000,
+                 "displayCreationDate":"7\/26\/2017",
+                 "displayModifiedDate":"7\/26\/2017",
+                 "displaySize":"287 MB",
+                 "eTag":"51EF7D86B3568238!1132.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":2,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":2
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1132",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636958738458970000,
+                 "name":"My Games",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"300366926",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1132&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"ar,1,cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636366941385900000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636366941360000000,
+                 "displayCreationDate":"7\/26\/2017",
+                 "displayModifiedDate":"7\/26\/2017",
+                 "displaySize":"264 KB",
+                 "eTag":"51EF7D86B3568238!1165.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":2,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":2
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1165",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636856926913730000,
+                 "name":"Rise of the Tomb Raider",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"269777",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1165&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"ar,1,cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636379959813900000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636379959780000000,
+                 "displayCreationDate":"8\/10\/2017",
+                 "displayModifiedDate":"8\/10\/2017",
+                 "displaySize":"4.52 MB",
+                 "eTag":"51EF7D86B3568238!1605.1",
+                 "folder":{
+                    "category":1,
+                    "covers":[
+                       {
+                          "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p",
+                          "id":"51EF7D86B3568238!1612",
+                          "thumbnails":[
+                             {
+                                "height":2338,
+                                "name":"unRes",
+                                "streamVersion":257,
+                                "url":"ks3HCcRI_qCmG0Cerq9xjdC0KC3aW6BCFIMz2Wxrp1ZEG0Rzk0NIS8Iv3xb8vP1_ebYOTErYWwCb8xHYbjw6Q-A_KNQmKD6zDkucE9jfRcY1MsFzleKEbu8aI8vZ7MDoZfunzNcuFAoFAJ7MaqursmQ0WLgaG7GUMGpciDQyDIXJ3-51yVr3WMpWEN79-Qz0\/Image.jpg?psid=1",
+                                "width":1700
+                             }
+                          ]
+                       },
+                       {
+                          "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p",
+                          "id":"51EF7D86B3568238!1618",
+                          "thumbnails":[
+                             {
+                                "height":2338,
+                                "name":"unRes",
+                                "streamVersion":257,
+                                "url":"YXH6Ow8CYLmacOZMqNjgxUdzT6aSTgR-IlDYME_zk0EmIlJj8OyLxJM-ExH6bizQ7NQz41cNQk1s4WjnwnzGAfczm-cRaN9KHltMG_TTgXBg9yebhzk7UeEkVg0WdtfspPp5IGNlIOLTRasaqzrRUJmACmJ1nsTZ4MhbIR9jM0QMDbzb50xoJ745U7Kt6Txs\/Image%20%284%29.jpg?psid=1",
+                                "width":1700
+                             }
+                          ]
+                       },
+                       {
+                          "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p",
+                          "id":"51EF7D86B3568238!1616",
+                          "thumbnails":[
+                             {
+                                "height":2338,
+                                "name":"unRes",
+                                "streamVersion":257,
+                                "url":"86TM27T-pOnNkaqQBvZQ1krCpOMIbdoJiXUl809kFPFL5M_t5BAavqGTouE2Gt2E5fJ9qbplzpc_Ae0DI7FeSO4Mj_eiOYXgfcpjFKkurPQWS4lHVFdkMovxcOpLxg87gDBsOFzNZwwrZC-Yi8zNUgup7CMSWV0KsNXKJ7xz2FLq_YjhlZvrRC-KHUXJS0f_\/Image%20%283%29.jpg?psid=1",
+                                "width":1700
+                             }
+                          ]
+                       },
+                       {
+                          "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p",
+                          "id":"51EF7D86B3568238!1614",
+                          "thumbnails":[
+                             {
+                                "height":2338,
+                                "name":"unRes",
+                                "streamVersion":257,
+                                "url":"ah3y-xo16PndgFnMsCApie-z9huddIUEzNZDNNGyWLZKVuwRweAyIVrjZki1Ji3AmbbPwwaNOnyFWtc5t6CWUk2YaumIdreuKhJqVhVMNOYumk7DhuNMusUXmsSOblIf8HCobuoAZejU8md-mOBJCLsi_fVh7vPMLz7L3exJZ4_lx1nB-lE1LGUhpRWvdy1e\/Image%20%282%29.jpg?psid=1",
+                                "width":1700
+                             }
+                          ]
+                       }
+                    ],
+                    "defaultSort":6,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":5,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "subcategory":8,
+                    "totalCount":5
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyAlbum",
+                 "id":"51EF7D86B3568238!1605",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636894166163270000,
+                 "name":"Scanned Documents",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"4731594",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1605&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636371520011870000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636371519910000000,
+                 "displayCreationDate":"8\/1\/2017",
+                 "displayModifiedDate":"8\/1\/2017",
+                 "displaySize":"5.08 MB",
+                 "eTag":"51EF7D86B3568238!1585.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":1,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":1
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1585",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636730805593370000,
+                 "name":"U-Play online",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"5317632",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1585&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636366831133300000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636366831120000000,
+                 "displayCreationDate":"7\/26\/2017",
+                 "displayModifiedDate":"7\/26\/2017",
+                 "displaySize":"11.6 MB",
+                 "eTag":"51EF7D86B3568238!1162.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":1,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":1
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!1162",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636894848800430000,
+                 "name":"WB Games",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"12149152",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!1162&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cft,1,cp,1,cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,de,1,dl,1,em,1,mc,1,mv,1,rn,1,sds,1,sh,1,up,1",
+                 "commentCount":0,
+                 "creationDate":636697215727870000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636697215690000000,
+                 "displayCreationDate":"8\/13\/2018",
+                 "displayModifiedDate":"8\/13\/2018",
+                 "displaySize":"53 bytes",
+                 "eTag":"51EF7D86B3568238!5617.0",
+                 "folder":{
+                    "category":0,
+                    "defaultSort":1,
+                    "defaultSortDirection":1,
+                    "defaultSortReverse":false,
+                    "hasSubfolders":1,
+                    "itemGroupings":[
+                       {
+                          "itemGroups":[
+                             {
+                                "count":1,
+                                "groupingId":"other",
+                                "startIndex":0
+                             }
+                          ],
+                          "name":"FoldersDocumentsPhotos"
+                       }
+                    ],
+                    "totalCount":1
+                 },
+                 "group":0,
+                 "iconType":"NonEmptyDocumentFolder",
+                 "id":"51EF7D86B3568238!5617",
+                 "itemType":32,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636697215730970000,
+                 "name":"Wondershare MediaServer",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"53",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!5617&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636550976580330000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636792982583233333,
+                 "displayCreationDate":"2\/24\/2018",
+                 "displayModifiedDate":"12\/1\/2018",
+                 "displaySize":"52.8 KB",
+                 "eTag":"51EF7D86B3568238!3788.1837",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!3788",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636809340056530000,
+                 "name":"AI-CrimeLabInc",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"54010",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pZVTDBTaFzDQlQ6ZEmKj8N87aC1e7w-VRGUBj8mOZ-DGC6OXRQDwKcpnF8gO6XtKPZqBLIpj8zq0pNu6M1DoEFR-Q_G1LvJ2xQsMn05I07XfzKdb-saSlKIeT2TQxf5-VQKFF85ThlASMMdmcYJZ6uifH57tKonFUPUDMjW5v4gfL3vzMwv5lPa43CFYxkb0v\/AI-CrimeLabInc.docx?psid=1",
+                    "id":"51EF7D86B3568238!3788",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":525,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pLaW6UwueZfQ_Vk3WEn8_1Yi84lBAW8jI2ZeJ3g8xSplKMhySgEum6vEaG2Rb7b4CKAZ2yn0ovSLhZ4fJC6_-CiCszPR-hDtltJtCEOrTkSqLd3-3ynRsEivdr9VQ19DRLbyWyy4Tx2cB27lYANy1BA\/AI-CrimeLabInc.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pApfciwfitVjEbIITgv9OK5VOLB2kAyYN82Q0TbQ7RTVhNbNOcU73PPbYzUWTzL0M9G7IXfgL956wcSdh-10mxz0HC66joIxCr0lv_KjzZRq_nnM5qJVqHjubhOHYJrR4jKtIH6L8OenPQ9TrhQzMmhHPGtAa-76jjBDsm9q3Dbv8iYQS7TLkrB3H6WkU5tnq1SqhgwXwxP5uISLvY6JrrQ",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!3788&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636643257231400000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636643288016066667,
+                 "displayCreationDate":"6\/11\/2018",
+                 "displayModifiedDate":"6\/11\/2018",
+                 "displaySize":"11.5 KB",
+                 "eTag":"51EF7D86B3568238!5324.96",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5324",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636643318824600000,
+                 "name":"Compete",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"11707",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4prNN71trd9IZrVKg9jSwOrXTsuVQNsM1bLrnDJjUbtmUX_dAiXaSDdNCatznRYXBJdBvslWg096NHWRtOY7zZNtqQ9Vnx3EKtS1mmwGv_bqZzEMrq-PNgKdaP1ynxHudCw5Y_XeHYGVxgP1CQknAFuJepd-HFNNLGcJhvZIVsCauV8E3YJLVmFvzxPVS848UL\/Compete.docx?psid=1",
+                    "id":"51EF7D86B3568238!5324",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":348,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pgcilvfzNm5A5Qviv-GKrS_lJv_fBEaRiNqin27luitZkynyyAzMsj3NV9XXoUJK-QiuAQeEm1u4MmIHDYnz6FDCl1ATSd5XvqjihGaNGYf_ScFysglJZ6penGtQDpk8lguarC2VVwvly8FPuI7iExw\/Compete.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pJLIGUhzBlAEFaeJpE8iQNmaTiYyj-vt0kRYQta2UXQ0VkY34s3L3-DPEnqyma-7YBCxGt4DismA42ORzme-wpshp0tIsiQLIcGtddn2Io-OO4_1XDJsFjxpt-kWmvpD-KHvi5PPczAMoqwqir3i0lbXmP7nE27oESaoq953VxNsot7qfwfNXYxiA-0uGAJV4yKY-q60DWL7UZxQ9nxlckA",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5324&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636713287043600000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636713288507866667,
+                 "displayCreationDate":"8\/31\/2018",
+                 "displayModifiedDate":"8\/31\/2018",
+                 "displaySize":"24.6 KB",
+                 "eTag":"51EF7D86B3568238!5645.15",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5645",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636713289350870000,
+                 "name":"Document 1",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"25119",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pWZMc-mjpR6k7Olwkr2kfO5_eEeDU5ZBk7ezG-iTdGMzj6IBxzlfaBYYzHgigAjrcbbxqLaloxPvkMc3kSdDlub5xfG67mKXxJGM529H-pTLBRnsxX8r21kKwigr5aauhbByrcBDm7pg1jelIdtXLnhcRB3Wi0YkxzgXd7BZYZV6Fq2n-9YuC7F2GkHvYe8f1\/Document%201.docx?psid=1",
+                    "id":"51EF7D86B3568238!5645",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":272,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pNBGdu4tZKnzhLJd6rSYh9nbVwfkbMXc_GGvZLaqv47Bg97Y5P0bpwYAR-1hJKnezBGDewVEW9lXKG6nkLqL-R7UPYPN1qQvFwfqdPM94cYtGtI53sYhZ4SP9whCmvwfZdCBwanEk-_kq1KJNspHrJw\/Document%201.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4piSmDjiEFd4XJ74rSEh3mMJ-cAUGgJ0sCta6BAlJfXpIlp4YIzxD7cEFDFqMgBHZQBdcOWvgeOmsQyqWWmNo47Ll1Af8awL17Bq-b0K04esUKPcPkMyHJtPXrGqqKS6Lzw34unxmtNvX55yDQ-8hFvQ1iKxAwFysxQ3R9Z8NV_dKIsf1_tu_ST2-UYimyGkwNXiWLIBde2kEPxfCl6mG08g",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5645&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636716701357600000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636716701611800000,
+                 "displayCreationDate":"9\/4\/2018",
+                 "displayModifiedDate":"9\/4\/2018",
+                 "displaySize":"12.7 KB",
+                 "eTag":"51EF7D86B3568238!5651.11",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5651",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636716711825670000,
+                 "name":"Document 2",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"12985",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pmrnEmVIDUoegNjaDVJMyRuy-l_Xay0qrhrF0ZNI1z9NS6GxJHEo8Ql-hNOXvNvrbxjWicwQ27thcNlQwbKv8jDXZWWx3XDIMNvk16kv1qk801Mjb7bj_paQj3h1koh0TVoHq6I0cWsT4B9U3-nxaoXa6DdXKSfdjuZ0-y52gfoQKeeTKwCzexYdYHlgjzIGF\/Document%202.docx?psid=1",
+                    "id":"51EF7D86B3568238!5651",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":273,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pgm9wl7BmFky3sN_byngqrET19pvE5rG3A8Yl-GhnbF3pCN-ettmxkpiuR3TlGTBbL3tzfvOun7YKFFetxSqMAmrOFH4PtXDQ6yK1P8YOOGia13x0f40LVwgFGCWdZRXAs7kOM_MdJLbxoeSmzy3cHg\/Document%202.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pI3qxXzgRUAVUhKOmFkuP3XPrmIxNWW6BRpoF-4hKYY1D0SIboXDIto1P1HtmZ_LLvoW0cbTZcU_P2Abmk_9vSO4XJkAWha_RVEPUjZ40vhn1acKPSfQtEuF6TpE24vo5y4SY0gB2WfiCC9gJI1ooBxzdPxZMHPedzpQP0rzCBAEsDPknwiThpOqEOdZq9ckxugS1EvL49RB0v21YeAdp3Q",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5651&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636613082412200000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636622560852666667,
+                 "displayCreationDate":"5\/7\/2018",
+                 "displayModifiedDate":"5\/18\/2018",
+                 "displaySize":"12.0 KB",
+                 "eTag":"51EF7D86B3568238!3856.160",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!3856",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636622581571570000,
+                 "name":"Document",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"12230",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pQnoV7zu31ItJR3YKniF94KpEsi74Psqz4R4mkkyiggkMdNx9FRRXn--MCIy33oUzXjY70VMosHlw_o0FR8DPSrbrCcSZrRUZO_kzGQL6w_9o2kSGDxC-WyG4VCDZYVpmQQV0iMp4ASdNRKo--JaCDqJdgQak_uRh7_cN_pfN4apQTIsfo8B10iWDLvoTW1ws\/Document.docx?psid=1",
+                    "id":"51EF7D86B3568238!3856",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":309,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4p7dY6s6sZT3TFjXCRCDl7R3I9FD_iYz6tG898PWUrt8RTPa7PPCGWiy1cTNi_d1zqmhf_mwzjGAz1ybFlnUiLo3ha-gpu43MmOyAV-RrtC9aLb3oNhFDnvV-nG_T4-Y8_Ek69fha9rjLUeCQYuypaJg\/Document.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pmUKXbpSdYhlLJTZk0fkx7lsOT3SHitqFQyji2aFu2IpsJgaR9gjxSRPi4_GNCoqRtTiJj9oIEV6p33qgoRZo3v_Io0XNMiBqPTx5nYFPqq7dEUDGsB-6Z5Fc8LygHwDy4kaTnnsipv0t-OJx5scHljsGZIvr7b909OaQ5GwW3ub3yIwtq6BgHDRnM68PQjalK3lyNNuLiaR0kEw26f6beA",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!3856&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636633776678900000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636633789217000000,
+                 "displayCreationDate":"5\/31\/2018",
+                 "displayModifiedDate":"5\/31\/2018",
+                 "displaySize":"10.3 KB",
+                 "eTag":"51EF7D86B3568238!5302.43",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5302",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636633805963130000,
+                 "name":"Document1",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"10470",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pbd3jIhAjFmhLTl8BVbGeswbaS5mLD0TcJ1f5XDmfAez1ZmVQ1GmiON3kG9V97ZGA4fwuQNAmGOvciDmCFONnVrR9nvqfiXZ6xWgGQWLKdhM0BVVyKXK5vCAOV4IP-mDVgXZ7z0DqMIVqJ8df6_U6Zpy92qEqgwxxJ2M1oQe9JsYhOT6xC-3wWZ60rcnEY8uh\/Document1.docx?psid=1",
+                    "id":"51EF7D86B3568238!5302",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":301,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4po_P3HN2pXC0n7ifcK2ErRcCZOkEJIAD6ohM-fVe15OgdAcnALHZeqahEWmUKLpz7g2z09jUv72Uaf2bb9pIMGgV1vWGwDTYOGGPuUWvLWV-eWnF0ccpvDMhxCMMnxDmGYaH56KDqf41lrR7LLtqdDw\/Document1.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pXXSDvm96OTf-Ta8fEAS7ok4tuHOmzoxgv21dIdvZ7_TeKc8e9MBE2RVB2fBDDrQVq9vviFZEbtWZ2CaHuFJeaGdpzOhxPw0v4g2fK7e-C0RDZGtyVaVIYPPjwmso7gld7S0Jo3B6nnr0_eXKbXSJ85yB7M_drlbWseLTAPFEVKKyrOFeBTUYvKBK7cBFkOnPXIN2ino1Jo7F_FdTvntTuw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5302&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636637356966070000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636637385915600000,
+                 "displayCreationDate":"6\/4\/2018",
+                 "displayModifiedDate":"6\/4\/2018",
+                 "displaySize":"9.84 KB",
+                 "eTag":"51EF7D86B3568238!5308.109",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5308",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636637433363030000,
+                 "name":"Document2",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"10071",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4ppHQXWAeUHcRCz_8IKuil5hp12xRxrXBFNbHG5OlF--AH6_HYJcRsSUHf3jjSSGeko5f7EFxondVZz1qBmEznheMUjFyLvBMbq7XGhyv_hkvt-sycuCgzXiiPpZo7nnBVcDwtkE4DtYE9fo13wVWyDzf8SHVQJ3bw1cZyy0ceUJ1wvAdaQ3Byy_90mCuXSumE\/Document2.docx?psid=1",
+                    "id":"51EF7D86B3568238!5308",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":349,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pB_YY5dflo_Xb340Oza0_W5Y2uk-NOiqVkXGI2YTPoOtbc_576fU83D9LDo2AKdKo7PdJJakslK77pV6a8Os9PToWDm-PcHFwPJDoyfIxg0sGYkQc7eBLnjyes4IEm9VLiHU4x3GVpVGsQDEJv2TmsQ\/Document2.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4p7tlrQv4wrVyoVLAYAZN9_6JlzuGhvU0Zc92dYDSm3EzxHLHmH7-2bej_4Us8oGx0LOWKEmWOltmDOk5lB2SqMvBheJXsaLS4_4irhPmpfB_xkxeeFiUWIwrMngpFxjNIXk4Wqw3lE4Aabo93l8BqEdN3qytzQXeKJBPS_anTnCnsGamPUe17TZGLEpH9vrgC68W0oB2XrzWfvUbVuM4T_A",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5308&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636643252958630000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636643257229833333,
+                 "displayCreationDate":"6\/11\/2018",
+                 "displayModifiedDate":"6\/11\/2018",
+                 "displaySize":"10.6 KB",
+                 "eTag":"51EF7D86B3568238!5322.31",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5322",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636643258601800000,
+                 "name":"Document3",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"10824",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p8QzmrgwvjO1Zwr-nCr-8ltiBfr7LlAIq-v4wKA_solQ3bmnd5dqpkGiaCiTroqqdEsBpnC9V91mNQUGxn8QQ9BvjRVRwXslfV3xgc8i_RNsQkKl_zyE6S-m_JhE7SkLwyKNgKt7rVGFsXBFPCfbKcx3v7PkcqP8JzJJb9z8_Xd_4k8xDXL7xFNPph0Fgxran\/Document3.docx?psid=1",
+                    "id":"51EF7D86B3568238!5322",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":290,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pv9xP9KLIdNGSrU5pPKLX3JgNZ-TaRe0lORMjguZhe0vQGLyvJQ3vNO9vygZilHWZA-iXRg9_o3UaXlQK2SzUNAWYRNuE8w1BvZc8zynGk90Y4R6jpekAxH4jPEoV92uCBLx-_5q-jndIHSja35NV4A\/Document3.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pGYcRExtVeIX2zncB-C3iHXo6olQngjg3IRHN8NdeHOsKvC54ORDtpbnBw4V_FHghvuU8mI792vtnWPq9ITI3XnRAcYjgtwSp3yf370Z4l9QiUxCitBod78koFk-Xv4V_LnHOq1bHvW2KCqlC1tAfSgUcc4GjN7fntQ8-zAT_lZrU4xIMyKVxSOpz3MhVcXGDBjlR9o3GEkacZW80xVHffw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5322&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636651878500800000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636651878500800000,
+                 "displayCreationDate":"6\/21\/2018",
+                 "displayModifiedDate":"6\/21\/2018",
+                 "displaySize":"9.11 KB",
+                 "eTag":"51EF7D86B3568238!5331.5",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5331",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636651879871930000,
+                 "name":"Document4",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"9319",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pjsua2pAXLHtXi0fm2gt583ZYhp6fG9AzV-868X4bqCAOBSKdvfmSpX0UfAJuZhZhi1ZtLtcfmBIZWrmJss2qqJ28sXiq6e62hrBxaDvE1lg9BKqR3wsiHleqmuQif5fu56o3cNR-5AvlR_TWal5iou2TmlAgLCPgM_XPauw0YzZN0zQDZB5zsrpgI3ARRecx\/Document4.docx?psid=1",
+                    "id":"51EF7D86B3568238!5331",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":266,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pg_qlPOBX1FLoRbH-WlvNNGxwA25oQBvN0crE2BwAVe8laNY_SSb7JxiWB_-BaAtqz0Q4YO3nUIDzJe9iIlQb0qBOGwx411JjjRhIgCiqE2NuQLMgKALp-qLVTSIkqO-3sRFG1zYMrt_xJqz9D8mw0Q\/Document4.docx?download&psid=1",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5331&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636661457673200000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636661466391900000,
+                 "displayCreationDate":"7\/2\/2018",
+                 "displayModifiedDate":"7\/2\/2018",
+                 "displaySize":"9.65 KB",
+                 "eTag":"51EF7D86B3568238!5339.72",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5339",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636661561055230000,
+                 "name":"Document5",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"9872",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4ppxRan9ac3kvI_PqDek6TKzBqoA5cByl0BOPuaxbclBrFYz1xjLU3od6vbvppVMldTSf47Nx8Mbsi1164sZGhaQ3v3SmZ7X1yy7GCqHBg9ZMLnFZeu252NQjg_0qbhYgKNMxtZuxWaBcQPLNoWcXWOaftnShBH8H2-iAH426F2PZUoI26nuKG5_bwl4jifUv9\/Document5.docx?psid=1",
+                    "id":"51EF7D86B3568238!5339",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":317,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4ppPAKYpz43Zg4ZHz3tynlIlWYT2N5_p9ti4Elua_H5OzidMTLE2hS-gWWl6k0SHxXoi2mZeSWcmp2z7RNje4IH7kCU3EemWIUm9nUBrcg3kq9_wA1er377sOXd5vbFYduGDkznbHjdW7b6S2BGPi-vQ\/Document5.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pc3oW0PayQPmpX51VuA2l-hkA6KPrje09__0GK5tqfxBDUngICVvFlq04kCrTjwSIXaz1MUKGnCcV2xC6md4zk4doZ4Yh1JXpQh7WYvGrum9MTS0rCYoxo6BQ6-jY3eS7vQ373WHAI_ZkdqHZheLOcy_nBTGexSCHRUsBCOJYzLGK2i0v9pJytSWwIVUpMr8Cp8W5xE6VDwLLT2aKH_AAgw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5339&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,4,de,3,dl,3,em,2,mc,1,mv,1,rn,1,sh,1",
+                 "commentCount":0,
+                 "creationDate":636727942553300000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636727942520000000,
+                 "displayCreationDate":"9\/17\/2018",
+                 "displayModifiedDate":"9\/17\/2018",
+                 "displaySize":"90.2 KB",
+                 "eTag":"51EF7D86B3568238!5984.3",
+                 "extension":".pdf",
+                 "group":0,
+                 "iconType":"Pdf",
+                 "id":"51EF7D86B3568238!5984",
+                 "isPdf":true,
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/pdf",
+                 "modifiedDate":636727945203300000,
+                 "name":"Flag Football Schedule 2018",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"92357",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pVNpgAGkHnTSbfvtwrLfmeDVva0jfYebYE5YYbvMljebH4l7fZ0ScdMD6VtdCE7vEtQq8kG1VXSZlvRVqO86sPcMlYLIi_WTzl2QFbRNlYMu3gd39dkVROEKyGFlnS_v-huCWSNth3p_6KXxOuNJpMp6uyR4mBuXPF0ba6HHzsmwrUX6A6rafe29VNVv3EDEE\/Flag%20Football%20Schedule%202018.pdf?psid=1",
+                    "id":"51EF7D86B3568238!5984",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":260,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.dm.files.1drv.com\/y4prb-bi6bdu4q7m-Mf4BsMnxcBZWAAek6mW7IOdPSvMdWaT3aWV1X71JRIl8i9IQIeRRUV6Xs3sj0MuBAJEq_EQGMQawstp6hYgNxu1BKYN5pgwj0dBnfXGx1mQodLyFoY4R2UFIWmXBk9zYkHSvyd445t09KUw_OwQluYWTp4g6P42yPwbBxuAf256hdWJ4HOVa6Z8edkiwueo8pJs8i9OQ\/Flag%20Football%20Schedule%202018.pdf?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.dm.files.1drv.com\/y4puC6ktNrn6LiYNUJzQMgLmG5IuJ200hItWfjbU4QYo1YZUABwXfWyf8WgJUg-DLKtcvRaMG1S1vFBv7A8_omoDtqmb3FqRHDqfAtj6EK4ZXSqhP5dpKiNMzZlb3uhUFkWL4wScRNoaZeMZX3kGRkHG5CgXX_mkNC9fGpJZmHZ0GMUfgiYeBJeb4RiYRWNiDAkX28PcBpHBG-YfcM_zCe8NQ",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5984&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,1,de,3,dl,3,etf,1,em,1,mc,1,mv,1,rn,1,sh,1",
+                 "commentCount":0,
+                 "creationDate":636855275787830000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636854367970000000,
+                 "displayCreationDate":"2\/12\/2019",
+                 "displayModifiedDate":"2\/10\/2019",
+                 "displaySize":"378 bytes",
+                 "eTag":"51EF7D86B3568238!8618.0",
+                 "extension":".txt",
+                 "group":0,
+                 "iconType":"Txt",
+                 "id":"51EF7D86B3568238!8618",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"text\/plain",
+                 "modifiedDate":636855275787830000,
+                 "name":"girls u10 Thunder team",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"378",
+                 "textEditorMimeType":"text\/plain",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pi-1TWGSgMStPkD2sf_ytmS_ZrpLzNQ59s7Zs3G49lsgdQxVhyNMRgzfOyBiPaoHuUFDgOZ5W7U5htMJ4KAIO8zVAqleedY6gLduLYDPedAvH_MNsf_5BnBEI3Uqo2QDp-Xu47acF1MWneQLgdwjc9CCLCqN_sBbpgzvMfVItal6eIjv4k-EQuRYvDxX2ETez\/girls%20u10%20Thunder%20team.txt?psid=1",
+                    "id":"51EF7D86B3568238!8618",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":258,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pp8gz71OjZ_96AmwrxfVh0CSjsjrXgqxwv9P0TydNqZKd-y9RxjVDK1RgHiGsWZyp5uzyEfX7fXiLSy6oKg6OrRVw6PlH9rxMyISmlQX644EgnizA4-bj72QHl9RGEwVuRkNPIVUQWmtEBllwS6OrI00tYE1RCEUQEY27uSE_HzkPSN_LRQErG8wYF6AQF8E3qlXDUv9Vo6iLuq6hVbw0Ag\/girls%20u10%20Thunder%20team.txt?download&psid=1",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!8618&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,eb,1,em,1,mc,1,mv,3,oo,2,rn,1,sh,1,vb,1",
+                 "commentCount":0,
+                 "creationDate":636162867140900000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636162867158330000,
+                 "displayCreationDate":"12\/2\/2016",
+                 "displayModifiedDate":"12\/2\/2016",
+                 "displaySize":"1.94 KB",
+                 "eTag":"51EF7D86B3568238!447.1",
+                 "group":0,
+                 "iconType":"Notebook",
+                 "id":"51EF7D86B3568238!447",
+                 "itemType":17,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "modifiedDate":636162867246800000,
+                 "name":"Mark's Notebook",
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"1981",
+                 "urls":{
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!447&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636651878899870000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636340906160000000,
+                 "displayCreationDate":"6\/21\/2018",
+                 "displayModifiedDate":"6\/26\/2017",
+                 "displaySize":"112 KB",
+                 "eTag":"51EF7D86B3568238!5333.3",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5333",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636651879879770000,
+                 "name":"megamind2",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"114676",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4plK2H5anVOiVI6v2ZV1yUbxo9yn0nGb09739R89g_jwBuBjfp3yRqKGpeA7ocOrk_rKHY0Iy45XtW-Hrt5ECeOZSnc-rHwjw7kUMdTQ6-996QEmYY_vd_QetJUcWL8RpfZrA_92ihUobbcZSU-2uYbjSmygSsuo6SrW8bkvHOqJ0izj_T0g3PQpQrF2IYLqGL\/megamind2.docx?psid=1",
+                    "id":"51EF7D86B3568238!5333",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":258,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4puQUetuXQ6e3Nb7plzVE_Rf-ng6Zx5zOplnyELdAqGuHsaOOWjUsfXLpyIxTmt8l1ny3t5vzEEkjIwOAtjyhD736qqepOGixeAmUrTUfosxckkheGp6J2OtDgldJayRHT7HtnmSi6KDnmvEu8CxZe0-Pmt5eU8bF0QoLYUxAY9iAU2ipNK95ijdqWmslrqSRialYO1GhKW2KxJc2Qg0OtFQ\/megamind2.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pcFFH2fPZWEXGD7Nofa4wJQYw2Y0DbVTCPzbp8AF1KIf7Aw4WZRFAUBqu0dEu91rVi9m3bzPa4M2fXIdJ55U3c1fj7eHun9wO2byOE1J6n20ygQO0Cri83X9ZxaXSVoam9nH0qaeH6Sl0eMgo2sF2zDdA0njyuQSByvPRL-W9rhLYv42M6HVCSzaHhzaeoUGVcZJfjy4DNvXba6MvACamQg",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5333&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636619037400270000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636619037430266667,
+                 "displayCreationDate":"5\/14\/2018",
+                 "displayModifiedDate":"5\/14\/2018",
+                 "displaySize":"12.0 KB",
+                 "eTag":"51EF7D86B3568238!3872.8",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!3872",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636619084332300000,
+                 "name":"Patent Company",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"12230",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pHTgy_hGox8fWI_FzdBd5rG_e4c2CLRlNI3x3tL5yTwAzqLEd-aJzKMCwYEM0J7u_WpKc6no10r_qUcdjUuu-S09tde63JxLiVEg49bgxpPt6WHqxYZTplRd4N6OFoqa4FXlytbtCyi7Ftc9B24VZEa0HJSgH1Ng-9hl7wRVs66tQuqdRQkGkuovyFSCrUhbM\/Patent%20Company.docx?psid=1",
+                    "id":"51EF7D86B3568238!3872",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":271,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pTLJUceKagJW7vF9HBxSJ2qwCi2A5ltCSyON0hghMhlACndWPq10xEq02NtB__Qprv3gxGdYtZTPtL7utGhjup0yRMY1wl3ZlvAXde7GDY4c3eM2HVwPUKPklGLqVihn0nDih3KcrdOB-6TeOdvMwPg\/Patent%20Company.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pOMpgR0lKs1mVvc9d71IcKY0ztWNs378LhLrraoVzARz8ZIDLwLCIT03mNZAJws-pKyloATcbjVRHDueJ-KuowVH1D-JEGR1kBsDjwNzIijPj_4pAMgwBzYh5Zxj7U6fw6jRBnKoGoyqfu8oPCRBDI5I64othjUH487A0gWSioxiKe5yOQbgdExokUO8aV7tvJJwOcOGwe06B9UD3tbSi1g",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!3872&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636619042001530000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636619042022966667,
+                 "displayCreationDate":"5\/14\/2018",
+                 "displayModifiedDate":"5\/14\/2018",
+                 "displaySize":"12.0 KB",
+                 "eTag":"51EF7D86B3568238!3873.13",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!3873",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636622565713000000,
+                 "name":"PatentCompany",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"12230",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pRr0Wr5UQPnE4tHHNXmhylWnZ4CxpVGLN9bj93JhZSKMX2gGeNvD6NYZbLb4CF6huQOH_0UWQW1MPnXK25QlL57LtjScyFc-Vr0epebblhCX3idWsUy-GmkoSsu436zmr8YJlsupvXDXTZNTeQdMNbqQB2yk0LxA0R4siCx9Xxj6IvIrA36z5SJtTM7eXtjPz\/PatentCompany.docx?psid=1",
+                    "id":"51EF7D86B3568238!3873",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":272,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pFU1Drc3WCVt_QO_L9R72dtonW-FM2KGSwrWe4AA6b-LeR1xLNRQbBeN-F9krfsiy_W-hGIIWRZggrxCY-RoDUTmsWn9Alc7Jz_sr0KkrU3PfxtrfXu5XRsPW0FY27xl5PIv-gaElLFe3T_nNRcwTJQ\/PatentCompany.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4prptusqePDD8Ap1HmrdmlSAls1t3hsHQNi-0XP2HLSi0YOod7kIX_JaP4n-PVBAc6u4b2GqHIl5gXMv4UawNXaIU_a7Dl0RYw7rT3ZdfRXktuZbGPExESZuwCED6deanv0N3SEpwuKFFt8ZIXSGh8KgN1Z-bYhP33qgg7sSD1r4IjpbarVfFkSpez3pSv3IS8qpGP9gOBaRXcLJACu0X5Dg",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!3873&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636633789427670000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636633922012133333,
+                 "displayCreationDate":"5\/31\/2018",
+                 "displayModifiedDate":"5\/31\/2018",
+                 "displaySize":"10.3 KB",
+                 "eTag":"51EF7D86B3568238!5304.47",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5304",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636634013072870000,
+                 "name":"Pickmybrain.com",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"10515",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pr0aeBk3fpeeFlUlOezj7dWDys48mM3gN0lg39yGry7K--dgANNJ91k2z4RTaAkuGF-4IDDh1viyonu5Sb4cbanZ-I-3hzLhEiiyxiMOaPrLjLWzyLQaxwB0xGp2LGg1K3IIKOVhh3jKvMeyZO9iMPIFVJ9vvlHr1IftsNChqUWrh3Dq_LAgMq9Y9NnNflIew\/Pickmybrain.com.docx?psid=1",
+                    "id":"51EF7D86B3568238!5304",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":282,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pJkyjOs7zfwg55URNES6KMYt12d2UTEZnpBkAhmlxlqpcxS-DrhKviSUB1hVxQ1FwxUpqVxXNZiEVxYMWab4H70bB_zyYgzdHXbapvc87CF-VHMaPFU8-vj3nLMKjV96ApGwgz49fcPV4kSWSJquLaw\/Pickmybrain.com.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4phPcqjo0aXuctWVP8ALZ6WaroUVg0l9BNM5SNiocfhqd_77uIqr-sfZfhWxX-v2XjZznbuJecj1b78FxWf8p7Eaf8WMCWMxbzhsd8CTKG6Is1wT1T1F_BCsHZEqANPe-CpfV0ruQGR7VAfoZDrsrhjqf7zOQdfFiZZOQuQNu7zMlh7e7gBn5UJZoSyU2Fpql-i-0QG1u-d0THWpZmZZUMgA",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5304&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,4,de,3,dl,3,em,2,mc,1,mv,1,rn,1,sh,1",
+                 "commentCount":0,
+                 "creationDate":636622575953530000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":635370549760000000,
+                 "displayCreationDate":"5\/18\/2018",
+                 "displayModifiedDate":"5\/30\/2014",
+                 "displaySize":"372 KB",
+                 "eTag":"51EF7D86B3568238!4684.3",
+                 "extension":".pdf",
+                 "group":0,
+                 "iconType":"Pdf",
+                 "id":"51EF7D86B3568238!4684",
+                 "isPdf":true,
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/pdf",
+                 "modifiedDate":636622576328100000,
+                 "name":"Soccer Manifesto",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"380540",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pSmInm65s1c1lwxcx7dqLJgS3D8_69OJu4EJ_mo_k9jfwZZlUzz1k6OeZI40hbJfm5er7IhWbw_jr5tb1GcQElPaJDHwmCwzE-MI24nvcaeGqzJ9MlZ0_GPVbCNpgNg19cXh4P80MfBhub-IBJAVMAWp6H3qEpa92clIIR9_2zfLRbrx70hd0caPL2-4mV83W\/Soccer%20Manifesto.pdf?psid=1",
+                    "id":"51EF7D86B3568238!4684",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":258,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4piSotELl0f3kbJ-Tb1D13jSfSJyvS4FGkM-HRn2cVunV-v9V0XW8D88bBqEGTOeYYSsqVHLsPqbVH-mqeUuiWByKQw8TKbPcnmWQQk5W15kcvD6vCty8D-CMtP2s--eXgMiBjjowGE_zm_EmoYqq1SkL8AuSUuYlDrDDzfoZdgbVJNutyEifm0dXDztXlEIrXfyDy_dmTXzRYukFVnIX2OQ\/Soccer%20Manifesto.pdf?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pRHV7KVvehFKTYh9vt0otnOLwOq-ATAcSqwO7wv64YfXB5cK874ODH-I2Zi3hqFoE-EkLDXjfmiI62-GiN4ZOtOEemrKuvxMvSNpZhKr10n0PpJqUUWV7dyBcFhvXxmmBO95lxvBhPyOHRqEa_iR79o7zhOClCpvq3OMLwHHTtvb7qfqWrV2wkBAx0MXBghyzKYoHyL8Xpt6R7y0hXXrtRQ",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!4684&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,4,de,3,dl,3,em,2,mc,1,mv,1,rn,1,sh,1",
+                 "commentCount":0,
+                 "creationDate":636688406991900000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636688406960000000,
+                 "displayCreationDate":"8\/2\/2018",
+                 "displayModifiedDate":"8\/2\/2018",
+                 "displaySize":"229 KB",
+                 "eTag":"51EF7D86B3568238!5416.3",
+                 "extension":".PDF",
+                 "group":0,
+                 "iconType":"Pdf",
+                 "id":"51EF7D86B3568238!5416",
+                 "isPdf":true,
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/pdf",
+                 "modifiedDate":636688407369400000,
+                 "name":"Sofia Diabetes Order 2018_19",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"233603",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p0gnf55p-6S8DjJI5blEElu7s25Qib-Brp5x_nTG8XlOso9DgcrM4G8XoqoL2_mxZn17z1B1aurOR0dTXd67yYkxXD_e_5aoPLrBq3dNWXAMAY1LSTWlHqR8TB_2zh6YHtesuJ_Y7BIrFl0M-Ob934pMRDn11xl-8GaBgJGqKBzkwtrmIW_lbahTur8GKmjI3\/Sofia%20Diabetes%20Order%202018_19.PDF?psid=1",
+                    "id":"51EF7D86B3568238!5416",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":260,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pSD9VhsjJelgSYpAuAvOjavxwBcLVun_0owm4HwQcuf1GXOeNyGWzU2cUozJQWPA-2QOETmnaksmEiZiAKUOwl7JIp8etZWOhZlQIhw39Jnq_loOcnSUk0BqhmhgfkT6sjy7CGhnsUbnF4pVUKoKGCErgv3-FbdM_8hvjyxXYFIdHqSZh_QHwizN3IGpYOqTQABkN-P9gmpvpIBvJV7tT-w\/Sofia%20Diabetes%20Order%202018_19.PDF?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pFc-kW5oX0eNBaCEIyfrD_wH8WnfEBKr5YhOCepXiYPFM7qzGWRjeqTDlnGee4QzjZaz81z0guZwd-i6fbmv7uJaKkGpkxw0rkqhcC8D-Wb3tA7jbftky2qMukOaxpIxlN9k9MtHWFPI2ZBqP_h9vnvepOEyRF1CSw86sESc3wSHyZfgYG6kuvlQuXLCdZw1Id68G1YB8rGqGOKZoYt1kcw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5416&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636731615773100000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636740110281000000,
+                 "displayCreationDate":"9\/21\/2018",
+                 "displayModifiedDate":"10\/1\/2018",
+                 "displaySize":"143 KB",
+                 "eTag":"51EF7D86B3568238!6091.1693",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!6091",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636748937049500000,
+                 "name":"SOULSHINE",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"145438",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pffsciHflJLATKA--s5TE_hDFj6N9mUXvcFjKbZ41xx5cgF4pId01lnnYyPK4bCoqcqT_QmWyDGJfHZidZGJEs68yv82cdZZvFPKe0vOJgii_ttB7OHZr4KHHspIiNmhbpbo3gYE6bY1N1zDmowN4eg289Wbg6nE0RaQ9JqPW60jcFPfGFNjeaN4rUJdpxyBe\/SOULSHINE.docx?psid=1",
+                    "id":"51EF7D86B3568238!6091",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":1030,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pzGdsfVutI2faqiyf4bHxlrPn1cl8PygDDagZ3IBw1GDCgL_XBIa82PgARlR-wb_qNnYHRL4o4XHiA204cHP7wihHYaVYBe9Gy5ism5QLZ1aCdC-DdynZ1y8jL9UZc81xp1oaZiQVDqSKPUd-__9oaA\/SOULSHINE.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pqjSSjFl4-8rG0AcaKMZDeObLrLoK954K6meHFyXZ6j0N6xzNGgtZFOj80L6lWNfk4l5D0pUyaINq6aBRLmz8sO5kIAtroZXvREx_NBJx9a08pJRabTOzxHncs31LCPF2ElvF6_tom2-8kfFt3dmYbP59M6wW0-jxx2E-8NLaI1kaHRfU9P640nNcgnLuDGuEsmzwuXFK8Bsh3nxhI6_7Gg",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!6091&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636734234843930000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636734234904266667,
+                 "displayCreationDate":"9\/24\/2018",
+                 "displayModifiedDate":"9\/24\/2018",
+                 "displaySize":"142 KB",
+                 "eTag":"51EF7D86B3568238!6113.9",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!6113",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636734238634100000,
+                 "name":"SOULSHINE-9-24-2018",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"144640",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pWk5q5ULgOKCuNTP747vg1_XmLRY1mUFBnTuI1dEaAlLMCJs3I_elZg-HYu0s3FwtmTLG_puNnNPBu0mfSI3DFEeycn8Mi_EcPcRm2EsDPkb81zDiOVBGrvfGOzcXXET5IHwWvHEIs7To0WCemO1DasQk4Xj78VzPfH5z5bhGLdt8Gwsz58EbXw1fOHUVQmvC\/SOULSHINE-9-24-2018.docx?psid=1",
+                    "id":"51EF7D86B3568238!6113",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":271,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4prFrZgFDdG9MBJ673Tdd46J0VAN23RRYKv5zWmOaHJycOa59tfHk9Jrxz7pFfKM1UhnmXux-EgA29acB5yx7733oV3DKtTqoyXLnsKvjZYuWKPo8Dc0LezfpKjfMbYLmcn7EZpZCxUDlM4Ghpun-gZQ\/SOULSHINE-9-24-2018.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4phqicddgqI1RbJRWwI7ZDM_VKEXB80QdrXo8RD7Tq9pQl9jB1x7jDk35pOjQU45jKMkbnxoY7cdXZ_eQxYTsUeB5P1ZE5b_pJP5ejPAqVRMoCMP1ZcfGtwtfmdcNpp0H4h694YNgrUf2b8_rFSW8J7VfItM_eIJ4i1LmQgQt1GPca1XubyhlRpiVH_HP1AXeya4S9m9x1oh0oF2m1wmFeQw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!6113&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636851666382330000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636851666418100000,
+                 "displayCreationDate":"2\/7\/2019",
+                 "displayModifiedDate":"2\/7\/2019",
+                 "displaySize":"130 KB",
+                 "eTag":"51EF7D86B3568238!8611.9",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!8611",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636851691059770000,
+                 "name":"SOULSHINE-FINAL-2-7-2019",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"132449",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4p5Akk8gtO0HUno7-c-IALtAPNCcrxAIghh8DsZzf6UVd2_UzsYV7nbPsaMqwGjV4laMjQcWgBNa6lT23AhUBoNMi9bh7hY8rKZOta7BnZGl-GcXSSQwysSnltpjeEdppaE3wxKUOlb0KbMULJSVwB2fTJVcFY87M2u133Tt7JLt_Gs3nFJvc-BK2hfNl7qgWd\/SOULSHINE-FINAL-2-7-2019.docx?psid=1",
+                    "id":"51EF7D86B3568238!8611",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":269,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4p_ujsYhcqQVly80GD35MvIvkrRkTttu8mCtu2E8eeNfgtWjqwAji-MLrEGI3yCfBITquwONHwCBK9wly_9RlA2t6FNV7lbECBaLMuUQrGGF1KXZAFMWrz-4s9NXaml8HNaqa1zRoUHPsMaCzcHkvtJg\/SOULSHINE-FINAL-2-7-2019.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4p9ypW_k2QXPlv7NvkUiGq2rdW561j_eMgtGlblP4NA5qJ8RRXvfEbJ1512tffv5hBn2elw4lPJmkfHCfXcbiliLfxeo58oDYf3NH8tfpYlNbnpEhHxL-6oQH9DHLPmin6DFIgyLjYODecOGdKTQOWH2TPeMY5NZzmuB15ewBjqe72j7WxgCXqhbG33mxiHj3sHJhQHg4mg_yFcIK9SfUb7Q",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!8611&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636651878915800000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636731614868700000,
+                 "displayCreationDate":"6\/21\/2018",
+                 "displayModifiedDate":"9\/21\/2018",
+                 "displaySize":"139 KB",
+                 "eTag":"51EF7D86B3568238!5334.3023",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!5334",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636764304099670000,
+                 "name":"X",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"141552",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pOxtHsw4iFgu3HRNwl4IwBwccBErYXLr_49NGiv_oXYE4kxXgQEMO16x-wAc9Vds7S-lWyijREOtRIeiE7tCKNsVi9o1BJtyyj5DIWh1yy-SsKD38PJ83UfeCqouUWQB7QM5iY5bPBL-k6tygDLdzHrMv4Jy-GVMCkp25mEKyvwn8OTPJD_23RBvMC-LYLExS\/X.docx?psid=1",
+                    "id":"51EF7D86B3568238!5334",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":1602,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4p8aex9nQmORDMaWZngnLoRdqZ4YXY7g-bnpYBJIgCiUVc0kMM6LsNm7-h8Pndg5_CAzLk1o6kt1uYD6AcfEXQ2P_pGf1MO-kxbISbE7cJe2_C2tDUVU9FE1QuNggLR1QQqIcBd3EBZ9MCuY48nBY1Ew\/X.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.bn.files.1drv.com\/y4pqEr0e8giIlNHj95uGjFE9OAsjcPQtgdNVPZkHqB1NvbJMmfNjLYIjFZBHqEWYKq1tnRZoHoAMgwtKuRAC6MCUqumT1WFAkCZeNFFRCZhqbfjgWBRbZRv_e1X7i43wMGUnX0RjW-aCrpRyB_sk1yIR76yyeQtDU7QMrZaQxY4cGl3sMrrhxeMadH-yyxcgzWEFK5q2XpEXniymNmVnVsLmg",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!5334&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              },
+              {
+                 "commands":"cp,1,defc,2,de,3,dl,3,eb,1,em,2,mc,1,mv,1,oo,4,rn,1,sh,1,vb,1,vv,1",
+                 "commentCount":0,
+                 "creationDate":636729805456400000,
+                 "creatorCid":"51EF7D86B3568238",
+                 "creatorName":"Mark Angeletti",
+                 "dateModifiedOnClient":636729805481700000,
+                 "displayCreationDate":"9\/19\/2018",
+                 "displayModifiedDate":"9\/19\/2018",
+                 "displaySize":"137 KB",
+                 "eTag":"51EF7D86B3568238!6071.9",
+                 "extension":".docx",
+                 "group":0,
+                 "iconType":"Docx",
+                 "id":"51EF7D86B3568238!6071",
+                 "itemType":1,
+                 "lastModifierCid":"51EF7D86B3568238",
+                 "lastModifierName":"Mark Angeletti",
+                 "mimeType":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                 "modifiedDate":636729806724670000,
+                 "name":"X-9-19-2018",
+                 "ocr":{
+                    "entityTags":[
+
+                    ]
+                 },
+                 "orderedFriendlyName":"Mark",
+                 "ownerCid":"51EF7D86B3568238",
+                 "ownerDCid":"5904075653993890360",
+                 "ownerId":"51EF7D86B3568238",
+                 "ownerName":"Mark Angeletti",
+                 "parentId":"51EF7D86B3568238!438",
+                 "resourcePartitionCid":"51EF7D86B3568238",
+                 "sharingLevel":"Just me",
+                 "sharingLevelValue":4,
+                 "size":"139863",
+                 "thumbnailSet":{
+                    "baseUrl":"https:\/\/bn1302files.storage.live.com\/y4pPQ1HL6UfwD5J8y28hs465rFPNrRnhmKQ54kgobg80PUPXj3DANT3iiDnKcI06i79jA1Kf1aIVJLp11q_4eAwXZs-02Ep9fnXUHI8g5-CGN3sSLsRe5bhaudpTpxa703eJJ7aihvkVj5uAiGC-FlAf1Pv0XxHGqbYNh-kvRK9PSgjJGCkcFrOODpQFuhuhnsV\/X-9-19-2018.docx?psid=1",
+                    "id":"51EF7D86B3568238!6071",
+                    "thumbnails":[
+                       {
+                          "height":0,
+                          "name":"doc",
+                          "streamVersion":267,
+                          "url":"",
+                          "width":0
+                       }
+                    ]
+                 },
+                 "urls":{
+                    "download":"https:\/\/fnnqog.bn.files.1drv.com\/y4pJVUDRwcw1vqdvJ8ULmQOtKNIX_Mgxc8TVw8htSbR-aVc32lFw3GSXPvnTwLS4-YbeXz9ymPGw70p6_tJGqWm4CVVZXP62D0zofQjjVrW8YpxWoOnR2JcZVVaBT1EZjrSID_M8SZO9ScSzw4iQwvgZw\/X-9-19-2018.docx?download&psid=1",
+                    "textContent":"https:\/\/fnnqog.dm.files.1drv.com\/y4pYK714zaQWATcvhMQCYi4z-bU_keZ_fhX0TkdbPiIz9oxxcEN-5eQQF1YMu4azHz6xw1vP74sVPLzBd_FjHBgIKY8lJmKfiF9TuiMy89Slb7ovvGEq3xsM0bTODPWFgHhEO5v8Q-RqDwDuxt9zL3mtyDy9bNasmzr3i5V6d6WlHbGzlFk2z4HFe_S5XbnTHQ7gK7tOoeIEd50tj7koK8ylw",
+                    "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=view&resid=51EF7D86B3568238!6071&parId=51EF7D86B3568238!438"
+                 },
+                 "userRole":0
+              }
+           ],
+           "defaultSort":1,
+           "defaultSortDirection":1,
+           "defaultSortReverse":false,
+           "documentCount":24,
+           "folderCount":9,
+           "hasSubfolders":1,
+           "itemGroupings":[
+              {
+                 "itemGroups":[
+                    {
+                       "count":9,
+                       "groupingId":"folder",
+                       "startIndex":0
+                    },
+                    {
+                       "count":24,
+                       "groupingId":"document",
+                       "startIndex":9
+                    }
+                 ],
+                 "name":"FoldersDocumentsPhotos"
+              }
+           ],
+           "photoCount":0,
+           "startIndex":0,
+           "totalCount":33
+        },
+        "group":0,
+        "iconType":"NonEmptyDocumentFolder",
+        "id":"51EF7D86B3568238!438",
+        "isSpecialFolder":1,
+        "itemType":32,
+        "lastModifierCid":"51EF7D86B3568238",
+        "lastModifierName":"Mark Angeletti",
+        "modifiedDate":636970028063470000,
+        "name":"Documents",
+        "orderedFriendlyName":"Mark",
+        "ownerCid":"51EF7D86B3568238",
+        "ownerDCid":"5904075653993890360",
+        "ownerId":"51EF7D86B3568238",
+        "ownerName":"Mark Angeletti",
+        "parentId":"root",
+        "quotaExceeded":0,
+        "quotaRemaining":198351968,
+        "quotaStatus":1,
+        "quotaTotal":5368709120,
+        "resourcePartitionCid":"51EF7D86B3568238",
+        "sharingLevel":"Just me",
+        "sharingLevelValue":4,
+        "size":"324653742",
+        "specialFolderCanonicalName":"Documents",
+        "urls":{
+           "viewInBrowser":"https:\/\/onedrive.live.com\/redir.aspx?cid=51ef7d86b3568238&page=browse&resid=51EF7D86B3568238!438&parId=51EF7D86B3568238!103"
+        },
+        "userRole":0
+     },
+     {
+        "commands":"cxls,1,cxlsf,1,cf,1,con,1,cppt,1,cdoc,1,defc,1,sds,1,up,1",
+        "dateModifiedOnClient":635717372179870000,
+        "displayModifiedDate":"7\/5\/2015",
+        "displaySize":"4.82 GB",
+        "eTag":"51EF7D86B3568238!103.0",
+        "folder":{
+           "category":0,
+           "defaultSort":1,
+           "defaultSortDirection":1,
+           "defaultSortReverse":false,
+           "itemGroupings":[
+              {
+                 "itemGroups":[
+                    {
+                       "count":0,
+                       "groupingId":"other",
+                       "startIndex":0
+                    }
+                 ],
+                 "name":"FoldersDocumentsPhotos"
+              }
+           ],
+           "totalCount":0
+        },
+        "group":0,
+        "id":"root",
+        "itemType":32,
+        "modifiedDate":636970028063470000,
+        "orderedFriendlyName":"Mark Angeletti",
+        "ownerCid":"51EF7D86B3568238",
+        "ownerDCid":"5904075653993890360",
+        "ownerId":"51EF7D86B3568238",
+        "ownerName":"Mark Angeletti",
+        "resourcePartitionCid":"51EF7D86B3568238",
+        "rootResourceId":"51EF7D86B3568238!103",
+        "sharingLevel":"Just me",
+        "sharingLevelValue":4,
+        "size":"5170357152",
+        "urls":{
+           "viewInBrowser":"https:\/\/onedrive.live.com?cid=51ef7d86b3568238"
+        }
+     }
+  ],
+  "originId":"0.2088473929033483",
+  "sortDirection":1,
+  "sortOrder":1,
+  "sortReverse":false
+}

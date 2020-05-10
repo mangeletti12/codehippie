@@ -1,0 +1,595 @@
+{
+  "TotalResults": 396,
+  "Results": {
+    "Columns": [
+      {
+        "ColumnName": "DocumentId",
+        "IsSystem": true,
+        "Display": "DocID",
+        "ColumnType": "System.Int64",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "Number",
+        "IsSystem": false,
+        "Display": "Number",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "Name",
+        "IsSystem": false,
+        "Display": "Name",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "FileName",
+        "IsSystem": false,
+        "Display": "File",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "FileType",
+        "IsSystem": false,
+        "Display": "Type",
+        "ColumnType": "System.String",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "Note",
+        "IsSystem": false,
+        "Display": "Note",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "Date",
+        "IsSystem": false,
+        "Display": "Date",
+        "ColumnType": "System.DateTime",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "IsActive",
+        "IsSystem": true,
+        "Display": "IsActive",
+        "ColumnType": "System.Boolean",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "Revision",
+        "IsSystem": false,
+        "Display": "Revision",
+        "ColumnType": "System.Int32",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "CreatedBy",
+        "IsSystem": false,
+        "Display": "CreatedBy",
+        "ColumnType": "System.Int64",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "CreatedByName",
+        "IsSystem": false,
+        "Display": "Added By",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "TotalRows",
+        "IsSystem": true,
+        "Display": "TotalRows",
+        "ColumnType": "System.Int32",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "SetId",
+        "IsSystem": true,
+        "Display": "SetId",
+        "ColumnType": "System.String",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "SetName",
+        "IsSystem": false,
+        "Display": "Set",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "DisciplineId",
+        "IsSystem": true,
+        "Display": "DisciplineId",
+        "ColumnType": "System.String",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "DisciplineName",
+        "IsSystem": false,
+        "Display": "Discipline",
+        "ColumnType": "System.String",
+        "IsHidden": false
+      },
+      {
+        "ColumnName": "DocTypeId",
+        "IsSystem": true,
+        "Display": "DocTypeId",
+        "ColumnType": "System.String",
+        "IsHidden": true
+      },
+      {
+        "ColumnName": "DocTypeName",
+        "IsSystem": true,
+        "Display": "DocTypeName",
+        "ColumnType": "System.String",
+        "IsHidden": true
+      }
+    ],
+    "Rows": [
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12198",
+          "",
+          "",
+          "zelda.jpg",
+          "image/jpeg",
+          "",
+          "2/11/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12197",
+          "",
+          "",
+          "zelda.jpg",
+          "image/jpeg",
+          "",
+          "2/7/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12196",
+          "",
+          "",
+          "screenshot.jpg",
+          "image/jpeg",
+          "",
+          "2/6/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12195",
+          "",
+          "",
+          "elvis.jpg",
+          "image/jpeg",
+          "",
+          "2/6/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12194",
+          "",
+          "",
+          "ElectricalPlans.pdf",
+          "application/pdf",
+          "",
+          "1/30/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12193",
+          "",
+          "",
+          "austin.txt",
+          "text/plain",
+          "",
+          "1/29/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12192",
+          "",
+          "",
+          "Certificate.pdf",
+          "application/pdf",
+          "",
+          "1/24/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12191",
+          "",
+          "",
+          "austin.txt",
+          "text/plain",
+          "",
+          "1/22/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12189",
+          "",
+          "",
+          "ElectricalPlans.pdf",
+          "application/pdf",
+          "",
+          "1/22/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "12187",
+          "",
+          "",
+          "soccer-2018-poster2b.jpg",
+          "image/jpeg",
+          "",
+          "1/22/2019 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "10775",
+          "323",
+          "MKA-Project-1 a",
+          "elvis.jpg",
+          "image/jpeg",
+          "",
+          "10/29/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "10109",
+          "MKA-SET-1",
+          "16",
+          "Plumbing",
+          "7",
+          "Contract Docs"
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "697",
+          "",
+          "",
+          "austin.txt",
+          "text/plain",
+          "",
+          "9/25/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "696",
+          "",
+          "",
+          "BatchJobServices.pdf",
+          "application/pdf",
+          "",
+          "9/25/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "692",
+          "54533",
+          "",
+          "austin.txt",
+          "text/plain",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "32",
+          "set7",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "691",
+          "",
+          "",
+          "certificate -concussion.pdf",
+          "application/pdf",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "2",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "690",
+          "",
+          "",
+          "mka.jpg",
+          "image/jpeg",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "689",
+          "",
+          "",
+          "search-this.txt",
+          "text/plain",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "2",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "687",
+          "",
+          "",
+          "mka.jpg",
+          "image/jpeg",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "684",
+          "",
+          "",
+          "mka.jpg",
+          "image/jpeg",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      },
+      {
+        "IsEditable": true,
+        "Fields": [
+          "681",
+          "",
+          "",
+          "austin.txt",
+          "text/plain",
+          "",
+          "9/14/2018 12:00:00 AM",
+          "True",
+          "1",
+          "1",
+          "Admin User",
+          "396",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  }
+}

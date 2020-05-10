@@ -1,0 +1,60 @@
+$Indigo900: #1A237E;
+$Indigo800: #283593;
+$Indigo700: #303F9F;
+$Indigo600: #3949AB;
+$Indigo500: #3F51B5;
+$Indigo400: #5C6BC0;
+$Indigo300: #7986CB;
+$Indigo200: #9FA8DA;
+$Indigo100: #C5CAE9;
+
+.node {
+  font-size: 14px;
+  color: #e3e3e3;
+  padding: 3px;
+}
+
+.node.selected > .node_children {
+  display: block;
+
+}
+
+.node_label {
+  padding: 5px;
+}
+
+.node_children {
+  display: none;
+}
+.node_children:not(.barren) {
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.15);
+}
+
+.node .empty { display: block; color: rgba(0,0,0,0.4); padding: 5px; padding-left: 20px; }
+
+.node { background: $Indigo900; }
+.node .node { background: $Indigo800; }
+.node .node .node { background: $Indigo700; }
+.node .node .node .node { background: $Indigo600; }
+.node .node .node .node .node { background: $Indigo500; }
+.node .node .node .node .node .node { background: $Indigo400; }
+.node .node .node .node .node .node .node { background: $Indigo300; }
+.node .node .node .node .node .node .node .node { background: $Indigo200; }
+.node .node .node .node .node .node .node .node .node { background: $Indigo100; }
+
+.header-icon {
+  margin-top: -2px;
+  color: #54E883;
+  height: 14px;
+  width: 14px;
+  transition:
+    color 150ms ease,
+    transform 150ms ease
+  ;
+}
+.header-icon-expanded {
+    color: #ff3366;
+    transform: rotate( 90deg ) ;
+  }

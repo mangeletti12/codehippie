@@ -1,0 +1,77 @@
+<nav *ngIf="nav" [class.hideNav]="navStatus">
+
+    <div class="navApp">
+
+      <div class="appHolder" (click)="openAppMenu()">
+        <div class="appImageHolder">
+          <span class="appImage" role="img" [style.background-image]="'url(/assets/images/' + nav.icon + ')'"></span>
+        </div>
+        <div class="appMeta">
+          <span class="appName">{{nav.Name}}</span>
+          <span class="appDescription">{{nav.Description}}</span>
+        </div>
+        <div class="appDownArrow">
+          <span>
+            <svg width="24" height="24" viewBox="0 0 24 24" focusable="false" role="presentation">
+              <path d="M8.292 10.293a1.009 1.009 0 0 0 0 1.419l2.939 2.965c.218.215.5.322.779.322s.556-.107.769-.322l2.93-2.955a1.01 1.01 0 0 0 0-1.419.987.987 0 0 0-1.406 0l-2.298 2.317-2.307-2.327a.99.99 0 0 0-1.406 0z" fill="currentColor" fill-rule="evenodd">
+              </path>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- apps -->
+      <div id="appsHolder" [class.hideApps]="!isAppsHolderOpen">
+
+        <div class="appHolderTop">
+          Apollo Apps
+        </div>
+
+        <ng-container *ngFor="let item of navApps; let i = index; let even = even">
+          <div class="appHolder menuItem" [class.even]="even" (click)="getNavApp(i)">
+            <div class="appImageHolder">
+              <span class="appImage" role="img" [style.background-image]="'url(/assets/images/' + item.icon + ')'"></span>
+            </div>
+            <div class="appMeta">
+              <span class="appName">{{item.Name}}</span>
+              <span class="appDescription">{{item.Description}}</span>
+            </div>
+          </div>
+        </ng-container>
+
+        <div class="appHolderBottom">
+          End-to-End Solutions
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="navScroller">
+
+      <ng-container *ngFor="let item of nav.MenuItem; let r = index">
+        <div class="navGroup" *hasClaim="item.Claim" [class.active]="item.Active">
+          <h2 class="acc_trigger" (click)="navSelect(item)"><span class="fas {{item.icon}}"></span>{{item.Text}}
+          </h2>
+          <ng-container *ngIf="item.MenuItem != null">
+              <div class="acc_container">
+                <ul class="ulNav">
+                  <li *ngFor="let nav of item.MenuItem"><a [routerLink]="nav.Url"
+                          routerLinkActive="active-link">{{nav.Text}}</a></li>
+                </ul>
+              </div>
+          </ng-container>
+        </div>
+      </ng-container>
+
+      <div class="navGroup">
+        <h2 id="hideShowSidebar" class="acc_trigger" (click)="hideShowSidebar()" [class.hideNav]="isOpen">
+          <span id="rightArrow" class="fas fa-angle-right"></span>
+          <span id="leftArrow" class="fas fa-angle-left"></span>Collapse Menu
+        </h2>
+      </div>
+
+    </div>
+
+</nav>

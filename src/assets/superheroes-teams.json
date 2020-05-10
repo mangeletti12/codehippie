@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "The Avengers",
+    "alignment": 1,
+    "image": "avengers.jpg",
+    "members": []
+  },
+  {
+    "id": 2,
+    "name": "X-Men",
+    "image": "x-men.jpg",
+    "members": []
+  },
+  {
+    "id": 3,
+    "name": "Brotherhood of Mutants",
+    "image": "brotherhood.jpg",
+    "members": []
+  }
+]

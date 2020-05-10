@@ -1,0 +1,52 @@
+.k-radio-group {
+  display: flex;
+  flex-direction: column;
+  //margin: 15px 0;
+}
+  
+.k-radio-button {
+  margin: 5px;
+}
+
+.theme-circle {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.theme-default-primary {
+  background-color: #1976D2;
+}
+.theme-default-accent {
+  background-color: #0D47A1;
+}
+.theme-default-bg {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+}
+//
+.theme-dark-primary {
+  background-color: #607d8b;
+}
+.theme-dark-accent {
+  background-color: #ffc107;;
+}
+.theme-dark-bg {
+  background-color: #303030;
+  border: 1px solid #ccc;
+}
+//
+.theme-light-primary {
+  background-color: #eeeeee;
+}
+.theme-light-accent {
+  background-color: #283593;
+}
+.theme-light-bg {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+}
+           

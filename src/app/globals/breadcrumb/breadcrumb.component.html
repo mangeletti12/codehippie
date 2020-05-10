@@ -1,0 +1,12 @@
+<ol id="breadcrumb">
+  <li *ngFor="let breadcrumb of breadcrumbs, let i = index;">
+    <a [routerLink]="breadcrumb.url" routerLinkActive="router-link-active">
+      <ng-container *ngIf="i === 0">
+        <span><i class="material-icons">home</i></span>
+      </ng-container>
+      <ng-container *ngIf="i !== 0">
+        {{ breadcrumb.label }}
+      </ng-container>
+    </a>
+  </li>
+</ol>

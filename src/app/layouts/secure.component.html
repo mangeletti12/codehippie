@@ -1,0 +1,90 @@
+<div id="slideOut" [class.closedSlideOut]="isSlideOutOpen">
+  <div class="bar">
+    <button  (click)="toggleSlideOut('close')" >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+
+  <div id="slideNotifications" [style.display]="slideOutItems[1].status ? 'inherit' : 'none'">
+      <app-notifications></app-notifications>
+    </div>
+
+  <div id="slideProfile" [style.display]="slideOutItems[0].status ? 'inherit' : 'none'">
+    <app-profile></app-profile>
+  </div>
+
+</div>
+
+<div id="flex-parent">
+
+  <div id="global-nav">
+    <div id="fixed-nav">
+      <div id="global-left-nav">
+        <div class="main-loader" [hidden]="!HTTPActivity"><i class="fas fa-cog fa-spin" aria-hidden="true"></i></div>
+
+        <a [routerLink]="['/']">
+          <div id="logo" title="Home"></div>
+        </a>
+
+        <div class="btns-holder">
+          <div class="m-icon" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
+          <div class="m-icon"><div><i class="material-icons">search</i></div></div>
+          <div class="m-icon"><div><i class="material-icons">help_outline</i></div></div>
+          <div class="m-icon" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
+        </div>
+
+      </div>
+
+      <div id="global-main-nav" [class.small-nav]="isOpen">
+        <main-nav #nav></main-nav>
+      </div>
+    </div>
+    <div id="nav-buffer" [class.small-nav]="isOpen"></div>
+  </div>
+
+  <div id="global-content" [class.small-nav]="isOpen">
+    <main-header></main-header>
+    <div class="doorTop" [class.door-open]="isDoorOpen" >test</div>
+    <!--
+    <ng-container *ngIf="animationTrigger === 'fader'; then fader; else slider"></ng-container>
+
+    <ng-template #fader>
+      <div class="global-routed" [@fader]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </ng-template>
+
+    <ng-template #slider>
+      <div class="global-routed" [@slideLeft]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </ng-template>
+
+    <ng-template #off>
+      <div class="global-routed" >
+        <router-outlet></router-outlet>
+      </div>
+    </ng-template>
+    -->
+
+    <ng-container [ngSwitch]="animationTrigger">
+      <ng-container *ngSwitchCase="'fader'">
+        <div class="global-routed" [@fader]="prepareRoute(outlet)">
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'slideLeft'">
+        <div class="global-routed" [@slideLeft]="prepareRoute(outlet)">
+          <router-outlet #outlet="outlet"></router-outlet>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="'off'">
+        <div class="global-routed" >
+          <router-outlet ></router-outlet>
+        </div>
+      </ng-container>
+    </ng-container>
+
+  </div>
+
+</div>

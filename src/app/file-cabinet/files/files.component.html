@@ -1,0 +1,42 @@
+<div *ngIf="currentFolder">
+  <h2>{{ currentFolder.name }} ({{ currentFolder.folder.totalCount }})</h2>
+
+  <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
+  <button mat-flat-button (click)="addFiles()">
+    <i class="material-icons">
+      vertical_align_top
+    </i>
+  </button>
+
+
+  <div class="flex-parent" *ngIf="files">
+
+    <mat-card class="iScrollItem"
+    *ngFor="let item of filesRetrieved; let i = index"
+      [class.selectedCard]="item.selected"
+      (click)="selectItem(item)"
+    >
+
+      <div class="item-image" *ngIf="item.folder">
+        <img src="../../../../../assets/images/folder-large_backplate.svg">
+
+        <div class="folder-cover">
+            <img src="../../../../../assets/images/folder-large_frontplate_nopreview.svg">
+            <span>{{ item.folder.totalCount }}</span>
+        </div>
+      </div>
+
+      <div class="item-image" *ngIf="!item.folder">
+        <div class="file-image"></div>
+        <span *ngIf="item.extension" class="file-extension">{{ item.extension }}</span>
+      </div>
+
+      <mat-card-content class="item-content">
+        <div>{{ item.name }}</div>
+        <div>{{ item.displayModifiedDate }}</div>
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+</div>

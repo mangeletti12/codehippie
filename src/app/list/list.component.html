@@ -1,0 +1,130 @@
+<div class="board">
+
+  <div class="todo-container list-wrapper">
+
+    <div class="list-header">
+      <h3>Company List</h3>
+    </div>
+
+    <ng-scrollbar class="my-scrollbar">
+
+      <div class="list"
+        cdkDropList
+        #listOne="cdkDropList"
+        [cdkDropListData]="list1"
+        [cdkDropListConnectedTo]="[listTwo, listThree]"
+        (cdkDropListDropped)="onDrop($event)">
+
+        <div class="list-cards">
+
+          <mat-card *ngFor="let item of list1" cdkDrag (click)="selectCard(item)"
+            [class.selectedCard]="item.isSelected">
+            <mat-card-header>
+              <mat-card-title>{{item.name}}</mat-card-title>
+              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-footer>
+
+            </mat-card-footer>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </ng-scrollbar>
+
+    <div class="list-footer">
+      Total Cards: {{list1.length}}
+    </div>
+
+  </div>
+
+  <!-- next list -->
+
+  <div class="done-container list-wrapper">
+
+    <div class="list-header">
+      <h3>Project List</h3>
+    </div>
+
+    <ng-scrollbar class="my-scrollbar">
+
+      <div class="list"
+        cdkDropList
+        #listTwo="cdkDropList"
+        [cdkDropListData]="list2"
+        [cdkDropListConnectedTo]="[listOne, listThree]"
+        (cdkDropListDropped)="onDrop($event)">
+
+        <div class="list-cards">
+
+          <mat-card *ngFor="let item of list2" cdkDrag (click)="selectCard(item)"
+            [class.selectedCard]="item.isSelected">
+            <mat-card-header>
+              <mat-card-title>{{item.name}}</mat-card-title>
+              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-footer>
+
+            </mat-card-footer>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </ng-scrollbar>
+
+    <div class="list-footer">
+      Total Cards: {{list2.length}}
+    </div>
+
+  </div>
+
+  <!-- next list -->
+
+  <div class="done-container list-wrapper">
+
+    <div class="list-header">
+      <h3>My Team List</h3>
+    </div>
+
+    <ng-scrollbar class="my-scrollbar">
+
+      <div class="list"
+        cdkDropList
+        #listThree="cdkDropList"
+        [cdkDropListData]="list3"
+        [cdkDropListConnectedTo]="[listOne, listTwo]"
+        (cdkDropListDropped)="onDrop($event)">
+
+        <div class="list-cards">
+
+          <mat-card *ngFor="let item of list3" cdkDrag (click)="selectCard(item)"
+            [class.selectedCard]="item.isSelected">
+            <mat-card-header>
+              <mat-card-title>{{item.name}}</mat-card-title>
+              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-footer>
+
+            </mat-card-footer>
+          </mat-card>
+
+        </div>
+
+      </div>
+
+    </ng-scrollbar>
+
+    <div class="list-footer">
+      Total Cards: {{list3.length}}
+    </div>
+
+  </div>
+
+
+
+
+</div>

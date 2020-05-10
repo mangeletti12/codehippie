@@ -1,0 +1,45 @@
+<div class="full-viewport">
+
+  <div class="box">
+    <div id="logoHolder" [class.success]="loginSuccess && !loginError" [class.error]="loginError && !loginSuccess">
+      <!-- <div id="logo" ></div> -->
+      <i class="fas fa-user-circle"></i>
+    </div>
+    <h2>Login</h2>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="inputBox">
+        
+        <input type="email" 
+          name="email" 
+          formControlName="email"
+          
+          autofocus="autofocus" 
+          required 
+          onkeyup="this.setAttribute('value', this.value);" 
+          value="">
+
+        <label>Email</label>
+        <show-errors [control]="form.controls.email"></show-errors>  
+
+      </div>
+      <div class="inputBox">
+
+        <input type="password" 
+          name="password" 
+          formControlName="password"
+             
+          required 
+          onkeyup="this.setAttribute('value', this.value);"
+          value="">
+               
+        <label>Password</label>
+        <show-errors [control]="form.controls.password"></show-errors>  
+
+      </div>
+      <br><br>
+      <button [disabled]="!form.valid" class="btn btn-primary">Login</button>
+      <a routerLink="/register" class="btn btn-link">Register</a>
+    </form>
+  </div>
+
+</div>

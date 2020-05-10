@@ -1,0 +1,25 @@
+
+.notificationHolder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  width: 100%;
+}
+
+.notificationItem {
+  color: #fcfcfc;
+  margin-top: 2px;
+  padding: 10px;
+  background: #333;
+}
+
+
+.timestamp {
+  color: rgb(179, 186, 197);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.blend {
+  color: transparent;
+}

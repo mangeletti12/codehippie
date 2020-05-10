@@ -1,0 +1,27 @@
+<div class="flex-parent">
+
+  <div class="flex-grow">
+    <h3>Picker One</h3>
+    <ng-container *ngFor="let item of swArray">
+      <div>
+        {{ item.name }}
+
+        <mat-form-field appearance="outline">
+          <mat-select (selectionChange)="changeFood($event.value, item)">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+    </ng-container>
+
+
+  </div>
+
+  <div>
+    <app-picker (childEvent)="arrayChangeEvent($event)"></app-picker>
+  </div>
+
+</div>

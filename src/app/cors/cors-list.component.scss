@@ -1,0 +1,70 @@
+.flex-parent-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-parent-column {
+  display: flex;
+  flex-direction: column;
+  // position: fixed;
+  // bottom: 0;
+  // top: 50px;
+  height: calc(100vh - 65px);
+  width: 275px;
+  background: rgba(0, 0, 0, 0.085);
+}
+
+.list-header {
+  display: flex;
+  flex-direction: row;
+
+  height: 50px;
+
+}
+
+.iScrollViewport {
+  flex-grow: 1;
+}
+
+.iScrollItem {
+  margin: 5px;
+  height: 200px;
+  width: 248px;
+  overflow: hidden;
+}
+
+.list-item-details {
+  flex-grow: 1;
+  background: rgba(0, 0, 0, 0.085);
+  height: calc(100vh - 65px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+mat-card { border: 2px solid transparent; cursor: pointer; }
+mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
+
+.lineItemRow {
+  display: flex;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+}
+.lineItemKey {
+  margin-bottom: -2px;
+}
+.lineItemValue {
+  flex-grow: 1;
+  text-align: right;
+  margin-bottom: -2px;
+}
+.lineItemComment {
+  font-size: .75rem;
+  padding: 0 10px 5px 10px;
+ }
+
+ .smallIcon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+ }
+
+ .s2 a { vertical-align: sub; }

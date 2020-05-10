@@ -1,0 +1,34 @@
+.doorTop {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  // height: 0px;
+  z-index: 9;
+}
+
+.door-open {
+  background: pink;
+  height: 50vh;
+  -webkit-animation: openDoor .5s ease-in; /* Safari 4+ */
+  -moz-animation:    openDoor .5s ease-in; /* Fx 5+ */
+  -o-animation:      openDoor .5s ease-in; /* Opera 12+ */
+  animation:         openDoor .5s ease-in; /* IE 10+, Fx 29+ */
+}
+
+
+@-webkit-keyframes openDoor {
+  0%   { height: 0px; }
+  100% { height: 50vh; }
+}
+@-moz-keyframes openDoor {
+  0%   { height: 0px; }
+  100% { height: 50vh; }
+}
+@-o-keyframes openDoor {
+  0%   { height: 0px; }
+  100% { height: 50vh; }
+}
+@keyframes openDoor {
+  0%   { height: 0px; }
+  100% { height: 50vh; }
+}

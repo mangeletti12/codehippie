@@ -1,0 +1,52 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Typography
+/*
+$custom-typography: mat-typography-config(
+  $font-family: Raleway,
+  $headline: mat-typography-level(24px, 48px, 400),
+  $body-1: mat-typography-level(16px, 24px, 400)
+);
+@include angular-material-typography($custom-typography);
+*/
+
+/////////////////////////////////////////////////////////////
+// Default colors
+$my-app-primary: mat-palette($mat-blue, 700, 100, 900);
+$my-app-accent:  mat-palette($mat-blue, 900, 100, 900);
+$my-app-warn: mat-palette($mat-red);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+//
+// https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+// https://freelancedeveloper.io/angular-material-custom-color-palette/
+$my-app-marvel: mat-palette($mat-red);
+
+@include angular-material-theme($my-app-theme);
+
+.theme-alt-font1 { color: #999; }
+
+/////////////////////////////////////////////////////////////
+// Dark theme
+.dark-theme {
+  //color: $light-primary-text;
+  $dark-primary: mat-palette($mat-blue-grey);
+  $dark-accent:  mat-palette($mat-amber);
+  $dark-warn:    mat-palette($mat-red);
+  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+
+  .theme-alt-font1 { color: #D7BA7D; }
+  .theme-dark-font { color: #000; }
+}
+
+/////////////////////////////////////////////////////////////
+// Light theme
+.light-theme {
+  $light-primary: mat-palette($mat-grey, 200, 500, 300);
+  $light-accent: mat-palette($mat-indigo, 800);
+  $light-warn: mat-palette($mat-red);
+  $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+  @include angular-material-theme($light-theme);
+}
+

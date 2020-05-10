@@ -1,0 +1,170 @@
+.alert-element {
+  position: absolute;
+  top: 80px;
+  right: 15px;
+  width: 300px;
+  min-width: 300px;
+  color: #fff;
+  font-weight: 400;
+  visibility: hidden;
+  font-size: 13px;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -.01em;
+  font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Apple Legacy Chevron","Helvetica Neue","Helvetica","Arial",sans-serif;
+  padding: 5px;
+  background-color: #333;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-animation: vALERT-ANIMATION 7s ease-in-out; /* Safari 4+ */
+  -moz-animation:    vALERT-ANIMATION 7s ease-in-out; /* Fx 5+ */
+  -o-animation:      vALERT-ANIMATION 7s ease-in-out; /* Opera 12+ */
+  animation:         vALERT-ANIMATION 7s ease-in-out; /* IE 10+, Fx 29+ */
+}
+
+.alert-element.alert-good {
+  background-color: #008A1B;; 
+}
+
+
+.alert-element.alert-bad {
+  background-color: #D93025; 
+}
+
+//caret
+// .alert-holder::after {
+//   left: 119px;
+//   border: solid 8px transparent;
+//   content: " ";
+//   height: 0;
+//   width: 0;
+//   position: absolute;
+//   pointer-events: none;
+//   border-left: 15px solid transparent;
+//   border-right: 15px solid transparent;
+//   border-bottom: 15px solid #333;
+//   top: -23px;
+
+// }
+
+.alert-dismissable, .alert-dismissible { padding-right: 0; }
+
+.alert-icons {
+  position: absolute;
+  left: calc(50% - 25px);
+  top: -25px;
+}
+
+.msg-success {
+  display: none;
+  background:#008A1B; 
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.msg-error {
+  display: none;
+  background:#D93025; 
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.alert-good .msg-success { display: inline-flex; }
+.alert-bad .msg-error { display: inline-flex; }
+
+.msg-holder {
+  visibility: visible;
+  display: inline-block;
+  background: #333;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  color: #888;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.alert-text {
+  padding: 20px 15px;
+  color: #000;
+  background-color: #fcfcfc;
+  overflow: hidden;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+      
+ 
+
+/* alert trans */
+@-webkit-keyframes vALERT-ANIMATION {
+  0%   { visibility: visible; transform: translateY(-200px);  }
+  100% { }
+}
+@-moz-keyframes vALERT-ANIMATION {
+  0%   { visibility: visible; }
+  100% { }
+}
+@-o-keyframes vALERT-ANIMATION {
+  0%   { visibility: visible; }
+  100% { }
+}
+@keyframes vALERT-ANIMATION {
+  0%   { visibility: visible; transform: translateY(-200px);  }
+  10%  { transform: translateY(0px); }
+  99%  {  }
+  100% { }
+}
+
+
+// @-webkit-keyframes ALERT-ANIMATION {
+//   0%   { opacity: 1; transform: translateX(200px); transition: transform 400ms ease-in-out 400ms;  transform-origin: right; }
+//   10%  { opacity: 1; transform: translateX(0px); }
+//   99%  { opacity: 1; }
+//   100% {  }
+// }
+// @-moz-keyframes ALERT-ANIMATION {
+//   0%   { opacity: 1; transform: translateX(200px); transition: transform 400ms ease-in-out 400ms;  transform-origin: right; }
+//   10%  { opacity: 1; transform: translateX(0px); }
+//   99%  { opacity: 1; }
+//   100% {  }
+// }
+// @-o-keyframes ALERT-ANIMATION {
+//   0%   { opacity: 1; transform: translateX(200px); transition: transform 400ms ease-in-out 400ms;  transform-origin: right; }
+//   10%  { opacity: 1; transform: translateX(0px); }
+//   99%  { opacity: 1; }
+//   100% {  }
+// }
+// @keyframes ALERT-ANIMATION {
+//   0%   { opacity: 1; transform: translateX(200px); transition: transform 400ms ease-in-out 400ms;  transform-origin: right; visibility: visible; }
+//   10%  { opacity: 1; transform: translateX(0px); }
+//   99%  { opacity: 1; }
+//   100% {  }
+// }
+

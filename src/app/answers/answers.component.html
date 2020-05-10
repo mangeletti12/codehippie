@@ -1,0 +1,50 @@
+<h2>Answers</h2>
+
+
+<select class="users" (change)="getUsersAnswers($event.target.value)" >
+    <option value="">-- Select a set --</option>
+    <option *ngFor="let user of users | async" [value]="user.id" >{{user.data.firstName}} {{user.data.lastName}}</option>
+</select>
+    
+<ul>
+    <li class="text" *ngFor="let item of userQandA">
+        {{item.question}} - {{item.answer}}
+    </li>
+</ul>
+
+<hr>
+
+Add Question
+
+<input type="text" #inputQuestion  >
+<button (click)="addQuestion(inputQuestion.value)">Add Question</button>
+
+
+<h3>Questions</h3>
+<ul *ngIf="questions">
+    <li class="text" *ngFor="let item of questions | async" (click)="selectQuestion(item)">
+        {{item.data.question}} - {{item.id}}
+    </li>
+</ul>
+
+<h3>Answers</h3>
+<ul *ngIf="answers">
+    <li class="text" *ngFor="let item of answers | async">
+        {{item.data.answer}} - {{item.id}}
+    </li>
+</ul>
+
+<h3>Users</h3>
+<ul *ngIf="users">
+    <li class="text" *ngFor="let item of users | async" (click)="selectUser(item)">
+        {{item.data.firstName}} {{item.data.lastName}} - {{item.id}}
+    </li>
+</ul>
+
+<div >
+    <h3>Give Answer to Question</h3>
+    <span *ngIf="selectedUser">{{selectedUser.data.firstName}} {{selectedUser.data.lastName}}</span><br>
+    <span *ngIf="selectedQuestion">{{selectedQuestion.data.question}}</span><br>
+    <input type="text" #inputAnswer >
+    <button (click)="addAnswer(inputAnswer.value)">Add Answer</button>
+</div>

@@ -1,0 +1,6 @@
+<ul class="itemPickerList" >
+  <li *ngFor="let item of swList">
+    <mat-checkbox  (change)="itemSelect(item, $event)" >{{ item.name }}</mat-checkbox>
+
+  </li>
+</ul>

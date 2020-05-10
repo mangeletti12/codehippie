@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <span>{{ selectedTeam.name }}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<mat-dialog-content>
+  <ng-container *ngFor="let hero of selectedTeam.members">
+    <div class="team-member">
+      <span>
+        {{ hero.name }}
+      </span>
+      <span>
+        <button mat-icon-button (click)="details(hero, $event)"><mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="delete(hero, $event)"><mat-icon>delete_outline</mat-icon></button>
+      </span>
+    </div>
+  </ng-container>
+</mat-dialog-content>

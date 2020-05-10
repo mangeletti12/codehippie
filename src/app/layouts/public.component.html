@@ -1,0 +1,20 @@
+<main-header [navComp]="nav"></main-header>
+<div id="main-flex">
+  <main-nav #nav></main-nav>
+  <div id="main-content" [class.hideNav]="!isOpen">
+    <ng-container *ngIf="animationTrigger == 'fader'; then fader; else slider"></ng-container>
+
+    <ng-template #fader>
+      <div [@fader]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </ng-template>
+
+    <ng-template #slider>
+      <div [@slideLeft]="prepareRoute(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

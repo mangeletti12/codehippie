@@ -1,0 +1,15 @@
+{
+  "Users" : [
+    {
+      "access_token":"PTSTQxg1TPZFGEsSGyvilKjQksRxlLbLM46KbSOBdOo27M9j5vo-ZFye8l1tjGnsF5_u-H8P9GIQjnxC4JuKyc3PPITJbdZxDV9SW8x64JgHXd18a3f59iXLffssLUDIqrYD2uhqNVZZcUdcRk-AKRNRSUwfA21hMafqPlIcU0C3VUbqhU-KVGuvPIIC391INgjN_Pt5NN18pK-XVJkCm7olHlbqwtt8sEYLIUcqvNQAXnLBIgk1jwUB6gvHeBPOYbGlDAQ4NfkkDtJFmHk--F3ylezkf1Od1MTTav-UD8m2K1PKSYoYHZg40RU6kxKAPNEVxAVowqj-FuPbiKQ1HjT0qJ2LittZMfhjqwfWm281RB-cuiRaepH1S8I-KxekKLFZZMEQMxEk5B6RiUFjnSkCuJiuJdi4iys4uVweybTrOK0S7cKnZEaCigRRmeT0reKq9DtcBz7_TMj2EmEm4FgD1Pr5rqpwlHXDqnMTIbstr9xTGv9zfygcZF76Vk9vmBVcW1wGEwkZWz5obYdqWP_QpdPNTjQPZC76yKQv6e4gtGr2cNzD-CbYEM658GIXGJRKlwbtaxWECYWuJJvzrIEmPBZsVdF9OkEuvIc0EZG0QbmcFwyL3Y9bvX2ZJG5WnBWmtUBb_xO2O9QVDuwABTMoc3jXRi6TFJOBY3_UcYdO0b2aXYWX8zAYucA0jeHG",
+      "token_type":"bearer",
+      "expires_in":3599,
+      "refresh_token":"4981b44313104b60b1244a67da1adca0",
+      "as:client_id":"RootsWebClient",
+      "userName":"mark.angeletti@gmail.com",
+      "claims":"[{\"ClaimType\":\"http://rootssoftware.com/roots/data/company\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://schemas.microsoft.com/ws/2008/06/identity/claims/role\",\"ClaimValue\":\"Accounting\"},{\"ClaimType\":\"http://rootssoftware.com/module/estimating\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://rootssoftware.com/module/projectmanagement\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://rootssoftware.com/module/accounting\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://rootssoftware.com/module/charts\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://rootssoftware.com/module/security\",\"ClaimValue\":\"canRead\"},{\"ClaimType\":\"http://rootssoftware/development/sandbox\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/nochildren\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/mark/dev/canAccessProducts\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/mark/dev/canAccessAnswers\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/mark/dev/canSaveProduct\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/mark/dev/canAccessMovies\",\"ClaimValue\":\"canAccess\"},{\"ClaimType\":\"http://rootssoftware.com/development/mark/dev/canAddCategory\",\"ClaimValue\":\"canAccess\"}]",
+      ".issued":"Fri, 08 Mar 2019 17:27:50 GMT",
+      ".expires":"Fri, 08 Mar 2019 18:27:50 GMT"
+    }
+  ]
+}

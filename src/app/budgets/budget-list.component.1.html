@@ -1,0 +1,131 @@
+<div class="rel">
+
+  <div class="comp-header">
+    <button mat-button [matMenuTriggerFor]="menu" >
+      <mat-icon title="Columns">view_list</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <div class="matMenuBuffer">
+        <div *ngFor="let header of displayedColumnsShort; let i = index;">
+          <ng-container *ngIf="i !== 0">
+            <mat-checkbox checked="true" (change)="hideColumn(header, i, $event)" >{{header}}</mat-checkbox>
+          </ng-container>
+        </div>
+      </div>
+    </mat-menu>
+  </div>
+
+  <!-- table -->
+  <div class="comp-wrapper">
+    <table class="mat-table" matSort (matSortChange)="sortData($event)" role="grid">
+      <thead>
+        <tr >
+          <th class="sticky-head col_{{i}}" mat-sort-header="{{header}}" *ngFor="let header of displayedColumnsShort; let i = index;" @tableCells>
+
+            {{ header }}
+
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <ng-container class="table-scroll" *ngFor="let division of budgets">
+
+          <tr class="row-head" >
+            <td class="sticky-col" colspan="5" >
+              <!-- <mat-icon title="Hide/Show" class="btnHideShow" (click)="hideDetails(division)">add</mat-icon> -->
+
+                <svg
+                  viewBox="0 0 32 32"
+                  class="header-icon"
+                  (click)="hideDetails(division)"
+                  [class.header-icon-expanded]="division.isCollapsed">
+                  <path fill="currentColor" d="M24.291,14.276L14.705,4.69c-0.878-0.878-2.317-0.878-3.195,0l-0.8,0.8c-0.878,0.877-0.878,2.316,0,3.194 L18.024,16l-7.315,7.315c-0.878,0.878-0.878,2.317,0,3.194l0.8,0.8c0.878,0.879,2.317,0.879,3.195,0l9.586-9.587 c0.472-0.471,0.682-1.103,0.647-1.723C24.973,15.38,24.763,14.748,24.291,14.276z" />
+                </svg>
+                <span class="hideShow">{{ division.name }}</span>
+
+            </td>
+            <td colspan="100"></td>
+          </tr>
+
+          <ng-container *ngIf="!division.isCollapsed">
+            <tr class="line-items" *ngFor="let item of division.line_items" @tableRows>
+              <td class="line-large sticky-col">
+                {{ item.number }} - {{ item.name }}
+              </td>
+              <td class="col_1">{{ item.category }}</td>
+              <td class="col_2">{{ item.original_budget | currency }}</td>
+              <td class="col_3">{{ item.approved_cos | currency }}</td>
+              <td class="col_4">{{ item.revised_budget | currency }}</td>
+              <td class="col_5">{{ item.pending_budget_changes | currency }}</td>
+              <td class="col_6">{{ item.projected_budget | currency }}</td>
+
+              <td class="col_7">{{ item.committed_costs | currency }}</td>
+              <td class="col_8">{{ item.direct_costs | currency }}</td>
+              <td class="col_9">{{ item.pending_costs_changes | currency }}</td>
+              <td class="col_10">{{ item.projected_costs | currency }}</td>
+
+              <td class="col_11">{{ item.forecast_to_complete | currency }}</td>
+              <td class="col_12">{{ item.estimated_cost_at_completion | currency }}</td>
+              <td class="col_13">{{ item.projected_over_under | currency }}</td>
+            </tr>
+          </ng-container>
+
+          <tr class="row-footer" @tableRows>
+            <td class="line-large sticky-col">
+              Total: {{ division.line_items.length }}
+            </td>
+            <td class="col_1"></td>
+            <td class="col_2">
+              {{ sumColumn(division, "original_budget") | currency }}
+            </td>
+            <td class="col_3">
+              {{ sumColumn(division, "approved_cos") | currency }}
+            </td>
+            <td class="col_4">
+              {{ sumColumn(division, "revised_budget") | currency }}
+            </td>
+            <td class="col_5">
+              {{ sumColumn(division, "pending_budget_changes") | currency }}
+            </td>
+            <td class="col_6">
+              {{ sumColumn(division, "projected_budget") | currency }}
+            </td>
+            <td class="col_7">
+              {{ sumColumn(division, "committed_costs") | currency }}
+            </td>
+            <td class="col_8">
+              {{ sumColumn(division, "direct_costs") | currency }}
+            </td>
+            <td class="col_9">
+              {{ sumColumn(division, "pending_costs_changes") | currency }}
+            </td>
+            <td class="col_10">
+              {{ sumColumn(division, "projected_costs") | currency }}
+            </td>
+            <td class="col_11">
+              {{ sumColumn(division, "forecast_to_complete") | currency }}
+            </td>
+            <td class="col_12">
+              {{ sumColumn(division, "estimated_cost_at_completion") | currency }}
+            </td>
+            <td class="col_13">
+              {{ sumColumn(division, "projected_over_under") | currency }}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Totals -->
+  <div class="comp-bottom" *ngIf="budgets">
+
+    <div><span>Original Buget: </span><span>{{ totalColumn("original_budget") | currency }}</span></div>
+    <div><span>Revised: </span><span>{{ totalColumn("revised_budget") | currency }}</span></div>
+    <div><span>Projectd: </span><span>{{ totalColumn("projected_budget") | currency }}</span></div>
+
+  </div>
+
+</div>

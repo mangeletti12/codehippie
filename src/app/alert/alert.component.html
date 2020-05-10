@@ -1,0 +1,10 @@
+<div class="alert-holder">
+    <!-- <div class="msg-holder" (click)="lastAlert()"><i class="far fa-bell"></i></div> -->
+    <div *ngFor="let alert of alerts; let i = index" class="{{ cssClass(alert) }}">
+        <div class="alert-icons">
+            <span class="msg-success"><i class="fas fa-check"></i></span>
+            <span class="msg-error"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="alert-text">{{alert.message}}</div>
+    </div>
+</div>

@@ -1,0 +1,153 @@
+<div class="flex-parent-row">
+
+    <div class="flex-child">
+
+        <div class="flex-parent-column iScroll">
+
+            <div class="list-header">
+                <div class="iScrollLeft">
+                  <div class="iScrollSelect">
+                      <mat-form-field appearance="outline" floatLabel="never" >
+                          <mat-select placeholder="Projects">
+                            <mat-option value="email">Project One</mat-option>
+                            <mat-option value="text">Project Two</mat-option>
+                            <mat-option value="team">Project Three</mat-option>
+                            <mat-option value="role">Project Four</mat-option>
+                          </mat-select>
+                      </mat-form-field>
+                  </div>
+                  <div class="iScrollTB" >
+                      <span class="iScrollPages">{{itemsRetrieved}}/50</span>
+                      <mat-checkbox>Multi-Select</mat-checkbox>
+                  </div>
+                </div>
+
+                <div class="iScrollButtons">
+
+                    <button mat-mini-fab (click)="newCOR()" >
+                      <mat-icon title="Add Change Order">add</mat-icon>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- tiles -->
+
+            <cdk-virtual-scroll-viewport class="iScrollViewport" itemSize="200" minBufferPx="200" maxBufferPx="201"
+                (scrolledIndexChange)="nextBatch($event)">
+                <mat-card *cdkVirtualFor="let item of list; let i = index; let last = last; " class="iScrollItem"
+                    [class.selectedCard]="item.selected"
+                    (click)="selectItem(item)"
+                    tabindex="0"
+
+                    (keydown)="onKeydown(item, $event)">
+                    <span title="{{item.Status}}" class="status_{{item.Status}}"></span>
+                    <mat-card-header>
+                        <mat-card-title>
+                            <div class="s1 dots">{{item.Subject}}</div>
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            <div class="s2"><a [routerLink]="['/cors', item.Number]" ><mat-icon class="smallIcon">launch</mat-icon></a> {{item.Number}}</div>
+                        </mat-card-subtitle>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <div class="s3">COR Date: {{item.COR_Date}}</div>
+                        <div class="s3">Action Date: {{item.Action_Date}}</div>
+                        <div class="s3">Labor Cost/hours: {{item.Labor_Cost | currency }}/{{item.Labor_Hours}}</div>
+                        <div class="s3">Equipment Cost: {{item.Equipment_Cost | currency }}</div>
+                        <div class="s3">Material Cost: {{item.Material_Cost | currency }}</div>
+                    </mat-card-content>
+
+                    <mat-card-footer>
+                        <div class="iScroll-item-footer">
+                            <span title="Total Cost">{{item.Total_Cost | currency}}</span> &nbsp;|&nbsp;
+                            <span title="Amount Quoted ">{{item.Amount_Quoted | currency}}</span> &nbsp;|&nbsp;
+                            <span title="Amount Approved">{{item.Amount_Approved | currency}}</span>
+                        </div>
+                    </mat-card-footer>
+                </mat-card>
+            </cdk-virtual-scroll-viewport>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- details -->
+    <div class="flex-child list-item-details">
+
+        <ng-container *ngIf="selectedItems.length > 1; then multipleContent else singleContent"></ng-container>
+
+        <ng-template #singleContent>
+            <ng-container *ngIf="selectedItems.length == 1">
+                <div class="dHeader">
+                    <span class="dTitle">{{selectedItems[0].Subject}}</span>
+                    <span class="dSubTitle theme-alt-font1">{{selectedItems[0].Number}}</span>
+                    <div class="dSubTitle2 theme-alt-font1"> COR Date: {{selectedItems[0].COR_Date}}, Action Date:
+                        {{selectedItems[0].Action_Date}}</div>
+                </div>
+
+                <div class="dContent mat-app-background">
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Labor Cost </span><span
+                            class="lineItemValue">{{selectedItems[0].Labor_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Equipment Cost</span><span
+                            class="lineItemValue">{{selectedItems[0].Equipment_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Material Cost</span><span
+                            class="lineItemValue">{{selectedItems[0].Material_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Overhead Cost</span><span
+                            class="lineItemValue">{{selectedItems[0].Overhead_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Other Cost</span><span
+                            class="lineItemValue">{{selectedItems[0].Other_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Total Cost</span><span
+                            class="lineItemValue">{{selectedItems[0].Total_Cost | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Amount Quoted</span><span
+                            class="lineItemValue">{{selectedItems[0].Amount_Quoted | currency}}</span></div>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">Amount Approved</span><span
+                            class="lineItemValue">{{selectedItems[0].Amount_Approved | currency}}</span></div>
+                </div>
+                <div class="dContent mat-app-background">
+                    <span>Comments</span><br>
+                    <span class="theme-alt-font1">{{selectedItems[0].Comments }}</span>
+                    <hr>
+                    <span>Issue Thread</span><br>
+                    <span class="theme-alt-font1">{{selectedItems[0].Issue_Thread }}</span>
+                </div>
+                <!-- <div class="dContent mat-app-background">
+
+                    <ng-container *ngFor="let file of selectedItems[0].Files">
+                        <span class="file-invoice"><i class="far fa-file"></i></span>
+                    </ng-container>
+
+                </div> -->
+
+            </ng-container>
+        </ng-template>
+
+        <!-- multiple -->
+
+        <ng-template #multipleContent>
+            <div class="dHeader">
+                <span class="dTitle">Total Change Orders</span>
+                <div class="dSubTitle2 theme-alt-font1">Selected: {{selectedItems.length}}</div>
+            </div>
+
+            <div class="dContent mat-app-background">
+                <div *ngFor="let item of selectedItems" @items>
+                    <div class="lineItemRow"><span class="lineItemKey mat-app-background">{{item.Subject}}</span> <span
+                            class="lineItemValue">{{item.Total_Cost | currency}}</span></div>
+                    <div class="lineItemComment theme-alt-font1"> {{item.Comments}} </div>
+                </div>
+            </div>
+
+            <div class="dContentTotals">
+                <div>Total Cost: {{getTotalCost() | currency}}</div>
+                <div>Total Amount Quoted: {{getTotalAmountQuoted() | currency}}</div>
+                <div>Total Amount Approved: {{getTotalAmountApproved() | currency}}</div>
+            </div>
+        </ng-template>
+
+    </div>
+
+</div>
