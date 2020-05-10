@@ -1,28 +1,3 @@
-
-// :root {
-//   /* --katerra is Katerra official colors*/
-//   --katerra-light-gray: #c3c5c8;
-//   --katerra-medium-gray: #7b858c;
-//   --katerra-white: #fff;
-//   --katerra-black: #000;
-//   --katerra-dark-gray: #555;
-//   --katerra-orange: #F16621;
-//   /* --apollo is Apollo  colors*/
-//   --apollo-content-background: #F4F4F4;
-//   --apollo-light-blue: #248fde;
-//   --apollo-dark-grey: #3d4347;
-//   --apollo-blue: #19659d;
-//   --apollo-disabled: #103f61;
-//   --apollo-light-black: #3D4347;
-//   --apollo-pale-grey: #dfe1e6;
-//   --apollo-medium-gray: #5E666D;
-//   --apollo-error-red: #d0021b;
-//   --apollo-success-green: #009f7d;
-//   --apollo-warning-yellow: #ffa131;
-//   --apollo-near-black: #1e2123;
-//   --apollo-default-avatar: #386ADA;
-// }
-
 html, body {
   width: 100%;
   height: 100%;
@@ -412,13 +387,10 @@ body.right #rightArrow {
 }
 
 .mat-row:nth-of-type(odd) {
- /* background: #fcfcfc; */
  background: rgba(0,0,0,.04);
 }
 
 .mat-row:hover {
- /* background-color: #ecf3f8; */
- /*background-color: rgba(236, 243, 248, .09);*/
  background-color: rgb(255,191,0, .1);
  background-color: rgb(236,243,248, .5);
 }
@@ -426,10 +398,6 @@ body.right #rightArrow {
 .mat-checkbox-layout {
   margin-bottom: 0;
 }
-
-// .mat-grid-tile .mat-figure {
-//   padding: 10px !important;
-// }
 
 /* hide line in paginator textbox */
 .mat-paginator .mat-form-field-appearance-legacy .mat-form-field-underline {
@@ -462,7 +430,6 @@ mat-radio-group mat-radio-button {
 .button-row button {
   margin: 5px;
 }
-
 
 
 .hide {

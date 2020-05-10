@@ -210,7 +210,7 @@ export class HeroesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '30%';
+    dialogConfig.width = '40%';
     dialogConfig.data = {
       heroes: addToTeamHeroes
     }
