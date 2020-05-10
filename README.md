@@ -1,6 +1,6 @@
 # Directions
 
-VS Code
+Open VS Code
 
 Ctrl + Shift + p
 
