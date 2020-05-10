@@ -1,4 +1,21 @@
-# MkaSandbox
+# Directions
+
+VS Code
+
+Ctrl + Shift + p
+
+Git: Clone
+
+https://github.com/mangeletti12/codehippie
+
+In VS Code terminal window run: npm install ( This will install all the dependencies in package.json )
+
+( node_modules should now be in your directory )
+
+In the terminal window run: ng serve
+open up a browser (Chrome) and goto: http://localhost:4200/
+
+# MkaSandbox 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
