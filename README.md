@@ -13,7 +13,8 @@ In VS Code terminal window run: npm install ( This will install all the dependen
 ( node_modules should now be in your directory )
 
 In the terminal window run: ng serve
-open up a browser (Chrome) and goto: http://localhost:4200/
+
+Finally, open up a browser (Chrome) and goto: http://localhost:4200/
 
 # MkaSandbox 
 
