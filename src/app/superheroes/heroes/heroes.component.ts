@@ -123,7 +123,6 @@ export class HeroesComponent implements OnInit {
   // https://material.angular.io/components/paginator/overview
   pageChanged(e) {
     //{previousPageIndex: 2, pageIndex: 1, pageSize: 2, length: 10}
-    // console.log('pageChanged', e);
     //
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;

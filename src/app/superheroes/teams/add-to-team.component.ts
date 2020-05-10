@@ -46,7 +46,6 @@ export class AddToTeamComponent implements OnInit {
       }
     }
 
-    // console.log('-- all teams --', this.teams);
     // set in memory, no DB!
     this.superheroesService.setAllTeams(this.teams);
 

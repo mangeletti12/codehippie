@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-// import { MatDialogRef } from '@angular/material/dialog';
-// import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SuperheroesService } from '../superheroes.service';
 import { AlertService } from '../../alert/alert.service';
 import { Router, ActivatedRoute } from '@angular/router';
