@@ -15,6 +15,7 @@ export class GlobalService {
   private _changeRoute: BehaviorSubject<string> = new BehaviorSubject<string>('default');
   private _changeTransition: BehaviorSubject<string> = new BehaviorSubject<string>('fader');
   private _changeNavSide: BehaviorSubject<string> = new BehaviorSubject<string>('left');
+  private _loadingDoors = new BehaviorSubject<any>(null);
 
   constructor(
     private http: HttpClient,
@@ -89,11 +90,17 @@ export class GlobalService {
   }
   //Change transition
   toggleNavSide(side) {
-    //console.log("toggleRoute", routeUrl);
-
     this._changeNavSide.next(side);
   }
 
+  // Listener
+  get doorsTransition(): Observable<string> {
+    return this._loadingDoors.asObservable();
+  }
+  // Toggle Doors
+  toggleDoors(door) {
+    this._loadingDoors.next(door);
+  }
 
 
 

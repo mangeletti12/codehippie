@@ -50,20 +50,12 @@ export class AppComponent implements OnInit, OnDestroy {
         }
 
         if (event instanceof NavigationEnd) {
-
-            // if (event.url === this.lastRoute) {
-            //   console.log('route', 'same');
-            // } else {
-            //   console.log('route', 'diff');
-            // }
-
             this.lastRoute = event.url;
             this._globalService.toggleRoute(event.url);
         }
 
         if (event instanceof NavigationError) {
-            // Present error to user
-            //console.log(event.error);
+
         }
     });
 

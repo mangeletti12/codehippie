@@ -69,6 +69,7 @@ export const fader =
     ])
   ]);
 
+
 export const slideLeft =
   trigger('slideLeft', [
     transition('* => *', [

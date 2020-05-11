@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
 import { CostCodesService } from './cost-codes.service';
 import { AlertService } from '../alert/alert.service';
+import { GlobalService } from '../globals/global.service';
 
 @Component({
   selector: 'app-cost-codes',
@@ -15,6 +16,7 @@ export class CostCodesComponent implements OnInit {
   constructor(
     private codesService: CostCodesService,
     private alertService: AlertService,
+    private _globalService: GlobalService,
   ) { }
 
   ngOnInit() {
@@ -26,8 +28,10 @@ export class CostCodesComponent implements OnInit {
     this.codesService.getCostCodes().subscribe(
       data => {
         this.costCodes = data.body.line_items;
-
         // console.log('- getParentCostCodes', this.costCodes);
+        // Open doors now!
+        this._globalService.toggleDoors('openDoors');
+
       },
       err => {
         this.alertService.warn('Could not retreive cost codes');

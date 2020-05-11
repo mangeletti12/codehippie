@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { MatIconModule } from '@angular/material/icon'
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+// import { MatIconModule } from '@angular/material/icon'
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatSelectModule } from '@angular/material/select';
 
 export interface Food {
   value: string;
@@ -14,7 +14,7 @@ export interface Food {
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.scss']
 })
-export class TreeComponent implements OnInit, AfterViewInit {
+export class TreeComponent implements OnInit {
   bidItems: any[] = [];
 
   foods: Food[] = [
@@ -28,9 +28,6 @@ export class TreeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    // console.log('-- ngAfterViewInit --');
-  }
 
   // Node label clicked
   nodeSelect(node, e) {

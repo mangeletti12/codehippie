@@ -2,10 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GlobalService } from '../globals/global.service';
 import { fader, slideLeft } from '../route-animations';
 import { Subscription } from 'rxjs';
-
 import { HTTPStatus } from '../interceptors/loader.interceptor';
-import { RouterOutlet, Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
-
+import { RouterOutlet } from '@angular/router';
 
 export class SlideItem {
   id: number;
@@ -18,8 +16,8 @@ export class SlideItem {
   templateUrl: './secure.component.html',
   styleUrls: ['./secure.component.scss'],
   animations: [
-    fader,
-    slideLeft
+    slideLeft,
+    fader
   ]
 })
 export class SecureComponent implements OnInit, OnDestroy {
@@ -41,36 +39,26 @@ export class SecureComponent implements OnInit, OnDestroy {
   constructor(
     private _globalService: GlobalService,
     private httpStatus: HTTPStatus,
-    private router: Router,
+    // private router: Router,
   ) {
 
   }
 
   ngOnInit(): void {
-    /*
-    //////////////////////////////
-    //Router event subscription
-    this.router.events.subscribe((event: Event) => {
 
-      if (event instanceof NavigationStart) {
-        console.log('-- NavigationStart --');
+    // Listen for Doors Open/Close
+    // this.subscription = this._globalService.doorsTransition.subscribe(
+    //   data => {
 
-        if (event.url === this.lastRoute) {
-          console.log('route -->', 'same');
-        } else {
-          console.log('route -->', 'diff');
-          // this.isDoorOpen = true;
-        }
-
-      }
-
-      if (event instanceof NavigationEnd) {
-        console.log('-- NavigationEnd --');
-
-      }
-
-    });
-    */
+    //     if (data === 'closeDoors') {
+    //       console.log('DOORS BITCH!', data);
+    //       this.isDoorOpen = true;
+    //     }
+    //     if (data === 'openDoors') {
+    //       console.log('DOORS BITCH!', data);
+    //       this.isDoorOpen = false;
+    //     }
+    // });
 
     // Listen for route trans change
     this.subscription = this._globalService.changeTransition.subscribe(
@@ -78,7 +66,7 @@ export class SecureComponent implements OnInit, OnDestroy {
         const anim = (data !== null) ? data : 'off';
         this.animationTrigger = anim;
 
-        // console.log('animationTrigger', this.animationTrigger);
+        console.log('animationTrigger', this.animationTrigger);
     });
 
     // Nav collapse click change
@@ -95,8 +83,6 @@ export class SecureComponent implements OnInit, OnDestroy {
         //console.log(status);
     });
 
-
-
   }
 
   ngOnDestroy() {
@@ -104,10 +90,12 @@ export class SecureComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  // https://angular.io/guide/route-animations
   prepareRoute(outlet: RouterOutlet) {
-    // console.log("route animation - secure", outlet);
+    // console.log("route animation", outlet.activatedRoute);
     return outlet.isActivated ? outlet.activatedRoute : '';
   }
+
 
   //
   toggleSlideOut(action: string) {

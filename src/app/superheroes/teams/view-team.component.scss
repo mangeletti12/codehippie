@@ -17,4 +17,12 @@
 
 .team-member span:nth-child(1) {
   flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-member span:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
 }

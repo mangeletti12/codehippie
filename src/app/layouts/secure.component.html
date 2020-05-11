@@ -44,46 +44,19 @@
 
   <div id="global-content" [class.small-nav]="isOpen">
     <main-header></main-header>
-    <div class="doorTop" [class.door-open]="isDoorOpen" >test</div>
-    <!--
-    <ng-container *ngIf="animationTrigger === 'fader'; then fader; else slider"></ng-container>
+    <!-- <div class="doorTop" [class.door-open]="isDoorOpen" ></div> -->
 
-    <ng-template #fader>
-      <div class="global-routed" [@fader]="prepareRoute(outlet)">
-        <router-outlet #outlet="outlet"></router-outlet>
-      </div>
-    </ng-template>
+    <div class="global-routed" [@fader]="prepareRoute(outlet)" *ngIf="animationTrigger == 'fader'">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
 
-    <ng-template #slider>
-      <div class="global-routed" [@slideLeft]="prepareRoute(outlet)">
-        <router-outlet #outlet="outlet"></router-outlet>
-      </div>
-    </ng-template>
+    <div class="global-routed" [@slideLeft]="prepareRoute(outlet)" *ngIf="animationTrigger == 'slideLeft'">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
 
-    <ng-template #off>
-      <div class="global-routed" >
-        <router-outlet></router-outlet>
-      </div>
-    </ng-template>
-    -->
-
-    <ng-container [ngSwitch]="animationTrigger">
-      <ng-container *ngSwitchCase="'fader'">
-        <div class="global-routed" [@fader]="prepareRoute(outlet)">
-          <router-outlet #outlet="outlet"></router-outlet>
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="'slideLeft'">
-        <div class="global-routed" [@slideLeft]="prepareRoute(outlet)">
-          <router-outlet #outlet="outlet"></router-outlet>
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="'off'">
-        <div class="global-routed" >
-          <router-outlet ></router-outlet>
-        </div>
-      </ng-container>
-    </ng-container>
+    <div class="global-routed" *ngIf="animationTrigger == 'off'">
+      <router-outlet ></router-outlet>
+    </div>
 
   </div>
 
