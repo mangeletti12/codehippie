@@ -14,6 +14,11 @@
               "icon": "fa-calculator",
               "MenuItem": [
                 {
+                  "Text": "About",
+                  "Url": "/about",
+                  "Claim": "Nav_About"
+                },
+                {
                   "Text": "Users",
                   "Url": "/users",
                   "Claim": "Nav_Users"
@@ -125,8 +130,8 @@
                 },
                 {
                   "Text": "Alerts",
-                  "Url": "/about",
-                  "Claim": "Nav_About"
+                  "Url": "/test-alerts",
+                  "Claim": "Nav_Alerts"
                 },
                 {
                   "Text": "List",

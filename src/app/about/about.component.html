@@ -1,16 +1,19 @@
+<div class="wrapper">
 
-    <h2>Alerts</h2>
+  <div class="pane-left my-shadow">
+    left
+  </div>
 
-    <p>The buttons below are for testing the alert system of the app! There can be success and failure alerts.</p>
-    <div class="btn-holder">
-        <button mat-stroked-button *hasClaim="claims.Security + ',canRead'" (click)="alertBad()">single claim
-            check</button><br>
-        <button mat-button color="primary"
-            *hasClaim="[claims.Company + ',canAccess' + '','' + claims.Company + ',canRead']"
-            (click)="alertGood()">array claims check</button><br>
-        <!-- <button mat-stroked-button color="accent" (click)="alertClear()">Clear Alert</button><br> -->
-        <button mat-raised-button (click)="longRequest()">Long Request</button><br>
-        <button mat-flat-button color="accent" (click)="error401()">Call 401 Error</button><br>
-        <button mat-button color="warn" (click)="error404()">Call 404 Error</button><br>
-        <button mat-raised-button (click)="error405()">Call 405 Error</button><br>
-    </div>
+  <div class="pane-right my-shadow">
+
+    <ng-container *ngFor="let skill of mySkills">
+
+      <div class="skill" class="skill-width_{{ skill.level }} type_{{ skill.type }}" >
+        <span>{{ skill.skill }}</span>
+      </div>
+
+    </ng-container>
+
+  </div>
+
+</div>

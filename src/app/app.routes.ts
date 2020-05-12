@@ -17,7 +17,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 //
 import { AnswersComponent } from './answers/answers.component';
 import { MoviesComponent } from './movies/movies.component';
-import { AboutComponent } from './about/about.component';
+import { TestAlertsComponent } from './test-alerts/test-alerts.component';
 import { ListComponent } from './list/list.component';
 import { IScrollComponent } from './iscroll/iscroll.component';
 //
@@ -36,6 +36,7 @@ import { PieChartComponent } from './charts/pie-chart.component';
 import { BarChartComponent } from './charts/bar-chart.component';
 //
 import { ResolverService } from './resolver.service';
+import { AboutComponent } from './about/about.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -100,18 +101,18 @@ export const SECURE_ROUTES: Routes = [
     redirectTo: '/login',
     data: { breadcrumb: 'Sub' },
   },
-  {
-    path: 'rfi',
-    component: RfiComponent,
-    //canActivate: [AuthGuard],
-    data: { breadcrumb: 'RFI' },
-  },
-  {
-    path: 'calendar',
-    component: CalendarComponent,
-    //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Calendar' },
-  },
+  // {
+  //   path: 'rfi',
+  //   component: RfiComponent,
+  //   //canActivate: [AuthGuard],
+  //   data: { breadcrumb: 'RFI' },
+  // },
+  // {
+  //   path: 'calendar',
+  //   component: CalendarComponent,
+  //   //canActivate: [AuthGuard],
+  //   data: { breadcrumb: 'Calendar' },
+  // },
   {
     path: 'line-chart',
     component: LineChartComponent,
@@ -133,6 +134,11 @@ export const SECURE_ROUTES: Routes = [
     data: { breadcrumb: 'Flex One' },
   },
   {
+    path: 'test-alerts',
+    component: TestAlertsComponent,
+    data: { breadcrumb: 'Alert Test' },
+  },
+  {
     path: 'about',
     component: AboutComponent,
     data: { breadcrumb: 'About' },
@@ -147,16 +153,16 @@ export const SECURE_ROUTES: Routes = [
     component: SettingsComponent,
     data: { breadcrumb: 'App Settings' },
   },
-  {
-    path: 'picker',
-    component: PickerListComponent,
-    data: { breadcrumb: 'Picker' },
-  },
-  {
-    path: 'picker2',
-    component: PickerListTwoComponent,
-    data: { breadcrumb: 'Picker Two' },
-  },
+  // {
+  //   path: 'picker',
+  //   component: PickerListComponent,
+  //   data: { breadcrumb: 'Picker' },
+  // },
+  // {
+  //   path: 'picker2',
+  //   component: PickerListTwoComponent,
+  //   data: { breadcrumb: 'Picker Two' },
+  // },
   {
     path: 'files',
     component: FilesComponent,

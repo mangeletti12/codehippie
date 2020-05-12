@@ -68,7 +68,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { AnswersComponent } from './answers/answers.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesService } from './movies/movies.service';
-import { AboutComponent } from './about/about.component';
+import { TestAlertsComponent } from './test-alerts/test-alerts.component';
 import { ListComponent } from './list/list.component';
 import { ListService } from './list/list.service';
 import { IScrollComponent } from './iscroll/iscroll.component';
@@ -91,6 +91,7 @@ import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './charts/line-chart.component';
 import { BarChartComponent } from './charts/bar-chart.component';
 import { PieChartComponent } from './charts/pie-chart.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -112,7 +113,7 @@ import { PieChartComponent } from './charts/pie-chart.component';
     CalendarComponent,
     AnswersComponent,
     MoviesComponent,
-    AboutComponent,
+    TestAlertsComponent,
     ListComponent,
     IScrollComponent,
     CompanyComponent,
@@ -132,6 +133,7 @@ import { PieChartComponent } from './charts/pie-chart.component';
     LineChartComponent,
     BarChartComponent,
     PieChartComponent,
+    AboutComponent,
 
   ],
   imports: [

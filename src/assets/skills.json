@@ -1,0 +1,114 @@
+[
+  {
+    "skill": "Ajax",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "Angular",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "ASP.NET",
+    "level": 4,
+    "type": "app"
+  },
+  {
+    "skill": "C#",
+    "level": 4,
+    "type": "backend"
+  },
+  {
+    "skill": "CSS",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "Docker",
+    "level": 1,
+    "type": "app"
+  },
+  {
+    "skill": "Firebase",
+    "level": 2,
+    "type": "app"
+  },
+  {
+    "skill": "Git/GitHub",
+    "level": 3,
+    "type": "app"
+  },
+  {
+    "skill": "GitKraken",
+    "level": 3,
+    "type": "app"
+  },
+  {
+    "skill": "HTML",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "Java",
+    "level": 2,
+    "type": "backend"
+  },
+  {
+    "skill": "JavaScript",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "jQuery",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "JSON",
+    "level": 5,
+    "type": "frontend"
+  },
+  {
+    "skill": "MySQL",
+    "level": 2,
+    "type": "backend"
+  },
+  {
+    "skill": "Node.js",
+    "level": 3,
+    "type": "app"
+  },
+  {
+    "skill": "npm",
+    "level": 3,
+    "type": "app"
+  },
+  {
+    "skill": "Postman",
+    "level": 2,
+    "type": "app"
+  },
+  {
+    "skill": "Robo 3T",
+    "level": 2,
+    "type": "app"
+  },
+  {
+    "skill": "RxJS",
+    "level": 3,
+    "type": "frontend"
+  },
+  {
+    "skill": "SASS",
+    "level": 4,
+    "type": "frontend"
+  },
+  {
+    "skill": "TypeScript",
+    "level": 4,
+    "type": "frontend"
+  }
+
+]
+
