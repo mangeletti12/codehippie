@@ -7,7 +7,7 @@ import { GlobalService } from '../globals/global.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  theme: any;
+  theme = 'default-theme';
   transition = 'slideLeft';
   // nav: any;
 
@@ -21,22 +21,25 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
 
     const cookieTheme = localStorage.getItem('k-theme');
-    if (cookieTheme !== undefined) {
-      // console.log(cookieTheme);
+    // console.log('cookieTheme', cookieTheme);
+    if (cookieTheme !== undefined && cookieTheme !== null && cookieTheme !== 'null') {
       this.theme = cookieTheme;
     }
+    // console.log('theme', this.theme);
 
     const cookieTrans = localStorage.getItem('k-trans');
-    if (cookieTrans !== undefined) {
-      // console.log(cookieTrans);
+    // console.log('cookieTrans', cookieTrans);
+    if (cookieTrans !== undefined && cookieTrans !== null && cookieTrans !== 'null') {
       this.transition = cookieTrans;
     }
+    // console.log('transition', this.transition);
 
   }
 
   // This method is in app-component.ts
   onSetTheme(theme: string) {
-    // console.log(theme);
+    // console.log('onSetTheme', theme);
+    localStorage.setItem('k-theme', theme);
     this._globalService.toggleTheme(theme);
   }
 

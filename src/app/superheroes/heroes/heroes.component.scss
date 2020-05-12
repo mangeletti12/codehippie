@@ -1,28 +1,9 @@
-// #cardViewUsers { margin: 10px; }
-
-// mat-card {
-//     color: #333;
-//     border: 2px solid transparent;
-//     float: left;
-//     width: 190px;
-//     height: 200px;
-//     margin-right: 8px;
-//     margin-bottom: 8px;
-//     position: relative;
-//     text-transform: uppercase;
-//     overflow: hidden;
-//     font-size: 11px;
-//     cursor: pointer;
-//     -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-//     -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-//     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+// .fixed-bar { position: fixed; z-index: 2; right: 0; width: calc(100% - 285px); }
+// ::ng-deep #global-content.small-nav .fixed-bar {
+//   width: calc(100% - 115px);
 // }
-
-// mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
-
-// #cardViewUsers mat-card h3 { text-align: center; font-size:15px; }
-
-// marvel #EC1D24
+// .table-down { margin-top: 90px; }
+.fixed-bar { position: sticky; z-index: 2; top: 65px; }
 
 .toolbar-wrapper { display: flex; }
 .mat-toolbar .mat-paginator  { flex-grow: 2; background-color: transparent; color: currentColor; }

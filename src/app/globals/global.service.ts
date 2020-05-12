@@ -70,7 +70,6 @@ export class GlobalService {
   }
   //Change route method
   toggleRoute(routeUrl) {
-    //console.log("toggleRoute", routeUrl);
     this._changeRoute.next(routeUrl);
   }
 
@@ -80,7 +79,6 @@ export class GlobalService {
   }
   //Change transition
   toggleTransition(trans) {
-    localStorage.setItem('k-trans', trans);
     this._changeTransition.next(trans);
   }
 

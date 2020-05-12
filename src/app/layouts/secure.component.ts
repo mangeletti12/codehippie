@@ -24,7 +24,7 @@ export class SecureComponent implements OnInit, OnDestroy {
   // nav bar open or small
   isOpen = true;
   isDoorOpen = false;
-  animationTrigger = 'slideLeft';
+  animationTrigger = 'slideLeft'; // default slideLeft
   subscription: Subscription;
   isSlideOutOpen = false;
   HTTPActivity: boolean;
@@ -63,10 +63,10 @@ export class SecureComponent implements OnInit, OnDestroy {
     // Listen for route trans change
     this.subscription = this._globalService.changeTransition.subscribe(
       data => {
-        const anim = (data !== null) ? data : 'off';
+        const anim = (data !== null) ? data : 'slideLeft';
         this.animationTrigger = anim;
 
-        console.log('animationTrigger', this.animationTrigger);
+        // console.log('animationTrigger', this.animationTrigger);
     });
 
     // Nav collapse click change

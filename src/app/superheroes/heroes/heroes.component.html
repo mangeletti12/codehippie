@@ -1,4 +1,4 @@
-<mat-toolbar id="comp-toolbar" color="primary">
+<mat-toolbar id="comp-toolbar" class="fixed-bar" color="primary">
   <mat-toolbar-row class="search-row">
 
     <mat-form-field class="search-form-field" floatLabel="never">
@@ -33,7 +33,7 @@
 </mat-toolbar>
 
 
-<mat-table [dataSource]="dataSource" matSort (matSortChange)="sortChanged($event)">
+<mat-table class="table-down" [dataSource]="dataSource" matSort (matSortChange)="sortChanged($event)">
 
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
