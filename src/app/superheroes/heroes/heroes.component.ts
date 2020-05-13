@@ -9,10 +9,48 @@ import { DialogService } from 'src/app/mat-confirm-dialog/mat-confirm-dialog.ser
 import { AddToTeamComponent } from '../teams/add-to-team.component';
 import { AlertService } from 'src/app/alert/alert.service';
 
+//animation
+import { transition, animate, trigger, state, style, query, animation, stagger, sequence } from '@angular/animations';
+
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  styleUrls: ['./heroes.component.scss'],
+  animations: [
+    trigger('tableCells', [
+      // transition(':enter', [ // void => *
+      //   style({ background: '#fff' }),
+      //   animate('1.0s ease-in',
+      //     style({ background: 'red' }))
+      // ]),
+      transition(':enter', [ // * => void
+        style({ opacity: 0 }),
+        animate('1s ease-in',
+          style({ opacity: 1 }))
+      ]),
+
+    ]),
+    trigger('tableRows', [
+      // transition(':enter', [ // void => *
+      //   style({ transform: 'translateX(100%) ' }),
+      //   animate('1.0s ease-in',
+      //     style({ transform: 'translateX(0%) ' }))
+      // ]),
+      transition(':enter', [ // * => void
+        style({ opacity: 0 }),
+        animate('1s ease-in',
+          style({ opacity: 1 }))
+      ]),
+      transition(':leave', [ // * => void
+        style({ opacity: 1 }),
+        animate('1s ease-out',
+          style({ opacity: 0 }))
+      ]),
+
+    ]),
+
+  ]
 })
 export class HeroesComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();

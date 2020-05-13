@@ -8,6 +8,7 @@ import { AboutService } from './about.service';
 })
 export class AboutComponent implements OnInit {
   mySkills: any[] = [];
+  selectedType = 'all';
 
   constructor(
     private aboutService: AboutService,
@@ -39,6 +40,31 @@ export class AboutComponent implements OnInit {
         console.log('skills', this.mySkills);
       }
     )
+  }
+
+  //
+  filterSkill(skill) {
+
+    // Mark all selected false
+    this.mySkills.forEach(obj => {
+
+        if (obj.type === skill) {
+          // just a single color
+          obj.selected = true;
+        }
+        else {
+          obj.selected = false;
+        }
+    });
+
+    // clicked same skill/color again!
+    // so show all!
+    if (this.selectedType === skill) {
+      this.mySkills.forEach(obj => obj.selected = true);
+      skill = 'all';
+    }
+    //
+    this.selectedType = skill;
   }
 
 }

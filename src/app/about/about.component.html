@@ -1,18 +1,63 @@
 <div class="wrapper">
 
   <div class="pane-left my-shadow">
-    "That's no moon… it's a space station!"
 
-    <h2>Welcome to Code Hippie!</h2>
-    <h4>The playground of Mark Angeletti.</h4>
+    <div class="pad-maker">
+      <div class="my-pic"></div>
+      <span>"That's no moon… it's a space station!"</span>
+      <h2 class="ch-title">Welcome to Code Hippie!</h2>
+      <h4 class="ch-handwriting">The playground of Mark Angeletti</h4>
+    </div>
+
+    <p class="quote">
+      Creating internet applications that enhance our lives is what gets me up in the morning.
+    </p>
+
+    <div class="pad-maker">
+
+      <h2>Why you should hire me</h2>
+
+      <ul>
+        <li>I am passionate about front-end development and end user experience.</li>
+        <li>I am comfortable working with a team in an agile environment.</li>
+        <li>I appreciate constructive criticism and thrive in an environment with direct, open and honest communication.</li>
+      </ul>
+
+
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/markangeletti" target="_blank" rel="me" class="socialicon">
+          <i class="fab fa-linkedin icon-large"></i>
+        </a>
+        <a href="https://www.facebook.com/mark.angeletti" target="_blank" rel="me" class="socialicon">
+          <i class="fab fa-facebook icon-large"></i>
+        </a>
+        <a href="https://twitter.com/markangeletti" target="_blank" rel="me" class="socialicon">
+          <i class="fab fa-twitter-square icon-large"></i>
+        </a>
+      </div>
+
+    </div>
 
   </div>
 
-  <div class="pane-right my-shadow">
+  <div class="pane-right">
+
+    <div class="skills">
+      <div class="skill-filter-holder">
+        <div class="frontend" (click)="filterSkill('frontend')"><span class="skill-filter my-shadow" ></span><i>Front-end</i></div>
+        <div class="backend" (click)="filterSkill('backend')"><span class="skill-filter my-shadow" ></span><i>Back-end</i></div>
+        <div class="app" (click)="filterSkill('app')"><span class="skill-filter my-shadow" ></span><i>App</i></div>
+      </div>
+      <div class="legendish">
+        <span class="curly"></span>
+        <span class="ch-handwriting legendText">Click to filter</span>
+      </div>
+    </div>
 
     <ng-container *ngFor="let skill of mySkills">
 
-      <div class="skill" class="skill-width_{{ skill.level }} type_{{ skill.type }}" >
+      <div *ngIf="skill.selected" class="skill my-shadow" class="skill-width_{{ skill.level }} type_{{ skill.type }}" >
         <span>{{ skill.skill }}</span>
       </div>
 

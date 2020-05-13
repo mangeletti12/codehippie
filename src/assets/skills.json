@@ -2,82 +2,98 @@
   {
     "skill": "Ajax",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "Angular",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "ASP.NET",
     "level": 4,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "C#",
     "level": 4,
-    "type": "backend"
+    "type": "backend",
+    "selected": true
   },
   {
     "skill": "CSS",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "Docker",
-    "level": 1,
-    "type": "app"
+    "level": 2,
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "Firebase",
     "level": 2,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "Git/GitHub",
     "level": 3,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "GitKraken",
     "level": 3,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "HTML",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "Java",
     "level": 2,
-    "type": "backend"
+    "type": "backend",
+    "selected": true
   },
   {
     "skill": "JavaScript",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "jQuery",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "JSON",
     "level": 5,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "MySQL",
     "level": 2,
-    "type": "backend"
+    "type": "backend",
+    "selected": true
   },
   {
     "skill": "Node.js",
     "level": 3,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "npm",
@@ -87,27 +103,32 @@
   {
     "skill": "Postman",
     "level": 2,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "Robo 3T",
     "level": 2,
-    "type": "app"
+    "type": "app",
+    "selected": true
   },
   {
     "skill": "RxJS",
     "level": 3,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "SASS",
     "level": 4,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
   {
     "skill": "TypeScript",
     "level": 4,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   }
 
 ]

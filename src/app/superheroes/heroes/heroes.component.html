@@ -96,7 +96,7 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row, $event)" (dblclick)="onEdit(row, $event)"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row, $event)" (dblclick)="onEdit(row, $event)" @tableRows></mat-row>
 
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
     <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && totalRows==0)}"></mat-footer-row>
