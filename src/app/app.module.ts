@@ -46,7 +46,7 @@ import { PublicComponent } from './layouts/public.component';
 import { SecureComponent } from './layouts/secure.component';
 import { AlertComponent } from './alert/alert.component';
 import { ShowErrorsComponent } from './validation/show-errors.componet';
-import { HomeComponent } from './home/home.component';
+import { BuffetComponent } from './buffet/buffet.component';
 // 404
 import { FileNotFoundComponent } from './404/fileNotFound.component';
 // Setting for App
@@ -106,7 +106,7 @@ import { AboutComponent } from './about/about.component';
     RegisterComponent,
     LoginComponent,
     HasClaimDirective,
-    HomeComponent,
+    BuffetComponent,
     CorsListComponent,
     CorComponent,
     RfiComponent,

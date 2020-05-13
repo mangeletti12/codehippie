@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ExternalService } from './external.service';
 
 @Component({
-  selector: 'home',
+  selector: 'app-buffet',
   providers: [ExternalService],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './buffet.component.html',
+  styleUrls: ['./buffet.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class BuffetComponent implements OnInit {
 
   constructor(
 

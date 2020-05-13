@@ -9,11 +9,7 @@ import { CorComponent } from './cors/cor/cor.component';
 //
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
-import { HomeComponent } from './home/home.component';
-//
-
-import { RfiComponent } from './rfi/rfi.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { BuffetComponent } from './buffet/buffet.component';
 //
 import { AnswersComponent } from './answers/answers.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -26,8 +22,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { FileNotFoundComponent } from './404/fileNotFound.component';
 
 import { FlexComponent } from './flex/flex.component';
-import { PickerListComponent } from './picker-list/picker-list.component';
-import { PickerListTwoComponent } from './picker-list-two/picker-list-two.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
 import { CostCodesComponent } from './codes/cost-codes.component';
 import { TreeComponent } from './tree/tree.component';
@@ -45,15 +39,15 @@ import { AboutComponent } from './about/about.component';
 //SECURE
 export const SECURE_ROUTES: Routes = [
   { path: '',
-    component: HomeComponent,
-    data: { breadcrumb: 'home' },
+    component: AboutComponent,
+    data: { breadcrumb: 'About' },
   },
-  // {
-  //   path: 'home',
-  //   component: HomeComponent,
-  //   //canActivate: [AuthGuard],
-  //   data: { breadcrumb: 'home' },
-  // },
+  {
+    path: 'buffet',
+    component: BuffetComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Buffet' },
+  },
   {
     path: 'cors',
     data: { breadcrumb: 'Change Order Request' },

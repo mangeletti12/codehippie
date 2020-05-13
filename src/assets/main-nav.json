@@ -3,21 +3,71 @@
       "App" : [
         {
           "Id": 0,
-          "Name": "Estimating",
-          "Description": "Estimating description",
+          "Name": "Alpha",
+          "Description": "...in the beginning",
           "icon": "icon-estimating.png",
 
           "MenuItem": [
             {
-              "Text": "Estimating",
-              "Claim": "http://rootssoftware.com/module/estimating",
-              "icon": "fa-calculator",
+              "Text": "Regarding",
+              "Claim": "http://rootssoftware.com/module/projectmanagement",
+              "icon": "fa-couch",
               "MenuItem": [
                 {
                   "Text": "About",
                   "Url": "/about",
                   "Claim": "Nav_About"
                 },
+                {
+                  "Text": "The Buffet",
+                  "Url": "/buffet",
+                  "Claim": "Nav_Buffet"
+                },
+                {
+                  "Text": "Resume",
+                  "Url": "/resume",
+                  "Claim": "Nav_Resume"
+                },
+                {
+                  "Text": "Hiking Trails",
+                  "Url": "/trails",
+                  "Claim": "Nav_Trails"
+                },
+                {
+                  "Text": "Q & A",
+                  "Url": "/qa",
+                  "Claim": "Nav_QA"
+                },
+                {
+                  "Text": "Music",
+                  "Url": "/music",
+                  "Claim": "Nav_Music"
+                }
+              ]
+            },
+            {
+              "Text": "Heroes",
+              "Claim": "http://rootssoftware.com/module/projectmanagement",
+              "icon": "fa-mask",
+              "MenuItem": [
+                {
+                  "Text": "Heroes",
+                  "Url": "/superheroes/heroes",
+                  "Claim": "Nav_Heroes"
+                },
+                {
+                  "Text": "Teams",
+                  "Url": "/superheroes/teams",
+                  "Claim": "Nav_Teams"
+                }
+
+              ]
+            },
+            {
+              "Text": "Scrap Yard",
+              "Claim": "http://rootssoftware.com/module/projectmanagement",
+              "icon": "fa-drafting-compass",
+              "MenuItem": [
                 {
                   "Text": "Users",
                   "Url": "/users",
@@ -55,42 +105,7 @@
                 }
               ]
             },
-            {
-              "Text": "Heroes",
-              "Claim": "http://rootssoftware.com/module/projectmanagement",
-              "icon": "fa-mask",
-              "MenuItem": [
-                {
-                  "Text": "Heroes",
-                  "Url": "/superheroes/heroes",
-                  "Claim": "Nav_Heroes"
-                },
-                {
-                  "Text": "Teams",
-                  "Url": "/superheroes/teams",
-                  "Claim": "Nav_Teams"
-                }
 
-
-              ]
-            },
-            {
-              "Text": "Accounting",
-              "Claim": "http://rootssoftware.com/module/accounting",
-              "icon": "fa-dollar-sign",
-              "MenuItem": [
-                {
-                  "Text": "Accounts Payable",
-                  "Url": "/leads/calendar",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Accounts Receivable",
-                  "Url": "/leads",
-                  "Claim": "Nav_Tags"
-                }
-              ]
-            },
             {
               "Text": "Charts",
               "Claim": "http://rootssoftware.com/module/charts",
@@ -163,8 +178,8 @@
 
         {
           "Id": 1,
-          "Name": "Construct",
-          "Description": "Construct description",
+          "Name": "Beta",
+          "Description": "description",
           "icon": "icon-construct.png",
 
           "MenuItem": [
@@ -347,8 +362,8 @@
 
         {
           "Id": 2,
-          "Name": "Design",
-          "Description": "Design description",
+          "Name": "Gamma",
+          "Description": "description",
           "icon": "icon-design.png",
 
           "MenuItem": [
@@ -369,8 +384,8 @@
 
         {
           "Id": 3,
-          "Name": "Insight",
-          "Description": "Insight description",
+          "Name": "Delta",
+          "Description": "description",
           "icon": "icon-insight.png",
 
           "MenuItem": [
@@ -391,8 +406,8 @@
 
         {
           "Id": 4,
-          "Name": "Connect",
-          "Description": "Connect description",
+          "Name": "Epsilon",
+          "Description": "description",
           "icon": "icon-connect.png",
 
           "MenuItem": [

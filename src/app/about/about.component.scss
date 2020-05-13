@@ -1,5 +1,16 @@
 @import url(//fonts.googleapis.com/css?family=Raleway);
-@import url(//fonts.googleapis.com/css?family=Caveat);
+// @import url(//fonts.googleapis.com/css?family=Caveat);
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('../../assets/fonts/Caveat-Regular.ttf');
+  // src: url('../../assets/fonts/Caveat-Regular.eot');
+  // src: url('../../assets/fonts/Caveat-Regular.eot?') format('☺'),
+  //      url('../../assets/fonts/Caveat-Regular.woff') format('woff'),
+  //      url('../../assets/fonts/Caveat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .wrapper {
   display: flex;
@@ -58,6 +69,8 @@
 }
 
 .pad-maker { padding: 15px; }
+
+.strike { text-decoration: line-through; }
 
 .ch-handwriting { font-family: 'Caveat', sans-serif; color: #777; }
 
