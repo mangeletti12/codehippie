@@ -1,4 +1,7 @@
 .chart-wrapper {
   width: 100%;
+
+  height: -moz-calc(100vh - 65px);
+  height: -webkit-calc(100vh - 65px);
   height: calc(100vh - 65px);
 }

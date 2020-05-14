@@ -13,8 +13,8 @@
   margin: 15px;
 }
 
-.team h5 { margin-bottom: 2px; }
-.team span { color: #444; text-transform: uppercase; font-size: 12px; }
+.team h5 { color: rgba(145,145,145, 1); margin-bottom: 2px; }
+.team span { color: rgba(165,165,165, 1); text-transform: uppercase; font-size: 12px; }
 
 .team-flexer {
   display: flex;
@@ -26,7 +26,7 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  // border: 3px solid black;
+
   overflow: hidden;
   cursor: pointer;
   background-repeat: no-repeat;

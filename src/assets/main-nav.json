@@ -15,7 +15,7 @@
               "MenuItem": [
                 {
                   "Text": "About",
-                  "Url": "/about",
+                  "Url": "/",
                   "Claim": "Nav_About"
                 },
                 {

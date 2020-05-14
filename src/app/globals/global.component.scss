@@ -10,7 +10,7 @@
 
 .navScroller {
   flex-basis: 100%;
-  height: calc(100% - 65px);
+  height: calc(100vh - 65px);
   -webkit-box-pack: start;
   justify-content: flex-start;
   overflow-y: auto;

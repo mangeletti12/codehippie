@@ -109,10 +109,12 @@ body {
   flex-direction: column;
   width: 65px;
   background: #1e1e1e;
+  height: 100%;
+  /* height: calc(100vh - 0px); */
   -webkit-box-shadow: inset -5px 0px 5px 0px rgba(0,0,0,0.58);
   -moz-box-shadow: inset -5px 0px 5px 0px rgba(0,0,0,0.58);
   box-shadow: inset -5px 0px 5px 0px rgba(0,0,0,0.58);
-  /* height: calc(100vh - 0px); */
+
 }
 
 .btns-holder {
@@ -173,7 +175,8 @@ body {
 }
 
 #global-main-nav {
-  background: #2f2f2f;
+  // background: #2f2f2f;
+  background-color: #303030;
   width: 220px;
   transition: width 125ms ease-out ;
 }
@@ -222,6 +225,17 @@ header {
 .dark-theme header {
   background: #353535;
   border-bottom: 1px solid #444;
+}
+
+.dark-theme .pane-left {
+  background: #424242 !important;
+  color: white;
+}
+
+.dark-theme a { color: #FFBF00; }
+
+.dark-theme .backing-color {
+  background-color: #212121 !important;
 }
 
 .global-button {

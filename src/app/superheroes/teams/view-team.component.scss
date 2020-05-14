@@ -1,18 +1,17 @@
-
+$light-gray           : #f2f2f2;
 
 .team-member {
   display: flex;
   align-items: center;
   flex-direction: row;
   font-size: 14px;
-  background-color: #f2f2f2;
-  // border-radius: 0px 49px 49px 0px;
-  // -moz-border-radius: 0px 49px 49px 0px;
-  // -webkit-border-radius: 0px 49px 49px 0px;
-  // border: 1px solid #ccc;
   margin: 2px 0;
   padding: 2px;
   padding-left: 10px;
+}
+
+.backing-color {
+  background-color: $light-gray;
 }
 
 .team-member span:nth-child(1) {

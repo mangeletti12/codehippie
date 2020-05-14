@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ExternalService } from '../home/external.service';
+import { ExternalService } from '../buffet/external.service';
 //
 import { AlertService } from '../alert/alert.service';
 import { Claims } from '../constants/claims';

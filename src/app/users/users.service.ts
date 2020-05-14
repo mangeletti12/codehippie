@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DatePipe } from '@angular/common';
-//import * as _ from 'lodash';
-
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { httpOptions } from '../http-options';
@@ -50,14 +48,11 @@ export class UsersService {
     });
   }
 
-
-
   //Get List
   getUsers(pageNumber) {
 
     let url = "https://swapi.dev/api/people/";
     let page = "?page=" + pageNumber;
-
 
     return this.http.get<any>(url+page, httpOptions)
       .pipe(

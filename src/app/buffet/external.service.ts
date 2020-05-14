@@ -4,7 +4,6 @@ import { catchError } from 'rxjs/operators';
 
 import { httpOptions } from '../http-options';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-import { map } from 'rxjs/operators';
 
 //URL
 const serviceUrl = 'https://exportbeta.rootssoftware.com/api/';
@@ -73,7 +72,7 @@ export class ExternalService {
         "Access-Control-Allow-Origin": 'true',
         "Accept": '*/*'
       })
-   
+
     //
     let urlSearchParams = new URLSearchParams();
     urlSearchParams.set('grant_type', 'password');
