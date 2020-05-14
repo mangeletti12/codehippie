@@ -39,6 +39,7 @@ import { AboutComponent } from './about/about.component';
 //SECURE
 export const SECURE_ROUTES: Routes = [
   { path: '',
+    pathMatch: 'full',
     component: AboutComponent,
     data: { breadcrumb: 'About' },
   },
@@ -95,18 +96,6 @@ export const SECURE_ROUTES: Routes = [
     redirectTo: '/login',
     data: { breadcrumb: 'Sub' },
   },
-  // {
-  //   path: 'rfi',
-  //   component: RfiComponent,
-  //   //canActivate: [AuthGuard],
-  //   data: { breadcrumb: 'RFI' },
-  // },
-  // {
-  //   path: 'calendar',
-  //   component: CalendarComponent,
-  //   //canActivate: [AuthGuard],
-  //   data: { breadcrumb: 'Calendar' },
-  // },
   {
     path: 'line-chart',
     component: LineChartComponent,
@@ -123,40 +112,20 @@ export const SECURE_ROUTES: Routes = [
     data: { breadcrumb: 'Pie Chart' },
   },
   {
-    path: 'flex1',
-    component: FlexComponent,
-    data: { breadcrumb: 'Flex One' },
-  },
-  {
     path: 'test-alerts',
     component: TestAlertsComponent,
     data: { breadcrumb: 'Alert Test' },
   },
-  {
-    path: 'about',
-    component: AboutComponent,
-    data: { breadcrumb: 'About' },
-  },
-  {
-    path: 'company',
-    component: CompanyComponent,
-    data: { breadcrumb: 'Company' },
-  },
+  // {
+  //   path: 'about',
+  //   component: AboutComponent,
+  //   data: { breadcrumb: 'About' },
+  // },
   {
     path: 'app',
     component: SettingsComponent,
     data: { breadcrumb: 'App Settings' },
   },
-  // {
-  //   path: 'picker',
-  //   component: PickerListComponent,
-  //   data: { breadcrumb: 'Picker' },
-  // },
-  // {
-  //   path: 'picker2',
-  //   component: PickerListTwoComponent,
-  //   data: { breadcrumb: 'Picker Two' },
-  // },
   {
     path: 'files',
     component: FilesComponent,
@@ -193,7 +162,7 @@ export const SECURE_ROUTES: Routes = [
     data: { breadcrumb: null },
     loadChildren: () => import('./estimates/estimate.module').then(mod => mod.EstimateModule)
   },
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  // {path: '', redirectTo: 'home', pathMatch: 'full'},
   // 404
   {
     path: 'error',

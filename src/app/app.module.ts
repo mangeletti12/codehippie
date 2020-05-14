@@ -73,16 +73,16 @@ import { ListComponent } from './list/list.component';
 import { ListService } from './list/list.service';
 import { IScrollComponent } from './iscroll/iscroll.component';
 import { IScrollService} from './iscroll/iscroll.service';
-import { CompanyComponent } from './company/company.component';
+// import { CompanyComponent } from './company/company.component';
 
 import { FlexComponent } from './flex/flex.component';
 import { environment } from '../environments/environment';
 import { BreadcrumbComponent } from './globals/breadcrumb/breadcrumb.component';
 import { ProfileComponent } from './globals/profile/profile.component';
 import { NotificationsComponent } from './globals/notifications/notifications.component';
-import { PickerComponent } from './picker/picker.component';
-import { PickerListComponent } from './picker-list/picker-list.component';
-import { PickerListTwoComponent } from './picker-list-two/picker-list-two.component';
+// import { PickerComponent } from './picker/picker.component';
+// import { PickerListComponent } from './picker-list/picker-list.component';
+// import { PickerListTwoComponent } from './picker-list-two/picker-list-two.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
 import { CostCodesComponent } from './codes/cost-codes.component';
 import { TreeComponent } from './tree/tree.component';
@@ -116,7 +116,7 @@ import { AboutComponent } from './about/about.component';
     TestAlertsComponent,
     ListComponent,
     IScrollComponent,
-    CompanyComponent,
+    // CompanyComponent,
     SettingsComponent,
     FileNotFoundComponent,
     MatConfirmDialogComponent,
@@ -124,9 +124,9 @@ import { AboutComponent } from './about/about.component';
     BreadcrumbComponent,
     ProfileComponent,
     NotificationsComponent,
-    PickerComponent,
-    PickerListComponent,
-    PickerListTwoComponent,
+    // PickerComponent,
+    // PickerListComponent,
+    // PickerListTwoComponent,
     FilesComponent,
     CostCodesComponent,
     TreeComponent,

@@ -2,17 +2,17 @@ import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AuthenticationService } from './security/auth.service';
 import { AppUserAuth } from './security/app-user-auth';
-import { RouterOutlet, Router, ActivatedRoute, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { RouterOutlet, Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GlobalService } from './globals/global.service';
-import { login } from './route-animations';
+// import { login } from './route-animations';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [login]
+  // animations: [login]
 })
 export class AppComponent implements OnInit, OnDestroy {
   currentUser: AppUserAuth;
@@ -26,10 +26,10 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private renderer: Renderer2,
     private router: Router,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     ) {
       this.authService.currentUser.subscribe(data => {
-        //console.log('currentUser', data);
+        console.log('authService', data);
         //redirect if currentUser is null
         //Eventually this would be handeled by the auth.guard.ts
         if (data === null) {
