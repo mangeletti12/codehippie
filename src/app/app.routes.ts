@@ -17,11 +17,11 @@ import { TestAlertsComponent } from './test-alerts/test-alerts.component';
 import { ListComponent } from './list/list.component';
 import { IScrollComponent } from './iscroll/iscroll.component';
 //
-import { CompanyComponent } from './company/company.component';
+// import { CompanyComponent } from './company/company.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FileNotFoundComponent } from './404/fileNotFound.component';
 
-import { FlexComponent } from './flex/flex.component';
+// import { FlexComponent } from './flex/flex.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
 import { CostCodesComponent } from './codes/cost-codes.component';
 import { TreeComponent } from './tree/tree.component';
@@ -38,8 +38,14 @@ import { AboutComponent } from './about/about.component';
 
 //SECURE
 export const SECURE_ROUTES: Routes = [
-  { path: '',
-    pathMatch: 'full',
+  // { path: '',
+  //   // pathMatch: 'full',
+  //   component: AboutComponent,
+  //   data: { breadcrumb: 'About' },
+  // },
+  {path: '', redirectTo: 'about', pathMatch: 'full'},
+  {
+    path: 'about',
     component: AboutComponent,
     data: { breadcrumb: 'About' },
   },
@@ -116,11 +122,6 @@ export const SECURE_ROUTES: Routes = [
     component: TestAlertsComponent,
     data: { breadcrumb: 'Alert Test' },
   },
-  // {
-  //   path: 'about',
-  //   component: AboutComponent,
-  //   data: { breadcrumb: 'About' },
-  // },
   {
     path: 'app',
     component: SettingsComponent,

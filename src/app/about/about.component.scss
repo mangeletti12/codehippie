@@ -44,16 +44,16 @@
   margin-left: -28px;
 }
 
-
+.social-wrapper {
+  float: right;
+}
 
 .my-pic {
-  float: right;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   // border: 3px solid black;
   overflow: hidden;
-
   background-image: url("../../assets/images/mka1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -208,10 +208,34 @@
 //   transition: all 1s cubic-bezier(0.25,1,0.25,1);
 // }
 
-.social-icons { text-align: center; }
-.social-icons i { font-size: 3em; color: #999; margin: 5px; }
-.social-icons i:hover { color: #303030; }
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+}
+
+.social-icons a {
+  padding: 0;
+  margin: 12px;
+  width: 36px;
+  height: 36px;
+  font-size: 30px;
+  line-height: 36px;
+  cursor: pointer;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
+.social-icons svg {
+  fill: #999;
+  height: 100%;
+  width: 100%;
+ }
+
+ .social-icons svg:hover  {
+  fill: #303030;
+ }
 
 
 .skill-width_5 { width: 100%; }

@@ -2,27 +2,24 @@
 
     <div class="b-container theme-dark-font">
 
-        <mat-card class="box" [routerLink]="'/cors'">
+        <mat-card class="box" [routerLink]="'/superheroes/heroes'">
           <div class="icon">01</div>
           <div class="content">
-              <h3>Change Orders</h3>
-              <p>A change order is work that is added to or deleted from the original contract,
-                  which alters the amount and/or completion date. This may force a new
-                  project to handle significant changes to the current project.
+              <h3>Heroes</h3>
+              <p>Here we consume the Marvel API to retreive Earth's mighties heroes... and villians.
+                The data is then presented in a table with standard pagination, sorting and searching.
+                You may also select heroes and add them to a team.
               </p>
-              <!-- <button mat-raised-button [routerLink]="'/cors'">Go Now!</button> -->
           </div>
         </mat-card>
 
-        <mat-card class="box" [routerLink]="['/users']">
+        <mat-card class="box" [routerLink]="['/infinite-scroll']">
             <div class="icon">02</div>
             <div class="content">
-                <h3>Users</h3>
-                <p>Users may be placed on teams, which in turn are placed on to projects. Teams can
-                    then be used as distribution groups and have actions applied to them, such as, sent
-                    text/SMS messages, emailed, given a role and more.
+                <h3>Star Wars</h3>
+                <p>This page features infinite-scrolling that we use to continuously consume the Star Wars API.
+                It also conveniently remembers which character was selected when you view thier details.
                 </p>
-                <!-- <button mat-raised-button [routerLink]="['/users']">Go Now!</button> -->
             </div>
         </mat-card>
 
