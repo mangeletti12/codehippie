@@ -3,13 +3,13 @@
       "App" : [
         {
           "Id": 0,
-          "Name": "Alpha",
-          "Description": "in the beginning...",
+          "Name": "Code Hippie",
+          "Description": "my portfolio",
           "icon": "icon-estimating.png",
 
           "MenuItem": [
             {
-              "Text": "Regarding",
+              "Text": "At a Glance",
               "Claim": "http://rootssoftware.com/module/projectmanagement",
               "icon": "fa-couch",
               "MenuItem": [

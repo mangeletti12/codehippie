@@ -268,6 +268,20 @@ header {
   transition: background-color 100ms linear 0s, color 100ms linear 0s, opacity 300ms cubic-bezier(0.2, 0, 0, 1) 0s, transform 300ms cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
+// #logo {
+//   margin: 7px;
+//   height: 50px;
+//   width: 50px;
+//   overflow: hidden;
+//   cursor: pointer;
+//   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(86deg) brightness(100%) contrast(100%);
+//   background-image: url('assets/katerra-full.svg');
+//   background-repeat: no-repeat;
+
+//   background-position: 7px 1px;
+//   background-size: 165px 50px;
+// }
+
 #logo {
   margin: 7px;
   height: 50px;
@@ -275,11 +289,11 @@ header {
   overflow: hidden;
   cursor: pointer;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(86deg) brightness(100%) contrast(100%);
-  background-image: url('assets/katerra-full.svg');
+  background-image: url('assets/images/cap.png');
   background-repeat: no-repeat;
 
-  background-position: 7px 1px;
-  background-size: 165px 50px;
+  background-position: 0px 10px;
+  background-size: 50px 29px;
 }
 #logo:hover {
   /* filter: invert(41%) sepia(78%) saturate(2384%) hue-rotate(5deg) brightness(108%) contrast(102%); */
