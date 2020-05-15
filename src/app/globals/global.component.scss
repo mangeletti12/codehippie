@@ -8,6 +8,35 @@
   padding: 10px;
 }
 
+.theme-holder {
+  float: right;
+  padding: 8px;
+  width: 36px;
+  height: 65px;
+}
+.dark {
+  display: inline-block;
+  border: 1px solid #f1f1f1;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: #303030;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.light {
+  display: inline-block;
+  border: 1px solid #f1f1f1;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
 .navScroller {
   flex-basis: 100%;
   height: calc(100vh - 65px);

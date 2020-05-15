@@ -1,14 +1,10 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
-//import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-//
-//import { GlobalService } from './global.service';
 import { NavComponent } from '../globals/nav.component';
-//
 import { AppUserAuth } from '../security/app-user-auth';
-import { AuthenticationService } from '../security/auth.service';
-//
 import { HTTPStatus } from '../interceptors/loader.interceptor';
+import { AuthenticationService } from '../security/auth.service';
+import { GlobalService } from '../globals/global.service';
 
 
 @Component({
@@ -17,7 +13,6 @@ import { HTTPStatus } from '../interceptors/loader.interceptor';
   styleUrls: ['./global.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
 
   @Input() navComp: NavComponent;
   HTTPActivity: boolean;
@@ -28,8 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthenticationService,
     private httpStatus: HTTPStatus,
-    //private _globalService: GlobalService,
-    //private router: Router,
+    private _globalService: GlobalService,
   ) {
     //
     this.currentUserSubscription = this.authService.currentUser.subscribe(
@@ -48,35 +42,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    //console.log("--Header--");
-    //console.log(this.currentUser);
-
-    //this.subscription = this.authService.securityReset
-    // .subscribe();
-
-    /*
-    //Come straight from full url on page load
-    var routeData = this.route.root.firstChild.firstChild.snapshot.data['search'];
-    this.getRouteData(routeData);
-
-    //Nav link event
-    this._router.events.subscribe(event => {
-      if(event instanceof NavigationEnd) {
-        var data = this.route.root.firstChild.firstChild.snapshot.data['search']
-        this.getRouteData(data);
-      }
-    });
-    */
-
-    /*
-    //https://www.toptal.com/angular-js/angular-4-forms-validation
-    this.form = this.fb.group({
-      searchHeader: [''],
-
-      //dynamic fields (descriptors) added below
-      //descriptors: this.fb.group({})
-    });
-    */
 
   }
 
@@ -88,25 +53,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.currentUserSubscription.unsubscribe();
   }
 
-  //Search Header
-  // searchHeader() {
-  //   this.searching = true;
-
-  //   console.log("search");
-
-  //   this._globalService.searchHeader()
-  //     .subscribe(
-  //     data => {
-  //       console.log(data);
-  //       this.searching = false;
-
-  //     },
-  //     error => {
-  //       var msg = { "State": "error", "Message": <any>error };
-  //       //external js
-  //       this.searching = false;
-  //     }
-  //     );
-  // }
+  // This method is in app-component.ts
+  onSetTheme(theme: string) {
+    console.log('onSetTheme', theme);
+    localStorage.setItem('k-theme', theme);
+    this._globalService.toggleTheme(theme);
+  }
 
 }

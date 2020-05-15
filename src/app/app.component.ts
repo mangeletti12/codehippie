@@ -7,7 +7,6 @@ import { Subscription } from 'rxjs';
 import { GlobalService } from './globals/global.service';
 // import { login } from './route-animations';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,21 +27,23 @@ export class AppComponent implements OnInit, OnDestroy {
     private router: Router,
     // private route: ActivatedRoute,
     ) {
+
+      //
       this.authService.currentUser.subscribe(data => {
         console.log('authService', data);
-        //redirect if currentUser is null
-        //Eventually this would be handeled by the auth.guard.ts
-        if (data === null) {
-          // not logged in so redirect to login page with the return url
-          this.router.navigate(['/login']);
-          return false;
-        }
+        // redirect if currentUser is null
+        // Eventually this would be handeled by the auth.guard.ts
+        // if (data === null) {
+        //   // not logged in so redirect to login page with the return url
+        //   this.router.navigate(['/login']);
+        //   return false;
+        // }
 
         this.currentUser = data;
       });
 
       //////////////////////////////
-      //Router event subscription
+      // Router event subscription
       router.events.subscribe((event: Event) => {
 
         if (event instanceof NavigationStart) {
@@ -57,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (event instanceof NavigationError) {
 
         }
-    });
+      });
 
 
   }
@@ -65,18 +66,17 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     //console.log('AppComponent init');
 
-    //Listen for theme change
+    // Listen for theme change
     this.subscription = this._globalService.changeTheme.subscribe(data => {
       this.onSetTheme(data);
     });
 
-    //Listen for nav change
-    this.subscription = this._globalService.changeNavSide.subscribe(data => {
-
-      this.renderer.removeClass(document.body, 'left');
-      this.renderer.removeClass(document.body, 'right');
-      this.renderer.addClass(document.body, data);
-    });
+    // Listen for nav change
+    // this.subscription = this._globalService.changeNavSide.subscribe(data => {
+    //   this.renderer.removeClass(document.body, 'left');
+    //   this.renderer.removeClass(document.body, 'right');
+    //   this.renderer.addClass(document.body, data);
+    // });
 
   }
 

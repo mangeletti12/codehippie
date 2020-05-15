@@ -51,7 +51,7 @@
     <div class="navScroller">
 
       <ng-container *ngFor="let item of nav.MenuItem; let r = index">
-        <div class="navGroup" *hasClaim="item.Claim" [class.active]="item.Active">
+        <div class="navGroup" [class.active]="item.Active">
           <h2 class="acc_trigger" (click)="navSelect(item)"><span class="fas {{item.icon}}"></span>{{item.Text}}
           </h2>
           <ng-container *ngIf="item.MenuItem != null">

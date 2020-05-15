@@ -65,7 +65,7 @@ export class NavComponent implements OnInit, OnDestroy {
     this._globalService.getNav()
       .subscribe(
         data => {
-          //console.log(data.body);
+          console.log('nav', data.body);
           this.navApps = data.body.Navigation.App;
 
           // You just fetched ALL navs, should now cache this

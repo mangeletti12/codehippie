@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//
-//import { PublicComponent } from './layouts/public.component';
+// import { PublicComponent } from './layouts/public.component';
 import { SecureComponent } from './layouts/secure.component';
 //
 import { CorsListComponent } from './cors/cors-list.component';
 import { CorComponent } from './cors/cor/cor.component';
 //
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './login/register.component';
+// import { LoginComponent } from './login/login.component';
+// import { RegisterComponent } from './login/register.component';
 import { BuffetComponent } from './buffet/buffet.component';
-//
 import { AnswersComponent } from './answers/answers.component';
 import { MoviesComponent } from './movies/movies.component';
 import { TestAlertsComponent } from './test-alerts/test-alerts.component';
 import { ListComponent } from './list/list.component';
 import { IScrollComponent } from './iscroll/iscroll.component';
-//
-// import { CompanyComponent } from './company/company.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FileNotFoundComponent } from './404/fileNotFound.component';
-
-// import { FlexComponent } from './flex/flex.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
 import { CostCodesComponent } from './codes/cost-codes.component';
 import { TreeComponent } from './tree/tree.component';
@@ -38,15 +32,16 @@ import { AboutComponent } from './about/about.component';
 
 //SECURE
 export const SECURE_ROUTES: Routes = [
-  // { path: '',
-  //   // pathMatch: 'full',
-  //   component: AboutComponent,
-  //   data: { breadcrumb: 'About' },
-  // },
-  {path: '', redirectTo: 'about', pathMatch: 'full'},
+  { path: '',
+    pathMatch: 'full',
+    component: AboutComponent,
+    data: { breadcrumb: 'About' },
+  },
+  //{path: '', redirectTo: 'about', pathMatch: 'full'},
   {
     path: 'about',
     component: AboutComponent,
+    //canActivate: [AuthGuard],
     data: { breadcrumb: 'About' },
   },
   {
@@ -180,12 +175,11 @@ export const SECURE_ROUTES: Routes = [
 //
 const routes: Routes = [
   //no layout routes
-  { path: 'login', component: LoginComponent, data: { search: 'login' } },
-  { path: 'register', component: RegisterComponent },
+  // { path: 'login', component: LoginComponent, data: { search: 'login' } },
+  // { path: 'register', component: RegisterComponent },
 
   { path: '', component: SecureComponent, data: { title: 'Secure Views' }, children: SECURE_ROUTES },
   //{ path: '', component: PublicComponent, data: { title: 'Public Views' }, children: PUBLIC_ROUTES },
-
 ];
 
 @NgModule({

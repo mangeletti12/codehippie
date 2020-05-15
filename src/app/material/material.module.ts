@@ -20,6 +20,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatCardModule,
     MatMenuModule,
+    MatTooltipModule,
   ],
   exports: [
     MatToolbarModule,
@@ -62,6 +64,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDialogModule,
     MatCardModule,
     MatMenuModule,
+    MatTooltipModule,
   ],
   declarations: []
 })

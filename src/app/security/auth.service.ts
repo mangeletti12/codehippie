@@ -11,15 +11,11 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 //import { AppUserClaim } from './app-user-claim';
 //import { Claims } from '../constants/claims';
 
-//https://codinglatte.com/amp/posts/angular/refreshing-authorization-tokens-angular-6/
-//http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
   })
 };
-
 
 @Injectable()
 export class AuthenticationService {
@@ -43,7 +39,8 @@ export class AuthenticationService {
 
   loginAPI(entity: AppUser) {
 
-    const API_URL = "https://exportbeta.rootssoftware.com/token";
+   // const API_URL = "https://exportbeta.rootssoftware.com/token";
+   const API_URL = "";
 
     httpOptions.headers = new HttpHeaders({
       "Content-Type": 'application/x-www-form-urlencoded',

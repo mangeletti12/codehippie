@@ -38,7 +38,7 @@ export class SettingsComponent implements OnInit {
 
   // This method is in app-component.ts
   onSetTheme(theme: string) {
-    // console.log('onSetTheme', theme);
+    console.log('onSetTheme', theme);
     localStorage.setItem('k-theme', theme);
     this._globalService.toggleTheme(theme);
   }

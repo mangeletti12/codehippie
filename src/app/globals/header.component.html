@@ -1,4 +1,8 @@
 <header>
   <app-breadcrumb></app-breadcrumb>
+  <div class="theme-holder">
+    <span class="light" (click)="onSetTheme('default-theme')" matTooltip="Light Theme"></span>
+    <span class="dark" (click)="onSetTheme('dark-theme')" matTooltip="Dark Theme"></span>
+  </div>
   <alert></alert>
 </header>
