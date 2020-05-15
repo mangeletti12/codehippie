@@ -25,6 +25,7 @@ import { BarChartComponent } from './charts/bar-chart.component';
 //
 import { ResolverService } from './resolver.service';
 import { AboutComponent } from './about/about.component';
+import { TrailsComponent } from './trails/trails.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -49,6 +50,12 @@ export const SECURE_ROUTES: Routes = [
     component: BuffetComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Buffet' },
+  },
+  {
+    path: 'trails',
+    component: TrailsComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Happy Trails' },
   },
   {
     path: 'cors',

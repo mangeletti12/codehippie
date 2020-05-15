@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url('/assets/fonts/Caveat-Regular.ttf');
+  // src: url('../../assets/fonts/Caveat-Regular.eot');
+  // src: url('../../assets/fonts/Caveat-Regular.eot?') format('☺'),
+  //      url('../../assets/fonts/Caveat-Regular.woff') format('woff'),
+  //      url('../../assets/fonts/Caveat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -159,7 +170,6 @@ body {
   width: 32px;
 }
 .btns-holder div:hover {
-  /* background-color: #000; */
   color: #fcfcfc;
 }
 
@@ -175,7 +185,6 @@ body {
 }
 
 #global-main-nav {
-  // background: #2f2f2f;
   background-color: #303030;
   width: 220px;
   transition: width 125ms ease-out ;
@@ -214,7 +223,6 @@ header {
   z-index: 10;
   height: 65px;
   width: calc(100% - 285px);
-  /* background: rgba(237, 237, 237, 1); */
   background: #f1f1f1;
   border-bottom: 1px solid #e8e8e8;
 }
@@ -246,7 +254,6 @@ header {
   opacity: 1;
   position: absolute;
   top: 32px;
-
   z-index: 10;
   transform: translate(-50%);
   width: 24px;
@@ -303,6 +310,11 @@ header {
 
 h2 { margin: 0; padding: 0; }
 
+.ch-handwriting {
+  font-family: 'Caveat', sans-serif;
+  color: rgba(165,165,165, 1);
+}
+
 /* bootstap outline on focus */
 button:focus { outline:none; }
 .btn-primary.focus, .btn-primary:focus {
@@ -311,8 +323,6 @@ button:focus { outline:none; }
 
 #main-flex {
   display:flex;
-  /* padding-top: 50px; */
-  /* min-height: 100%; */
   flex-direction: row;
   height: 100%;
 }
@@ -353,7 +363,6 @@ body.right #rightArrow {
   position: absolute;
   top: 0;
   right: -210px;
-  /* background: rgba(0, 0, 0, 0.6); */
   background: #007ACC;;
   color: #ffffff;
   list-style-type: none;
@@ -391,7 +400,6 @@ body.right #rightArrow {
 
 .mat-header-row button {
   text-rendering: optimizeLegibility;
-  /* color: rgba(30, 12, 228, 1); */
   letter-spacing: -.022em;
   font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
@@ -444,7 +452,6 @@ mat-radio-group mat-radio-button {
 .button-row button {
   margin: 5px;
 }
-
 
 .hide {
   display: none;
@@ -545,7 +552,6 @@ mat-footer-row mat-footer-cell {
   z-index: 2;
   height: 50px;
   background: rgba(255, 255, 255, 0.9);
-  /* border-bottom: 1px solid #e8e8e8; */
 }
 .dark-theme .comp-header {
   background: rgba(0, 0, 0, 0.9);

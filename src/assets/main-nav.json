@@ -15,11 +15,11 @@
               "MenuItem": [
                 {
                   "Text": "About",
-                  "Url": "/",
+                  "Url": "/about",
                   "Claim": "Nav_About"
                 },
                 {
-                  "Text": "The Buffet",
+                  "Text": "Buffet",
                   "Url": "/buffet",
                   "Claim": "Nav_Buffet"
                 },
@@ -105,7 +105,6 @@
                 }
               ]
             },
-
             {
               "Text": "Charts",
               "Claim": "http://rootssoftware.com/module/charts",
@@ -175,7 +174,6 @@
 
           ]
         },
-
         {
           "Id": 1,
           "Name": "Beta",
@@ -184,182 +182,19 @@
 
           "MenuItem": [
             {
-              "Text": "RFI",
+              "Text": "Future link...",
               "Claim": "http://rootssoftware.com/module/estimating",
               "icon": "fa-book",
               "MenuItem": [
                 {
-                  "Text": "Calendar",
-                  "Url": "/calendar",
-                  "Claim": "Nav_Calendar"
-                },
-                {
-                  "Text": "Tables",
-                  "Url": "/tables",
-                  "Claim": "Nav_Tables"
-                },
-                {
-                  "Text": "Estimates",
-                  "Url": "/estimates",
-                  "Claim": "Nav_Estimates"
-                },
-
-                {
-                  "Text": "Flex",
-                  "Url": "/flex1",
-                  "Claim": "Nav_Flex"
-                },
-                {
-                  "Text": "Picker",
-                  "Url": "picker",
-                  "Claim": "Picker"
-                },
-
-                {
-                  "Text": "Markups",
-                  "Url": "/leads/markups",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Estimate Summary",
-                  "Url": "/leads/estimatesummary",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Project Documents",
-                  "Url": "/leads/estimatedocuments",
-                  "Claim": "Nav_Tags"
+                  "Text": "Coming...",
+                  "Url": "/coming",
+                  "Claim": "Nav_coming"
                 }
-              ]
-            },
-            {
-              "Text": "RFI Tasks",
-              "Claim": "http://rootssoftware.com/module/projectmanagement",
-              "icon": "fa-book-open",
-              "MenuItem": [
-                {
-                  "Text": "Team",
-                  "Url": "/team",
-                  "Claim": "Nav_Teams"
-                },
-                {
-                  "Text": "RFI",
-                  "Url": "/rfi",
-                  "Claim": "Nav_Rfi"
-                },
-                {
-                  "Text": "Submittals",
-                  "Url": "/leads/estimates",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Issues",
-                  "Url": "/leads/scope",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Change Orders",
-                  "Url": "/cors",
-                  "Claim": "Nav_CORS"
-                },
-                {
-                  "Text": "Cost Control",
-                  "Url": "/leads/bidtabs",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Labor Reporting",
-                  "Url": "/leads/general",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Schedule of Values",
-                  "Url": "/leads/markups",
-                  "Claim": "Nav_Tags"
-                }
-              ]
-            },
-            {
-              "Text": "Observations",
-              "Claim": "http://rootssoftware.com/module/accounting",
-              "icon": "fa-bullseye",
-              "MenuItem": [
-                {
-                  "Text": "Accounts Payable",
-                  "Url": "/leads/calendar",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Accounts Receivable",
-                  "Url": "/leads",
-                  "Claim": "Nav_Tags"
-                }
-              ]
-            },
-            {
-              "Text": "Inspections",
-              "Claim": "http://rootssoftware.com/module/contacts",
-              "icon": "fa-calendar-check",
-              "MenuItem": [
-                {
-                  "Text": "Companies",
-                  "Url": "/leads/calendar",
-                  "Claim": "Nav_Tags"
-                },
-                {
-                  "Text": "Contacts",
-                  "Url": "/leads",
-                  "Claim": "Nav_Tags"
-                }
-              ]
-            },
-            {
-              "Text": "Submittals",
-              "Claim": "http://rootssoftware/development/sandbox",
-              "icon": "fa-archive",
-              "MenuItem": [
-                {
-                  "Text": "Answers",
-                  "Url": "/answers",
-                  "Claim": "Nav_Answers"
-                },
-                {
-                  "Text": "Movies",
-                  "Url": "/movies",
-                  "Claim": "Nav_Movies"
-                }
-              ]
-            },
-            {
-              "Text": "Safety",
-              "Claim": "http://rootssoftware/development/sandbox",
-              "icon": "fa-band-aid",
-              "MenuItem": [
-                {
-                  "Text": "Company",
-                  "Url": "/company",
-                  "Claim": "Nav_Company"
-                }
-
-              ]
-            },
-            {
-              "Text": "Photos",
-              "Claim": "http://rootssoftware/development/sandbox",
-              "icon": "fa-camera",
-              "MenuItem": [
-                {
-                  "Text": "Company",
-                  "Url": "/company",
-                  "Claim": "Nav_Company"
-                }
-
               ]
             }
-
           ]
         },
-
         {
           "Id": 2,
           "Name": "Gamma",
@@ -368,20 +203,19 @@
 
           "MenuItem": [
             {
-              "Text": "Design One",
+              "Text": "Future link...",
               "Claim": "http://rootssoftware.com/module/estimating",
-              "icon": "fa-drafting-compass",
+              "icon": "fa-book",
               "MenuItem": [
                 {
-                  "Text": "Design",
-                  "Url": "/calendar",
-                  "Claim": "Nav_Calendar"
+                  "Text": "Coming...",
+                  "Url": "/coming",
+                  "Claim": "Nav_coming"
                 }
               ]
             }
           ]
         },
-
         {
           "Id": 3,
           "Name": "Delta",
@@ -390,14 +224,14 @@
 
           "MenuItem": [
             {
-              "Text": "Insight One",
+              "Text": "Future link...",
               "Claim": "http://rootssoftware.com/module/estimating",
-              "icon": "fa-couch",
+              "icon": "fa-book",
               "MenuItem": [
                 {
-                  "Text": "Insight",
-                  "Url": "/calendar",
-                  "Claim": "Nav_Calendar"
+                  "Text": "Coming...",
+                  "Url": "/coming",
+                  "Claim": "Nav_coming"
                 }
               ]
             }
@@ -412,26 +246,20 @@
 
           "MenuItem": [
             {
-              "Text": "Connect One",
+              "Text": "Future link...",
               "Claim": "http://rootssoftware.com/module/estimating",
-              "icon": "fa-cubes",
+              "icon": "fa-book",
               "MenuItem": [
                 {
-                  "Text": "Insight",
-                  "Url": "/calendar",
-                  "Claim": "Nav_Calendar"
-                },
-                {
-                  "Text": "Dain",
-                  "Url": "/dain",
-                  "Claim": "Nav_Dain"
+                  "Text": "Coming...",
+                  "Url": "/coming",
+                  "Claim": "Nav_coming"
                 }
               ]
             }
           ]
+
         }
-
-
 
       ]
     }

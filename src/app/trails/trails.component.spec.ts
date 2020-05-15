@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PickerListComponent } from './picker-list.component';
+import { TrailsComponent } from './trails.component';
 
-describe('PickerListComponent', () => {
-  let component: PickerListComponent;
-  let fixture: ComponentFixture<PickerListComponent>;
+describe('TrailsComponent', () => {
+  let component: TrailsComponent;
+  let fixture: ComponentFixture<TrailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PickerListComponent ]
+      declarations: [ TrailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PickerListComponent);
+    fixture = TestBed.createComponent(TrailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
