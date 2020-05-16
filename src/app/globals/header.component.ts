@@ -4,7 +4,7 @@ import { NavComponent } from '../globals/nav.component';
 import { AppUserAuth } from '../security/app-user-auth';
 import { HTTPStatus } from '../interceptors/loader.interceptor';
 import { AuthenticationService } from '../security/auth.service';
-import { GlobalService } from '../globals/global.service';
+// import { GlobalService } from '../globals/global.service';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private authService: AuthenticationService,
     private httpStatus: HTTPStatus,
-    private _globalService: GlobalService,
+    // private _globalService: GlobalService,
   ) {
     //
     this.currentUserSubscription = this.authService.currentUser.subscribe(
@@ -54,10 +54,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   // This method is in app-component.ts
-  onSetTheme(theme: string) {
-    console.log('onSetTheme', theme);
-    localStorage.setItem('k-theme', theme);
-    this._globalService.toggleTheme(theme);
-  }
+  // onSetTheme(theme: string) {
+  //   console.log('onSetTheme', theme);
+  //   localStorage.setItem('k-theme', theme);
+  //   this._globalService.toggleTheme(theme);
+  // }
 
 }

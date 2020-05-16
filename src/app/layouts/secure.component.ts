@@ -116,4 +116,11 @@ export class SecureComponent implements OnInit, OnDestroy {
     this.isSlideOutOpen = !this.isSlideOutOpen;
   }
 
+  // This method is in app-component.ts
+  onSetTheme(theme: string) {
+    console.log('onSetTheme', theme);
+    localStorage.setItem('k-theme', theme);
+    this._globalService.toggleTheme(theme);
+  }
+
 }

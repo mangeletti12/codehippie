@@ -33,6 +33,12 @@
           <div class="m-icon" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
         </div>
 
+        <!-- themes -->
+        <div class="theme-holder">
+          <span class="light" (click)="onSetTheme('default-theme')" matTooltip="Light Theme"></span>
+          <span class="dark" (click)="onSetTheme('dark-theme')" matTooltip="Dark Theme"></span>
+        </div>
+
       </div>
 
       <div id="global-main-nav" [class.small-nav]="isOpen">
