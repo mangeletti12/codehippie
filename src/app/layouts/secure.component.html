@@ -23,14 +23,14 @@
         <div class="main-loader" [hidden]="!HTTPActivity"><i class="fas fa-cog fa-spin" aria-hidden="true"></i></div>
 
         <a [routerLink]="['/']">
-          <div id="logo" title="Home"></div>
+          <div id="logo" matTooltip="Home Jeeves"></div>
         </a>
 
         <div class="btns-holder">
-          <div class="m-icon" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
-          <div class="m-icon"><div><i class="material-icons">search</i></div></div>
-          <div class="m-icon"><div><i class="material-icons">help_outline</i></div></div>
-          <div class="m-icon" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
+          <div class="m-icon" matTooltip="Profile" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
+          <div class="m-icon" matTooltip="Search" ><div><i class="material-icons">search</i></div></div>
+          <div class="m-icon" matTooltip="Help" ><div><i class="material-icons">help_outline</i></div></div>
+          <div class="m-icon" matTooltip="Notifications" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
         </div>
 
         <!-- themes -->

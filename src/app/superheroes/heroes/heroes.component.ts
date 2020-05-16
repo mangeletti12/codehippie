@@ -61,7 +61,7 @@ export class HeroesComponent implements OnInit {
   sortField = 'name';
   sortOrder = 'asc';
   pageNumber = 0;
-  pageSize = 10;
+  pageSize = 25;
   totalRows = 0;
   bulkCheckbox = false;
   searchKey: string;
