@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
       //
       this.authService.currentUser.subscribe(data => {
-        console.log('authService', data);
+        // console.log('authService', data);
         // redirect if currentUser is null
         // Eventually this would be handeled by the auth.guard.ts
         // if (data === null) {

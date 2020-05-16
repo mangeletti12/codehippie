@@ -212,9 +212,26 @@ body {
   order: 2;
 }
 
+#global-filler {
+  order: 3;
+  width: 50px;
+  background-color: pink;
+
+}
+
+// #global-filler div {
+//   height: 100%;
+//   background-color: orange;
+// }
+
+
+.content-body { display: table-cell; }
+
 .global-routed {
   padding-top: 65px;
 }
+
+
 
 /*Header*/
 header {
@@ -268,20 +285,6 @@ header {
   transition: background-color 100ms linear 0s, color 100ms linear 0s, opacity 300ms cubic-bezier(0.2, 0, 0, 1) 0s, transform 300ms cubic-bezier(0.2, 0, 0, 1) 0s;
 }
 
-// #logo {
-//   margin: 7px;
-//   height: 50px;
-//   width: 50px;
-//   overflow: hidden;
-//   cursor: pointer;
-//   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(86deg) brightness(100%) contrast(100%);
-//   background-image: url('assets/katerra-full.svg');
-//   background-repeat: no-repeat;
-
-//   background-position: 7px 1px;
-//   background-size: 165px 50px;
-// }
-
 #logo {
   margin: 7px;
   height: 50px;
@@ -289,11 +292,10 @@ header {
   overflow: hidden;
   cursor: pointer;
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(86deg) brightness(100%) contrast(100%);
-  background-image: url('assets/images/cap.png');
+  background-image: url('assets/images/cap.svg');
   background-repeat: no-repeat;
-
-  background-position: 0px 10px;
-  background-size: 50px 29px;
+  background-position: 4px 10px;
+  background-size: 42px 24px;
 }
 #logo:hover {
   /* filter: invert(41%) sepia(78%) saturate(2384%) hue-rotate(5deg) brightness(108%) contrast(102%); */
