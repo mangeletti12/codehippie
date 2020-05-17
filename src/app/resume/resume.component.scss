@@ -1,0 +1,13 @@
+.page-container {
+  height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-all {
+  width: 35rem;
+  height: 200px;
+  text-align: center;
+  font-family: sans-serif;
+}

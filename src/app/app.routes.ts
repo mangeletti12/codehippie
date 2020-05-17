@@ -26,6 +26,7 @@ import { BarChartComponent } from './charts/bar-chart.component';
 import { ResolverService } from './resolver.service';
 import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
+import { ResumeComponent } from './resume/resume.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -50,6 +51,12 @@ export const SECURE_ROUTES: Routes = [
     component: BuffetComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Buffet' },
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Resume' },
   },
   {
     path: 'trails',
@@ -135,12 +142,12 @@ export const SECURE_ROUTES: Routes = [
     data: { breadcrumb: 'Files' },
     resolve: { comp: ResolverService },
   },
-  {
-    path: 'codes',
-    component: CostCodesComponent,
-    data: { breadcrumb: 'Codes' },
-    resolve: { comp: ResolverService },
-  },
+  // {
+  //   path: 'codes',
+  //   component: CostCodesComponent,
+  //   data: { breadcrumb: 'Codes' },
+  //   resolve: { comp: ResolverService },
+  // },
   {
     path: 'tree',
     component: TreeComponent,

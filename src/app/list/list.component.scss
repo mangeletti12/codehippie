@@ -84,7 +84,7 @@
 
 .board #light-side mat-card {
   background-color: rgba(6, 165, 6, 0.5);
-
+  color: white;
   -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
   -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */
   -o-animation:      FADEOUT 2s ease-out; /* Opera 12+ */
@@ -92,7 +92,7 @@
 }
 .board #dark-side mat-card {
   background-color: rgba(165, 6, 6, 0.5);
-
+  color: white;
   -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
   -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */
   -o-animation:      FADEOUT 2s ease-out; /* Opera 12+ */

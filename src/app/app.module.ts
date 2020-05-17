@@ -90,6 +90,7 @@ import { BarChartComponent } from './charts/bar-chart.component';
 import { PieChartComponent } from './charts/pie-chart.component';
 import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
+import { ResumeComponent } from './resume/resume.component';
 
 
 @NgModule({
@@ -129,6 +130,7 @@ import { TrailsComponent } from './trails/trails.component';
     PieChartComponent,
     AboutComponent,
     TrailsComponent,
+    ResumeComponent,
 
   ],
   imports: [

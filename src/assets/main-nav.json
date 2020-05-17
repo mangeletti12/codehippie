@@ -64,35 +64,30 @@
               ]
             },
             {
-              "Text": "Scrap Yard",
-              "Claim": "http://rootssoftware.com/module/projectmanagement",
-              "icon": "fa-drafting-compass",
+              "Text": "Sandbox",
+              "Claim": "http://rootssoftware/development/sandbox",
+              "icon": "fa-cat",
               "MenuItem": [
+                {
+                  "Text": "Answers",
+                  "Url": "/answers",
+                  "Claim": "Nav_Answers"
+                },
+                {
+                  "Text": "Movies",
+                  "Url": "/movies",
+                  "Claim": "Nav_Movies"
+                },
 
                 {
-                  "Text": "Budgets",
-                  "Url": "/budgets",
-                  "Claim": "Nav_Budget"
+                  "Text": "List",
+                  "Url": "/list",
+                  "Claim": "Nav_List"
                 },
                 {
-                  "Text": "Estimates",
-                  "Url": "/estimates",
-                  "Claim": "Nav_Estimates"
-                },
-                {
-                  "Text": "Change Orders",
-                  "Url": "/cors",
-                  "Claim": "Nav_CORS"
-                },
-                {
-                  "Text": "Files",
-                  "Url": "/files",
-                  "Claim": "Nav_Files"
-                },
-                {
-                  "Text": "Tree",
-                  "Url": "/tree",
-                  "Claim": "Nav_Tree"
+                  "Text": "Infinite Scroll",
+                  "Url": "/infinite-scroll",
+                  "Claim": "Nav_List"
                 }
               ]
             },
@@ -119,30 +114,34 @@
               ]
             },
             {
-              "Text": "Sandbox",
-              "Claim": "http://rootssoftware/development/sandbox",
-              "icon": "fa-cat",
+              "Text": "Scrap Yard",
+              "Claim": "http://rootssoftware.com/module/projectmanagement",
+              "icon": "fa-drafting-compass",
               "MenuItem": [
                 {
-                  "Text": "Answers",
-                  "Url": "/answers",
-                  "Claim": "Nav_Answers"
+                  "Text": "Budgets",
+                  "Url": "/budgets",
+                  "Claim": "Nav_Budget"
                 },
                 {
-                  "Text": "Movies",
-                  "Url": "/movies",
-                  "Claim": "Nav_Movies"
-                },
-
-                {
-                  "Text": "List",
-                  "Url": "/list",
-                  "Claim": "Nav_List"
+                  "Text": "Estimates",
+                  "Url": "/estimates",
+                  "Claim": "Nav_Estimates"
                 },
                 {
-                  "Text": "Infinite Scroll",
-                  "Url": "/infinite-scroll",
-                  "Claim": "Nav_List"
+                  "Text": "Change Orders",
+                  "Url": "/cors",
+                  "Claim": "Nav_CORS"
+                },
+                {
+                  "Text": "Files",
+                  "Url": "/files",
+                  "Claim": "Nav_Files"
+                },
+                {
+                  "Text": "Tree",
+                  "Url": "/tree",
+                  "Claim": "Nav_Tree"
                 }
               ]
             },
