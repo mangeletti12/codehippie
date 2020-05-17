@@ -1,13 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-//import { CollectionViewer, DataSource } from '@angular/cdk/collections';
+// import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+// import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { DialogService } from '../mat-confirm-dialog/mat-confirm-dialog.service';
-
 import { IScrollService } from './iscroll.service';
-//import { ScrollDispatcher, CdkScrollable } from '@angular/cdk/overlay';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-//animation
-import { transition, animate, trigger, state, style, query, animation, stagger, sequence } from '@angular/animations';
+// animation
+import { transition, animate, trigger, state, style } from '@angular/animations';
+import { SuperheroesService } from '../superheroes/superheroes.service';
 
 
 @Component({
@@ -89,92 +88,107 @@ export class IScrollComponent implements OnInit {
   infiniteScrollDistance = 1;
   infiniteScrollUpDistance = 2;
   direction = '';
+  // Heroes
+  heroes: any;
+  sortField = 'name';
+  sortOrder = 'asc';
+  pageNumber = 0;
+  pageSize = 25;
+  totalRows = 0;
+  bulkCheckbox = false;
+  searchKey: string;
 
   constructor(
-    private iScrollService: IScrollService,
+    // private iScrollService: IScrollService,
     private dialogService: DialogService,
+    private superheroesService: SuperheroesService,
   ) {
 
   }
 
   ngOnInit(): void {
     //
-    this.getSWAPI();
+    // this.getSWAPI();
+    this.getAllHeroes();
   }
 
   onScrollDown(e) {
     console.log('scrolled down!!', e);
 
-    // add another 20 items
-    // const start = this.sum;
-    // this.sum += 20;
-    // this.appendItems(start, this.sum);
-
     this.direction = 'down';
     this.currentPage++;
-    this.getSWAPI();
+    this.pageNumber++;
+    // this.getSWAPI();
+    this.getAllHeroes();
   }
 
   onUp(e) {
     console.log('scrolled up!', e);
-    // const start = this.sum;
-    // this.sum += 20;
-    // this.prependItems(start, this.sum);
 
     this.direction = 'up';
   }
 
+  getAllHeroes() {
+    const orderBy = (this.sortOrder === 'asc') ? this.sortField : '-' + this.sortField;
 
-  // nextBatch(e, offset) {
+    var searchCriteria = {
+      orderBy: orderBy,
+      limit: this.pageSize,
+      offset: (this.pageNumber * this.pageSize),
+      // offset: (this.pageNumber - 1) * this.pageSize + 1,
+    };
 
-  //   const end = this.viewport.getRenderedRange().end;
-  //   const total = this.viewport.getDataLength();
+    if (this.searchKey !== null && this.searchKey !== undefined && this.searchKey !== '') {
+      searchCriteria['nameStartsWith'] = this.searchKey.trim();
+    }
 
-  //   if (end === total) {
-  //     //don't call if we have all items
-  //     if (this.itemsRetrieved != this.itemsTotal) {
-  //       //if we already made one call for that RenderedRange, don't do it again!
-  //       if (this.lastRenderedRange != end) {
-
-  //         console.log(`${end}, '>=', ${total}`);
-
-  //         this.currentPage++;
-  //         this.lastRenderedRange = end;
-  //         this.getSWAPI();
-  //       }
-  //     }
-  //   }
-
-
-  // }
-
-
-  //Get SW API
-  getSWAPI() {
-
-    this.iScrollService.getSWAPI(this.currentPage).subscribe(
+    // console.log('searchCriteria', searchCriteria);
+    this.superheroesService.getAllHeroes(searchCriteria).subscribe(
       data => {
-        console.log(data.body.results);
+        // this.heroes = data.body.data.results;
+      if (this.currentPage === 1) {
+        this.heroes = data.body.data.results;
 
-        //var firstPage = (data.body.previous == null) ? true : false;
-        console.log(this.currentPage);
-        if (this.currentPage === 1) {
-          this.list = data.body.results;
-          //Default, display first item
-          //this.selectItem(this.list[0]);
-        } else {
-          this.list = this.list.concat(data.body.results);
-        }
+      } else {
+        this.heroes = this.heroes.concat(data.body.data.results);
+      }
+        console.log('heroes', this.heroes);
 
-        //this.itemsRetrieved = this.list.length;
-        this.itemsTotal = data.body.count;
+        this.totalRows = data.body.data.total;
       },
       error => {
 
       }
-
     );
+
   }
+
+  //Get SW API
+  // getSWAPI() {
+
+  //   this.iScrollService.getSWAPI(this.currentPage).subscribe(
+  //     data => {
+  //       console.log(data.body.results);
+
+  //       //var firstPage = (data.body.previous == null) ? true : false;
+  //       console.log(this.currentPage);
+  //       if (this.currentPage === 1) {
+  //         this.list = data.body.results;
+  //         //Default, display first item
+  //         //this.selectItem(this.list[0]);
+  //       } else {
+  //         this.list = this.list.concat(data.body.results);
+  //       }
+
+  //       //this.itemsRetrieved = this.list.length;
+  //       this.itemsTotal = data.body.count;
+  //     },
+  //     error => {
+
+  //     }
+
+  //   );
+  // }
 
   //
   selectItem(item) {

@@ -59,6 +59,11 @@
                   "Text": "Teams",
                   "Url": "/superheroes/teams",
                   "Claim": "Nav_Teams"
+                },
+                {
+                  "Text": "Infinite Scroll",
+                  "Url": "/infinite-scroll",
+                  "Claim": "Nav_List"
                 }
 
               ]
@@ -82,11 +87,6 @@
                 {
                   "Text": "List",
                   "Url": "/list",
-                  "Claim": "Nav_List"
-                },
-                {
-                  "Text": "Infinite Scroll",
-                  "Url": "/infinite-scroll",
                   "Claim": "Nav_List"
                 }
               ]

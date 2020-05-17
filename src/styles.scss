@@ -594,8 +594,12 @@ mat-footer-row mat-footer-cell {
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  position: fixed;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: sticky;
   width: 100%;
+  top: 65px;
   z-index: 2;
   height: 50px;
   background: rgba(255, 255, 255, 0.9);
