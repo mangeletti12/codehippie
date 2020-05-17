@@ -258,10 +258,38 @@ header {
   color: white;
 }
 
+.pane-normal {
+  position: relative;
+  margin: 6px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 4px;
+}
+.dark-theme .pane-normal { background: #424242; }
+
+.pane-full {
+  position: relative;
+  height: 100%;
+  margin: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.lineItemKey { background-color: #fff; }
+.dark-theme .lineItemKey { background: #424242; }
+
+.my-shadow {
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
 .dark-theme a { color: #FFBF00; }
 
 .dark-theme .backing-color {
   background-color: #212121 !important;
+}
+.dark-theme .line-large {
+  background-color: #545454 !important;
 }
 
 .global-button {
@@ -585,7 +613,7 @@ mat-footer-row mat-footer-cell {
 .dContent {
   padding: 25px;
   margin: 5px;
-  background-color: rgba(0, 0, 0, 0.05);
+  // background-color: rgba(0, 0, 0, 0.05);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;

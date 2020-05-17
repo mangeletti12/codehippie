@@ -11,7 +11,7 @@
   // top: 50px;
   height: calc(100vh - 65px);
   width: 275px;
-  background: rgba(0, 0, 0, 0.085);
+  // background: rgba(0, 0, 0, 0.085);
 }
 
 .list-header {
@@ -35,7 +35,7 @@
 
 .list-item-details {
   flex-grow: 1;
-  background: rgba(0, 0, 0, 0.085);
+  // background: rgba(0, 0, 0, 0.085);
   height: calc(100vh - 65px);
   overflow: auto;
   overflow-x: hidden;

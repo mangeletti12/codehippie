@@ -1,13 +1,15 @@
 .board {
   height: calc(100% - 65px);
+  display: flex;
+  justify-content: center;
 }
 
 .list-wrapper {
   display: flex;
   flex-direction:column;
-  width: 32%;
+  width: 31%;
   float: left;
-  margin: 5px 0 5px 10px;
+  margin: 5px;
   background: rgba(0, 0, 0, 0.085);
   padding-right: 2px;
   border-radius: 4px;
@@ -80,6 +82,41 @@
   margin-right: -2px;
 }
 
+.board #light-side mat-card {
+  background-color: rgba(6, 165, 6, 0.5);
+
+  -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
+  -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */
+  -o-animation:      FADEOUT 2s ease-out; /* Opera 12+ */
+  animation:         FADEOUT 2s ease-out; /* IE 10+, Fx 29+ */
+}
+.board #dark-side mat-card {
+  background-color: rgba(165, 6, 6, 0.5);
+
+  -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
+  -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */
+  -o-animation:      FADEOUT 2s ease-out; /* Opera 12+ */
+  animation:         FADEOUT 2s ease-out; /* IE 10+, Fx 29+ */
+}
+
+
+/* ANIMATIONS */
+@-webkit-keyframes FADEOUT {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes FADEOUT {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes FADEOUT{
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes FADEOUT {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* CDK Drag */
 .cdk-drag-preview {

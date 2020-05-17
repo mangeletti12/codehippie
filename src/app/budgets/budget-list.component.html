@@ -3,8 +3,8 @@
 
     <!-- toolbar -->
     <div class="comp-header">
-      <button mat-button [matMenuTriggerFor]="menu" >
-        <mat-icon title="Columns">view_list</mat-icon>
+      <button mat-button [matMenuTriggerFor]="menu" matTooltip="Columns">
+        <mat-icon >view_list</mat-icon> Select Columns
       </button>
 
       <mat-menu #menu="matMenu">
@@ -26,7 +26,7 @@
       <table class="mat-table" matSort (matSortChange)="sortData($event)" role="grid">
           <thead>
             <tr >
-              <th class="sticky-head col_{{i}}" mat-sort-header="{{header}}" *ngFor="let header of displayedColumnsShort; let i = index;" @tableCells>
+              <th class="sticky-head line-large col_{{i}}" mat-sort-header="{{header}}" *ngFor="let header of displayedColumnsShort; let i = index;" @tableCells>
 
                 {{ header }}
 

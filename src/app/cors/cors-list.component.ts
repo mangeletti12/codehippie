@@ -103,6 +103,7 @@ export class CorsListComponent implements OnInit {
 
   //Get Season Matches
   getChangeOrders() {
+    if (this.itemsRetrieved === 50) { return false; }
 
     this.corService.getChangeOrders(this.currentPage).subscribe(
       data => {

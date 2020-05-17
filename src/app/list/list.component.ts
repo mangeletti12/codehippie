@@ -52,8 +52,10 @@ export class ListComponent implements OnInit {
 
   }
 
-  //Drop event
+  // Drop event
   onDrop(event: CdkDragDrop<string[]>) {
+    console.log('onDrop', event);
+
     //
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data,
@@ -66,7 +68,7 @@ export class ListComponent implements OnInit {
     }
   }
 
-  //Select a care
+  // Select a care
   selectCard(item) {
     console.log(item);
     item.isSelected = !item.isSelected;
@@ -77,11 +79,7 @@ export class ListComponent implements OnInit {
     var selected = this.list1.filter(i => i.isSelected);
     console.log(selected);
 
-
-
   }
-
-
 
 
 }
