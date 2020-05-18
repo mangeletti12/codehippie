@@ -45,21 +45,24 @@
   <!-- details -->
   <div class="list-item-details" [@hideShowDetails]="hideShowItemsState">
     <ng-container *ngIf="selectedItem">
+      <!-- <button mat-stroked-button (click)="toggle()">Back</button> -->
+      <button mat-mini-fab color="primary" aria-label="Back" (click)="toggle()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      &nbsp;
       <span class="titleLarge">{{ selectedItem.name }}</span>
-      <button mat-stroked-button (click)="toggle()">Back</button>
 
-      <div class='fParent'>
+      <div class="fParent">
         <div class="datailsProfilePic">
-          <img src="../../assets/images/profile.png">
+          <div class="hero-img" [style.background-image]="'url(' + selectedItem.thumbnail.path + '.' + selectedItem.thumbnail.extension + ')'" ></div>
         </div>
 
         <div class="detailsHolder">
-          <div><label>Birth Year:</label> {{ selectedItem.birth_year }}</div>
-          <div><label>Eye Color:</label> {{ selectedItem.eye_color }}</div>
-          <div><label>Gender:</label> {{ selectedItem.gender }}</div>
-          <div><label>Hair Color:</label> {{ selectedItem.hair_color }}</div>
-          <div><label>Height:</label> {{ selectedItem.height }}</div>
-          <div><label>Weight:</label> {{ selectedItem.mass }}</div>
+          <ul class="hero-comics">
+            <li *ngFor="let comic of selectedItem.comics.items" >
+              {{ comic.name }}
+            </li>
+          </ul>
         </div>
       </div>
     </ng-container>

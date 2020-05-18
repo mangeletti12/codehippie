@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 // import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 // import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { DialogService } from '../mat-confirm-dialog/mat-confirm-dialog.service';
-import { IScrollService } from './iscroll.service';
+// import { IScrollService } from './iscroll.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 // animation
 import { transition, animate, trigger, state, style } from '@angular/animations';
@@ -72,13 +72,9 @@ export class IScrollComponent implements OnInit {
   //The component needs this information to calculate when an item should be rendered or removed.
   @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
 
-  batch = 20;
-  theEnd = false;
+  // batch = 20;
+  // theEnd = false;
 
-  //infinite: Observable<any[]>;
-  //
-  currentPage: number = 1;
-  //itemsRetrieved: number = 0;
   itemsTotal: number = 0;
   lastRenderedRange: number = 0;
   //
@@ -87,7 +83,7 @@ export class IScrollComponent implements OnInit {
   infiniteScrollThrottle = 300;
   infiniteScrollDistance = 1;
   infiniteScrollUpDistance = 2;
-  direction = '';
+
   // Heroes
   heroes: any;
   sortField = 'name';
@@ -99,7 +95,6 @@ export class IScrollComponent implements OnInit {
   searchKey: string;
 
   constructor(
-    // private iScrollService: IScrollService,
     private dialogService: DialogService,
     private superheroesService: SuperheroesService,
   ) {
@@ -107,7 +102,6 @@ export class IScrollComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //
     // this.getSWAPI();
     this.getAllHeroes();
   }
@@ -115,8 +109,6 @@ export class IScrollComponent implements OnInit {
   onScrollDown(e) {
     console.log('scrolled down!!', e);
 
-    this.direction = 'down';
-    this.currentPage++;
     this.pageNumber++;
     // this.getSWAPI();
     this.getAllHeroes();
@@ -124,8 +116,6 @@ export class IScrollComponent implements OnInit {
 
   onUp(e) {
     console.log('scrolled up!', e);
-
-    this.direction = 'up';
   }
 
   getAllHeroes() {
@@ -146,14 +136,13 @@ export class IScrollComponent implements OnInit {
     this.superheroesService.getAllHeroes(searchCriteria).subscribe(
       data => {
         // this.heroes = data.body.data.results;
-      if (this.currentPage === 1) {
+      if (this.pageNumber === 0) {
         this.heroes = data.body.data.results;
 
       } else {
         this.heroes = this.heroes.concat(data.body.data.results);
       }
-        console.log('heroes', this.heroes);
-
+        // console.log('heroes', this.heroes);
         this.totalRows = data.body.data.total;
       },
       error => {
@@ -192,22 +181,22 @@ export class IScrollComponent implements OnInit {
 
   //
   selectItem(item) {
-    console.log(item);
+    // console.log('selectItem', item);
     // Mark all non-selecetd, before mark the new selected
-    this.list.forEach(i => { i.selected = false; });
-
+    this.heroes.forEach(i => { i.selected = false; });
     item.selected = !item.selected;
     this.selectedItem = item;
   }
 
   details(id, item, e) {
-    //e.stopPropagation();
-    this.hideShowItemsState = (this.hideShowItemsState === 'showItems') ? 'hideItems' : 'showItems';
+    e.stopPropagation();
+    console.log('details', item);
+    // Mark all non-selecetd, before mark the new selected
+    this.heroes.forEach(i => { i.selected = false; });
+    item.selected = !item.selected;
     this.selectedItem = item;
-    // this.list.forEach(i => { i.showItemDetails = 'hide'; });
 
-    // this.list[id].showItemDetails = (this.list[id].showItemDetails === 'hide' || this.list[id].showItemDetails === undefined) ? 'show' : 'hide';
-
+    this.hideShowItemsState = (this.hideShowItemsState === 'showItems') ? 'hideItems' : 'showItems';
   }
 
   toggle() {
@@ -219,21 +208,23 @@ export class IScrollComponent implements OnInit {
     e.stopPropagation();
 
     //call confirm box now
-    this.dialogService.openConfirmDialog('Sure you want to delete this item?')
-      .afterClosed().subscribe(
-        data => {
-          //console.log(data); //true or false
-          //if yes/true
-          if (data) {
-            if (!this.list.length) { return; }
-            //remove item from array
-            this.list.splice(index, 1);
-          }
+    const dialogRef = this.dialogService.openConfirmDialog('Sure you want to delete this item?');
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        console.log(`Dialog result: ${data}`);
+        // if yes/true
+        if (data) {
+          if (!this.heroes.length) { return; }
+          // remove item from array
+          this.heroes.splice(index, 1);
         }
-      );
+        dialogRef.close();
+      }
+    );
+
+
   }
-
-
 
 
 }

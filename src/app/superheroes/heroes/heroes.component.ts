@@ -10,7 +10,7 @@ import { AddToTeamComponent } from '../teams/add-to-team.component';
 import { AlertService } from 'src/app/alert/alert.service';
 
 //animation
-import { transition, animate, trigger, state, style, query, animation, stagger, sequence } from '@angular/animations';
+import { transition, animate, trigger, style } from '@angular/animations';
 
 
 @Component({
@@ -77,7 +77,7 @@ export class HeroesComponent implements OnInit {
 
     // Get and set the teams, no DB!
     const memTeams = this.superheroesService.getAllTeams();
-    console.log('memTeams', memTeams);
+    // console.log('memTeams', memTeams);
     if (memTeams.length === 0) {
       // Get teams from API
       this.superheroesService.getTeams().subscribe(

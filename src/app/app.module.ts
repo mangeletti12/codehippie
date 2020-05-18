@@ -42,7 +42,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './security/auth.service';
 import { HasClaimDirective } from './security/has-claim.directive';
 // Layouts, alerts, error handling, and home
-import { PublicComponent } from './layouts/public.component';
+
 import { SecureComponent } from './layouts/secure.component';
 import { AlertComponent } from './alert/alert.component';
 import { ShowErrorsComponent } from './validation/show-errors.componet';
@@ -98,7 +98,6 @@ import { ResumeComponent } from './resume/resume.component';
     AppComponent,
     AlertComponent,
     ShowErrorsComponent,
-    PublicComponent,
     SecureComponent,
     NavComponent,
     HeaderComponent,

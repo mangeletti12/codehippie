@@ -110,7 +110,18 @@ export class SuperheroesService {
       .pipe(
         catchError(this.handleError('getHero', []))
       );
+  }
 
+  getDetails(resourceURI) {
+    // http://gateway.marvel.com/v1/public/characters/1010699
+    const timeStamp = this.getTimeStamp();
+    const hash = this.getHash(timeStamp);
+    const url = resourceURI + "?&ts=" + timeStamp + "&apikey=" + this._publicKey + "&hash=" + hash;
+
+    return this.http.get<any>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('getDetails', []))
+      );
   }
 
   // TEAMS
