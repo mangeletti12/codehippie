@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
 //All materials in module
 import { MaterialModule } from "./material/material.module";
-import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { ModalComponent } from './modal/modal.component';
 
 //https://material.angular.io/cdk/drag-drop/overview
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -116,7 +116,7 @@ import { ResumeComponent } from './resume/resume.component';
     IScrollComponent,
     SettingsComponent,
     FileNotFoundComponent,
-    MatConfirmDialogComponent,
+    ModalComponent,
     FlexComponent,
     BreadcrumbComponent,
     ProfileComponent,
@@ -167,6 +167,6 @@ import { ResumeComponent } from './resume/resume.component';
     Claims,
   ],
   bootstrap: [AppComponent],
-  entryComponents:[MatConfirmDialogComponent]
+  entryComponents:[ModalComponent]
 })
 export class AppModule { }

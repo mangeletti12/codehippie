@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-// import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-// import { CollectionViewer, DataSource } from '@angular/cdk/collections';
-import { DialogService } from '../mat-confirm-dialog/mat-confirm-dialog.service';
-// import { IScrollService } from './iscroll.service';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 // animation
 import { transition, animate, trigger, state, style } from '@angular/animations';
 import { SuperheroesService } from '../superheroes/superheroes.service';
+// modal
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -95,8 +94,8 @@ export class IScrollComponent implements OnInit {
   searchKey: string;
 
   constructor(
-    private dialogService: DialogService,
     private superheroesService: SuperheroesService,
+    public matDialog: MatDialog,
   ) {
 
   }
@@ -207,10 +206,22 @@ export class IScrollComponent implements OnInit {
   remove(index, e) {
     e.stopPropagation();
 
-    //call confirm box now
-    const dialogRef = this.dialogService.openConfirmDialog('Sure you want to delete this item?');
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.height = "200px";
+    dialogConfig.width = "400px";
+    dialogConfig.data = {
+      type: "confirm",
+      title: "Remove",
+      message: 'Are you sure you want to remove this item?'
+    }
+    // // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(
+    modalDialog.afterClosed().subscribe(
       data => {
         console.log(`Dialog result: ${data}`);
         // if yes/true
@@ -219,7 +230,7 @@ export class IScrollComponent implements OnInit {
           // remove item from array
           this.heroes.splice(index, 1);
         }
-        dialogRef.close();
+        modalDialog.close();
       }
     );
 

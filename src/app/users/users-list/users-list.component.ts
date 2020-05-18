@@ -8,7 +8,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UsersService } from '../users.service';
 import { UserComponent } from '../user/user.component';
 
-import { DialogService } from '../../mat-confirm-dialog/mat-confirm-dialog.service';
+import { DialogService } from '../../modal/modal.service';
 // import { Router } from '@angular/router';
 
 //https://blog.angular-university.io/angular-material-data-table/
@@ -167,12 +167,12 @@ export class UsersListComponent implements OnInit {
 
     console.log(row);
     //call confirm box now
-    this.dialogService.openConfirmDialog('Are you sure you want to delete ' + row.name + '?')
-    .afterClosed().subscribe(
-      data => {
-        console.log(data);
-      }
-    );
+    // this.dialogService.openConfirmDialog('Are you sure you want to delete ' + row.name + '?')
+    // .afterClosed().subscribe(
+    //   data => {
+    //     console.log(data);
+    //   }
+    // );
 
 
   }
