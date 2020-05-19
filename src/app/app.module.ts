@@ -91,6 +91,7 @@ import { PieChartComponent } from './charts/pie-chart.component';
 import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
 import { ResumeComponent } from './resume/resume.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 @NgModule({
@@ -130,7 +131,7 @@ import { ResumeComponent } from './resume/resume.component';
     AboutComponent,
     TrailsComponent,
     ResumeComponent,
-
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

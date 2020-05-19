@@ -1,91 +1,77 @@
-<div id="meta">
-    <div style="float: left">
-<!--
-        <div class="loadingSpinner">
-            <spinner name="mySpinner"></spinner>
-        </div>
--->
-        <span class="metaSearchText">{{moviesRetrieved}} of {{moviesTotal}} </span>
+<ng-container *ngIf="movies">
 
-        <select name="primary_release_year" [(ngModel)]="primary_release_year" style="width: 150px;" (change)="filterByYear()">
-            <option value="0">None</option>
-            <option *ngFor="let year of filterableYears" [value]="year">{{year}}</option>
-        </select>
-<!--
-        <select name="genres" [(ngModel)]="genre_id" style="width: 150px;" (change)="filterByGenre()">
-            <option value="null">Filter by genres...</option>
-            <option *ngFor="let genre of genres" [value]="genre.id">{{genre.name}}</option>
-        </select>
--->
-    </div>
+  <div class="comp-header">
+    <span>Total: {{ moviesRetrieved }} of {{ moviesTotal }}</span>
+    &nbsp;
+    <mat-form-field>
+      <!-- <mat-label>Year</mat-label> -->
+      <mat-select [(value)]="selectedYear" (selectionChange)="selectYear($event)">
+        <mat-option [value]="option" *ngFor="let option of filterableYears">{{ option }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
 
-<!--
-    <div class="auto-complete-container">
-        <input type="text" autocomplete="off" [(ngModel)]="filterKeyword" (keyup)="filterByKeyword()"  placeholder="Filter by keywords...">
+  <div
+    class="flex-parent"
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollUpDistance]="1.5"
+    [infiniteScrollThrottle]="300"
+    (scrolled)="onScrollDown($event)"
+    (scrolledUp)="onUp($event)"
+    [@hideShowItems]="hideShowItemsState"
 
-        <div class="auto-complete-scroller">
-            <ul class="auto-complete-list" *ngIf="keywordSearchList != undefined" >
-                <li *ngFor="let item of keywordSearchList" ><a (click)="selectedKeyword(item)" > {{item.name}}</a></li>
-            </ul>
-        </div>
-    </div>
--->
+  >
+    <mat-card
+      *ngFor="let movie of movies.results; let i = index; let last = last"
+      class="iScrollItem"
+      [class.selectedCard]="movie.selected"
+      (click)="selectItem(movie)"
+      @items
+    >
+      <!-- [@scaleFull]="list[i].showItemDetails" -->
+      <!-- <mat-card-header>
+        <mat-card-title>
+          <h3 class="card-title">{{ movie.name }}</h3>
+          <span class="iNumber">{{ i + 1 }}</span>
+        </mat-card-title>
+      </mat-card-header> -->
 
-<!--
-    <div class="keywordHolder" *ngIf="keywordsArray.length > 0">
-        <ul>
-            <li *ngFor="let item of keywordsArray">
-                <span>{{item.name}}</span><span class="deleteKeyword"><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="clearKeyword(item.id)" ></span></span>
-            </li>
-        </ul>
-    </div>
--->
+      <mat-card-content>
 
+        <div class="cards-flex-parent">
 
-</div>
-
-<div class="search-results">
-
-    <ul class="comicsHolder" *ngIf="movies">
-
-
-        <li *ngFor="let movie of movies.results" class="selected-{{movie.checked}}">
-
+          <div>
             <div *ngIf="movie.poster_path != null; then truthyTemplate else falsyTemplate"></div>
 
             <ng-template #truthyTemplate >
-                <img class="comicThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}">
+              <img class="imgThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}">
             </ng-template>
 
             <ng-template #falsyTemplate>
-                <img class="comicThumbnail" src="assets/images/no-image.jpg">
+              <img class="imgThumbnail" src="assets/images/no-image.jpg">
             </ng-template>
+          </div>
 
-            <div class="cardDetails">
-                <a class="cardTitle" >{{movie.title}}</a>
-                <p class="meta">
-                    <span class="release_date">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        {{movie.release_date | date:"yyyy"}}
-                    </span>
-                    <br>
-                    <span class="vote" title="Votes: {{movie.vote_count}}">
-                        <span class="glyphicon glyphicon-star"></span>
-                        {{movie.vote_average}}
-                    </span>
-                    <br>
-                    <span class="genres">
-                        <span class="glyphicon glyphicon-tag"></span>
-                        {{movie.genre_ids}}
-                    </span>
-                </p>
+          <div class="movie-details">
+            <h6 class="cardTitle" >{{ movie.title }}</h6>
+            <div class="meta fParent">
+              <i class="material-icons">calendar_today</i>
+              <span>{{ movie.release_date | date:"yyyy" }}</span>
 
-                <p class="overview">{{movie.overview}}</p>
-
+              <i class="material-icons">star_border</i>
+              <span>{{ movie.vote_average }}</span>
             </div>
-        </li>
+            <div class="overview ">{{ movie.overview | truncate:500 }}</div>
+          </div>
 
+        </div>
 
-    </ul>
-
-</div>
+      </mat-card-content>
+<!--
+      <mat-card-actions>
+        <button mat-icon-button matTooltip="details" (click)="details(i, item, $event)"><i class="far fa-address-card"></i></button>
+        <button mat-icon-button matTooltip="delete" (click)="remove(i, $event)"><i class="far fa-trash-alt"></i></button>
+      </mat-card-actions> -->
+    </mat-card>
+  </div>

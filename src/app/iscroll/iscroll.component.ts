@@ -61,8 +61,6 @@ import { Overlay } from '@angular/cdk/overlay';
       ]),
 
     ]),
-
-
   ]
 })
 export class IScrollComponent implements OnInit {
@@ -72,7 +70,9 @@ export class IScrollComponent implements OnInit {
   //The cdk-virtual-scroll-viewport must have a height and the items it loops over should also have a fixed height.
   //The component needs this information to calculate when an item should be rendered or removed.
   @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
-
+  infiniteScrollThrottle = 300;
+  infiniteScrollDistance = 1;
+  infiniteScrollUpDistance = 2;
   // batch = 20;
   // theEnd = false;
 
@@ -80,11 +80,6 @@ export class IScrollComponent implements OnInit {
   lastRenderedRange: number = 0;
   //
   selectedItem: any;
-  //
-  infiniteScrollThrottle = 300;
-  infiniteScrollDistance = 1;
-  infiniteScrollUpDistance = 2;
-
   // Heroes
   heroes: any;
   sortField = 'name';

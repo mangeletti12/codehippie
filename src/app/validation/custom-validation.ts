@@ -1,7 +1,7 @@
 import { FormArray, FormControl, FormGroup, ValidationErrors, Validator  } from '@angular/forms';
 
 
-//https://www.toptal.com/angular-js/angular-4-forms-validation
+// https://www.toptal.com/angular-js/angular-4-forms-validation
 export class CustomValidators {
 
   //NO SPACE
