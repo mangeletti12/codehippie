@@ -191,7 +191,7 @@ export class MoviesComponent implements OnInit {
   }
 
   onScrollDown(e) {
-    // console.log('scrolled down!!', e);
+    console.log('scrolled down!!', e);
 
     this.pageNumber++;
     // this.getSWAPI();

@@ -1,6 +1,8 @@
 .cardTitle { font-weight: bold; }
 .movie-details { padding: 5px; }
 .meta { margin-bottom: 7px; }
+.left-header { flex-grow: 1; padding-left: 10px; }
+.right-header { padding-right: 10px; }
 
 .flex-parent {
 	display: -webkit-flex;
@@ -13,9 +15,7 @@
   position: relative;
 }
 
-.iScrollViewport {
-  flex-grow: 1;
-}
+.iScrollViewport { flex-grow: 1; }
 
 .iScrollItem {
   margin: 5px;
@@ -30,9 +30,7 @@
   border-radius: 4px 0 0 4px;
 }
 
-.iScrollItem.mat-card {
-  padding: 0 !important;
-}
+.iScrollItem.mat-card { padding: 0 !important; }
 
 .list-item-details {
   position: fixed;
@@ -42,14 +40,17 @@
 
 .titleLarge { font-weight: 700; margin-right: 15px; font-size: 20px; }
 .detailsHolder { padding: 15px; }
-.overview { line-height: 14px; }
+.overview {
+  line-height: 16px;
+  padding: 5px;
+}
 
 // mat-card { border: 2px solid transparent; cursor: pointer; }
 // mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
 
-.mat-card > .mat-card-actions { position: absolute; bottom: 0; margin: 0; }
-.mat-card > .mat-card-actions button { font-size: 16px; margin-right: 10px; }
-.mat-card > .mat-card-actions button .mat-icon { font-size: 16px; }
+// .mat-card > .mat-card-actions { position: absolute; bottom: 0; margin: 0; }
+// .mat-card > .mat-card-actions button { font-size: 16px; margin-right: 10px; }
+// .mat-card > .mat-card-actions button .mat-icon { font-size: 16px; }
 
 .fParent {
   display: flex;

@@ -1,0 +1,87 @@
+<div class="comp-search-bar" #advSearchHolder>
+
+  <form [formGroup]="form" (ngSubmit)="searchSubmit()" class="searchHolder" #myForm="ngForm">
+
+    <!-- search bar start -->
+    <div class="searchBar" [ngClass]="{'shadow whiteBg': searchHasfocus == true}">
+
+      <button type="button" class="mainSearchBtn leftSide" aria-label="Search" role="button">
+        <label for="search">
+          <i class="pi pi-search" aria-hidden="true"></i>
+        </label>
+      </button>
+
+      <div class="gb_of">
+        <input type="text" class="mainSearch" aria-label="Search" autocomplete="off" placeholder="Search" value="" id="search" formControlName="textSearch" dir="ltr" spellcheck="false" aria-haspopup="true" (focus)="focusSearch()" (focusout)="focusOutSearch()" (input)="onSearchChange($event.target.value)">
+      </div>
+
+      <div class="searchGear" *ngIf="searching">
+        <i class="pi pi-cog pi-spin" aria-hidden="true" ></i>
+      </div>
+
+      <button type="button" style="color:#990000;" class="mainSearchBtn rightSideX" aria-label="Clear Search" role="button" (click)="xFilter()" [style.visibility]="hasSearchOptions && searching == false ? 'visible' : 'hidden'">
+        <i class="pi pi-times" aria-hidden="true"></i>
+      </button>
+
+      <button type="button" class="mainSearchBtn rightSide" aria-label="Advanced search options" role="button" (click)="hideSearch = !hideSearch">
+        <i class="pi pi-chevron-down" aria-hidden="true" [style.visibility]="hideSearch ? 'visible' : 'hidden'"></i>
+      </button>
+
+    </div>
+    <!-- search bar end -->
+
+
+    <div id="advSearch" class="shadow" [hidden]="hideSearch">
+
+      <div class="advSearchWrap">
+        <span class="advSearchLabelWrap">
+          <label for="startDateSearch">From</label>
+        </span>
+        <span class="advSearchInputWrap">
+          <input type="date" class="advSearchInput" id="startDateSearch" formControlName="startDateSearch" >
+          <!-- <p-calendar showButtonBar="true" [showIcon]="true" name="startDateSearch" formControlName="startDateSearch" ></p-calendar> -->
+
+        </span>
+      </div>
+
+      <div class="advSearchWrap">
+        <span class="advSearchLabelWrap">
+          <label for="endDateSearch">To</label>
+        </span>
+        <span class="advSearchInputWrap">
+          <input type="date" class="advSearchInput" id="endDateSearch" formControlName="endDateSearch" >
+
+        </span>
+      </div>
+
+      <div class="advSearchWrap">
+        <span class="advSearchLabelWrap">
+            <label for="textSearch">Search Text</label>
+        </span>
+        <span class="advSearchInputWrap">
+            <input type="text" class="advSearchInput" id="textSearch" formControlName="textSearch" (input)="onSearchChange($event.target.value)">
+        </span>
+      </div>
+
+      <div class="advSearchWrap">
+        <span class="advSearchLabelWrap">
+          <label for="showInactive">Show Inactive</label>
+        </span>
+        <span class="advSearchInputWrap">
+          <input type="checkbox" id="showInactive" formControlName="showInactive" >
+        </span>
+      </div>
+
+      <div class="searchBtns">
+        <button pButton type="button" class="ui-button-secondary" label="Clear" (click)="clearFilterForm()" ></button> &nbsp;
+        <button pButton type="submit" class="ui-button-success" label="Search" ></button> &nbsp;
+        <button pButton type="button" class="ui-button-warning" label="Cancel" (click)="hideSearch = !hideSearch" ></button>
+      </div>
+
+    </div>
+
+  </form>
+
+  <!-- <span class="search-results">{{ searchItemsRetrieved }}/{{ searchItemsTotal }}</span> -->
+
+</div>

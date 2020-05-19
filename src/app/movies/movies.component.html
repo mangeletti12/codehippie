@@ -1,14 +1,17 @@
 <ng-container *ngIf="movies">
 
   <div class="comp-header">
-    <span>Total: {{ moviesRetrieved }} of {{ moviesTotal }}</span>
-    &nbsp;
-    <mat-form-field>
-      <!-- <mat-label>Year</mat-label> -->
-      <mat-select [(value)]="selectedYear" (selectionChange)="selectYear($event)">
-        <mat-option [value]="option" *ngFor="let option of filterableYears">{{ option }}</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="left-header">
+      <mat-form-field>
+        <!-- <mat-label>Year</mat-label> -->
+        <mat-select [(value)]="selectedYear" (selectionChange)="selectYear($event)">
+          <mat-option [value]="option" *ngFor="let option of filterableYears">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="right-header">
+      <span>Total: {{ moviesRetrieved }} of {{ moviesTotal }}</span>
+    </div>
   </div>
 
   <div
@@ -58,11 +61,11 @@
             <div class="meta fParent">
               <i class="material-icons">calendar_today</i>
               <span>{{ movie.release_date | date:"yyyy" }}</span>
-
+              &nbsp;
               <i class="material-icons">star_border</i>
               <span>{{ movie.vote_average }}</span>
             </div>
-            <div class="overview ">{{ movie.overview | truncate:500 }}</div>
+            <div class="overview ">{{ movie.overview | truncate:400 }}</div>
           </div>
 
         </div>
