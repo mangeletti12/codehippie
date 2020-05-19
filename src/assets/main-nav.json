@@ -61,7 +61,7 @@
                   "Claim": "Nav_Teams"
                 },
                 {
-                  "Text": "Infinite Scroll",
+                  "Text": "Cards",
                   "Url": "/infinite-scroll",
                   "Claim": "Nav_List"
                 }

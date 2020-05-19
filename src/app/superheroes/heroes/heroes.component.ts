@@ -9,6 +9,7 @@ import { AlertService } from 'src/app/alert/alert.service';
 // modal
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../../modal/modal.component';
+import { Overlay } from '@angular/cdk/overlay';
 //animation
 import { transition, animate, trigger, style } from '@angular/animations';
 
@@ -71,8 +72,8 @@ export class HeroesComponent implements OnInit {
     private alertService: AlertService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dialog: MatDialog,
     public matDialog: MatDialog,
+    public overlay: Overlay,
   ) {
 
     // Get and set the teams, no DB!
@@ -209,44 +210,28 @@ export class HeroesComponent implements OnInit {
   onDelete(row, e) {
     e.stopPropagation();
 
-    // console.log(row);
-    //call confirm box now
-    //this.dialogService.openConfirmDialog('Are you sure you want to delete ' + row.name + '?')
-    // .afterClosed().subscribe(
-    //   data => {
-    //     // Set for deletion
-    //     if (data) {
-    //       // faking out since no DB.
-    //       const index = this.dataSource.data.findIndex(obj => obj.id === row.id);
-    //       this.dataSource.data.splice(index, 1);
-    //       this.dataSource = new MatTableDataSource(this.dataSource.data);
-    //     }
-
-    //   }
-    // );
-
-
     const dialogConfig = new MatDialogConfig();
     // The user can't close the dialog by clicking outside its body
     dialogConfig.disableClose = true;
     dialogConfig.id = "modal-component";
     dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
     dialogConfig.height = "200px";
     dialogConfig.width = "400px";
     dialogConfig.data = {
       type: "confirm",
       title: "Remove",
-      message: 'Are you sure you want to remove this item?'
+      message: `Are you sure you want to remove ${row.name}?`
     }
     // // https://material.angular.io/components/dialog/overview
     const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
 
     modalDialog.afterClosed().subscribe(
       data => {
-        console.log(`Dialog result: ${data}`);
+        // console.log(`Dialog result: ${data}`);
         // if yes/true
         if (data) {
-    //       // faking out since no DB.
+          // faking out since no DB.
           const index = this.dataSource.data.findIndex(obj => obj.id === row.id);
           this.dataSource.data.splice(index, 1);
           this.dataSource = new MatTableDataSource(this.dataSource.data);
@@ -278,11 +263,12 @@ export class HeroesComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
     dialogConfig.width = '40%';
     dialogConfig.data = {
       heroes: addToTeamHeroes
     }
-    const dialogRef = this.dialog.open(AddToTeamComponent, dialogConfig);
+    const dialogRef = this.matDialog.open(AddToTeamComponent, dialogConfig);
     //
     dialogRef.afterClosed().subscribe(result => {
 

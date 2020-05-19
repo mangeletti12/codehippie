@@ -6,6 +6,8 @@ import { SuperheroesService } from '../superheroes/superheroes.service';
 // modal
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+import { Overlay } from '@angular/cdk/overlay';
+
 
 
 @Component({
@@ -96,6 +98,7 @@ export class IScrollComponent implements OnInit {
   constructor(
     private superheroesService: SuperheroesService,
     public matDialog: MatDialog,
+    public overlay: Overlay,
   ) {
 
   }
@@ -211,6 +214,7 @@ export class IScrollComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.id = "modal-component";
     dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
     dialogConfig.height = "200px";
     dialogConfig.width = "400px";
     dialogConfig.data = {
@@ -223,7 +227,7 @@ export class IScrollComponent implements OnInit {
 
     modalDialog.afterClosed().subscribe(
       data => {
-        console.log(`Dialog result: ${data}`);
+        // console.log(`Dialog result: ${data}`);
         // if yes/true
         if (data) {
           if (!this.heroes.length) { return; }
