@@ -22,7 +22,12 @@ body {
   text-align: left;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  background-image: url('assets/images/backing1.svg');
+}
 
+body.dark-theme {
+  // background-image: url('assets/images/backing2.svg');
+  background-image: none;
 }
 
 /* Main layout */
