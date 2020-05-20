@@ -9,6 +9,9 @@
         </mat-select>
       </mat-form-field>
     </div>
+    <div class="mid-header">
+      <app-search-bar (searchBarEvent)="searchBarEventHander($event)" searchStatus="{{ searchStatus }}"></app-search-bar>
+    </div>
     <div class="right-header">
       <span>Total: {{ moviesRetrieved }} of {{ moviesTotal }}</span>
     </div>
@@ -26,7 +29,7 @@
 
   >
     <mat-card
-      *ngFor="let movie of movies.results; let i = index; let last = last"
+      *ngFor="let movie of movies; let i = index; let last = last"
       class="iScrollItem"
       [class.selectedCard]="movie.selected"
       (click)="selectItem(movie)"

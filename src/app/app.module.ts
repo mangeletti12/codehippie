@@ -91,8 +91,9 @@ import { PieChartComponent } from './charts/pie-chart.component';
 import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
 import { ResumeComponent } from './resume/resume.component';
+import { SearchBarComponent } from './globals/search-bar/search-bar.component';
+// pipes
 import { TruncatePipe } from './pipes/truncate.pipe';
-
 
 @NgModule({
   declarations: [
@@ -131,6 +132,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     AboutComponent,
     TrailsComponent,
     ResumeComponent,
+    SearchBarComponent,
     TruncatePipe,
   ],
   imports: [

@@ -73,7 +73,7 @@ export class MoviesComponent implements OnInit {
   // cardsCurrentPage: number = 1;
   moviesRetrieved: number = 0;
   moviesTotal: number = 0;
-
+  //
   filterKeyword: string = '';
   keywordSearchList: any;
 
@@ -82,18 +82,19 @@ export class MoviesComponent implements OnInit {
   movies: any;
   sortField = 'name';
   sortOrder = 'asc';
-  pageNumber = 0;
+  pageNumber = 1; // movies API starts at 1
   pageSize = 25;
   totalRows = 0;
   bulkCheckbox = false;
-  searchKey: string;
+  search: any;
+  searchStatus = false;
 
-   // Return today's date and time
-   currentTime = new Date();
-   // returns the year (four digits)
-   filterableYears: any[] = [];
-   primary_release_year: number = this.currentTime.getFullYear();
-   selectedYear: number =  this.primary_release_year;
+  // Return today's date and time
+  currentTime = new Date();
+  // returns the year (four digits)
+  filterableYears: any[] = [];
+  primary_release_year: number = this.currentTime.getFullYear();
+  selectedYear: number =  this.primary_release_year;
 
   constructor(
     private moviesService: MoviesService,
@@ -102,14 +103,33 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.GetYears();
-    this.GetMovies();
+    this.getYears();
+    this.getMovies();
     //this.filterByKeyword();
   }
 
-  GetMoviesMeta() {
+  // Search listener
+  searchBarEventHander(e) {
+    // console.log('-- SEARCH', e);
+    this.search = e;
+    this.pageNumber = 1;
+    this.getMovies();
+  }
 
-    this.moviesService.GetGenres()
+  onScrollDown(e) {
+    // console.log('scrolled down!!', e);
+
+    this.pageNumber++;
+    this.getMovies();
+  }
+
+  onUp(e) {
+    // console.log('scrolled up!', e);
+  }
+
+  getMoviesMeta() {
+
+    this.moviesService.getGenres()
       .subscribe(
       data => {
         //console.log(data);
@@ -123,7 +143,7 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  GetYears() {
+  getYears() {
     var years = [];
     for(var i = this.primary_release_year; years.length <= 100; i--) {
         years.push(i);
@@ -132,25 +152,38 @@ export class MoviesComponent implements OnInit {
     // console.log('GetYears', this.filterableYears);
   }
 
-  GetMovies() {
+  getMovies() {
 
     const filters = {
-      year: this.selectedYear
+      year: this.selectedYear,
+      page: this.pageNumber,
     }
 
-    this.moviesService.GetMovies(filters)
+    // check search
+    if (this.search !== undefined && this.search.textSearch !== undefined && this.search.textSearch !== "") {
+      filters['search'] = this.search.textSearch;
+    }
+
+    //
+    this.searchStatus = true;
+    this.moviesService.getMovies(filters)
       .pipe(
         debounceTime(500),     // wait N ms after each keystroke before considering the term
         distinctUntilChanged() // ignore if next search term is same as previous
       )
       .subscribe(
         data => {
-          console.log('GetMovies', data);
-          this.movies = data;
-          this.moviesRetrieved = this.movies.results.length;
-          this.moviesTotal = this.movies.total_results;
+          // console.log('GetMovies', data.results);
+          if (this.pageNumber === 1) {
+            this.movies = data['results'];
 
-          //this.keywordSearchList = data.body;
+          } else {
+            this.movies = this.movies.concat(data['results']);
+          }
+
+          this.moviesRetrieved = this.movies.length;
+          this.moviesTotal = data['total_results'];
+          this.searchStatus = false;
         }
       );
 
@@ -159,7 +192,8 @@ export class MoviesComponent implements OnInit {
   // Select year chance event handler
   selectYear(e: Event) {
     console.log('selectYear', e);
-    this.GetMovies();
+    this.pageNumber = 1;
+    this.getMovies();
   }
 
   // Filter by keyword
@@ -167,7 +201,7 @@ export class MoviesComponent implements OnInit {
 
       //if (this.filterKeyword !== "" && this.filterKeyword.length >= 3) {
         //
-        this.moviesService.GetKeywords(this.filterKeyword)
+        this.moviesService.getKeywords(this.filterKeyword)
           .pipe(
             debounceTime(500),     // wait N ms after each keystroke before considering the term
             distinctUntilChanged() // ignore if next search term is same as previous
@@ -190,16 +224,6 @@ export class MoviesComponent implements OnInit {
     this.selectedItem = item;
   }
 
-  onScrollDown(e) {
-    console.log('scrolled down!!', e);
 
-    this.pageNumber++;
-    // this.getSWAPI();
-    // this.getAllHeroes();
-  }
-
-  onUp(e) {
-    // console.log('scrolled up!', e);
-  }
 
 }

@@ -23,25 +23,30 @@ export class MoviesService {
         this.handleError = httpErrorHandler.createHandleError('MovieService');
       }
 
-    GetMovies(filters) {
-
+    getMovies(filters) {
       //
-      const urlDiscover = 'https://api.themoviedb.org/3/discover/movie?api_key=' + this.apiKeyV3;
       //var urlPopular = 'https://api.themoviedb.org/3/movie/popular?api_key=' + this.apiKeyV3;
       //var urlTopRated= 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + this.apiKeyV3;
       //var urlNowPlaying = 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + this.apiKeyV3;
 
       //filter
-      let filter = '&language=en-US&include_adult=false&media_type=movie&include_video=false&vote_count.gte=0&list_style=1&sort_by=popularity.desc';
+      let filter = '&language=en-US&include_adult=false&media_type=movie&include_video=false&vote_count.gte=0&list_style=1';
 
-      //filter by year
+      // Are we Search or Discover?
+      let urlType= 'discover';
+      if (filters.search !== undefined && filters.search !== null) {
+        urlType = 'search';
+        filter += `&query=${filters.search}`;
+      }
+      const urlBase =  `https://api.themoviedb.org/3/${urlType}/movie?api_key=${this.apiKeyV3}`
+
+      // filter by year
       console.log('filters', filters);
-      if(filters !== undefined) {
+      if (filters !== undefined) {
          filter += `&primary_release_year=${filters.year}`;
       }
 
-
-      //filter by genre
+      // filter by genre
       // if(this.genre_id != "null") {
       //     this.filterByGenres = '&with_genres=' + this.genre_id;
       // }
@@ -50,22 +55,18 @@ export class MoviesService {
       // }
 
 
-      //filter by keywords
-      //A comma separated list of keyword ID's. Only include movies that have one of the ID's added as a keyword.
+      // filter by keyword
+      // A comma separated list of keyword ID's. Only include movies that have one of the ID's added as a keyword.
       /*
       var keywordIds = this.keywordsArray.map(a => a.id);
       var strArrayKeywords = keywordIds.join(", ");
       this.filterByKeywords = '&with_keywords=' + encodeURIComponent(strArrayKeywords);
       */
 
-      //page
-      var page = '&page=' + 1;
 
-      //let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
-      //let options = new RequestOptions({ headers: headers }); // Create a request option
-
-      //let url = urlDiscover + filter + this.filterByGenres + this.filterByYears + this.filterByKeywords + page;
-      let url = urlDiscover + filter + page;
+      // page
+      const page = '&page=' + filters.page;
+      const url = urlBase + filter + page;
 
       return this.http.get(url)
           .pipe(
@@ -75,7 +76,7 @@ export class MoviesService {
     }
 
     //
-    GetGenres() {
+    getGenres() {
 
       let url = 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=' + this.apiKeyV3;
 
@@ -87,8 +88,8 @@ export class MoviesService {
     }
 
 
-    //Call Service to get keywords
-    GetKeywords(keyword: any) {
+    // Call Service to get keywords
+    getKeywords(keyword: any) {
       console.log("GetKeywords");
       //var page = '&page=1';
 

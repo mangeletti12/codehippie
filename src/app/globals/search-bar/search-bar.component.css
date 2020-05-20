@@ -11,12 +11,15 @@ input:focus { outline: none; }
 /* search */
 .searchHolder {
   position: relative;
-  background: rgba(0,0,0,0.04);
-  border: 1px solid rgba(0,0,0,0);
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+  /* background: rgba(100,100,100,.08); */
+  background: rgba(127, 127, 127, .1);
   width: 75%;
   height: 45px;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0);
 
   -webkit-transition: background 100ms ease-in,width 100ms ease-out;
   transition: background 100ms ease-in,width 100ms ease-out;
@@ -25,7 +28,12 @@ input:focus { outline: none; }
 .whiteBg { background-color: #fff; }
 
 .searchBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
   border-radius: 4px;
 }
 
@@ -39,31 +47,13 @@ input:focus { outline: none; }
   border: none;
   cursor: pointer;
   outline: none;
+  text-align: center;
 }
 
-.leftSide {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.rightSide {
-  position: absolute;
-  right: 10px;
-  top: 0;
-}
-
-.rightSideX {
-  position: absolute;
-  right: 50px;
-  top: 0;
-}
-
-.gb_of {
+.searchInput {
+  flex-grow: 1;
   height: 45px;
   padding: 0;
-  margin-left: 40px;
-  margin-right: 50px;
   overflow: hidden;
 }
 
@@ -147,17 +137,6 @@ input:focus { outline: none; }
   animation: fadeout 3s;
 }
 
-.searchGear {
-  position: absolute;
-  right: 37px;
-  top: 0;
-  height: 45px;
-  width: 45px;
-  line-height: 45px;
-  font-size: 24px;
-  color: #888;
-  display: inline-block;
-}
 /* end search */
 
 .searchBtns { text-align: right; }

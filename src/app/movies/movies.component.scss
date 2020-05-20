@@ -1,7 +1,8 @@
 .cardTitle { font-weight: bold; }
 .movie-details { padding: 5px; }
 .meta { margin-bottom: 7px; }
-.left-header { flex-grow: 1; padding-left: 10px; }
+.left-header { padding-left: 10px; }
+.mid-header { flex-grow: 1; }
 .right-header { padding-right: 10px; }
 
 .flex-parent {
@@ -20,7 +21,7 @@
 .iScrollItem {
   margin: 5px;
   height: 278px;
-  width: 440px;
+  width: 450px;
   overflow: hidden;
 }
 

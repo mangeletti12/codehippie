@@ -99,6 +99,10 @@
   animation:         FADEOUT 2s ease-out; /* IE 10+, Fx 29+ */
 }
 
+.board .iScrollItem .mat-card-header-text {
+  margin: 0 !important;
+}
+
 
 /* ANIMATIONS */
 @-webkit-keyframes FADEOUT {
@@ -142,3 +146,4 @@
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
+

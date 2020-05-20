@@ -64,7 +64,6 @@ import { Overlay } from '@angular/cdk/overlay';
   ]
 })
 export class IScrollComponent implements OnInit {
-  list: any[] = [];
   hideShowItemsState = 'showItems';
   //itemSize input property defined as the pixel height of each item.
   //The cdk-virtual-scroll-viewport must have a height and the items it loops over should also have a fixed height.
@@ -73,8 +72,6 @@ export class IScrollComponent implements OnInit {
   infiniteScrollThrottle = 300;
   infiniteScrollDistance = 1;
   infiniteScrollUpDistance = 2;
-  // batch = 20;
-  // theEnd = false;
 
   itemsTotal: number = 0;
   lastRenderedRange: number = 0;
@@ -133,12 +130,12 @@ export class IScrollComponent implements OnInit {
     this.superheroesService.getAllHeroes(searchCriteria).subscribe(
       data => {
         // this.heroes = data.body.data.results;
-      if (this.pageNumber === 0) {
-        this.heroes = data.body.data.results;
+        if (this.pageNumber === 0) {
+          this.heroes = data.body.data.results;
 
-      } else {
-        this.heroes = this.heroes.concat(data.body.data.results);
-      }
+        } else {
+          this.heroes = this.heroes.concat(data.body.data.results);
+        }
         // console.log('heroes', this.heroes);
         this.totalRows = data.body.data.total;
       },

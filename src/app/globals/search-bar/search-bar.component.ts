@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,14 +6,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent implements OnInit, OnChanges {
   form: FormGroup;
   searching = false;
   hasSearchOptions = false;
   searchHasfocus = false;
   hideSearch = true;
+  useAdvancedSearch = false;
 
   @Output() searchBarEvent = new EventEmitter<any>();
+  @Input('searchStatus') searchStatus = '';
   @ViewChild('advSearchHolder', { static: true }) advSearchHolder: ElementRef;
 
   constructor(
@@ -43,6 +45,11 @@ export class SearchBarComponent implements OnInit {
 
   }
 
+  ngOnChanges(): void {
+    console.log('searchStatus', this.searchStatus);
+    this.searching = this.searchStatus === 'true';
+  }
+
   // Check for click in the document, so we can close element
   @HostListener('document: click', ['$event'])
   onClick(e: Event) {
@@ -60,17 +67,17 @@ export class SearchBarComponent implements OnInit {
     }
   }
 
-  //
-  onSearchChange(searchValue: string) {
-    // console.log('onSearchChange', searchValue);
-    this.form.get('textSearch').setValue(searchValue);
-  }
-
   // This is called from 'other' components
   setSearchBar(searchValue: string) {
     console.log('setSearchBar', searchValue);
     this.form.get('textSearch').setValue(searchValue);
     this.hasSearchOptions = true;
+  }
+
+  //
+  onSearchChange(searchValue: string) {
+    console.log('onSearchChange', searchValue);
+    this.form.get('textSearch').setValue(searchValue);
   }
 
   // Submit
@@ -80,6 +87,8 @@ export class SearchBarComponent implements OnInit {
     this.searching = true;
     //
     const searchBarParams = this.form.value;
+    // console.log('searchSubmit', searchBarParams);
+
     if (searchBarParams.textSearch !== ''
       || searchBarParams.showInactive !== false) {
       this.hasSearchOptions = true;
@@ -87,7 +96,7 @@ export class SearchBarComponent implements OnInit {
       this.hasSearchOptions = false;
     }
     // Output the search now!
-    this.searchBarEvent.emit();
+    this.searchBarEvent.emit(searchBarParams);
   }
 
   // X button to clear and submit

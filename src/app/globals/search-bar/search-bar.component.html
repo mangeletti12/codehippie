@@ -5,27 +5,33 @@
     <!-- search bar start -->
     <div class="searchBar" [ngClass]="{'shadow whiteBg': searchHasfocus == true}">
 
-      <button type="button" class="mainSearchBtn leftSide" aria-label="Search" role="button">
-        <label for="search">
-          <i class="pi pi-search" aria-hidden="true"></i>
-        </label>
-      </button>
+      <div class="leftSide">
+        <button type="button" class="mainSearchBtn" aria-label="Search" role="button">
+          <label for="search">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </label>
+        </button>
+      </div>
 
-      <div class="gb_of">
+      <div class="searchInput">
         <input type="text" class="mainSearch" aria-label="Search" autocomplete="off" placeholder="Search" value="" id="search" formControlName="textSearch" dir="ltr" spellcheck="false" aria-haspopup="true" (focus)="focusSearch()" (focusout)="focusOutSearch()" (input)="onSearchChange($event.target.value)">
       </div>
 
-      <div class="searchGear" *ngIf="searching">
-        <i class="pi pi-cog pi-spin" aria-hidden="true" ></i>
+      <div class="mainSearchBtn" *ngIf="searching" >
+        <i class="fas fa-cog fa-spin" aria-hidden="true"></i>
       </div>
 
-      <button type="button" style="color:#990000;" class="mainSearchBtn rightSideX" aria-label="Clear Search" role="button" (click)="xFilter()" [style.visibility]="hasSearchOptions && searching == false ? 'visible' : 'hidden'">
-        <i class="pi pi-times" aria-hidden="true"></i>
-      </button>
+      <div *ngIf="hasSearchOptions && !searching">
+        <button type="button" style="color:#990000;" class="mainSearchBtn" aria-label="Clear Search" role="button" (click)="xFilter()" >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
 
-      <button type="button" class="mainSearchBtn rightSide" aria-label="Advanced search options" role="button" (click)="hideSearch = !hideSearch">
-        <i class="pi pi-chevron-down" aria-hidden="true" [style.visibility]="hideSearch ? 'visible' : 'hidden'"></i>
-      </button>
+      <div *ngIf="useAdvancedSearch">
+        <button type="button" class="mainSearchBtn rightSide" aria-label="Advanced search options" role="button" (click)="hideSearch = !hideSearch" >
+          <i class="fas fa-chevron-down" aria-hidden="true" [style.visibility]="hideSearch ? 'visible' : 'hidden'"></i>
+        </button>
+      </div>
 
     </div>
     <!-- search bar end -->
