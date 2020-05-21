@@ -1,0 +1,17 @@
+<div class="page-container-flex">
+
+    <ng-container *ngFor="let item of qAndA" >
+      <!-- flip card -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>{{ item.data.question }}</h3>
+          </div>
+          <div class="flip-card-back">
+            <h3>{{ item.data.answer }}</h3>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+</div>

@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+// import { Router, ActivatedRoute } from '@angular/router';
 import { Observable,  } from 'rxjs';
 import { map } from 'rxjs/operators';
 //
-//import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+// import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 
@@ -18,12 +18,12 @@ export interface Question {
   question: string;
 }
 
-export interface Answer { 
-  answer: string; 
+export interface Answer {
+  answer: string;
   date: string;
   isPublic: boolean;
   questionId: string;
-  userId: string; 
+  userId: string;
 }
 
 export class UserAnswersAndQuestions {
@@ -50,7 +50,7 @@ export class AnswersComponent implements OnInit {
   //
   answerCollection: AngularFirestoreCollection<Answer>;
   answersCollection: AngularFirestoreCollection<Answer>;
-  answers: Observable<any>;  
+  answers: Observable<any>;
   //
   questionsDoc: AngularFirestoreDocument<Question>;
   userQandA: any[] = new Array();
@@ -61,16 +61,16 @@ export class AnswersComponent implements OnInit {
 
 
   constructor(
-    //public auth: AuthService,
-    private _router: Router,
-    private route: ActivatedRoute,
+    // public auth: AuthService,
+    // private _router: Router,
+    // private route: ActivatedRoute,
     private db: AngularFirestore,
   ) {
-    
+
   }
 
   ngOnInit(): void {
-    
+
     //
     this.getQuestions();
 
@@ -85,9 +85,9 @@ export class AnswersComponent implements OnInit {
     //Set a listener to receive data-change events.
     //When you set a listener, Cloud Firestore sends your listener an initial snapshot of the data, and then another snapshot each time the document changes.
     //this.users = this.usersCollection.valueChanges();
-    
-    //snapshotChanges() differs from the previous method because in addition to providing you with the document data, 
-    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?     
+
+    //snapshotChanges() differs from the previous method because in addition to providing you with the document data,
+    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?
     this.questions = this.questionCollection.snapshotChanges().pipe(
     map(actions => {
       return actions.map(a => {
@@ -96,7 +96,7 @@ export class AnswersComponent implements OnInit {
         return { id, data };
       });
     }));
-    
+
   }
 
   getAnswers() {
@@ -104,9 +104,9 @@ export class AnswersComponent implements OnInit {
     //Set a listener to receive data-change events.
     //When you set a listener, Cloud Firestore sends your listener an initial snapshot of the data, and then another snapshot each time the document changes.
     //this.users = this.usersCollection.valueChanges();
-    
-    //snapshotChanges() differs from the previous method because in addition to providing you with the document data, 
-    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?     
+
+    //snapshotChanges() differs from the previous method because in addition to providing you with the document data,
+    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?
     this.answers = this.answerCollection.snapshotChanges().pipe(
     map(actions => {
       return actions.map(a => {
@@ -115,17 +115,17 @@ export class AnswersComponent implements OnInit {
         return { id, data };
       });
     }));
-    
+
   }
-  
+
   getUsers() {
     this.usersCollection = this.db.collection('Users');
     //Set a listener to receive data-change events.
     //When you set a listener, Cloud Firestore sends your listener an initial snapshot of the data, and then another snapshot each time the document changes.
     //this.users = this.usersCollection.valueChanges();
-    
-    //snapshotChanges() differs from the previous method because in addition to providing you with the document data, 
-    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?     
+
+    //snapshotChanges() differs from the previous method because in addition to providing you with the document data,
+    // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?
     this.users = this.usersCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
@@ -167,11 +167,11 @@ export class AnswersComponent implements OnInit {
           this.userQandA.push(uqa);
         });
       });
-      
-      
+
+
     });
   }
-  
+
   //
   selectUser(item) {
     console.log(item);
@@ -201,11 +201,11 @@ export class AnswersComponent implements OnInit {
   }
 
 
-  
+
   //
   addAnswer(answer: string) {
     console.log(answer);
-    
+
     if(answer != "" && answer != undefined) {
       var questionId = this.selectedQuestion.id;
       var userId = this.selectedUser.id;
@@ -218,10 +218,10 @@ export class AnswersComponent implements OnInit {
       .limit(1))
       .get()
       .subscribe(ans => {
-              
+
         if(ans.size == 0) {
           console.log('INSERT');
-          
+
           this.db.collection('Answers').add({
             answer: answer,
             date: null,
@@ -241,7 +241,7 @@ export class AnswersComponent implements OnInit {
           console.log('UPDATE');
           var answserId = ans.docs[0].id;
           //console.log(answserId);
-          
+
           this.db.collection('Answers').doc(answserId).update({
             answer: answer,
             date: null,
@@ -251,11 +251,11 @@ export class AnswersComponent implements OnInit {
             })
             .then( docRef => {
                 console.log("Document successfully updated!");
-            }) 
+            })
             .catch( error => {
                 console.error("Error adding document: ", error);
             });
-            
+
         }
       });
     }

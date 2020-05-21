@@ -3,7 +3,7 @@
       "App" : [
         {
           "Id": 0,
-          "Name": "Code Hippie",
+          "Name": "CODE HIPPIE",
           "Description": "my portfolio",
           "icon": "icon-estimating.png",
 
@@ -162,7 +162,7 @@
         },
         {
           "Id": 1,
-          "Name": "Beta",
+          "Name": "BETA",
           "Description": "description",
           "icon": "icon-construct.png",
 
@@ -183,7 +183,7 @@
         },
         {
           "Id": 2,
-          "Name": "Gamma",
+          "Name": "GAMMA",
           "Description": "description",
           "icon": "icon-design.png",
 
@@ -204,7 +204,7 @@
         },
         {
           "Id": 3,
-          "Name": "Delta",
+          "Name": "DELTA",
           "Description": "description",
           "icon": "icon-insight.png",
 
@@ -226,7 +226,7 @@
 
         {
           "Id": 4,
-          "Name": "Epsilon",
+          "Name": "EPSILON",
           "Description": "description",
           "icon": "icon-connect.png",
 

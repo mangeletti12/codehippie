@@ -56,7 +56,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+// pipes
+import { TruncatePipe } from './pipes/truncate.pipe';
 ////////////////////////////////////////////
 // Below will be lazyloaded at some point
 ////////////////////////////////////////////
@@ -92,8 +93,8 @@ import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
 import { ResumeComponent } from './resume/resume.component';
 import { SearchBarComponent } from './globals/search-bar/search-bar.component';
-// pipes
-import { TruncatePipe } from './pipes/truncate.pipe';
+import { MusicComponent } from './music/music.component';
+import { QaComponent } from './qa/qa.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +135,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     ResumeComponent,
     SearchBarComponent,
     TruncatePipe,
+    MusicComponent,
+    QaComponent,
   ],
   imports: [
     BrowserModule,

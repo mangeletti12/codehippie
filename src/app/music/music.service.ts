@@ -1,0 +1,108 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { httpOptions } from '../http-options';
+import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
+//
+import { Md5 } from 'ts-md5/dist/md5';
+
+
+@Injectable({ providedIn: 'root' })
+export class MusicService {
+  private handleError: HandleError;
+  heroesToInsert: any[] = [];
+  teamsWithHeroes: any[] = [];
+  allTeams: any[] = [];
+  //
+  private _spotifyBaseUrl : string = "https://api.spotify.com";
+  // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
+  // https://developer.spotify.com/documentation/web-playback-sdk/reference/
+  // https://medium.com/@jmperezperez/playing-with-the-spotify-connect-api-f5c8cb62a849
+  private _publicKey : string = "9285e370921040c25d101324e5943c31";
+  private _privateKey : string = "e9e65111fa22dc3456e88a9ed422544a74113487";
+
+  private getHash(timeStamp : string) : string {
+      let hashGenerator : Md5 = new Md5();
+      hashGenerator.appendStr(timeStamp);
+      hashGenerator.appendStr(this._privateKey);
+      hashGenerator.appendStr(this._publicKey);
+      let hash : string = hashGenerator.end().toString();
+      return hash;
+  }
+  private getTimeStamp() : string {
+      return new Date().valueOf().toString();
+  }
+
+  constructor(
+    private http: HttpClient,
+    httpErrorHandler: HttpErrorHandler
+    ) {
+    this.handleError = httpErrorHandler.createHandleError('SuperheroesService');
+  }
+
+  // Set hero(s) to delete
+  // ... since we haove no DB
+  setHeroToInsert(hero: any) {
+    this.heroesToInsert.push(hero);
+    console.log('heroesToInsert', this.heroesToInsert);
+  }
+  //
+  getHeroToInsert() {
+    return this.heroesToInsert;
+  }
+
+  // Set hero(s) to team
+  // ... since we haove no DB
+  setHeroToTeam(team: any) {
+
+    for(let i = 0; i < team.length; i++) {
+      this.teamsWithHeroes.push(team[i]);
+    }
+    // console.log('--> setHeroToTeam', this.teamsWithHeroes);
+  }
+  getHeroToTeam() {
+    return this.teamsWithHeroes;
+  }
+
+  // Set all teams
+  // ... since we haove no DB
+  setAllTeams(teams: any) {
+    this.allTeams = teams;
+  }
+  //
+  getAllTeams() {
+    return this.allTeams;
+  }
+
+
+  // getAllHeroes(searchCriteria: any) {
+  //   // https://developer.marvel.com/documentation/entity_types
+
+  //   // httpOptions.headers = new HttpHeaders({
+  //   //   // 'Access-Control-Allow-Origin': 'true',
+  //   //   // 'Accept': '*/*',
+  //   //   'Content-Type': 'application/json',
+  //   //   // 'Authorization': '0'
+  //   // });
+
+  //   const timeStamp = this.getTimeStamp();
+  //   const hash = this.getHash(timeStamp);
+  //   const url = this._marvelCharacterUrl + "?&ts=" + timeStamp + "&apikey=" + this._publicKey + "&hash=" + hash;
+  //   //
+  //   // const options = new HttpParams().set('limit', searchCriteria.limit);
+  //   let httpParams = new HttpParams();
+
+  //   for (var key in searchCriteria) {
+  //     var value = searchCriteria[key];
+  //     httpParams = httpParams.append(key, value);
+  //   }
+  //   httpOptions.params = httpParams;
+
+  //   return this.http.get<any>(url, httpOptions)
+  //     .pipe(
+  //       catchError(this.handleError('getAllHeroes', []))
+  //     );
+  // }
+
+
+}

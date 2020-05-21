@@ -17,7 +17,7 @@ import { IScrollComponent } from './iscroll/iscroll.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FileNotFoundComponent } from './404/fileNotFound.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
-import { CostCodesComponent } from './codes/cost-codes.component';
+// import { CostCodesComponent } from './codes/cost-codes.component';
 import { TreeComponent } from './tree/tree.component';
 import { LineChartComponent } from './charts/line-chart.component';
 import { PieChartComponent } from './charts/pie-chart.component';
@@ -27,6 +27,8 @@ import { ResolverService } from './resolver.service';
 import { AboutComponent } from './about/about.component';
 import { TrailsComponent } from './trails/trails.component';
 import { ResumeComponent } from './resume/resume.component';
+import { MusicComponent } from './music/music.component';
+import { QaComponent } from './qa/qa.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -63,6 +65,18 @@ export const SECURE_ROUTES: Routes = [
     component: TrailsComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Happy Trails' },
+  },
+  {
+    path: 'qa',
+    component: QaComponent,
+    data: { breadcrumb: 'Q & A' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'music',
+    component: MusicComponent,
+    data: { breadcrumb: 'Music' },
+    resolve: { comp: ResolverService },
   },
   {
     path: 'cors',
@@ -140,19 +154,11 @@ export const SECURE_ROUTES: Routes = [
     path: 'files',
     component: FilesComponent,
     data: { breadcrumb: 'Files' },
-    resolve: { comp: ResolverService },
   },
-  // {
-  //   path: 'codes',
-  //   component: CostCodesComponent,
-  //   data: { breadcrumb: 'Codes' },
-  //   resolve: { comp: ResolverService },
-  // },
   {
     path: 'tree',
     component: TreeComponent,
     data: { breadcrumb: 'tree' },
-    resolve: { comp: ResolverService },
   },
 
   //Lazyloading
