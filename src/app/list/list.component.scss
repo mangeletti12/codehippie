@@ -53,7 +53,7 @@
   pointer-events: none;
 }
 
-.list { overflow: hidden; }
+.list { overflow: hidden; height: 100vh; }
 
 .my-scrollbar {
   --scrollbar-color: transparent;
@@ -83,7 +83,7 @@
 }
 
 .board #light-side mat-card {
-  background-color: rgba(6, 165, 6, 0.5);
+  background-color: rgba(6, 165, 6, 0.8);
   color: white;
   -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
   -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */
@@ -91,7 +91,7 @@
   animation:         FADEOUT 2s ease-out; /* IE 10+, Fx 29+ */
 }
 .board #dark-side mat-card {
-  background-color: rgba(165, 6, 6, 0.5);
+  background-color: rgba(165, 6, 6, 0.8);
   color: white;
   -webkit-animation: FADEOUT 2s ease-out; /* Safari 4+ */
   -moz-animation:    FADEOUT 2s ease-out; /* Fx 5+ */

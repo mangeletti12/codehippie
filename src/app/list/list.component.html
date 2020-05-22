@@ -1,18 +1,18 @@
 <div class="board">
 
-  <div id="light-side" class="list-wrapper">
+  <div id="no-side" class="list-wrapper">
 
     <div class="list-header">
-      <h3>Light Side</h3>
+      <h3>No Side</h3>
     </div>
 
     <ng-scrollbar class="my-scrollbar">
 
       <div class="list"
         cdkDropList
-        #listOne="cdkDropList"
+        #listThree="cdkDropList"
         [cdkDropListData]="list1"
-        [cdkDropListConnectedTo]="[listTwo, listThree]"
+        [cdkDropListConnectedTo]="[listOne, listTwo]"
         (cdkDropListDropped)="onDrop($event)">
 
         <div class="list-cards">
@@ -21,7 +21,7 @@
             [class.selectedCard]="item.isSelected">
             <mat-card-header>
               <mat-card-title>{{item.name}}</mat-card-title>
-              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+              <!-- <mat-card-subtitle>{{item.gender}}</mat-card-subtitle> -->
             </mat-card-header>
             <mat-card-footer>
 
@@ -42,19 +42,19 @@
 
   <!-- next list -->
 
-  <div id="dark-side" class="list-wrapper">
+  <div id="light-side" class="list-wrapper">
 
     <div class="list-header">
-      <h3>Dark Side</h3>
+      <h3>Light Side</h3>
     </div>
 
     <ng-scrollbar class="my-scrollbar">
 
       <div class="list"
         cdkDropList
-        #listTwo="cdkDropList"
+        #listOne="cdkDropList"
         [cdkDropListData]="list2"
-        [cdkDropListConnectedTo]="[listOne, listThree]"
+        [cdkDropListConnectedTo]="[listTwo, listThree]"
         (cdkDropListDropped)="onDrop($event)">
 
         <div class="list-cards">
@@ -63,7 +63,7 @@
             [class.selectedCard]="item.isSelected">
             <mat-card-header>
               <mat-card-title>{{item.name}}</mat-card-title>
-              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+              <!-- <mat-card-subtitle>{{item.gender}}</mat-card-subtitle> -->
             </mat-card-header>
             <mat-card-footer>
 
@@ -84,19 +84,19 @@
 
   <!-- next list -->
 
-  <div id="no-side" class="list-wrapper">
+  <div id="dark-side" class="list-wrapper">
 
     <div class="list-header">
-      <h3>No Side</h3>
+      <h3>Dark Side</h3>
     </div>
 
     <ng-scrollbar class="my-scrollbar">
 
       <div class="list"
         cdkDropList
-        #listThree="cdkDropList"
+        #listTwo="cdkDropList"
         [cdkDropListData]="list3"
-        [cdkDropListConnectedTo]="[listOne, listTwo]"
+        [cdkDropListConnectedTo]="[listOne, listThree]"
         (cdkDropListDropped)="onDrop($event)">
 
         <div class="list-cards">
@@ -105,7 +105,7 @@
             [class.selectedCard]="item.isSelected">
             <mat-card-header>
               <mat-card-title>{{item.name}}</mat-card-title>
-              <mat-card-subtitle>{{item.gender}}</mat-card-subtitle>
+              <!-- <mat-card-subtitle>{{item.gender}}</mat-card-subtitle> -->
             </mat-card-header>
             <mat-card-footer>
 

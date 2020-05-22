@@ -1,13 +1,17 @@
 <div class="page-container-flex">
 
+    <div class="info">
+      This uses Google Firebase (Cloud Firestore), a real-time NoSQL document database.
+    </div>
+
     <ng-container *ngFor="let item of qAndA" >
       <!-- flip card -->
       <div class="flip-card">
         <div class="flip-card-inner">
-          <div class="flip-card-front">
+          <div class="flip-card-front" [style.background-color]="item.data.lightColor">
             <h3>{{ item.data.question }}</h3>
           </div>
-          <div class="flip-card-back">
+          <div class="flip-card-back" [style.background-color]="item.data.color">
             <h3>{{ item.data.answer }}</h3>
           </div>
         </div>
