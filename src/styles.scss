@@ -46,7 +46,7 @@ body.dark-theme {
 }
 
 #slideOut.closedSlideOut {
-  width: 600px;
+  width: 500px;
 }
 
 #slideOut .bar {
@@ -212,7 +212,7 @@ body.dark-theme {
   position: relative;
   flex: 1;
   order: 2;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 #global-filler {
@@ -335,7 +335,7 @@ header {
   // background-size: 40px 37px;
 }
 #logo:hover {
-  filter: invert(30%) sepia(96%) saturate(3192%) hue-rotate(1deg) brightness(101%) contrast(112%);
+  filter: invert(40%) sepia(96%) saturate(250%) hue-rotate(1deg) brightness(101%) contrast(112%);
 }
 
 .main-loader {

@@ -5,13 +5,23 @@
     </button>
   </div>
 
-  <div id="slideNotifications" [style.display]="slideOutItems[1].status ? 'inherit' : 'none'">
-      <app-notifications></app-notifications>
-    </div>
-
   <div id="slideProfile" [style.display]="slideOutItems[0].status ? 'inherit' : 'none'">
     <app-profile></app-profile>
   </div>
+
+  <div id="slideSearch" [style.display]="slideOutItems[3].status ? 'inherit' : 'none'">
+    <app-search></app-search>
+  </div>
+
+  <div id="slideHelp" [style.display]="slideOutItems[2].status ? 'inherit' : 'none'">
+    <app-help></app-help>
+  </div>
+
+  <div id="slideNotifications" [style.display]="slideOutItems[1].status ? 'inherit' : 'none'">
+    <app-notifications></app-notifications>
+  </div>
+
+
 
 </div>
 
@@ -28,8 +38,8 @@
 
         <div class="btns-holder">
           <div class="m-icon" matTooltip="Profile" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
-          <div class="m-icon" matTooltip="Search" ><div><i class="material-icons">search</i></div></div>
-          <div class="m-icon" matTooltip="Help" ><div><i class="material-icons">help_outline</i></div></div>
+          <div class="m-icon" matTooltip="Search" (click)="toggleSlideOut('Search')"><div><i class="material-icons">search</i></div></div>
+          <div class="m-icon" matTooltip="Help" (click)="toggleSlideOut('Help')"><div><i class="material-icons">help_outline</i></div></div>
           <div class="m-icon" matTooltip="Notifications" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
         </div>
 

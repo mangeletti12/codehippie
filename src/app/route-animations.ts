@@ -97,6 +97,8 @@ export const slideLeft =
       query(':enter, :leave',
         style({
           position: 'relative',
+          top: '65px',
+          left: 0,
           width: '100%',
 
         }),

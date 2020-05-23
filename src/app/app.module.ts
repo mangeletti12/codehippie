@@ -95,6 +95,8 @@ import { ResumeComponent } from './resume/resume.component';
 import { SearchBarComponent } from './globals/search-bar/search-bar.component';
 import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
+import { HelpComponent } from './globals/help/help.component';
+import { SearchComponent } from './globals/search/search.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +139,8 @@ import { QaComponent } from './qa/qa.component';
     TruncatePipe,
     MusicComponent,
     QaComponent,
+    HelpComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

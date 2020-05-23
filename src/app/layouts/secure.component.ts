@@ -33,7 +33,8 @@ export class SecureComponent implements OnInit, OnDestroy {
   slideOutItems: SlideItem[] = [
     { 'id': 0, 'name': 'Profile', 'status': false },
     { 'id': 1, 'name': 'Notifications', 'status': false },
-    { 'id': 2, 'name': 'Search', 'status': false }
+    { 'id': 2, 'name': 'Help', 'status': false },
+    { 'id': 3, 'name': 'Search', 'status': false }
   ];
 
   constructor(
