@@ -1,7 +1,10 @@
 .board {
-  height: calc(100% - 65px);
   display: flex;
   justify-content: center;
+
+  height: -moz-calc(100vh - 65px);
+  height: -webkit-calc(100vh - 65px);
+  height: calc(100vh - 65px);
 }
 
 .list-wrapper {
@@ -13,6 +16,7 @@
   background: rgba(0, 0, 0, 0.085);
   padding-right: 2px;
   border-radius: 4px;
+
   height: -moz-calc(100vh - 75px);
   height: -webkit-calc(100vh - 75px);
   height: calc(100vh - 75px);
