@@ -39,9 +39,9 @@
                   "Claim": "Nav_QA"
                 },
                 {
-                  "Text": "Music",
-                  "Url": "/music",
-                  "Claim": "Nav_Music"
+                  "Text": "Inspiration",
+                  "Url": "/inspiration",
+                  "Claim": "Nav_Inspiration"
                 }
               ]
             },

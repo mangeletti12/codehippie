@@ -14,6 +14,7 @@ export class MusicService {
   private _spotifyBaseUrl : string = "https://api.spotify.com";
   // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/
   // https://developer.spotify.com/documentation/general/guides/authorization-guide/
+  // https://developer.spotify.com/community/showcase/web-apps/
   // GET https://api.spotify.com/v1/playlists/{playlist_id}
   private my_client_id: string = "7099083a151d4823afec0b0255e8c3cc";
   // private redirect_uri: string = 'http://codehippie.com/spotify';

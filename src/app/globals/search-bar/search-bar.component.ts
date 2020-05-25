@@ -80,6 +80,11 @@ export class SearchBarComponent implements OnInit, OnChanges {
     this.form.get('textSearch').setValue(searchValue);
   }
 
+  //
+  onKey(e: any) {
+    console.log('onKey',  e.key);
+  }
+
   // Submit
   searchSubmit() {
     // Called from search, so we assume a NEW search

@@ -41,7 +41,7 @@ export class MoviesService {
       const urlBase =  `https://api.themoviedb.org/3/${urlType}/movie?api_key=${this.apiKeyV3}`
 
       // filter by year
-      console.log('filters', filters);
+      // console.log('filters', filters);
       if (filters !== undefined) {
          filter += `&primary_release_year=${filters.year}`;
       }
@@ -69,9 +69,9 @@ export class MoviesService {
       const url = urlBase + filter + page;
 
       return this.http.get(url)
-          .pipe(
-              catchError(this.handleError('GetMovies', []))
-          );
+        .pipe(
+            catchError(this.handleError('GetMovies', []))
+        );
 
     }
 
@@ -81,16 +81,16 @@ export class MoviesService {
       let url = 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=' + this.apiKeyV3;
 
       return this.http.get(url)
-          .pipe(
-              catchError(this.handleError('GetGenres', []))
-          );
+        .pipe(
+            catchError(this.handleError('GetGenres', []))
+        );
 
     }
 
 
     // Call Service to get keywords
     getKeywords(keyword: any) {
-      console.log("GetKeywords");
+      // console.log("GetKeywords");
       //var page = '&page=1';
 
       //let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
@@ -99,9 +99,9 @@ export class MoviesService {
       let url = 'https://api.themoviedb.org/3/search/keyword?query=' + keyword + '&api_key=' + this.apiKeyV3;
 
       return this.http.get(url)
-          .pipe(
-              catchError(this.handleError('GetKeywords', []))
-          );
+        .pipe(
+            catchError(this.handleError('GetKeywords', []))
+        );
 
     }
 

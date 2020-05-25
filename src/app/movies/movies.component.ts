@@ -178,7 +178,9 @@ export class MoviesComponent implements OnInit {
             this.movies = data['results'];
 
           } else {
-            this.movies = this.movies.concat(data['results']);
+            // this.movies = this.movies.concat(data['results']);
+            // concatenate arrays
+            this.movies = [...this.movies, ...data['results']];
           }
 
           this.moviesRetrieved = this.movies.length;

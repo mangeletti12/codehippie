@@ -134,7 +134,9 @@ export class IScrollComponent implements OnInit {
           this.heroes = data.body.data.results;
 
         } else {
-          this.heroes = this.heroes.concat(data.body.data.results);
+          // this.heroes = this.heroes.concat(data.body.data.results);
+          // concatenate arrays
+          this.heroes = [...this.heroes, ...data.body.data.results];
         }
         // console.log('heroes', this.heroes);
         this.totalRows = data.body.data.total;
