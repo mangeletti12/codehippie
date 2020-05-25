@@ -1,8 +1,4 @@
-// .fixed-bar { position: fixed; z-index: 2; right: 0; width: calc(100% - 285px); }
-// ::ng-deep #global-content.small-nav .fixed-bar {
-//   width: calc(100% - 115px);
-// }
-// .table-down { margin-top: 90px; }
+
 .fixed-bar { position: sticky; z-index: 2; top: 65px; }
 
 .toolbar-wrapper { display: flex; }
@@ -12,5 +8,3 @@
   height: 50px;
   font: 400 16px/24px Roboto,"Helvetica Neue",sans-serif;
 }
-
-

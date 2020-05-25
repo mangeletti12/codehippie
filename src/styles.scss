@@ -800,3 +800,28 @@ mat-footer-row mat-footer-cell {
   // color:white;
   border-radius: 0px;
 }
+
+.text-transition {
+  -webkit-animation: TEXT-ANIMATION 2s ease-out; /* Safari 4+ */
+  -moz-animation:    TEXT-ANIMATION 2s ease-out; /* Fx 5+ */
+  -o-animation:      TEXT-ANIMATION 2s ease-out; /* Opera 12+ */
+  animation:         TEXT-ANIMATION 2s ease-out; /* IE 10+, Fx 29+ */
+}
+
+/* text trans */
+@-webkit-keyframes TEXT-ANIMATION {
+  0%   { color: #fff; }
+  100% { color: #999; }
+}
+@-moz-keyframes TEXT-ANIMATION {
+  0%   { color: #fff; }
+  100% { color: #999;; }
+}
+@-o-keyframes TEXT-ANIMATION {
+  0%   { color: #fff; }
+  100% { color: #999;; }
+}
+@keyframes TEXT-ANIMATION {
+  0%   { color: #fff; }
+  100% { color: #999;; }
+}

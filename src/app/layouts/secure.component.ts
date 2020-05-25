@@ -107,7 +107,7 @@ export class SecureComponent implements OnInit, OnDestroy {
 
   // min nav slide out
   toggleSlideOut(action: string) {
-    console.log('-> toggleSlideOut', action);
+    // console.log('-> toggleSlideOut', action);
 
     if (action !== 'close') {
       // Set the rest of the array to false status
