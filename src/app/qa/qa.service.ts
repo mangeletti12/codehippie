@@ -41,12 +41,16 @@ export class QaService {
   getUsersAnswers(user) {
     // User Questions with Answers
     this.answersCollection = this.db.collection('Answers', ref => ref.where('userId', '==', user.id));
-    //
+    // console.log('answersCollection', this.answersCollection);
     return this.answersCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
+          // const qId = data.questionId
+          // qId.get().then(doc => {
+          //   data['question'] = doc.data().question;
+          // });
 
           // Get each question from the answers now
           // bummer that this is a seperate request, very chatty
@@ -61,6 +65,7 @@ export class QaService {
         });
       })
     );
+
 
   }
 

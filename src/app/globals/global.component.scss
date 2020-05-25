@@ -66,15 +66,16 @@
 
 .appHolder.menuItem {
   border-radius: 0;
-  background: #444;
+  background: #1f1d1d;
+  border-bottom: 1px solid #444;
 }
 
-.appHolder.menuItem.odd {
-  background: #333;
-}
-.appHolder.menuItem.even {
-  background: #333;
-}
+// .appHolder.menuItem.odd {
+//   background: #333;
+// }
+// .appHolder.menuItem.even {
+//   background: #333;
+// }
 
 .appHolder.menuItem:hover {
   background: #555;

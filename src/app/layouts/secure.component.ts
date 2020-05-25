@@ -66,7 +66,6 @@ export class SecureComponent implements OnInit, OnDestroy {
       data => {
         const anim = (data !== null) ? data : 'slideLeft';
         this.animationTrigger = anim;
-
         // console.log('animationTrigger', this.animationTrigger);
     });
 
@@ -77,12 +76,20 @@ export class SecureComponent implements OnInit, OnDestroy {
         // console.log(this.isOpen);
     });
 
-    //
-    this.httpStatus.getHttpStatus().subscribe(
+    // cog spin
+    this.subscription = this.httpStatus.getHttpStatus().subscribe(
       (status: boolean) => {
         this.HTTPActivity = status;
-        //console.log(status);
+        // console.log(status);
     });
+
+    // slide out listener
+    this.subscription = this._globalService.slideOut.subscribe(
+      data => {
+        // console.log('slideOut', data);
+        this.toggleSlideOut(data);
+    });
+
 
   }
 
@@ -98,8 +105,9 @@ export class SecureComponent implements OnInit, OnDestroy {
   }
 
 
-  //
+  // min nav slide out
   toggleSlideOut(action: string) {
+    console.log('-> toggleSlideOut', action);
 
     if (action !== 'close') {
       // Set the rest of the array to false status
@@ -110,11 +118,13 @@ export class SecureComponent implements OnInit, OnDestroy {
       var slideItemToShow = this.slideOutItems.find(i => i.name === action);
       slideItemToShow.status = true;
 
-      //console.log(this.slideOutItems);
+      // console.log(this.slideOutItems);
+      this.isSlideOutOpen = true;
+    }
+    else {
+      this.isSlideOutOpen = false;
     }
 
-    //
-    this.isSlideOutOpen = !this.isSlideOutOpen;
   }
 
   // This method is in app-component.ts

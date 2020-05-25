@@ -41,13 +41,13 @@ export const SECURE_ROUTES: Routes = [
     component: AboutComponent,
     data: { breadcrumb: 'About' },
   },
-  //{path: '', redirectTo: 'about', pathMatch: 'full'},
-  {
-    path: 'about',
-    component: AboutComponent,
-    //canActivate: [AuthGuard],
-    data: { breadcrumb: 'About' },
-  },
+  { path: 'about', redirectTo: '', pathMatch: 'full' },
+  // {
+  //   path: 'about',
+  //   component: AboutComponent,
+  //   //canActivate: [AuthGuard],
+  //   data: { breadcrumb: 'About' },
+  // },
   {
     path: 'buffet',
     component: BuffetComponent,

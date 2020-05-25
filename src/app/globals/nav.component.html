@@ -55,12 +55,12 @@
           <h2 class="acc_trigger" (click)="navSelect(item)"><span class="fas {{item.icon}}"></span>{{item.Text}}
           </h2>
           <ng-container *ngIf="item.MenuItem != null">
-              <div class="acc_container">
-                <ul class="ulNav">
-                  <li *ngFor="let nav of item.MenuItem"><a [routerLink]="nav.Url"
-                          routerLinkActive="active-link">{{nav.Text}}</a></li>
-                </ul>
-              </div>
+            <div class="acc_container">
+              <ul class="ulNav">
+                <li *ngFor="let nav of item.MenuItem"><a [routerLink]="nav.Url"
+                        routerLinkActive="active-link" [class.active-link]="nav.Url === '/about' && areWeHome">{{nav.Text}}</a></li>
+              </ul>
+            </div>
           </ng-container>
         </div>
       </ng-container>

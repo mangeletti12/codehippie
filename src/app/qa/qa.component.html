@@ -14,6 +14,7 @@
           <div class="flip-card-back" [style.background-color]="item.data.color">
             <h3>{{ item.data.answer }}</h3>
           </div>
+          <span class="date">{{ item.data.formattedDate | date }}</span>
         </div>
       </div>
     </ng-container>

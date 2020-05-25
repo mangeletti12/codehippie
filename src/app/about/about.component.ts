@@ -22,22 +22,7 @@ export class AboutComponent implements OnInit {
     this.aboutService.getSkills().subscribe(
       data => {
         this.mySkills = data.body;
-
-        // const sortedSkills = data.body;
-
-        // sortedSkills.sort((n1,n2) => {
-        //   if (n1.skill > n2.skill) {
-        //       return 1;
-        //   }
-
-        //   if (n1.skill < n2.skill) {
-        //       return -1;
-        //   }
-
-        //   return 0;
-        // });
-        // console.log('sortedSkills', sortedSkills);
-        console.log('skills', this.mySkills);
+        // console.log('skills', this.mySkills);
       }
     )
   }

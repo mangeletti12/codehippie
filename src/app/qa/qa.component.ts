@@ -32,6 +32,15 @@ export class QaComponent implements OnInit {
     "#ebdef0",
     "#fadbd8",
     "#f5b7b1",
+    "#fff3aa",
+    "#ffd0a8",
+    "#ffb1b1",
+    "#d9d1ff",
+    "#b7efff",
+    "#96ceb4",
+    "#ffeead",
+    "#ff6f69",
+    "#ffcc5c",
 ]
 
   constructor(
@@ -58,17 +67,19 @@ export class QaComponent implements OnInit {
   getQuestionsByUser() {
 
     const me = this.users.filter(obj => obj.lastName === 'Angeletti')[0];
-    // console.log('me', me);
+    const austin = this.users.filter(obj => obj.lastName === 'Austin')[0];
+
     //
     this.qaService.getUsersAnswers(me).subscribe(
       data => {
         console.log('getQuestionsByUser', data);
 
-        // set a random color
+        // set a random color and date
         for (let i = 0; i < data.length; i++) {
           const color = this.setRandomColor();
           data[i].data['color'] = color;
           data[i].data['lightColor'] = this.LightenDarkenColor(color, -40);
+          data[i].data['formattedDate'] = this.timeConverter(data[i].data.date.seconds);
         }
 
         // Attach a random color
@@ -111,7 +122,19 @@ export class QaComponent implements OnInit {
     else if (g < 0) g = 0;
 
     return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
-}
+  }
 
+  timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
 
 }

@@ -38,15 +38,20 @@ import { transition, animate, trigger, style } from '@angular/animations';
       //   animate('1.0s ease-in',
       //     style({ transform: 'translateX(0%) ' }))
       // ]),
-      transition(':enter', [ // * => void
-        style({ opacity: 0 }),
-        animate('1s ease-in',
-          style({ opacity: 1 }))
-      ]),
+      // transition(':enter', [ // * => void
+      //   style({ opacity: 0 }),
+      //   animate('1s ease-in',
+      //     style({ opacity: 1 }))
+      // ]),
       transition(':leave', [ // * => void
-        style({ opacity: 1 }),
-        animate('1s ease-out',
-          style({ opacity: 0 }))
+        style({ transform: 'scale(1)', opacity: 1, height: '*' }),
+        animate('.7s cubic-bezier(.8, -0.6, 0.2, 1.5)',
+          style({
+            transform: 'scale(0.5)',
+            opacity: 0,
+            height: '0px',
+            margin: '0px'
+          }))
       ]),
 
     ]),

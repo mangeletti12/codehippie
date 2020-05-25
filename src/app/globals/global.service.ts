@@ -16,6 +16,7 @@ export class GlobalService {
   private _changeTransition: BehaviorSubject<string> = new BehaviorSubject<string>('fader');
   private _changeNavSide: BehaviorSubject<string> = new BehaviorSubject<string>('left');
   private _loadingDoors = new BehaviorSubject<any>(null);
+  private _slideOut = new BehaviorSubject<string>('close');
 
   constructor(
     private http: HttpClient,
@@ -100,6 +101,14 @@ export class GlobalService {
     this._loadingDoors.next(door);
   }
 
+  // Listener
+  get slideOut(): Observable<string> {
+    return this._slideOut.asObservable();
+  }
+  // Toggle SlideOut
+  toggleSlideOut(status) {
+    this._slideOut.next(status);
+  }
 
 
 

@@ -17,6 +17,7 @@ export class NavComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   lastRouteUrl: string;
   appId: number;
+  areWeHome = false;
 
   constructor(
     private _globalService: GlobalService,
@@ -39,7 +40,19 @@ export class NavComponent implements OnInit, OnDestroy {
     /////
     // Get the route and set
     this.subscription = this._globalService.changeRoute.subscribe(routeUrl => {
-      //
+      // console.log('routeUrl', routeUrl);
+      // home == about
+      if (routeUrl === '/') {
+        // console.log('-- HOME --');
+        routeUrl = '/about';
+      }
+      if (routeUrl === '/about') {
+        this.areWeHome = true;
+      }
+      else {
+        this.areWeHome = false;
+      }
+
       this.lastRouteUrl = routeUrl;
       this.getParentNavItem(routeUrl);
     });
@@ -53,13 +66,13 @@ export class NavComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  //Toggle
+  // Toggle
   hideShowSidebar() {
     this._globalService.toggle();
     //this.navStatus = !this.navStatus;
   }
 
-  //Get Navigation from json
+  // Get Navigation from json
   getNav() {
 
     this._globalService.getNav()
