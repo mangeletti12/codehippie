@@ -1,3 +1,4 @@
+
 .page-container {
   height: -moz-calc(100vh - 65px);
   height: -webkit-calc(100vh - 65px);
@@ -13,4 +14,21 @@
   height: 200px;
   text-align: center;
   font-family: sans-serif;
+}
+
+
+.desc div {
+  position: relative;
+  font-family: Raleway, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  // display: inline-block;
+  letter-spacing: -3px;
+  line-height: 1em;
+
+  animation: flipInX; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+  // animation-delay: 2s;
+
+  // transform: matrix(1, 0, 0, 1, 0, 0);
 }
