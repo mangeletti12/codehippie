@@ -62,7 +62,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 // Below will be lazyloaded at some point
 ////////////////////////////////////////////
 
-import { RfiComponent } from './rfi/rfi.component';
+
 import { CorsListComponent } from './cors/cors-list.component';
 import { CorComponent } from './cors/cor/cor.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -97,6 +97,9 @@ import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
 import { HelpComponent } from './globals/help/help.component';
 import { SearchComponent } from './globals/search/search.component';
+//
+import { NgwWowModule } from 'ngx-wow';
+import { InspirationComponent } from './inspiration/inspiration.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +115,6 @@ import { SearchComponent } from './globals/search/search.component';
     BuffetComponent,
     CorsListComponent,
     CorComponent,
-    RfiComponent,
     CalendarComponent,
     AnswersComponent,
     MoviesComponent,
@@ -141,6 +143,7 @@ import { SearchComponent } from './globals/search/search.component';
     QaComponent,
     HelpComponent,
     SearchComponent,
+    InspirationComponent,
   ],
   imports: [
     BrowserModule,
@@ -157,6 +160,8 @@ import { SearchComponent } from './globals/search/search.component';
     ScrollingModule,
     NgScrollbarModule,
     InfiniteScrollModule,
+    NgwWowModule,
+
     //Firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

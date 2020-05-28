@@ -40,6 +40,9 @@ export class ResolverService implements Resolve<any> {
     //   });
     // }
 
+    // move scrollbar to top
+    window.scrollTo(0, 0);
+
   }
 
 }

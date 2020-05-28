@@ -1,34 +1,96 @@
 
 .page-container {
-  height: -moz-calc(100vh - 65px);
-  height: -webkit-calc(100vh - 65px);
-  height: calc(100vh - 65px);
+  margin-bottom: 10px;
+  // height: -moz-calc(100vh - 65px);
+  // height: -webkit-calc(100vh - 65px);
+  // height: calc(100vh - 65px);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .center-all {
-  width: 35rem;
-  height: 200px;
+  width: 100%;
   text-align: center;
-  font-family: sans-serif;
+  // height: 200px;
+  // font-family: sans-serif;
 }
 
+.imgLFC { margin: 10px; }
 
-.desc div {
+.intro div {
   position: relative;
   font-family: Raleway, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 2em;
-  // display: inline-block;
   letter-spacing: -3px;
   line-height: 1em;
-
-  animation: flipInX; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 2s; /* don't forget to set a duration! */
+  padding: 10px;
+  // animation: flipInX; /* referring directly to the animation's @keyframe declaration */
+  // animation-duration: 2s; /* don't forget to set a duration! */
   // animation-delay: 2s;
 
   // transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.intro div:nth-child(1) { background-color: #002868; color: #ffffff; }
+.intro div:nth-child(2) { background-color: #ffffff; color: #000000; }
+.intro div:nth-child(3) { background-color: #bf0a30; color: #ffffff; }
+.intro div:nth-child(4) { background-color: #ffd700; color: #000000; }
+
+.flex-work {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: Raleway, Arial, sans-serif;
+  margin-bottom: 50px;
+}
+
+.flexify {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.flexify div:nth-child(1) { flex-grow: 1; }
+
+.years {
+  font-family: Arial, sans-serif;
+  font-size: 1.5em;
+  margin-bottom: -14px;
+  letter-spacing: -1px;
+}
+
+.company {
+  margin: 20px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: Raleway-Bold, Arial, sans-serif;
+  font-size: 2em;
+  letter-spacing: -3px;
+  display: block;
+  line-height: .8em;
+}
+
+.name {
+  height: 20px;
+  line-height: 20px;
+}
+
+.line {
+  background-color: black;
+  height: 2px;
+  max-height: 2px;
+  margin: 2px;
+}
+
+.desc {
+  width: 250px;
+  line-height: 18px;
+  overflow: hidden;
+
 }

@@ -41,6 +41,12 @@ export class QaComponent implements OnInit {
     "#ffeead",
     "#ff6f69",
     "#ffcc5c",
+    "#FF555E",
+    "#FF8650",
+    "#FFE981",
+    "#8BF18B",
+    "#83B2FF",
+    "#9B6EF3"
 ]
 
   constructor(

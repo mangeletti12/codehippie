@@ -237,10 +237,11 @@ export class HeroesComponent implements OnInit {
         // if yes/true
         if (data) {
           // faking out since no DB.
+          row.removed = true;
+          // console.log('ROW', row);
           const index = this.dataSource.data.findIndex(obj => obj.id === row.id);
           this.dataSource.data.splice(index, 1);
           this.dataSource = new MatTableDataSource(this.dataSource.data);
-
 
         }
         modalDialog.close();

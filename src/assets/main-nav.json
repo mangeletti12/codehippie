@@ -19,14 +19,14 @@
                   "Claim": "Nav_About"
                 },
                 {
-                  "Text": "Buffet",
-                  "Url": "/buffet",
-                  "Claim": "Nav_Buffet"
-                },
-                {
                   "Text": "Resume",
                   "Url": "/resume",
                   "Claim": "Nav_Resume"
+                },
+                {
+                  "Text": "Buffet",
+                  "Url": "/buffet",
+                  "Claim": "Nav_Buffet"
                 },
                 {
                   "Text": "Hiking Trails",

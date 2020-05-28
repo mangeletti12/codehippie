@@ -28,6 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // private route: ActivatedRoute,
     ) {
 
+
       //
       this.authService.currentUser.subscribe(data => {
         // console.log('authService', data);

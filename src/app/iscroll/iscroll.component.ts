@@ -82,7 +82,7 @@ export class IScrollComponent implements OnInit {
   sortField = 'name';
   sortOrder = 'asc';
   pageNumber = 0;
-  pageSize = 25;
+  pageSize = 50;
   totalRows = 0;
   bulkCheckbox = false;
   searchKey: string;

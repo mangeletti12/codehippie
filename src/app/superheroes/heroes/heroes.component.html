@@ -23,8 +23,8 @@
     <button mat-button [matMenuTriggerFor]="menu">Actions</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="addToTeam()">Add to Team</button>
-      <button mat-menu-item>Email</button>
-      <button mat-menu-item>Text/SMS</button>
+      <!-- <button mat-menu-item>Email</button>
+      <button mat-menu-item>Text/SMS</button> -->
     </mat-menu>
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="pageSize" [length]="totalRows" (page)="pageChanged($event)"></mat-paginator>
@@ -96,7 +96,7 @@
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row, $event)" (dblclick)="onEdit(row, $event)" ></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row, $event)" (dblclick)="onEdit(row, $event)" [class.animation-fade-out]="row.removed" ></mat-row>
 
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
     <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && totalRows==0)}"></mat-footer-row>

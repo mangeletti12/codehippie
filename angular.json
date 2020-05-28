@@ -29,10 +29,14 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/js/animate.css",
-              "src/theme.scss"
+              "src/theme.scss",
+              "node_modules/animate.css/animate.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/wowjs/dist/wow.js"
+
+            ]
           },
           "configurations": {
             "production": {
