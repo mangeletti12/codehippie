@@ -13,12 +13,30 @@ export class PieChartComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    legend: {
+      display: true,
+      position: 'left',
+    }
   };
-  public pieChartLabels: Label[] = [['SciFi'], ['Drama'], 'Comedy'];
-  public pieChartData: SingleDataSet = [30, 50, 20];
+  public pieChartLabels: Label[] = [
+    'Real Madrid',
+    'AC Milan',
+    'Liverpool',
+    'Bayern Munich',
+    'Barcelona',
+    'Ajax',
+    'Inter Milan',
+    'Manchester United',
+    'Juventus',
+    'Benfica'
+
+  ];
+  public pieChartData: SingleDataSet = [13, 7, 6, 5, 5, 4, 3, 3, 2, 2];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
+
+  // UEFA Champions League Titles
 
   constructor() {
     monkeyPatchChartJsTooltip();

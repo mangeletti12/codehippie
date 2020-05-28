@@ -12,7 +12,8 @@ export class SoccerService {
 
   allTeams: any[] = [];
   // https://www.api-football.com/coverage
-  private _baseUrl: string = 'https://v3.football.api-sports.io'; // 'https://v2.api-football.com/';
+  private _baseUrlv2: string = 'https://v2.api-football.com/';
+  private _baseUrlv3: string = 'https://v3.football.api-sports.io';
   private _publicKey: string = "ab346fee84b407862eb8e83d1ee2f6a4";
   private _team_id: 40; // Liverpool
   private _league_id: 524; // English Premier League, season 2019-2020
@@ -40,16 +41,16 @@ export class SoccerService {
   getLiverpool() {
 
     httpOptions.headers = new HttpHeaders({
-      // 'Access-Control-Allow-Origin': 'true',
-      // 'Accept': '*/*',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Accept': '*/*',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
       'Content-Type': 'application/json',
-      // 'Authorization': '0'
-      'x-rapidapi-host': 'v3.football.api-sports.io',
+      'x-rapidapi-host': 'V3.football.api-sports',
       'x-rapidapi-key': this._publicKey,
-      // 'method': 'GET'
     });
 
-    const url = 'https://v3.football.api-sports.io/players/topscorers?season=2019&league=61'
+    const url = 'https://v3.football.api-sports.io/teams?id=40';
 
     return this.http.get<any>(url, httpOptions)
       .pipe(

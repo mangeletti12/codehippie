@@ -45,6 +45,8 @@ export class LineChartComponent implements OnInit {
   lineChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    showLines: false,
+    stepSize: 1,
     scales: {
 
       // xAxes: [{
@@ -55,9 +57,10 @@ export class LineChartComponent implements OnInit {
       // }],
       yAxes: [{
         ticks: {
-          // reverse: true,
-          // min: 20,
-          // max: 1
+          stepSize: 1,
+          type: 'linear',
+          min: 1,
+          max: 20
         }
       }]
 
@@ -67,6 +70,10 @@ export class LineChartComponent implements OnInit {
   lineChartColors: Color[] = [
     {
       borderColor: 'black',
+      borderWidth: 0,
+      pointBorderWidth: 0,
+      pointRadius: 10,
+      pointBorderColor: 'rgba(255,0,0,1)',
       backgroundColor: 'rgba(255,0,0,0.28)',
     },
   ];

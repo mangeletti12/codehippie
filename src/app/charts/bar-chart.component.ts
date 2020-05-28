@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
 import { SoccerService } from './soccer.service';
+import { Color, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-bar-chart',
@@ -22,57 +22,55 @@ export class BarChartComponent implements OnInit {
   barChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
+    // scales: {
 
-      // xAxes: [{
-      //   display: false,
-      //   ticks: {
+    //   // xAxes: [{
+    //   //   display: false,
+    //   //   ticks: {
 
-      //   }
-      // }],
-      yAxes: [{
-        ticks: {
-          // reverse: true,
-          stepSize: 1,
-          min: 1,
-          max: 20
+    //   //   }
+    //   // }],
+    //   yAxes: [{
+    //     ticks: {
+    //       // reverse: true,
+    //       stepSize: 1,
+    //       min: 1,
+    //       max: 20
 
-        }
-      }]
+    //     }
+    //   }]
 
-    }
+    // }
   };
-
+  // https://www.premierleague.com/stats/all-time
   barChartLabels: Label[] = [
-    '00/01',
-    '01/02',
-    '02/03',
-    '03/04',
-    '04/05',
-    '05/06',
-    '06/07',
-    '07/08',
-    '08/09',
-    '09/10',
-    '10/11',
-    '11/12',
-    '12/13',
-    '13/14',
-    '14/15',
-    '15/16',
-    '16/17',
-    '17/18',
-    '18/19',
-    '19/20',
+    'Alan Shearer',
+    'Wayne Rooney',
+    'Andrew Cole',
+    'Sergio Aguero',
+    'Frank Lampard',
+    'Thierry Henry',
+    'Robbie Fowler',
+    'Jermain Defoe',
+    'Michael Owen',
+    'Les Ferdinand',
+
   ];
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [3,2,5,4,5,3,3,4,2,7,6,8,7,2,6,8,4,4,2,2],
-      label: 'Liverpool Final Rankings',
+    { data: [260,208,187,180,177,175,163,162,150,149],
+      label: 'All-time Premier League Top Scorers',
 
+    },
+  ];
+
+  barChartColors: Color[] = [
+    {
+      borderColor: 'black',
+      backgroundColor: 'rgba(148,0,211,0.28)',
     },
   ];
 

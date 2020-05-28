@@ -205,6 +205,22 @@
 
  .imgLFC img { margin-right: 20px; }
 
+ .imgLFC span {
+  line-height: 25px;
+  display: inline-block;
+}
+
+.section.dark {
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  background-color: #272b2f;
+  border-bottom: 1px solid #535f6b;
+  border-radius: 15px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4) inset, 0 0 20px rgba(0,0,0,0.2) inset;
+  margin: 0 0 70px;
+  padding: 30px;
+}
+
 .skill-width_5 { width: 100%; }
 .skill-width_4 { width: 80%; }
 .skill-width_3 { width: 60%; }
@@ -231,4 +247,25 @@
   @keyframes SKILL-ANIMATION {
     0%   { transform: scaleX(0); }
     100% { transform: scaleX(1); }
+  }
+
+  /* Media Queries */
+
+  @media only screen and (max-width: 900px) {
+    .imgLFC img {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+  }
+
+
+  // iPad in portrait
+  @media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation : portrait) {
+
+    .social-wrapper {
+      margin-right: 2px;
+    }
   }

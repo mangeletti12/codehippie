@@ -81,23 +81,27 @@ h2.acc_trigger span {
   background: #111;
   width: 220px;
 }
-.ulNav li {
-  padding: 3px 0;
-}
+// .ulNav li {
+//   padding: 3px 0;
+// }
 .ulNav a {
   color: #e3e3e3;
   text-decoration: none;
   display: block;
-  padding: 2px;
+  padding: 5px;
   padding-left: 20px;
-  border-left:2px solid #111;
+  border-left: 2px solid #111;
   -moz-transition: all .0s ease-in;
   -o-transition: all .0s ease-in;
   -webkit-transition: all .0s ease-in;
   transition: all .0s ease-in;
 }
 
-.ulNav a:hover { color: #FFBF00; border-left:2px solid #111; }
+.ulNav a:hover {
+  // color: #FFBF00;
+  border-left: 2px solid #111;
+  background-color: #252525;
+ }
 
 .ulNav a.active-link { color: #FFBF00; }
 
