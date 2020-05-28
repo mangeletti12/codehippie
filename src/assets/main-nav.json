@@ -24,11 +24,6 @@
                   "Claim": "Nav_Resume"
                 },
                 {
-                  "Text": "Buffet",
-                  "Url": "/buffet",
-                  "Claim": "Nav_Buffet"
-                },
-                {
                   "Text": "Hiking Trails",
                   "Url": "/trails",
                   "Claim": "Nav_Trails"
@@ -37,6 +32,11 @@
                   "Text": "Q & A",
                   "Url": "/qa",
                   "Claim": "Nav_QA"
+                },
+                {
+                  "Text": "Buffet",
+                  "Url": "/buffet",
+                  "Claim": "Nav_Buffet"
                 },
                 {
                   "Text": "Inspiration",

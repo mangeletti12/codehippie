@@ -137,6 +137,7 @@ export const SECURE_ROUTES: Routes = [
     path: 'line-chart',
     component: LineChartComponent,
     data: { breadcrumb: 'Line Chart' },
+    resolve: { comp: ResolverService },
   },
   {
     path: 'bar-chart',
@@ -147,11 +148,13 @@ export const SECURE_ROUTES: Routes = [
     path: 'pie-chart',
     component: PieChartComponent,
     data: { breadcrumb: 'Pie Chart' },
+    resolve: { comp: ResolverService },
   },
   {
     path: 'test-alerts',
     component: TestAlertsComponent,
     data: { breadcrumb: 'Alert Test' },
+    resolve: { comp: ResolverService },
   },
   {
     path: 'app',
@@ -162,11 +165,13 @@ export const SECURE_ROUTES: Routes = [
     path: 'files',
     component: FilesComponent,
     data: { breadcrumb: 'Files' },
+    resolve: { comp: ResolverService },
   },
   {
     path: 'tree',
     component: TreeComponent,
     data: { breadcrumb: 'tree' },
+    resolve: { comp: ResolverService },
   },
 
   //Lazyloading
