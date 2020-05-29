@@ -79,8 +79,8 @@ body.dark-theme {
 
 .bar button {
   position: relative;
-  color: #fff;
-  background: #000;
+  color: #000;
+  background: #FFBF00;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,6 +285,14 @@ header {
 
 .dark-theme .imgLFC img {
   filter: invert(75%) sepia(96%) saturate(350%) hue-rotate(1deg) brightness(101%) contrast(112%) !important;
+}
+
+.marvelLogo {
+  fill: #EC1D24;
+}
+
+.dark-theme .marvelLogo {
+  fill: #607d8b !important;
 }
 
 .dark-theme .line {

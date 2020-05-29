@@ -56,14 +56,14 @@
                   "Claim": "Nav_Heroes"
                 },
                 {
-                  "Text": "Teams",
-                  "Url": "/superheroes/teams",
-                  "Claim": "Nav_Teams"
-                },
-                {
                   "Text": "Cards",
                   "Url": "/infinite-scroll",
                   "Claim": "Nav_List"
+                },
+                {
+                  "Text": "Teams",
+                  "Url": "/superheroes/teams",
+                  "Claim": "Nav_Teams"
                 }
 
               ]
