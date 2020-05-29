@@ -26,6 +26,8 @@ export class TrailsComponent implements OnInit {
     // Markers
 
     const trails = [
+      ['Clement Park', 39.605113, -105.087197, 12],
+      ['South Platt River', 39.568308, -105.045398, 11],
       ['Mount Falcon Park', 39.6456458,-105.207352, 10],
       ['Trading Post Trail', 39.6612724,-105.2058838, 9],
       ['Lair o’ the Bear Park', 39.676889, -105.259000, 8],
