@@ -122,10 +122,10 @@ export const SECURE_ROUTES: Routes = [
     resolve: { comp: ResolverService },
   },
   {
-    path: 'infinite-scroll',
+    path: 'cards',
     component: IScrollComponent,
     //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Infinite Scroll' },
+    data: { breadcrumb: 'Cards' },
     resolve: { comp: ResolverService },
   },
   // {
