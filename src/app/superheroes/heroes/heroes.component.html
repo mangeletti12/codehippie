@@ -11,11 +11,9 @@
     </div>
 
     <div>
-
       <button mat-button (click)="onCreate()">
         <mat-icon title="Add User">add</mat-icon>
       </button>
-
     </div>
 
   </mat-toolbar-row>
@@ -23,7 +21,7 @@
   <mat-toolbar-row class="search-row">
 
     <mat-form-field class="search-form-field" floatLabel="never">
-      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup.enter)="search()" >
+      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="search($event)" >
       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="clearSearch()" >
         <mat-icon>close</mat-icon>
       </button>
@@ -67,11 +65,6 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
       <mat-cell *matCellDef="let element" @tableCells>{{element.name}}</mat-cell>
     </ng-container>
-<!--
-    <ng-container matColumnDef="desc">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Desc</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.desc}}</mat-cell>
-    </ng-container> -->
 
     <ng-container matColumnDef="modified">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Modified</mat-header-cell>

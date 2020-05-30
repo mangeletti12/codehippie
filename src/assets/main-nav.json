@@ -37,12 +37,8 @@
                   "Text": "Buffet",
                   "Url": "/buffet",
                   "Claim": "Nav_Buffet"
-                },
-                {
-                  "Text": "Inspiration",
-                  "Url": "/inspiration",
-                  "Claim": "Nav_Inspiration"
                 }
+
               ]
             },
             {

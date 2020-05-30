@@ -46,7 +46,7 @@ export class SearchBarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log('searchStatus', this.searchStatus);
+    // console.log('searchStatus', this.searchStatus);
     this.searching = this.searchStatus === 'true';
   }
 
@@ -69,30 +69,31 @@ export class SearchBarComponent implements OnInit, OnChanges {
 
   // This is called from 'other' components
   setSearchBar(searchValue: string) {
-    console.log('setSearchBar', searchValue);
+    // console.log('setSearchBar', searchValue);
     this.form.get('textSearch').setValue(searchValue);
     this.hasSearchOptions = true;
   }
 
   //
-  onSearchChange(searchValue: string) {
-    console.log('onSearchChange', searchValue);
-    this.form.get('textSearch').setValue(searchValue);
-  }
+  onSearchChange(e) {
+    if (e.key === "Enter") {
+      // console.log('-> onSearchChange', e);
 
-  //
-  onKey(e: any) {
-    console.log('onKey',  e.key);
+      this.form.get('textSearch').setValue(e.target.value);
+      //
+      this.searchSubmit();
+    }
   }
 
   // Submit
   searchSubmit() {
+
     // Called from search, so we assume a NEW search
     this.hideSearch = true;
     this.searching = true;
     //
     const searchBarParams = this.form.value;
-    // console.log('searchSubmit', searchBarParams);
+    // console.log('--> searchSubmit', searchBarParams);
 
     if (searchBarParams.textSearch !== ''
       || searchBarParams.showInactive !== false) {

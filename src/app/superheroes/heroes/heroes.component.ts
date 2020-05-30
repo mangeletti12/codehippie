@@ -12,6 +12,7 @@ import { ModalComponent } from '../../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
 //animation
 import { transition, animate, trigger, style } from '@angular/animations';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 
 @Component({
@@ -124,7 +125,12 @@ export class HeroesComponent implements OnInit {
     }
 
     // console.log('searchCriteria', searchCriteria);
-    this.superheroesService.getAllHeroes(searchCriteria).subscribe(
+    this.superheroesService.getAllHeroes(searchCriteria)
+    .pipe(
+      debounceTime(500),     // wait N ms after each keystroke before considering the term
+      distinctUntilChanged() // ignore if next search term is same as previous
+    )
+    .subscribe(
       data => {
         const heroes = data.body.data;
         // console.log('heroes', heroes);
@@ -138,11 +144,17 @@ export class HeroesComponent implements OnInit {
 
   }
 
-  search() {
-    this.pageNumber = 0;
-    this.paginator.pageIndex = 0;
-    this.dataSource = null;
-    this.getAllHeroes();
+  search(e) {
+
+    //if (e.key === "Enter") {
+      // console.log('SEARCH', e);
+      //
+      this.pageNumber = 0;
+      this.paginator.pageIndex = 0;
+      this.dataSource = null;
+      this.getAllHeroes();
+    //}
+
   }
 
   clearSearch() {
@@ -155,7 +167,7 @@ export class HeroesComponent implements OnInit {
 
   // Sort
   sortChanged(e) {
-    console.log(e);
+    // console.log(e);
     this.dataSource = null;
     //
     this.sortOrder = e.direction;
@@ -207,7 +219,7 @@ export class HeroesComponent implements OnInit {
   onEdit(row, e){
     e.stopPropagation();
 
-    console.log('edit', row);
+    // console.log('edit', row);
     this.router.navigate([row.id], { relativeTo: this.activatedRoute });
   }
 

@@ -1,6 +1,6 @@
 <div class="comp-search-bar" #advSearchHolder>
 
-  <form [formGroup]="form" (ngSubmit)="searchSubmit()" class="searchHolder" #myForm="ngForm">
+  <form [formGroup]="form" class="searchHolder" #myForm="ngForm">
 
     <!-- search bar start -->
     <div class="searchBar" [ngClass]="{'shadow whiteBg': searchHasfocus == true}">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="searchInput">
-        <input type="text" class="mainSearch" aria-label="Search" autocomplete="off" placeholder="Search" value="" id="search" formControlName="textSearch" dir="ltr" spellcheck="false" aria-haspopup="true" (focus)="focusSearch()" (focusout)="focusOutSearch()" (input)="onSearchChange($event.target.value)" (keyup)="onKey($event)">
+        <input type="text" class="mainSearch" aria-label="Search" autocomplete="off" placeholder="Search" value="" id="search" formControlName="textSearch" dir="ltr" spellcheck="false" aria-haspopup="true" (focus)="focusSearch()" (focusout)="focusOutSearch()" (keyup)="onSearchChange($event)">
       </div>
 
       <div class="mainSearchBtn" *ngIf="searching" >
