@@ -29,6 +29,7 @@ import { TrailsComponent } from './trails/trails.component';
 import { ResumeComponent } from './resume/resume.component';
 import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
+import { ContactComponent } from './contact/contact.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -61,6 +62,13 @@ export const SECURE_ROUTES: Routes = [
     component: ResumeComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Resume' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Contact' },
     resolve: { comp: ResolverService },
   },
   {

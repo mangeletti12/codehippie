@@ -100,6 +100,7 @@ import { SearchComponent } from './globals/search/search.component';
 //
 import { NgwWowModule } from 'ngx-wow';
 import { InspirationComponent } from './inspiration/inspiration.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,7 @@ import { InspirationComponent } from './inspiration/inspiration.component';
     HelpComponent,
     SearchComponent,
     InspirationComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

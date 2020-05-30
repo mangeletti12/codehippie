@@ -37,7 +37,7 @@ export class HeroComponent implements OnInit {
       }
     });
 
-    // Assume New Estimate, so initialize the form as a NEW Estimate, and add the validators
+    // Assume New hero, so initialize the form as a NEW, and add the validators
     this.form = this.fb.group( {
       $key: new FormControl(null),
       name: new FormControl('', [Validators.required, Validators.minLength(4)] ),

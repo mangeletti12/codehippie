@@ -1,0 +1,40 @@
+
+<form [formGroup]="form" >
+  <mat-grid-list cols="1" rowHeight="325px" gutterSize="1px" >
+    <mat-grid-tile class="formColStandard">
+      <div class="controles-container ">
+
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Name*" />
+          <mat-error *ngIf="form.controls['name'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['name'].errors?.minlength">Minimum 4 charactors needed.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="email" type="email" name="email" ngModel email="true" placeholder="Email*" />
+          <mat-error *ngIf="form.controls['email'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['email'].errors?.pattern">Must be a valid email.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="subject" placeholder="Subject*" />
+          <mat-error *ngIf="form.controls['subject'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['subject'].errors?.minlength">Minimum 4 charactors needed.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="body" placeholder="body*" />
+          <mat-error *ngIf="form.controls['body'].errors?.required">This field is mandatory.</mat-error>
+          <mat-error *ngIf="form.controls['body'].errors?.minlength">Minimum 4 charactors needed.</mat-error>
+        </mat-form-field>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">Submit</button>
+
+        </div>
+
+      </div>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>
