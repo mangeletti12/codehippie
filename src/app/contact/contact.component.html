@@ -16,11 +16,11 @@
           <mat-error *ngIf="form.controls['email'].errors?.pattern">Must be a valid email.</mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <!-- <mat-form-field>
           <input matInput formControlName="subject" placeholder="Subject*" />
           <mat-error *ngIf="form.controls['subject'].errors?.required">This field is mandatory.</mat-error>
           <mat-error *ngIf="form.controls['subject'].errors?.minlength">Minimum 4 charactors needed.</mat-error>
-        </mat-form-field>
+        </mat-form-field> -->
 
         <mat-form-field>
           <input matInput formControlName="body" placeholder="body*" />
