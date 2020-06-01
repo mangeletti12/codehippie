@@ -100,6 +100,7 @@ import { NgwWowModule } from 'ngx-wow';
 import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
   declarations: [
@@ -145,6 +146,7 @@ import { P5Component } from './p5/p5.component';
     InspirationComponent,
     ContactComponent,
     P5Component,
+    PracticeComponent,
   ],
   imports: [
     BrowserModule,

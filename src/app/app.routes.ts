@@ -31,6 +31,7 @@ import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
+import { PracticeComponent } from './practice/practice.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -142,6 +143,13 @@ export const SECURE_ROUTES: Routes = [
     component: P5Component,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'p5*js' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'practice',
+    component: PracticeComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Practice' },
     resolve: { comp: ResolverService },
   },
   {
