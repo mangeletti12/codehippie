@@ -62,10 +62,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 // Below will be lazyloaded at some point
 ////////////////////////////////////////////
 
-
 import { CorsListComponent } from './cors/cors-list.component';
 import { CorComponent } from './cors/cor/cor.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { AnswersComponent } from './answers/answers.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesService } from './movies/movies.service';
@@ -101,6 +99,7 @@ import { SearchComponent } from './globals/search/search.component';
 import { NgwWowModule } from 'ngx-wow';
 import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
+import { P5Component } from './p5/p5.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +115,6 @@ import { ContactComponent } from './contact/contact.component';
     BuffetComponent,
     CorsListComponent,
     CorComponent,
-    CalendarComponent,
     AnswersComponent,
     MoviesComponent,
     TestAlertsComponent,
@@ -146,6 +144,7 @@ import { ContactComponent } from './contact/contact.component';
     SearchComponent,
     InspirationComponent,
     ContactComponent,
+    P5Component,
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
+import { P5Component } from './p5/p5.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -136,11 +137,13 @@ export const SECURE_ROUTES: Routes = [
     data: { breadcrumb: 'Cards' },
     resolve: { comp: ResolverService },
   },
-  // {
-  //   path: 'sub',
-  //   redirectTo: '/login',
-  //   data: { breadcrumb: 'Sub' },
-  // },
+  {
+    path: 'p5',
+    component: P5Component,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'p5*js' },
+    resolve: { comp: ResolverService },
+  },
   {
     path: 'line-chart',
     component: LineChartComponent,
