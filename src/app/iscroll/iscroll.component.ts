@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { AddToTeamComponent } from '../superheroes/teams/add-to-team.component';
 // animation
 import { transition, animate, trigger, state, style } from '@angular/animations';
 import { SuperheroesService } from '../superheroes/superheroes.service';
+import { AlertService } from '../alert/alert.service';
 // modal
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
+
+
 
 
 
@@ -89,6 +93,7 @@ export class IScrollComponent implements OnInit {
 
   constructor(
     private superheroesService: SuperheroesService,
+    private alertService: AlertService,
     public matDialog: MatDialog,
     public overlay: Overlay,
   ) {
@@ -179,9 +184,10 @@ export class IScrollComponent implements OnInit {
   selectItem(item) {
     // console.log('selectItem', item);
     // Mark all non-selecetd, before mark the new selected
-    this.heroes.forEach(i => { i.selected = false; });
+    // this.heroes.forEach(i => { i.selected = false; });
+
     item.selected = !item.selected;
-    this.selectedItem = item;
+    // this.selectedItem = item;
   }
 
   details(id, item, e) {
@@ -232,7 +238,49 @@ export class IScrollComponent implements OnInit {
       }
     );
 
+  }
 
+  // Add to Team!
+  addToTeam() {
+    const selectedHeroes = this.heroes.filter(obj => obj.selected === true);
+    console.log('selectedHeroes', selectedHeroes);
+
+    if (selectedHeroes.length === 0) {
+      this.alertService.error('You must select some heroes first!');
+      return false;
+    }
+
+    const addToTeamHeroes = [];
+    selectedHeroes.forEach(obj => {
+      const h = {
+        id: obj.id,
+        name: obj.name
+      };
+      addToTeamHeroes.push(h);
+    });
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
+    dialogConfig.width = '40%';
+    dialogConfig.data = {
+      heroes: addToTeamHeroes
+    }
+    const dialogRef = this.matDialog.open(AddToTeamComponent, dialogConfig);
+    //
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result !== null && result !== undefined) {
+        if (result.data.length === 1) {
+          this.alertService.success('Successfully added a hero to a team!');
+        }
+        else if (result.data.length > 0) {
+          this.alertService.success('Successfully added ' + result.data.length + ' heroes to a team!');
+        }
+      }
+
+    });
   }
 
 

@@ -1,7 +1,8 @@
 <ng-container *ngIf="heroes">
 
   <div class="comp-header">
-    <span>Total: {{ heroes.length }} of {{ totalRows }}</span>
+    <div><button mat-flat-button (click)="addToTeam()" color="primary">Add to Team</button></div>
+    <div>{{ heroes.length }} of {{ totalRows }} </div>
   </div>
 
   <div

@@ -21,13 +21,14 @@ export class ContactService {
 
     console.log('gmail form', formData);
 
-    const url = 'https://script.google.com/macros/s/AKfycbyl-PyiIiGlHMKSsUtg2DbzWuYYSiJLOP7MiNIg/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbweoPo7m3n3bap1UhCfm2gTHY7Vm6v3C8LHW9HROxm9kgIKQHU/exec';
 
     httpOptions.headers = new HttpHeaders({
-      'Access-Control-Allow-Origin': 'true',
+
+      'Access-Control-Allow-Origin': '*',
       'Accept': '*/*',
       'Content-Type': 'application/x-www-form-urlencoded',
-      // 'Authorization': '0'
+
     });
 
     return this.http.post<any>(url, formData, httpOptions)

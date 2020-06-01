@@ -82,23 +82,6 @@ export class HeroesComponent implements OnInit {
     public overlay: Overlay,
   ) {
 
-    // Get and set the teams, no DB!
-    const memTeams = this.superheroesService.getAllTeams();
-    // console.log('memTeams', memTeams);
-    if (memTeams.length === 0) {
-      // Get teams from API
-      this.superheroesService.getTeams().subscribe(
-        data => {
-          const teams = data.body;
-          // console.log('teams', this.teams);
-          this.superheroesService.setAllTeams(teams);
-        },
-        error => {
-
-        }
-      );
-    }
-
   }
 
   ngOnInit(): void {

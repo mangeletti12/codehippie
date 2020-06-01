@@ -1,5 +1,5 @@
 
-<form [formGroup]="form" >
+<form [formGroup]="form" class="gform"  >
   <mat-grid-list cols="1" rowHeight="325px" gutterSize="1px" >
     <mat-grid-tile class="formColStandard">
       <div class="controles-container ">
@@ -29,7 +29,7 @@
         </mat-form-field>
 
         <div class="button-row">
-          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="onSubmit()">Submit</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)='onSubmit()' >Submit</button>
 
         </div>
 

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SuperheroesService } from '../superheroes.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-// import { Router, ActivatedRoute } from '@angular/router';
-// import { DialogService } from 'src/app/mat-confirm-dialog/mat-confirm-dialog.service';
 import { ViewTeamComponent } from '../teams/view-team.component';
 
 @Component({
@@ -15,10 +13,7 @@ export class TeamsComponent implements OnInit {
 
   constructor(
     private superheroesService: SuperheroesService,
-    // private router: Router,
-    // private activatedRoute: ActivatedRoute,
     private dialog: MatDialog,
-    // private dialogService: DialogService,
   ) { }
 
   ngOnInit(): void {

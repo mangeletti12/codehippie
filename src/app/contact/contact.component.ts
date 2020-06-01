@@ -3,7 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ContactService } from './contact.service';
 
 // https://docs.google.com/spreadsheets/d/1LyqAplh068LL2fwdE_9HwtbWjxxK6-1-EkPkY3AfV2c/copy
-//
+// https://blog.h-educate.com/how-to-send-an-email-in-a-static-html-page-using-google-sheets-scripts/
+// https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server/blob/master/README.md
 
 @Component({
   selector: 'app-contact',
@@ -37,22 +38,28 @@ export class ContactComponent implements OnInit {
 
     //
     if (this.form.valid) {
-        var id = this.form.get('$key').value;
+      var id = this.form.get('$key').value;
+
+      // email: "mark.angeletti@gmail.com"
+      // formDataNameOrder: "["name","message","email"]"
+      // formGoogleSendEmail: "example@email.net"
+      // formGoogleSheetName: "responses"
+      // message: "testing"
+      // name: "mark"
 
       // Insert
       if (!id) {
-        const email = {
+
+        const formData = {
+          formDataNameOrder: '["timestamp","subject","name","email","body"]', // JSON.stringify(email),
+          formGoogleSheetName: 'responses', // default sheet name
+          formGoogleSendEmail: 'mark.angeletti@gmail.com', // no email by default
+
           name: this.form.get('name').value,
           email: this.form.get('email').value,
           subject: 'CODE HIPPIE CONTACT', //this.form.get('subject').value,
           body: this.form.get('body').value,
           timestamp: new Date()
-        };
-
-        const formData = {
-          formDataNameOrder: JSON.stringify(email),
-          formGoogleSheetName: 'codehippie-contact' || "responses", // default sheet name
-          formGoogleSendEmail: 'mark.angeletti@gmail.com' || "", // no email by default
         }
         // console.log('formData', formData);
         //

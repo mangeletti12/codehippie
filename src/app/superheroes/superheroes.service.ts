@@ -62,7 +62,7 @@ export class SuperheroesService {
   }
 
   // Set all teams
-  // ... since we haove no DB
+  // ... since we have no DB
   setAllTeams(teams: any) {
     this.allTeams = teams;
   }
@@ -132,7 +132,7 @@ export class SuperheroesService {
 
     return this.http.get<any>(url, httpOptions)
       .pipe(
-        catchError(this.handleError('getAllTeams', []))
+        catchError(this.handleError('getTeams', []))
       );
   }
 

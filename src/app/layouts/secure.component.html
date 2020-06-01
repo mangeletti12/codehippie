@@ -33,20 +33,20 @@
         <div class="main-loader" [hidden]="!HTTPActivity"><i class="fas fa-cog fa-spin" aria-hidden="true"></i></div>
 
         <a [routerLink]="['/']">
-          <div id="logo" matTooltip="Home Jeeves"></div>
+          <div id="logo" matTooltip="Home Jeeves" #Logo="matTooltip" (click)="Logo.toggle()"></div>
         </a>
 
         <div class="btns-holder">
-          <div class="m-icon" matTooltip="Profile" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
-          <div class="m-icon" matTooltip="Search" (click)="toggleSlideOut('Search')"><div><i class="material-icons">search</i></div></div>
-          <div class="m-icon" matTooltip="Help" (click)="toggleSlideOut('Help')"><div><i class="material-icons">help_outline</i></div></div>
-          <div class="m-icon" matTooltip="Notifications" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
+          <div class="m-icon" matTooltip="Profile" #Profile="matTooltip" (click)="Profile.toggle()" (click)="toggleSlideOut('Profile')"><div><i class="material-icons">person</i></div></div>
+          <div class="m-icon" matTooltip="Search" #Search="matTooltip" (click)="Search.toggle()" (click)="toggleSlideOut('Search')"><div><i class="material-icons">search</i></div></div>
+          <div class="m-icon" matTooltip="Help" #Help="matTooltip" (click)="Help.toggle()" (click)="toggleSlideOut('Help')"><div><i class="material-icons">help_outline</i></div></div>
+          <div class="m-icon" matTooltip="Notifications" #Notifications="matTooltip" (click)="Notifications.toggle()" (click)="toggleSlideOut('Notifications')"><div><i class="material-icons">notifications_none</i></div></div>
         </div>
 
         <!-- themes -->
         <div class="theme-holder">
-          <span class="light" (click)="onSetTheme('default-theme')" matTooltip="Light Theme"></span>
-          <span class="dark" (click)="onSetTheme('dark-theme')" matTooltip="Dark Theme"></span>
+          <span class="light" matTooltip="Light Theme" #LightTheme="matTooltip" (click)="LightTheme.toggle()" (click)="onSetTheme('default-theme')"></span>
+          <span class="dark" matTooltip="Dark Theme" #DarkTheme="matTooltip" (click)="DarkTheme.toggle()" (click)="onSetTheme('dark-theme')"></span>
         </div>
 
       </div>

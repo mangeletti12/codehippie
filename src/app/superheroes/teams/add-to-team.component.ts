@@ -21,13 +21,32 @@ export class AddToTeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getTeams();
+
     this.passedInHeroes = this.data.heroes;
     // console.log('dialog heroes', this.passedInHeroes);
-
-    // Get the teams from memory, no DB!
-    this.teams = this.superheroesService.getAllTeams();
-    // console.log('all teams', this.teams);
   }
+
+  getTeams() {
+    // Get and set the teams, no DB!
+    this.teams = this.superheroesService.getAllTeams();
+    // console.log('this.teams', this.teams);
+    if (this.teams.length === 0) {
+      // Get teams from API
+      this.superheroesService.getTeams().subscribe(
+        data => {
+          this.teams = data.body;
+          // Set in memory, no DB!
+          this.superheroesService.setAllTeams(this.teams);
+        },
+        error => {
+
+        }
+      );
+    }
+
+  }
+
 
   changeTeam(team) {
     // console.log('changeTeam', team);
