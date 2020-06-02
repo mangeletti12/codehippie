@@ -47,6 +47,7 @@ export class PracticeComponent implements OnInit {
 
     ///////////////
     // function v arrow function =>
+    // => allow you to access outer variables
 
     const profile = {
       firstName: '',
@@ -67,7 +68,49 @@ export class PracticeComponent implements OnInit {
     profile.setName('bob marley');
     console.log(profile.firstName);
 
+    //
+    //////////////////////////
+    // 'this' keyword
 
+
+    const cleanTable = function(soap) {
+      console.log(`cleaning ${this.table} using ${soap}.`);
+    }
+
+    let garage = {
+      table: 'garage table',
+    };
+
+    cleanTable.call(garage, 'garage soap');
+
+    //
+
+    // constructor function
+    // let createRoom = function(name) {
+    //   this.table = `${name}s table`;
+    // }
+
+    // //
+    // createRoom.prototype.cleanTable = function(soap) {
+    //   console.log(`cleaning ${this.table} using ${soap}.`)
+    // }
+
+    class createRoom {
+      table: string;
+
+      constructor(name) {
+        this.table = `${name}'s table`
+      }
+      cleanTable(soap) {
+        console.log(`cleaning ${this.table} using ${soap}.`)
+      }
+    }
+
+    const jillsRoom = new createRoom('jill');
+    const johnsRoom = new createRoom('john');
+
+    jillsRoom.cleanTable('jill soap');
+    johnsRoom.cleanTable('john soap');
 
   }
 
