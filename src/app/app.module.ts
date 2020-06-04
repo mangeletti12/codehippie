@@ -101,6 +101,7 @@ import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
+import { GrmDashboardComponent } from './grm-dashboard/grm-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -147,6 +148,7 @@ import { PracticeComponent } from './practice/practice.component';
     ContactComponent,
     P5Component,
     PracticeComponent,
+    GrmDashboardComponent,
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,7 @@ import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
+import { GrmDashboardComponent } from './grm-dashboard/grm-dashboard.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -122,6 +123,13 @@ export const SECURE_ROUTES: Routes = [
     component: MoviesComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Movies',},
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'grm',
+    component: GrmDashboardComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'GRM Dashboard',},
     resolve: { comp: ResolverService },
   },
   {
