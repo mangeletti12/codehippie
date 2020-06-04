@@ -1,5 +1,6 @@
 # Directions
 Be sure to have node.js and git installed:
+
 https://git-scm.com/
 
 https://nodejs.org/en/download/
