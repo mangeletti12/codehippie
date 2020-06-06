@@ -76,6 +76,12 @@ export class ContactsComponent implements OnInit {
     legend: {
       display: true,
       position: 'right',
+      onHover: (e, chartElement) => {
+        console.log('onHover', chartElement);
+        console.log('e', e.target);
+        // e.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
+
+      },
       onClick: (e, legendItem) => {
         // console.log('item legend', legendItem);
         this.filterByStatus(legendItem.text);
@@ -191,11 +197,10 @@ export class ContactsComponent implements OnInit {
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     this.dataSource = null;
-
+    
     const filteredDs = this.getPaginatedSlice();
     // console.log('filteredDs', filteredDs);
-    
-    this.dataSource = filteredDs;
+    this.dataSource = new MatTableDataSource(filteredDs);
   }
 
   // Clear filter
@@ -228,7 +233,7 @@ export class ContactsComponent implements OnInit {
     // sort local, this should be done on the backend
     this.contacts.sort(this.sortValues(this.sortField, this.sortOrder));
     const ds = this.getPaginatedSlice();
-    this.dataSource = this.dataSource = new MatTableDataSource(ds);
+    this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
   }
@@ -239,7 +244,8 @@ export class ContactsComponent implements OnInit {
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;
     // console.log(this.pageNumber + '---' + this.pageSize);
-    this.dataSource = this.getPaginatedSlice();
+    const ds = this.getPaginatedSlice();
+    this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
   }

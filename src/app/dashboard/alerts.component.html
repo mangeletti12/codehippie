@@ -1,6 +1,19 @@
 <div class="contacts-meta">
-    <h3 class="pane-title">Alerts</h3>
 
+    <mat-form-field appearance="outline">
+        <!-- <mat-label>Severity</mat-label> -->
+        <mat-select
+            (selectionChange)="filterBySeverity($event.value)"
+            [(value)]="selectedSeverity"
+            panelClass="my-select-panel"
+        >
+            <mat-option *ngFor="let item of severity" [value]="item.value">
+            {{ item.viewValue }}
+            </mat-option>
+        </mat-select>
+        <!-- <mat-icon matSuffix>filter_alt</mat-icon> -->
+    </mat-form-field>
+    
     <div *ngIf="alerts" class="pie-chart">
         <!-- <div class="chart-wrapper">
             <canvas baseChart
@@ -14,6 +27,8 @@
             </canvas>
         </div> -->
     </div>
+
+    <h3 class="pane-title">Alerts</h3>
 </div>
   
 <div class="animation-shadow">
@@ -80,19 +95,19 @@
         </ng-container>
 
         <ng-container matColumnDef="loading">
-            <td mat-footer-cell *matFooterCellDef colspan="3">
+            <td mat-footer-cell *matFooterCellDef colspan="4">
             Loading data...
             </td>
         </ng-container>
 
         <ng-container matColumnDef="noData">
-            <td mat-footer-cell *matFooterCellDef colspan="3">
+            <td mat-footer-cell *matFooterCellDef colspan="4">
             No data...
             </td>
         </ng-container>
 
         <ng-container matColumnDef="filter">
-            <td mat-header-cell *matHeaderCellDef colspan="3">
+            <td mat-header-cell *matHeaderCellDef colspan="4">
                 <div class="filter-bar">
                     <div class="info1">You have one or more filters selected!</div>
                     <button mat-flat-button (click)="removeFilter()">click to remove filter(s)</button>
@@ -110,7 +125,7 @@
 
         <tr mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></tr>
         <tr mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && totalRows==0)}"></tr>
-        <tr mat-header-row *matHeaderRowDef="['filter']" [ngClass]="{'hide':!filterStatus}"></tr>
+        <tr mat-header-row *matHeaderRowDef="['filter']" [ngClass]="{'hide':!filterSeverity}"></tr>
 
         </table>
     </div>

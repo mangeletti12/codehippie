@@ -5,16 +5,17 @@
 .flex-parent {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   height: 100%;
 }
 
 .contacts-holder {
-  width: 100%;
+  width: 65%;
   // height: calc(100vh - 65px);
   padding: 10px 5px;
 }
 
 .alerts-holder {
-  width: 600px;
+  width: 33%;
   padding: 10px 5px;
 }

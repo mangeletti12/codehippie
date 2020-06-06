@@ -5,6 +5,7 @@ $colorSerious: rgb(255, 179, 0);
 $colorCritical: rgb(255, 56, 56);
 
 .contacts-meta {
+  position: relative;
   padding: 10px;
   height: 170px;
 }
@@ -17,6 +18,9 @@ $colorCritical: rgb(255, 56, 56);
     font-weight: 400;
     letter-spacing: -1px;
     line-height: 1.25;
+    bottom: -12px;
+    right: 1px;
+    color: #bbbbbb;
 }
 
 .pie-chart {
@@ -100,6 +104,7 @@ table {
 
 .example-element-row {
   border-top: 1px solid #ddd;
+  cursor: pointer;
 }
 
 .example-element-row:not(.example-expanded-row):hover {

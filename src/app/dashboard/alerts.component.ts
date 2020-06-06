@@ -59,8 +59,16 @@ export class AlertsComponent implements OnInit {
   //
   expandedElement: Alert | null;
   //
-  filterStatus: any = null;
+  filterSeverity: any = null;
+  //
+  severity = [
+    {value: 'all', viewValue: 'All'},
+    {value: 'caution', viewValue: 'Caution'},
+    {value: 'critical', viewValue: 'Critical'},
+    {value: 'serious', viewValue: 'Serious'},
+  ];
 
+  selectedSeverity = 'all';
 
   constructor(
     private dashboardService: DashboardService,
@@ -127,8 +135,10 @@ export class AlertsComponent implements OnInit {
   }
 
   //
-  filterByStatus(status) {
-    this.filterStatus = status.toLowerCase();
+  filterBySeverity(severity) {
+    console.log('filterBySeverity', severity);
+    this.filterSeverity = severity.toLowerCase();
+
     // reset for filter
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
@@ -136,14 +146,26 @@ export class AlertsComponent implements OnInit {
 
     const filteredDs = this.getPaginatedSlice();
     // console.log('filteredDs', filteredDs);
-    
-    this.dataSource = filteredDs;
+    this.dataSource = new MatTableDataSource(filteredDs);
   }
+
+  //
+  // filterByStatus(status) {
+  //   this.filterStatus = status.toLowerCase();
+  //   // reset for filter
+  //   this.pageNumber = 0;
+  //   this.paginator.pageIndex = 0;
+  //   this.dataSource = null;
+
+  //   const filteredDs = this.getPaginatedSlice();
+  //   // console.log('filteredDs', filteredDs);
+  //   this.dataSource = new MatTableDataSource(filteredDs);
+  // }
 
   // Clear filter
   removeFilter() {
     // reset for filter
-    this.filterStatus = null;
+    this.filterSeverity = null;
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     this.dataSource = null;
@@ -186,7 +208,7 @@ export class AlertsComponent implements OnInit {
     // sort local, this should be done on the backend
     this.alerts.sort(this.sortValues(this.sortField, this.sortOrder));
     const ds = this.getPaginatedSlice();
-    this.dataSource = this.dataSource = new MatTableDataSource(ds);
+    this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
   }
@@ -197,8 +219,8 @@ export class AlertsComponent implements OnInit {
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;
     // console.log(this.pageNumber + '---' + this.pageSize);
-    this.dataSource = this.getPaginatedSlice();
-
+    const ds = this.getPaginatedSlice();
+    this.dataSource = new MatTableDataSource(ds);
     // this.getAllContacts();
   }
 
@@ -235,10 +257,10 @@ export class AlertsComponent implements OnInit {
     let filtered = this.alerts;
 
     // Have a filter?
-    if (this.filterStatus !== null) {
+    if (this.filterSeverity !== null) {
       // console.log('> haveFilter', this.filterStatus);
       // console.log('> pageNumber', this.pageNumber);
-      filtered = filtered.filter(o => o.contactStatus === this.filterStatus.toLowerCase());
+      filtered = filtered.filter(o => o.errorSeverity === this.filterSeverity.toLowerCase());
       this.totalRows = filtered.length;
     }
 
