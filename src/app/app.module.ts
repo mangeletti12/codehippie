@@ -103,6 +103,7 @@ import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './dashboard/contacts.component';
+import { AlertsComponent } from './dashboard/alerts.component';
 
 @NgModule({
   declarations: [
@@ -151,6 +152,7 @@ import { ContactsComponent } from './dashboard/contacts.component';
     PracticeComponent,
     DashboardComponent,
     ContactsComponent,
+    AlertsComponent,
   ],
   imports: [
     BrowserModule,

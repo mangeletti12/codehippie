@@ -11,31 +11,22 @@ import { ChartType, ChartOptions } from 'chart.js';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 import * as Chart from 'chart.js';
 
-export interface Contact {
-  contactAzimuth: number;
-  contactBeginTimestamp: number;
-  contactDetail: string;
-  contactElevation: number;
-  contactEndTimestamp: number;
-  contactEquipment: string;
-  contactGround: string;
-  contactId: string;
-  contactLatitude: number;
-  contactLongitude: number;
-  contactName: number;
-  contactResolution: string;
-  contactResolutionStatus: string;
-  contactSatellite: string;
-  contactState: string;
-  contactStatus: string;
-  contactStep: string;
-  _id: string;
+export interface Alert {
+  errorCategory: string,
+  errorId: string,
+  errorMessage: string,
+  errorSeverity: string,
+  errorTime: number,
+  expanded: false,
+  longMessage: string,
+  new: false
+  selected: false
 }
 
 @Component({
-  selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.scss'],
+  selector: 'app-alerts',
+  templateUrl: './alerts.component.html',
+  styleUrls: ['./alerts.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -53,89 +44,43 @@ export interface Contact {
   ],
 
 })
-export class ContactsComponent implements OnInit {
+export class AlertsComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['contactStatus', 'contactName', 'contactGround', 'contactEquipment' , 'contactState', 'contactBeginTimestamp'];
+  displayedColumns: string[] = ['errorSeverity', 'errorCategory', 'errorTime'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-  contacts: any;
-  sortField = 'contactName';
-  sortOrder = 'asc';
+  alerts: any;
+  sortField = 'errorTime';
+  sortOrder = 'desc';
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
   //
-  expandedElement: Contact | null;
+  expandedElement: Alert | null;
   //
   filterStatus: any = null;
 
-  // Pie Chart
-  public pieChartOptions: ChartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-      display: true,
-      position: 'right',
-      onClick: (e, legendItem) => {
-        // console.log('item legend', legendItem);
-        this.filterByStatus(legendItem.text);
-      }
-    },
-    onClick: (e, legendItem) => {
-
-      if (legendItem.length === 0) { return false; }
-      // console.log('item pie', legendItem[0]['_view'].label);
-      this.filterByStatus(legendItem[0]['_view'].label);
-    }
-  };
-
-  public pieChartLabels: Label[] = [
-    'Normal',
-    'Caution',
-    'Serious',
-    'Critical',
-  ];
-  public pieChartData: SingleDataSet = [];
-  public pieChartColors: Color[] = [
-    {
-      // borderColor: 'black',
-      borderWidth: 0,
-      backgroundColor: ['#56f000', '#fce83a', '#ffb300', '#ff3838'],
-    },
-  ];
-
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
-  public pieChartPlugins = [];
-
-  setPieData() {
-    // clean this up
-    const normal = this.contacts.filter(o => o.contactStatus === 'normal');
-    const caution = this.contacts.filter(o => o.contactStatus === 'caution');
-    const serious = this.contacts.filter(o => o.contactStatus === 'serious');
-    const critical = this.contacts.filter(o => o.contactStatus === 'critical');
-    this.pieChartData = [normal.length, caution.length, serious.length, critical.length];
-  }
 
   constructor(
     private dashboardService: DashboardService,
-  ) {
+  ) { 
     monkeyPatchChartJsTooltip();
     monkeyPatchChartJsLegend();
   }
 
   ngOnInit(): void {
-    this.getAllContacts();
+    this.getAllAlerts();
 
+    
     //Defaults
-    this.sort.direction = 'asc';
-    this.sort.active = 'contactName';
+    this.sort.direction = 'desc';
+    this.sort.active = 'errorTime';
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  // Get All contacts
-  getAllContacts() {
+  // Get All alerts
+  getAllAlerts() {
     const orderBy = (this.sortOrder === 'asc') ? this.sortField : '-' + this.sortField;
 
     var searchCriteria = {
@@ -150,27 +95,24 @@ export class ContactsComponent implements OnInit {
     // }
 
     // console.log('searchCriteria', searchCriteria);
-    this.dashboardService.getContacts(searchCriteria).subscribe(
+    this.dashboardService.getAlerts(searchCriteria).subscribe(
       data => {
-        console.log('contacts', data.body);
+        console.log('alerts', data.body);
         if (this.pageNumber === 0) {
-          this.contacts = data.body;
-
-          // Set Pie Chart
-          this.setPieData();
+          this.alerts = data.body;
 
           // Fake pagination
           // this should happen on the backend
           // that way would only get the records you asked for, not all
           // const ds = this.getPaginatedSlice();
-          
+
           const defaultSort = { active: this.sortField, direction: this.sortOrder };
           this.sortChanged(defaultSort);
 
           // this.dataSource = new MatTableDataSource(ds);
         } else {
           // concatenate arrays
-          this.contacts = [...this.contacts, ...data.body];
+          this.alerts = [...this.alerts, ...data.body];
 
         }
         // Totals
@@ -183,7 +125,6 @@ export class ContactsComponent implements OnInit {
 
   }
 
-  
   //
   filterByStatus(status) {
     this.filterStatus = status.toLowerCase();
@@ -205,7 +146,7 @@ export class ContactsComponent implements OnInit {
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     this.dataSource = null;
-    this.getAllContacts();
+    this.getAllAlerts();
   }
 
 
@@ -220,13 +161,14 @@ export class ContactsComponent implements OnInit {
 
   // Sort
   sortChanged(e) {
+    console.log('sortChanged', e);
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     //
     this.sortOrder = e.direction;
     this.sortField = e.active;
     // sort local, this should be done on the backend
-    this.contacts.sort(this.sortValues(this.sortField, this.sortOrder));
+    this.alerts.sort(this.sortValues(this.sortField, this.sortOrder));
     this.dataSource = this.getPaginatedSlice();
 
     // this.getAllContacts();
@@ -273,7 +215,7 @@ export class ContactsComponent implements OnInit {
   // this should happen on the backend
   // that way you only get the records you asked for, not all
   getPaginatedSlice() {
-    let filtered = this.contacts;
+    let filtered = this.alerts;
 
     // Have a filter?
     if (this.filterStatus !== null) {
