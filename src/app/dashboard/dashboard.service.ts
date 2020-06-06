@@ -5,7 +5,7 @@ import { httpOptions } from '../http-options';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 
 @Injectable({ providedIn: 'root' })
-export class GRMService {
+export class DashboardService {
   private handleError: HandleError;
 
   constructor(
@@ -13,7 +13,7 @@ export class GRMService {
     httpErrorHandler: HttpErrorHandler
     ) {
 
-    this.handleError = httpErrorHandler.createHandleError('GRMService');
+    this.handleError = httpErrorHandler.createHandleError('DashboardService');
   }
 
 

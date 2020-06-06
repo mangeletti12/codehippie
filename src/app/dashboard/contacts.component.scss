@@ -1,0 +1,136 @@
+/* VARS */
+$colorNormal: rgb(86, 240, 0);
+$colorCaution: rgb(252, 232, 58);
+$colorSerious: rgb(255, 179, 0);
+$colorCritical: rgb(255, 56, 56);
+
+.pie-chart {
+    padding: 10px;
+    width: 40%;
+
+}
+
+/* TABLE */
+
+table {
+    width: 100%;
+}
+
+.contacts-container {
+    // height: 400px;
+    overflow: auto;
+}
+
+/* status */
+.status-holder {
+    display: flex;
+    justify-content: center;
+    width:30px;
+}
+
+.status-indicator {
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    /* outline: 1px solid rgba(127, 127, 127, 0.5); */
+}
+  
+.status-normal, .status-ok {
+    background-color: $colorNormal;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.status-critical {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid $colorCritical;
+}
+
+.status-serious {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: $colorSerious;
+    position: relative;
+    top: -10px;
+}
+.status-serious:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: $colorSerious;
+}
+
+.status-caution {
+    // fill: var(--colorCaution, rgb(252, 232, 58));
+    background-color: $colorCaution;
+    width: 26px;
+}
+
+
+  .example-detail-row {
+    height: 0;
+  }
+  
+  .example-element-row {
+    border-top: 1px solid #ddd;
+  }
+
+  .example-element-row:not(.example-expanded-row):hover {
+    background-color:rgba(0, 0, 0, 0.09);
+  }
+  
+  .example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .mat-column-expandedDetail {
+    border-bottom: 0 ;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  
+  

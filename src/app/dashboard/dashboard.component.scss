@@ -1,0 +1,22 @@
+.comp-header {
+  background: cyan;
+}
+
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.contacts-holder {
+  width: 100%;
+  // height: calc(100vh - 65px);
+  padding: 10px;
+  // background: yellow;
+}
+
+.alerts-holder {
+  width: 400px;
+  height: 100%;
+  background: pink;
+}

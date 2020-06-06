@@ -1,26 +1,31 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GRMService } from './grm.service';
+import { DashboardService } from './dashboard.service';
 //
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 //
 import { animate, state, style, transition, trigger } from '@angular/animations';
+//
+import { ChartType, ChartOptions } from 'chart.js';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
+import * as Chart from 'chart.js';
 
 
-export class TableExpandableRowsExample {
-  dataSource = ELEMENT_DATA;
-  columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
-  expandedElement: PeriodicElement | null;
-}
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-  description: string;
-}
+// export class TableExpandableRowsExample {
+//   dataSource = ELEMENT_DATA;
+//   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
+//   expandedElement: PeriodicElement | null;
+// }
+
+// export interface PeriodicElement {
+//   name: string;
+//   position: number;
+//   weight: number;
+//   symbol: string;
+//   description: string;
+// }
 
 export interface Contact {
   contactAzimuth: number;
@@ -43,96 +48,10 @@ export interface Contact {
   _id: string;
 }
 
-//
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    position: 1,
-    name: 'Hydrogen',
-    weight: 1.0079,
-    symbol: 'H',
-    description: `Hydrogen is a chemical element with symbol H and atomic number 1. With a standard
-        atomic weight of 1.008, hydrogen is the lightest element on the periodic table.`
-  }, {
-    position: 2,
-    name: 'Helium',
-    weight: 4.0026,
-    symbol: 'He',
-    description: `Helium is a chemical element with symbol He and atomic number 2. It is a
-        colorless, odorless, tasteless, non-toxic, inert, monatomic gas, the first in the noble gas
-        group in the periodic table. Its boiling point is the lowest among all the elements.`
-  }, {
-    position: 3,
-    name: 'Lithium',
-    weight: 6.941,
-    symbol: 'Li',
-    description: `Lithium is a chemical element with symbol Li and atomic number 3. It is a soft,
-        silvery-white alkali metal. Under standard conditions, it is the lightest metal and the
-        lightest solid element.`
-  }, {
-    position: 4,
-    name: 'Beryllium',
-    weight: 9.0122,
-    symbol: 'Be',
-    description: `Beryllium is a chemical element with symbol Be and atomic number 4. It is a
-        relatively rare element in the universe, usually occurring as a product of the spallation of
-        larger atomic nuclei that have collided with cosmic rays.`
-  }, {
-    position: 5,
-    name: 'Boron',
-    weight: 10.811,
-    symbol: 'B',
-    description: `Boron is a chemical element with symbol B and atomic number 5. Produced entirely
-        by cosmic ray spallation and supernovae and not by stellar nucleosynthesis, it is a
-        low-abundance element in the Solar system and in the Earth's crust.`
-  }, {
-    position: 6,
-    name: 'Carbon',
-    weight: 12.0107,
-    symbol: 'C',
-    description: `Carbon is a chemical element with symbol C and atomic number 6. It is nonmetallic
-        and tetravalent—making four electrons available to form covalent chemical bonds. It belongs
-        to group 14 of the periodic table.`
-  }, {
-    position: 7,
-    name: 'Nitrogen',
-    weight: 14.0067,
-    symbol: 'N',
-    description: `Nitrogen is a chemical element with symbol N and atomic number 7. It was first
-        discovered and isolated by Scottish physician Daniel Rutherford in 1772.`
-  }, {
-    position: 8,
-    name: 'Oxygen',
-    weight: 15.9994,
-    symbol: 'O',
-    description: `Oxygen is a chemical element with symbol O and atomic number 8. It is a member of
-        the chalcogen group on the periodic table, a highly reactive nonmetal, and an oxidizing
-        agent that readily forms oxides with most elements as well as with other compounds.`
-  }, {
-    position: 9,
-    name: 'Fluorine',
-    weight: 18.9984,
-    symbol: 'F',
-    description: `Fluorine is a chemical element with symbol F and atomic number 9. It is the
-        lightest halogen and exists as a highly toxic pale yellow diatomic gas at standard
-        conditions.`
-  }, {
-    position: 10,
-    name: 'Neon',
-    weight: 20.1797,
-    symbol: 'Ne',
-    description: `Neon is a chemical element with symbol Ne and atomic number 10. It is a noble gas.
-        Neon is a colorless, odorless, inert monatomic gas under standard conditions, with about
-        two-thirds the density of air.`
-  },
-];
-
-
-
-
 @Component({
-  selector: 'app-grm-dashboard',
-  templateUrl: './grm-dashboard.component.html',
-  styleUrls: ['./grm-dashboard.component.scss'],
+  selector: 'app-contacts',
+  templateUrl: './contacts.component.html',
+  styleUrls: ['./contacts.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0'})),
@@ -150,9 +69,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
   ],
 
 })
-export class GrmDashboardComponent implements OnInit {
+export class ContactsComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['contactStatus', 'contactName', 'contactGround', 'contactEquipment'];
+  displayedColumns: string[] = ['contactStatus', 'contactName', 'contactGround', 'contactEquipment' , 'contactState', 'contactBeginTimestamp'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   contacts: any;
@@ -160,7 +79,7 @@ export class GrmDashboardComponent implements OnInit {
   sortField = 'name';
   sortOrder = 'asc';
   pageNumber = 0;
-  pageSize = 5;
+  pageSize = 10;
   totalRows = 0;
   //
   // dataSource2 = ELEMENT_DATA;
@@ -168,10 +87,60 @@ export class GrmDashboardComponent implements OnInit {
   expandedElement: Contact | null;
   //
 
+  // Pie Chart
+
+  // var original = Chart.defaults.global.legend.onClick;
+  // Chart.defaults.global.legend.onClick = function(e, legendItem) {
+  //   // update_caption(legendItem);
+  //   original.call(this, e, legendItem);
+  // };
+  
+
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      display: true,
+      position: 'right',
+      onClick: (e, legendItem) => {
+        console.log('e', e);
+        console.log('item', legendItem);
+      }
+    },
+    // onClick: (e, legendItem) => {
+    //   console.log('e', e);
+    //   console.log('item', legendItem);
+    // }
+  };
+
+  public pieChartLabels: Label[] = [
+    'Normal',
+    'Caution',
+    'Serious',
+    'Critical',
+  ];
+  public pieChartData: SingleDataSet = [13, 7, 6, 5 ];
+  public pieChartColors: Color[] = [
+    {
+      // borderColor: 'black',
+      borderWidth: 0,
+      backgroundColor: ['#56f000', '#fce83a', '#ffb300', '#ff3838'],
+    },
+  ];
+
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+  public pieChartPlugins = [];
+
+  
+
 
   constructor(
-    private grmService: GRMService,
-  ) { }
+    private dashboardService: DashboardService,
+  ) {
+    monkeyPatchChartJsTooltip();
+    monkeyPatchChartJsLegend();
+  }
 
   ngOnInit(): void {
     this.getAllContacts();
@@ -199,7 +168,7 @@ export class GrmDashboardComponent implements OnInit {
     // }
 
     // console.log('searchCriteria', searchCriteria);
-    this.grmService.getContacts(searchCriteria).subscribe(
+    this.dashboardService.getContacts(searchCriteria).subscribe(
       data => {
         console.log('contacts', data.body);
         if (this.pageNumber === 0) {
@@ -214,14 +183,13 @@ export class GrmDashboardComponent implements OnInit {
           const ds = this.contacts.slice(start, end);
 
           this.dataSource = new MatTableDataSource(ds);
-          this.totalRows = data.body.length;
         } else {
           // concatenate arrays
           this.contacts = [...this.contacts, ...data.body];
 
         }
         // Totals
-        // this.totalRows = data.body.data.total;
+        this.totalRows = data.body.length;
       },
       error => {
 
@@ -246,7 +214,7 @@ export class GrmDashboardComponent implements OnInit {
     // }
 
     // console.log('searchCriteria', searchCriteria);
-    this.grmService.getAlerts(searchCriteria).subscribe(
+    this.dashboardService.getAlerts(searchCriteria).subscribe(
       data => {
         console.log('alerts', data.body);
         if (this.pageNumber === 0) {
@@ -278,36 +246,61 @@ export class GrmDashboardComponent implements OnInit {
 
   // Sort
   sortChanged(e) {
-    console.log(e);
-    // this.dataSource = null;
-    //
     this.sortOrder = e.direction;
     this.sortField = e.active;
-    // this.getAllHeroes();
+    // sort local, this should be done on the backend
+    this.contacts.sort(this.sortValues(this.sortField, this.sortOrder));
+    this.dataSource = this.getPaginatedSlice();
+
+    // this.getAllContacts();
   }
 
   // Pagination
   // https://material.angular.io/components/paginator/overview
   pageChanged(e) {
-
-    //
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;
     // console.log(this.pageNumber + '---' + this.pageSize);
-    this.dataSource = null;
-    // fake pagination
-    // this should happen on the backend
-    // that you would only get the records you asked for, not all
-    const start = (this.pageNumber * this.pageSize);
-    const end = (start + this.pageSize);
-    console.log(start + " - " + end);
+    this.dataSource = this.getPaginatedSlice();
 
-    const ds = this.contacts.slice(start, end);
-    this.dataSource = ds;
-
-    // this.getAllHeroes();
+    // this.getAllContacts();
   }
 
+  // Sort
+  // array is sorted by band in descending order
+  // singers.sort(sortValues('band', 'desc'));
+  sortValues(key, order = 'asc') {
+
+    return function innerSort(a, b) {
+      if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        // property doesn't exist on either object
+        return 0;
+      }
+  
+      const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
+  
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return (
+        (order === 'desc') ? (comparison * -1) : comparison
+      );
+    };
+  }
+
+  // Fake pagination
+  // this should happen on the backend
+  // that way you only get the records you asked for, not all
+  getPaginatedSlice() {
+    const start = (this.pageNumber * this.pageSize);
+    const end = (start + this.pageSize);
+    const ds = this.contacts.slice(start, end);
+    return ds;
+  }
 
 
 
