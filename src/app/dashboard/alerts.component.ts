@@ -46,7 +46,7 @@ export interface Alert {
 })
 export class AlertsComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['errorSeverity', 'errorCategory', 'errorTime'];
+  displayedColumns: string[] = ['select', 'errorSeverity', 'errorCategory', 'errorTime'];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   alerts: any;
@@ -55,6 +55,7 @@ export class AlertsComponent implements OnInit {
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
+  bulkCheckbox = false;
   //
   expandedElement: Alert | null;
   //
@@ -149,6 +150,21 @@ export class AlertsComponent implements OnInit {
     this.getAllAlerts();
   }
 
+  //Select all files
+  selectAllFiles(event: any) {
+
+    console.log('selectAllFiles', this.dataSource);
+
+    if (!this.bulkCheckbox) {
+      //Mark all files selected
+      this.dataSource.data.forEach(i => { i.selected = true; });
+      this.bulkCheckbox = true;
+    } else {
+      //Mark all files unselected
+      this.dataSource.data.forEach(i => { i.selected = false; });
+      this.bulkCheckbox = false;
+    }
+  }
 
   //Select Row
   selectRow(row, e) {
@@ -169,7 +185,8 @@ export class AlertsComponent implements OnInit {
     this.sortField = e.active;
     // sort local, this should be done on the backend
     this.alerts.sort(this.sortValues(this.sortField, this.sortOrder));
-    this.dataSource = this.getPaginatedSlice();
+    const ds = this.getPaginatedSlice();
+    this.dataSource = this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
   }

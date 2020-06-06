@@ -26,6 +26,22 @@
         (matSortChange)="sortChanged($event)"
         >
 
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="selectAllFiles($event)"
+                    [checked]="bulkCheckbox">
+                </mat-checkbox>
+            </th>
+
+            <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="selectRow(row, $event)"
+                    [checked]="row.selected">
+                </mat-checkbox>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="errorSeverity">
             <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
             <td mat-cell *matCellDef="let element" @tableCells>

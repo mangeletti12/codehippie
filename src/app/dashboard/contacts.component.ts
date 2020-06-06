@@ -163,7 +163,7 @@ export class ContactsComponent implements OnInit {
           // this should happen on the backend
           // that way would only get the records you asked for, not all
           // const ds = this.getPaginatedSlice();
-          
+
           const defaultSort = { active: this.sortField, direction: this.sortOrder };
           this.sortChanged(defaultSort);
 
@@ -227,7 +227,8 @@ export class ContactsComponent implements OnInit {
     this.sortField = e.active;
     // sort local, this should be done on the backend
     this.contacts.sort(this.sortValues(this.sortField, this.sortOrder));
-    this.dataSource = this.getPaginatedSlice();
+    const ds = this.getPaginatedSlice();
+    this.dataSource = this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
   }
