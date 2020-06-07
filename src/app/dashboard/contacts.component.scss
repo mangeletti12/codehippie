@@ -26,11 +26,25 @@ $colorCritical: rgb(255, 56, 56);
   letter-spacing: -1px;
   line-height: 1.25;
   border-bottom: 1px solid #777;
+  margin-bottom: 2px;
 }
 
 .pie-chart {
   width: 200px;
   height: 100px;
+}
+
+.chart-tip {
+  position: absolute;
+  margin-top: -25px;
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.09);
+  padding: 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .halfer {
@@ -174,7 +188,7 @@ table {
 
 .filter-bar {
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(85, 150, 211, 0.23);
   text-align: center;
 }
 

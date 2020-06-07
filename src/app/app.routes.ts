@@ -224,6 +224,7 @@ export const SECURE_ROUTES: Routes = [
     path: 'error',
     component: FileNotFoundComponent,
     data: { breadcrumb: 'WTF?' },
+    resolve: { comp: ResolverService },
   },
   {
     path: '**',

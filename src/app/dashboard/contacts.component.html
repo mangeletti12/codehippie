@@ -12,6 +12,7 @@
 
     <div class="halfer">
         <div *ngIf="contacts" class="pie-chart">
+            <span class="chart-tip">click chart to filter by status</span>
             <div class="chart-wrapper">
                 <canvas baseChart
                     [data]="pieChartData"

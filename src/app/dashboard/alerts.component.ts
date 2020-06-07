@@ -84,14 +84,14 @@ export class AlertsComponent implements OnInit {
       // },
       onClick: (e, legendItem) => {
         // console.log('item legend', legendItem);
-       // this.filterByStatus(legendItem.text);
+        this.filterBySeverity(legendItem.text);
       }
     },
     onClick: (e, legendItem) => {
 
       if (legendItem.length === 0) { return false; }
       // console.log('item pie', legendItem[0]['_view'].label);
-      // this.filterByStatus(legendItem[0]['_view'].label);
+      this.filterBySeverity(legendItem[0]['_view'].label);
     }
   };
 
@@ -115,7 +115,6 @@ export class AlertsComponent implements OnInit {
 
   setPieData() {
     // clean this up
-    // const normal = this.alerts.filter(o => o.contactStatus === 'normal');
     const caution = this.alerts.filter(o => o.errorSeverity === 'caution');
     const serious = this.alerts.filter(o => o.errorSeverity === 'serious');
     const critical = this.alerts.filter(o => o.errorSeverity === 'critical');
@@ -205,19 +204,6 @@ export class AlertsComponent implements OnInit {
     // console.log('filteredDs', filteredDs);
     this.dataSource = new MatTableDataSource(filteredDs);
   }
-
-  //
-  // filterByStatus(status) {
-  //   this.filterStatus = status.toLowerCase();
-  //   // reset for filter
-  //   this.pageNumber = 0;
-  //   this.paginator.pageIndex = 0;
-  //   this.dataSource = null;
-
-  //   const filteredDs = this.getPaginatedSlice();
-  //   // console.log('filteredDs', filteredDs);
-  //   this.dataSource = new MatTableDataSource(filteredDs);
-  // }
 
   // Clear filter
   removeFilter() {

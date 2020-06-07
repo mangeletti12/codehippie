@@ -74,7 +74,11 @@
                   "Url": "/movies",
                   "Claim": "Nav_Movies"
                 },
-
+                {
+                  "Text": "Dashboard",
+                  "Url": "/dashboard",
+                  "Claim": "Nav_Dashboard"
+                },
                 {
                   "Text": "List",
                   "Url": "/list",

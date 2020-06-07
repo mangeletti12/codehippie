@@ -40,13 +40,13 @@ export class DashboardService {
 
 
   getNasaRssFeed() {
-    const url = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+    const url = 'https://spaceflightnewsapi.net/api/v1/articles';
 
     httpOptions.headers = new HttpHeaders({
       // 'Access-Control-Allow-Origin': 'true',
       // 'Accept': '*/*',
       'Content-Type': 'application/json, application/xml',
-      // 'Authorization': '0'
+      'Authorization': 'Bearer 12'
     });
 
     return this.http.get<any>(url, httpOptions)
