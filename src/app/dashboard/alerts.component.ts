@@ -55,11 +55,12 @@ export class AlertsComponent implements OnInit {
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
+  totalSoftware = 0;
+  totalHardware = 0;
+  totalSpacecraft = 0;
   bulkCheckbox = false;
   //
-  expandedElement: Alert | null;
-  //
-  filterSeverity: any = null;
+  expandedElement: Alert;
   //
   severity = [
     {value: 'all', viewValue: 'All'},
@@ -67,8 +68,59 @@ export class AlertsComponent implements OnInit {
     {value: 'critical', viewValue: 'Critical'},
     {value: 'serious', viewValue: 'Serious'},
   ];
-
+  filterSeverity = 'all'
   selectedSeverity = 'all';
+
+  // Pie Chart
+  public pieChartOptions: ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
+    legend: {
+      display: true,
+      position: 'right',
+      // onHover: (e, chartElement) => {
+      //   console.log('onHover', chartElement);
+      //   //e.target['style'].cursor = chartElement[0] ? 'pointer' : 'default';
+      // },
+      onClick: (e, legendItem) => {
+        // console.log('item legend', legendItem);
+       // this.filterByStatus(legendItem.text);
+      }
+    },
+    onClick: (e, legendItem) => {
+
+      if (legendItem.length === 0) { return false; }
+      // console.log('item pie', legendItem[0]['_view'].label);
+      // this.filterByStatus(legendItem[0]['_view'].label);
+    }
+  };
+
+  public pieChartLabels: Label[] = [
+    'Caution',
+    'Serious',
+    'Critical',
+  ];
+  public pieChartData: SingleDataSet = [];
+  public pieChartColors: Color[] = [
+    {
+      // borderColor: 'black',
+      borderWidth: 0,
+      backgroundColor: [ '#fce83a', '#ffb300', '#ff3838'],
+    },
+  ];
+
+  public pieChartType: ChartType = 'pie';
+  public pieChartLegend = true;
+  public pieChartPlugins = [];
+
+  setPieData() {
+    // clean this up
+    // const normal = this.alerts.filter(o => o.contactStatus === 'normal');
+    const caution = this.alerts.filter(o => o.errorSeverity === 'caution');
+    const serious = this.alerts.filter(o => o.errorSeverity === 'serious');
+    const critical = this.alerts.filter(o => o.errorSeverity === 'critical');
+    this.pieChartData = [caution.length, serious.length, critical.length];
+  }
 
   constructor(
     private dashboardService: DashboardService,
@@ -110,6 +162,9 @@ export class AlertsComponent implements OnInit {
         if (this.pageNumber === 0) {
           this.alerts = data.body;
 
+          // Set Pie Chart
+          this.setPieData();
+
           // Fake pagination
           // this should happen on the backend
           // that way would only get the records you asked for, not all
@@ -126,6 +181,9 @@ export class AlertsComponent implements OnInit {
         }
         // Totals
         this.totalRows = data.body.length;
+        this.totalSoftware = this.alerts.filter(o => o.errorCategory === 'software').length;
+        this.totalHardware = this.alerts.filter(o => o.errorCategory === 'hardware').length;
+        this.totalSpacecraft = this.alerts.filter(o => o.errorCategory === 'spacecraft').length;
       },
       error => {
 
@@ -142,7 +200,6 @@ export class AlertsComponent implements OnInit {
     // reset for filter
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    this.dataSource = null;
 
     const filteredDs = this.getPaginatedSlice();
     // console.log('filteredDs', filteredDs);
@@ -165,10 +222,9 @@ export class AlertsComponent implements OnInit {
   // Clear filter
   removeFilter() {
     // reset for filter
-    this.filterSeverity = null;
+    this.filterSeverity = 'all';
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    this.dataSource = null;
     this.getAllAlerts();
   }
 
@@ -197,9 +253,22 @@ export class AlertsComponent implements OnInit {
     row.selected = !row.selected;
   }
 
+  // Expand row
+  expander(element) {
+    this.dataSource.data.forEach(i => 
+      { 
+        if(element.errorId === i.errorId) {
+          element.expanded = !element.expanded;
+        } else {
+          i.expanded = false; 
+        }
+      }
+    );
+  }
+
   // Sort
   sortChanged(e) {
-    console.log('sortChanged', e);
+    // console.log('sortChanged', e);
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     //
@@ -257,12 +326,15 @@ export class AlertsComponent implements OnInit {
     let filtered = this.alerts;
 
     // Have a filter?
-    if (this.filterSeverity !== null) {
+    if (this.filterSeverity !== null && this.filterSeverity !== 'all') {
       // console.log('> haveFilter', this.filterStatus);
       // console.log('> pageNumber', this.pageNumber);
       filtered = filtered.filter(o => o.errorSeverity === this.filterSeverity.toLowerCase());
       this.totalRows = filtered.length;
     }
+
+    // Close expanded on pagination? Sure
+    this.dataSource.data.forEach(i => { i.expanded = false; }); 
 
     const start = (this.pageNumber * this.pageSize);
     const end = (start + this.pageSize);

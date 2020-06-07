@@ -6,25 +6,37 @@ $colorCritical: rgb(255, 56, 56);
 
 .contacts-meta {
   position: relative;
-  padding: 10px;
-  height: 170px;
+  display: flex;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.meta-details {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-right: 10px;
 }
 
 .pane-title {
-    position: absolute;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: -1px;
-    line-height: 1.25;
-    bottom: -12px;
-    right: 1px;
-    color: #bbbbbb;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.25;
+  border-bottom: 1px solid #777;
 }
 
 .pie-chart {
+  width: 200px;
+  height: 100px;
+}
+
+.halfer {
   width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 /* status */
@@ -109,6 +121,10 @@ table {
 
 .example-element-row:not(.example-expanded-row):hover {
   background-color:rgba(0, 0, 0, 0.09);
+}
+
+.example-detail-row:hover {
+  background: inherit;
 }
 
 .example-element-row:not(.example-expanded-row):active {

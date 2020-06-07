@@ -14,8 +14,22 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.getNasaNews();
   }
 
+
+  getNasaNews() {
+
+    this.dashboardService.getNasaRssFeed().subscribe(
+      data => {
+        console.log('nasa', data);
+
+      },
+      error => {
+
+      }
+    );
+
+  }
 
 }

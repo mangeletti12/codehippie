@@ -29,7 +29,8 @@ export interface Contact {
   contactState: string;
   contactStatus: string;
   contactStep: string;
-  _id: string;
+
+  expanded: boolean;
 }
 
 @Component({
@@ -64,6 +65,8 @@ export class ContactsComponent implements OnInit {
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
+  totalExe = 0;
+  totalFailed = 0;
   //
   expandedElement: Contact | null;
   //
@@ -72,16 +75,14 @@ export class ContactsComponent implements OnInit {
   // Pie Chart
   public pieChartOptions: ChartOptions = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     legend: {
       display: true,
       position: 'right',
-      onHover: (e, chartElement) => {
-        console.log('onHover', chartElement);
-        console.log('e', e.target);
-        // e.target.style.cursor = chartElement[0] ? 'pointer' : 'default';
-
-      },
+      // onHover: (e, chartElement) => {
+      //   console.log('onHover', chartElement);
+      //   //e.target['style'].cursor = chartElement[0] ? 'pointer' : 'default';
+      // },
       onClick: (e, legendItem) => {
         // console.log('item legend', legendItem);
         this.filterByStatus(legendItem.text);
@@ -181,6 +182,8 @@ export class ContactsComponent implements OnInit {
         }
         // Totals
         this.totalRows = data.body.length;
+        this.totalExe = this.contacts.filter(o => o.contactState === 'executing').length;
+        this.totalFailed = this.contacts.filter(o => o.contactState === 'failed').length;
       },
       error => {
 
@@ -196,7 +199,6 @@ export class ContactsComponent implements OnInit {
     // reset for filter
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    this.dataSource = null;
     
     const filteredDs = this.getPaginatedSlice();
     // console.log('filteredDs', filteredDs);
@@ -209,7 +211,6 @@ export class ContactsComponent implements OnInit {
     this.filterStatus = null;
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    this.dataSource = null;
     this.getAllContacts();
   }
 
@@ -221,6 +222,19 @@ export class ContactsComponent implements OnInit {
     // Uncheck bulk checkbox
     //this.bulkCheckbox = false;
     row.selected = !row.selected;
+  }
+
+  // Expand row
+  expander(element) {
+    this.dataSource.data.forEach(i => 
+      { 
+        if(element.contactId === i.contactId) {
+          element.expanded = !element.expanded;
+        } else {
+          i.expanded = false; 
+        }
+      }
+    );
   }
 
   // Sort
@@ -289,6 +303,9 @@ export class ContactsComponent implements OnInit {
       filtered = filtered.filter(o => o.contactStatus === this.filterStatus.toLowerCase());
       this.totalRows = filtered.length;
     }
+
+    // Close expanded on pagination? Sure
+    this.dataSource.data.forEach(i => { i.expanded = false; }); 
 
     const start = (this.pageNumber * this.pageSize);
     const end = (start + this.pageSize);

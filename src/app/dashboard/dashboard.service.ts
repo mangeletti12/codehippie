@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { httpOptions } from '../http-options';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
@@ -36,6 +36,24 @@ export class DashboardService {
       .pipe(
         catchError(this.handleError('getAlerts', []))
       );
+  }
+
+
+  getNasaRssFeed() {
+    const url = 'https://www.nasa.gov/rss/dyn/breaking_news.rss';
+
+    httpOptions.headers = new HttpHeaders({
+      // 'Access-Control-Allow-Origin': 'true',
+      // 'Accept': '*/*',
+      'Content-Type': 'application/json, application/xml',
+      // 'Authorization': '0'
+    });
+
+    return this.http.get<any>(url, httpOptions)
+    .pipe(
+      catchError(this.handleError('getNasaRssFeed', []))
+    );
+
   }
 
 
