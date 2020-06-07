@@ -36,15 +36,16 @@ $colorCritical: rgb(255, 56, 56);
 
 .chart-tip {
   position: absolute;
-  margin-top: -25px;
+  margin-top: -30px;
   z-index: 2;
   text-transform: uppercase;
   font-size: 10px;
   background-color: rgba(0, 0, 0, 0.09);
+  color: #777;
   padding: 4px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
+  line-height: 10px;
+  text-align: center;
 }
 
 .halfer {
@@ -142,7 +143,7 @@ table {
 }
 
 .example-element-row:not(.example-expanded-row):active {
-  background: #efefef;
+  background-color: rgba(85, 150, 211, 0.23);
 }
 
 .example-element-row td {

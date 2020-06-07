@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard.service';
 
 @Component({
@@ -14,22 +14,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.getNasaNews();
-  }
-
-
-  getNasaNews() {
-
-    this.dashboardService.getNasaRssFeed().subscribe(
-      data => {
-        console.log('nasa', data);
-
-      },
-      error => {
-
-      }
-    );
-
+    
   }
 
 }
