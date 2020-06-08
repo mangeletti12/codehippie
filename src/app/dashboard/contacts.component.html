@@ -1,18 +1,8 @@
 <div class="contacts-meta">
 
     <div class="halfer">
-        <div class="meta-details">
-            <h3 class="pane-title">Contacts Meta</h3>
-            
-            <div>Executing: {{ totalExe }}</div>
-            <div>Failed: {{ totalFailed }}</div>
-            <div>Total Records: {{ totalRows }}</div>
-        </div>
-    </div>
-
-    <div class="halfer">
         <div *ngIf="contacts" class="pie-chart">
-            <span class="chart-tip">click chart to <br>filter by status</span>
+            <span class="chart-tip">click chart to <br>filter status</span>
             <div class="chart-wrapper">
                 <canvas baseChart
                     [data]="pieChartData"
@@ -24,6 +14,16 @@
                     [legend]="pieChartLegend">
                 </canvas>
             </div>
+        </div>
+    </div>
+
+    <div class="halfer">
+        <div class="meta-details">
+            <h3 class="pane-title">Contacts Meta</h3>
+            
+            <div>Executing: {{ totalExe }}</div>
+            <div>Failed: {{ totalFailed }}</div>
+            <div>Total Records: {{ totalRows }}</div>
         </div>
     </div>
 

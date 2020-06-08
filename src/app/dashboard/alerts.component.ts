@@ -164,11 +164,6 @@ export class AlertsComponent implements OnInit {
           // Set Pie Chart
           this.setPieData();
 
-          // Fake pagination
-          // this should happen on the backend
-          // that way would only get the records you asked for, not all
-          // const ds = this.getPaginatedSlice();
-
           const defaultSort = { active: this.sortField, direction: this.sortOrder };
           this.sortChanged(defaultSort);
 
@@ -176,7 +171,6 @@ export class AlertsComponent implements OnInit {
         } else {
           // concatenate arrays
           this.alerts = [...this.alerts, ...data.body];
-
         }
         // Totals
         this.totalRows = data.body.length;
@@ -231,13 +225,13 @@ export class AlertsComponent implements OnInit {
   }
 
   //Select Row
-  selectRow(row, e) {
-    // e.stopPropagation();
+  // selectRow(row, e) {
+  //   // e.stopPropagation();
 
-    // Uncheck bulk checkbox
-    //this.bulkCheckbox = false;
-    row.selected = !row.selected;
-  }
+  //   // Uncheck bulk checkbox
+  //   //this.bulkCheckbox = false;
+  //   row.selected = !row.selected;
+  // }
 
   // Expand row
   expander(element) {
@@ -318,9 +312,14 @@ export class AlertsComponent implements OnInit {
       filtered = filtered.filter(o => o.errorSeverity === this.filterSeverity.toLowerCase());
       this.totalRows = filtered.length;
     }
+    //
+    this.totalRows = filtered.length;
+    this.totalSoftware = filtered.filter(o => o.errorCategory === 'software').length;
+    this.totalHardware = filtered.filter(o => o.errorCategory === 'hardware').length;
+    this.totalSpacecraft = filtered.filter(o => o.errorCategory === 'spacecraft').length;
 
     // Close expanded on pagination? Sure
-    this.dataSource.data.forEach(i => { i.expanded = false; }); 
+    filtered.forEach(i => { i.expanded = false; }); 
 
     const start = (this.pageNumber * this.pageSize);
     const end = (start + this.pageSize);
