@@ -21,9 +21,9 @@
         <div class="meta-details">
             <h3 class="pane-title">Contacts Meta</h3>
             
-            <div>Executing: {{ totalExe }}</div>
-            <div>Failed: {{ totalFailed }}</div>
-            <div>Total Records: {{ totalRows }}</div>
+            <div><app-counter title="Executing:" [value]="totalExe"></app-counter></div>
+            <div><app-counter title="Failed:" [value]="totalFailed"></app-counter></div>
+            <div><app-counter title="Total Records:" [value]="totalRows"></app-counter></div>
         </div>
     </div>
 
@@ -84,6 +84,7 @@
         <ng-container matColumnDef="expandedDetail">
             <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
             <div class="example-element-detail"
+                [class.expanded]="element.expanded"
                 [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'"
                 >
                 <!-- [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'" -->

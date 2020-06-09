@@ -29,6 +29,7 @@
     "firebase": "^7.14.2",
     "moment": "2.24.0",
     "ng2-charts": "^2.3.0",
+    "ngx-countup": "^7.3.0",
     "ngx-infinite-scroll": "^8.0.2",
     "ngx-scrollbar": "^7.2.1-beta.0",
     "ngx-wow": "^2.0.1",

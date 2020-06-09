@@ -50,8 +50,10 @@ export class AlertsComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   alerts: any;
-  sortField = 'errorTime';
+  sortField = 'errorCategory';
   sortOrder = 'desc';
+  errorSeverity;
+  errorCategory;
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
@@ -61,15 +63,15 @@ export class AlertsComponent implements OnInit {
   bulkCheckbox = false;
   //
   expandedElement: Alert;
-  //
-  severity = [
-    {value: 'all', viewValue: 'All'},
-    {value: 'caution', viewValue: 'Caution'},
-    {value: 'critical', viewValue: 'Critical'},
-    {value: 'serious', viewValue: 'Serious'},
-  ];
   filterSeverity = 'all'
-  selectedSeverity = 'all';
+  //
+  // severity = [
+  //   {value: 'all', viewValue: 'All'},
+  //   {value: 'caution', viewValue: 'Caution'},
+  //   {value: 'critical', viewValue: 'Critical'},
+  //   {value: 'serious', viewValue: 'Serious'},
+  // ];
+  // selectedSeverity = 'all';
 
   // Pie Chart
   public pieChartOptions: ChartOptions = {
@@ -78,19 +80,12 @@ export class AlertsComponent implements OnInit {
     legend: {
       display: true,
       position: 'right',
-      // onHover: (e, chartElement) => {
-      //   console.log('onHover', chartElement);
-      //   //e.target['style'].cursor = chartElement[0] ? 'pointer' : 'default';
-      // },
       onClick: (e, legendItem) => {
-        // console.log('item legend', legendItem);
         this.filterBySeverity(legendItem.text);
       }
     },
     onClick: (e, legendItem) => {
-
       if (legendItem.length === 0) { return false; }
-      // console.log('item pie', legendItem[0]['_view'].label);
       this.filterBySeverity(legendItem[0]['_view'].label);
     }
   };
@@ -114,11 +109,7 @@ export class AlertsComponent implements OnInit {
   public pieChartPlugins = [];
 
   setPieData() {
-    // clean this up
-    const caution = this.alerts.filter(o => o.errorSeverity === 'caution');
-    const serious = this.alerts.filter(o => o.errorSeverity === 'serious');
-    const critical = this.alerts.filter(o => o.errorSeverity === 'critical');
-    this.pieChartData = [caution.length, serious.length, critical.length];
+    this.pieChartData = [this.errorSeverity.caution, this.errorSeverity.serious, this.errorSeverity.critical];
   }
 
   constructor(
@@ -131,12 +122,7 @@ export class AlertsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllAlerts();
 
-    
-    //Defaults
-    this.sort.direction = 'desc';
-    this.sort.active = 'errorTime';
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+
   }
 
   // Get All alerts
@@ -160,57 +146,96 @@ export class AlertsComponent implements OnInit {
         console.log('alerts', data.body);
         if (this.pageNumber === 0) {
           this.alerts = data.body;
+          /*
+          // We will let the matTable do the work in this component
+          // typically you would never fetch all records, as it could be huge
+          */
+          this.dataSource = new MatTableDataSource(this.alerts);
+          //Defaults
+          this.sort.direction = 'desc';
+          this.sort.active = 'errorCategory';
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
 
-          // Set Pie Chart
-          this.setPieData();
-
-          const defaultSort = { active: this.sortField, direction: this.sortOrder };
-          this.sortChanged(defaultSort);
-
-          // this.dataSource = new MatTableDataSource(ds);
         } else {
           // concatenate arrays
           this.alerts = [...this.alerts, ...data.body];
         }
-        // Totals
-        this.totalRows = data.body.length;
-        this.totalSoftware = this.alerts.filter(o => o.errorCategory === 'software').length;
-        this.totalHardware = this.alerts.filter(o => o.errorCategory === 'hardware').length;
-        this.totalSpacecraft = this.alerts.filter(o => o.errorCategory === 'spacecraft').length;
-      },
-      error => {
+        //
+        this.errorSeverity = this.getUniqueValues(this.alerts, 'errorSeverity');
+        this.setTotals();
+        // Set Pie Chart
+        this.setPieData();
+        //
+        // const defaultSort = { active: this.sortField, direction: this.sortOrder };
+        // this.sortChanged(defaultSort);
 
+      }, error => {
+
+      }, () => {
+        //complete
       }
     );
 
   }
 
+  // get number of each contact state value
+  // returns array: contactState => number of occurrences
+  getUniqueValues(obj, prop) {
+    let val;
+    const results = {};
+    for (const value of obj) {
+        val = value[prop];
+        if (!results[val]) {
+            results[val] = 0;
+        }
+        results[val] += 1;
+    }
+    return results;
+  }
+
+  // Totals
+  setTotals() {
+    console.log('setTotals', this.dataSource);
+    // Totals
+    this.errorCategory = this.getUniqueValues(this.dataSource.filteredData, 'errorCategory');
+    this.totalSoftware = this.errorCategory.software;
+    this.totalHardware = this.errorCategory.hardware;
+    this.totalSpacecraft = this.errorCategory.spacecraft;
+    this.totalRows = this.dataSource.filteredData.length;
+  }
+
   //
   filterBySeverity(severity) {
     console.log('filterBySeverity', severity);
-    this.filterSeverity = severity.toLowerCase();
-
+    this.filterSeverity = severity.trim().toLowerCase();
+  /*
     // reset for filter
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
 
     const filteredDs = this.getPaginatedSlice();
-    // console.log('filteredDs', filteredDs);
     this.dataSource = new MatTableDataSource(filteredDs);
+  */
+
+    this.dataSource.filter = this.filterSeverity;
+    this.setTotals();
   }
 
   // Clear filter
   removeFilter() {
     // reset for filter
+    this.dataSource.filter = '';
     this.filterSeverity = 'all';
+  /*  
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
     this.getAllAlerts();
+  */
   }
 
   //Select all files
   selectAllFiles(event: any) {
-
     console.log('selectAllFiles', this.dataSource);
 
     if (!this.bulkCheckbox) {
@@ -248,6 +273,7 @@ export class AlertsComponent implements OnInit {
 
   // Sort
   sortChanged(e) {
+  /*
     // console.log('sortChanged', e);
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
@@ -260,17 +286,20 @@ export class AlertsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(ds);
 
     // this.getAllContacts();
+  */
   }
 
   // Pagination
   // https://material.angular.io/components/paginator/overview
   pageChanged(e) {
+  /*
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;
     // console.log(this.pageNumber + '---' + this.pageSize);
     const ds = this.getPaginatedSlice();
     this.dataSource = new MatTableDataSource(ds);
     // this.getAllContacts();
+  */
   }
 
   // Sort
@@ -303,6 +332,7 @@ export class AlertsComponent implements OnInit {
   // this should happen on the backend
   // that way you only get the records you asked for, not all
   getPaginatedSlice() {
+  /*
     let filtered = this.alerts;
 
     // Have a filter?
@@ -314,17 +344,15 @@ export class AlertsComponent implements OnInit {
     }
     //
     this.totalRows = filtered.length;
-    this.totalSoftware = filtered.filter(o => o.errorCategory === 'software').length;
-    this.totalHardware = filtered.filter(o => o.errorCategory === 'hardware').length;
-    this.totalSpacecraft = filtered.filter(o => o.errorCategory === 'spacecraft').length;
-
-    // Close expanded on pagination? Sure
-    filtered.forEach(i => { i.expanded = false; }); 
+    this.totalSoftware = this.errorCategory.software;
+    this.totalHardware = this.errorCategory.hardware;
+    this.totalSpacecraft = this.errorCategory.spacecraft;
 
     const start = (this.pageNumber * this.pageSize);
     const end = (start + this.pageSize);
     const ds = filtered.slice(start, end);
     return ds;
+  */  
   }
 
 

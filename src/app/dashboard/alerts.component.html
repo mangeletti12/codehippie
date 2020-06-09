@@ -32,11 +32,11 @@
     <div class="halfer">
         <div class="meta-details">
             <h3 class="pane-title">Alerts Meta</h3>
-            
-            <div>Software: {{ totalSoftware }}</div>
-            <div>Hardware: {{ totalHardware }}</div>
-            <div>Spacecraft: {{ totalSpacecraft }}</div>
-            <div>Total Records: {{ totalRows }}</div>
+                 
+            <div><app-counter title="Software:" [value]="totalSoftware"></app-counter></div>
+            <div><app-counter title="Hardware:" [value]="totalHardware"></app-counter></div>
+            <div><app-counter title="Spacecraft:" [value]="totalSpacecraft"></app-counter></div>
+            <div><app-counter title="Total Records:" [value]="totalRows"></app-counter></div>
         </div>
     </div>
 
@@ -96,11 +96,12 @@
         <ng-container matColumnDef="expandedDetail">
             <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
             <div class="example-element-detail"
+                [class.expanded]="element.expanded"
                 [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'"
                 >
                 <!-- [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'" -->
                 <div class="example-element-description theme-alt-font1">
-                    {{ element.longMessage }} {{ element.expanded }}
+                    {{ element.longMessage }}
                 </div>
             </div>
             </td>

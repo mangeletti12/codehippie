@@ -104,6 +104,8 @@ import { PracticeComponent } from './practice/practice.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './dashboard/contacts.component';
 import { AlertsComponent } from './dashboard/alerts.component';
+import { CounterComponent } from './widgets/counter.component';
+import { CountUpModule } from 'ngx-countup';
 
 @NgModule({
   declarations: [
@@ -153,6 +155,7 @@ import { AlertsComponent } from './dashboard/alerts.component';
     DashboardComponent,
     ContactsComponent,
     AlertsComponent,
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -170,6 +173,7 @@ import { AlertsComponent } from './dashboard/alerts.component';
     NgScrollbarModule,
     InfiniteScrollModule,
     NgwWowModule,
+    CountUpModule,
 
     //Firebase
     AngularFireModule.initializeApp(environment.firebase),

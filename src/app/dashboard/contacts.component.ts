@@ -29,7 +29,6 @@ export interface Contact {
   contactState: string;
   contactStatus: string;
   contactStep: string;
-
   expanded: boolean;
 }
 
@@ -62,6 +61,8 @@ export class ContactsComponent implements OnInit {
   contacts: any;
   sortField = 'contactName';
   sortOrder = 'asc';
+  status;
+  states;
   pageNumber = 0;
   pageSize = 10;
   totalRows = 0;
@@ -79,19 +80,12 @@ export class ContactsComponent implements OnInit {
     legend: {
       display: true,
       position: 'right',
-      // onHover: (e, chartElement) => {
-      //   console.log('onHover', chartElement);
-      //   //e.target['style'].cursor = chartElement[0] ? 'pointer' : 'default';
-      // },
       onClick: (e, legendItem) => {
-        // console.log('item legend', legendItem);
         this.filterByStatus(legendItem.text);
       }
     },
     onClick: (e, legendItem) => {
-
       if (legendItem.length === 0) { return false; }
-      // console.log('item pie', legendItem[0]['_view'].label);
       this.filterByStatus(legendItem[0]['_view'].label);
     }
   };
@@ -116,12 +110,7 @@ export class ContactsComponent implements OnInit {
   public pieChartPlugins = [];
 
   setPieData() {
-    // clean this up
-    const normal = this.contacts.filter(o => o.contactStatus === 'normal');
-    const caution = this.contacts.filter(o => o.contactStatus === 'caution');
-    const serious = this.contacts.filter(o => o.contactStatus === 'serious');
-    const critical = this.contacts.filter(o => o.contactStatus === 'critical');
-    this.pieChartData = [normal.length, caution.length, serious.length, critical.length];
+    this.pieChartData = [this.status.normal, this.status.caution, this.status.serious, this.status.critical];
   }
 
   constructor(
@@ -162,30 +151,47 @@ export class ContactsComponent implements OnInit {
         console.log('contacts', data.body);
         if (this.pageNumber === 0) {
           this.contacts = data.body;
-
-          // Set Pie Chart
-          this.setPieData();
-
-          const defaultSort = { active: this.sortField, direction: this.sortOrder };
-          this.sortChanged(defaultSort);
-
           // this.dataSource = new MatTableDataSource(ds);
         } else {
           // concatenate arrays
           this.contacts = [...this.contacts, ...data.body];
         }
         // Totals
-        this.totalRows = data.body.length;
-        this.totalExe = this.contacts.filter(o => o.contactState === 'executing').length;
-        this.totalFailed = this.contacts.filter(o => o.contactState === 'failed').length;
-      },
-      error => {
+        this.totalRows = this.contacts.length;
+        this.status = this.getUniqueValues(this.contacts, 'contactStatus')
+        this.states = this.getUniqueValues(this.contacts, 'contactState');
+        this.totalExe = this.states.executing;
+        this.totalFailed = this.states.failed;
+        // Set Pie Chart
+        this.setPieData();
+        //
+        const defaultSort = { active: this.sortField, direction: this.sortOrder };
+        this.sortChanged(defaultSort);
 
+
+      }, error => {
+
+      }, () => {
+        //complete
       }
     );
 
   }
 
+  // get number of each contact state value
+  // returns array: contactState => number of occurrences
+  getUniqueValues(obj, prop) {
+    let val;
+    const results = {};
+    for (const value of obj) {
+        val = value[prop];
+        if (!results[val]) {
+            results[val] = 0;
+        }
+        results[val] += 1;
+    }
+    return results;
+  }
   
   //
   filterByStatus(status) {
@@ -291,17 +297,12 @@ export class ContactsComponent implements OnInit {
 
     // Have a filter?
     if (this.filterStatus !== null) {
-      // console.log('> haveFilter', this.filterStatus);
-      // console.log('> pageNumber', this.pageNumber);
       filtered = filtered.filter(o => o.contactStatus === this.filterStatus.toLowerCase());
     }
     //
     this.totalRows = filtered.length;
     this.totalExe = filtered.filter(o => o.contactState === 'executing').length;
     this.totalFailed = filtered.filter(o => o.contactState === 'failed').length;
-
-    // Close expanded on pagination? Sure
-    filtered.forEach(i => { i.expanded = false; }); 
 
     const start = (this.pageNumber * this.pageSize);
     const end = (start + this.pageSize);
