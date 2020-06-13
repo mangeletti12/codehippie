@@ -162,7 +162,7 @@ export class AlertsComponent implements OnInit {
           this.alerts = [...this.alerts, ...data.body];
         }
         //
-        this.errorSeverity = this.getUniqueValues(this.alerts, 'errorSeverity');
+        this.errorSeverity = this.getCountOfProperty(this.alerts, 'errorSeverity');
         this.setTotals();
         // Set Pie Chart
         this.setPieData();
@@ -179,26 +179,27 @@ export class AlertsComponent implements OnInit {
 
   }
 
-  // get number of each contact state value
-  // returns array: contactState => number of occurrences
-  getUniqueValues(obj, prop) {
-    let val;
-    const results = {};
+
+  // Count array property
+  getCountOfProperty(obj, prop) {
+    let pValue;
+    const items = {};
     for (const value of obj) {
-        val = value[prop];
-        if (!results[val]) {
-            results[val] = 0;
-        }
-        results[val] += 1;
+      pValue = value[prop];
+      
+      if (!items[pValue]) {
+        items[pValue] = 0;
+      }
+      items[pValue] += 1;
     }
-    return results;
+    return items;
   }
 
   // Totals
   setTotals() {
     console.log('setTotals', this.dataSource);
     // Totals
-    this.errorCategory = this.getUniqueValues(this.dataSource.filteredData, 'errorCategory');
+    this.errorCategory = this.getCountOfProperty(this.dataSource.filteredData, 'errorCategory');
     this.totalSoftware = this.errorCategory.software;
     this.totalHardware = this.errorCategory.hardware;
     this.totalSpacecraft = this.errorCategory.spacecraft;
