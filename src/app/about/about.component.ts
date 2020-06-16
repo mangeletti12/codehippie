@@ -9,13 +9,20 @@ import { AboutService } from './about.service';
 export class AboutComponent implements OnInit {
   mySkills: any[] = [];
   selectedType = 'all';
+  pic: any;
+  myPics = [
+    {image: 'flc.jpg', details: 'Fort Lewis College, Durango 2017'},
+    {image: 'mka1.jpg', details: 'Red Rocks Amphitheater 2017'},
+    {image: 'breck.jpg', details: 'Breckenridge 2017'},
+  ];
 
   constructor(
     private aboutService: AboutService,
   ) { }
 
   ngOnInit(): void {
-    this.getSkills()
+    this.getSkills();
+    this.getRandomPic();
   }
 
   getSkills() {
@@ -50,6 +57,12 @@ export class AboutComponent implements OnInit {
     }
     //
     this.selectedType = skill;
+  }
+
+  //
+  getRandomPic() {
+    //
+    this.pic = this.myPics[Math.floor(Math.random() * this.myPics.length)];
   }
 
 }

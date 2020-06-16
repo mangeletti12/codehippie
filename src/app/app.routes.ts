@@ -32,7 +32,9 @@ import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
+import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -158,6 +160,13 @@ export const SECURE_ROUTES: Routes = [
     component: PracticeComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Practice' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'tdd',
+    component: TddComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'TDD' },
     resolve: { comp: ResolverService },
   },
   {

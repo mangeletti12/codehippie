@@ -101,11 +101,13 @@ import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
+import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './dashboard/contacts.component';
 import { AlertsComponent } from './dashboard/alerts.component';
 import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
+
 
 @NgModule({
   declarations: [
@@ -152,6 +154,7 @@ import { CountUpModule } from 'ngx-countup';
     ContactComponent,
     P5Component,
     PracticeComponent,
+    TddComponent,
     DashboardComponent,
     ContactsComponent,
     AlertsComponent,

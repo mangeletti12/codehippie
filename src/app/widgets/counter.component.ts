@@ -5,13 +5,6 @@ import { Component, SimpleChange, OnChanges, Input } from '@angular/core';
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss']
 })
-
-/*
-Counter Widget
-accepts: title and value
-displays card with counter
- */
-
 export class CounterComponent implements OnChanges {
 
     @Input() title: string;

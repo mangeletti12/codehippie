@@ -17,7 +17,21 @@
           </a>
         </div>
         <!-- picture -->
-        <div class="my-pic my-shadow"></div>
+        <!-- <div class="my-pic my-shadow" [style.background-image]="'url(../../assets/images/' + pic.image + ')'">
+        </div> -->
+
+        <!-- flip card -->
+        <div class="flip-card">
+          <div class="flip-card-inner flip-shadow">
+            <div class="flip-card-front" >
+              <div class="my-pic flip-shadow" [style.background-image]="'url(../../assets/images/' + pic.image + ')'"></div>
+            </div>
+            <div class="flip-card-back" >
+              <span class="flip-details">{{ pic.details }}</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
 
