@@ -21,7 +21,7 @@
         </div> -->
 
         <!-- flip card -->
-        <div class="flip-card">
+        <div class="flip-card" (click)="cardFront =! cardFront" [class.cardBack]="!cardFront" >
           <div class="flip-card-inner flip-shadow">
             <div class="flip-card-front" >
               <div class="my-pic flip-shadow" [style.background-image]="'url(../../assets/images/' + pic.image + ')'"></div>

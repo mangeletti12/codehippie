@@ -9,6 +9,7 @@ import { AboutService } from './about.service';
 export class AboutComponent implements OnInit {
   mySkills: any[] = [];
   selectedType = 'all';
+  cardFront = true;
   pic: any;
   myPics = [
     {image: 'flc.jpg', details: 'Fort Lewis College, Durango 2017'},
