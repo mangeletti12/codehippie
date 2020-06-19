@@ -34,6 +34,7 @@ import { P5Component } from './p5/p5.component';
 import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FootyComponent } from './footy/footy/footy.component';
 
 
 // export const PUBLIC_ROUTES: Routes = [
@@ -125,6 +126,13 @@ export const SECURE_ROUTES: Routes = [
     component: MoviesComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Movies',},
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'footy',
+    component: FootyComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Footy',},
     resolve: { comp: ResolverService },
   },
   {

@@ -107,6 +107,7 @@ import { ContactsComponent } from './dashboard/contacts.component';
 import { AlertsComponent } from './dashboard/alerts.component';
 import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
+import { FootyComponent } from './footy/footy/footy.component';
 
 
 @NgModule({
@@ -159,6 +160,7 @@ import { CountUpModule } from 'ngx-countup';
     ContactsComponent,
     AlertsComponent,
     CounterComponent,
+    FootyComponent,
   ],
   imports: [
     BrowserModule,
