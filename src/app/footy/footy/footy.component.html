@@ -1,1 +1,35 @@
-<p>footy works!</p>
+<ul class="tableFooty" >
+    <li class="tableRow tableHead">
+        <span></span>
+        <span></span>
+        <span>MP</span>
+        <span>W</span>
+        <span>D</span>
+        <span>L</span>
+        <span>GF</span>
+        <span>GA</span>
+        <span>GD</span>
+        <span>Pts</span>
+    </li>
+    <li class="tableRow" *ngFor="let item of eplTable;">
+        <span>{{ item.position }}</span>
+        <!-- <span>{{ item.team.name }}</span> -->
+        <span><img [src]="item.team.crestUrl" width="30" height="30" [title]="item.team.name" /></span>
+        <span>{{ item.playedGames }}</span>
+        <span>{{ item.won }}</span>
+        <span>{{ item.draw }}</span>
+        <span>{{ item.lost }}</span>
+        <span>{{ item.goalsFor }}</span>
+        <span>{{ item.goalsAgainst }}</span>
+        <span>{{ item.goalDifference }}</span>
+        <span>{{ item.points }}</span>
+    </li>
+</ul>
+
+<ul>
+<li class="tableRow" *ngFor="let item of lfcMatches;">
+    {{ item.awayTeam.name }} v
+    {{ item.homeTeam.name }}
+    {{ item.utcDate | date }}
+</li>
+</ul>

@@ -7,29 +7,35 @@ import { FootyService } from '../footy.service';
   styleUrls: ['./footy.component.scss']
 })
 export class FootyComponent implements OnInit {
+  eplTable: any[] = [];
+  lfcMatches: any[] = [];
 
   constructor(
     private footyService: FootyService,
   ) { }
 
   ngOnInit(): void {
-    this.getLfcUpcomingMatches();
-    this.getAll();
-
+    //
+    this.getEplTable();
+    
 
   }
 
-  getAll() {
+  getEplTable() {
 
     //
     this.footyService.getEplTable().subscribe(
       data => {
-        console.log(data.body);
+        
+        this.eplTable = data.body.standings[0].table;
 
       }, error => {
 
       }, () => {
-        //complete
+        // complete
+        // now get upcoming matches
+        // have to do this after so we have crest
+        this.getLfcUpcomingMatches();
       }
 
     );
@@ -43,12 +49,25 @@ export class FootyComponent implements OnInit {
     //
     this.footyService.getLfcUpcomingMatches().subscribe(
       data => {
-        console.log(data.body);
+        
+        this.lfcMatches = data.body.matches;
+        
+        console.log('table', this.eplTable);
+        // get crest now
+        for(let i = 0; i < this.lfcMatches.length; i++) {
+          // home team
+          const homeId = this.lfcMatches[i].homeTeam.id;
+          const crest = this.eplTable.filter(o => o.team.id === homeId)[0].team.crestUrl; 
+          this.lfcMatches[i].homeTeam.crest = crest;
+          // away team
+          
+        }
+        console.log(this.lfcMatches);
 
       }, error => {
 
       }, () => {
-        //complete
+        // complete
       }
 
     );

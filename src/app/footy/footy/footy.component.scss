@@ -1,0 +1,29 @@
+.tableFooty {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tableHead {
+    font-weight: bold;
+}
+
+.tableRow {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.tableRow:nth-child(5) {
+    border-bottom: 1px solid limegreen;
+}
+
+.tableRow span {
+  margin: 0;
+width: 36px;
+  padding: 2px;
+  text-align: center;
+  align-self: center;
+}
+
