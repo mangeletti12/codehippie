@@ -58,9 +58,11 @@ export class FootyComponent implements OnInit {
           // home team
           const homeId = this.lfcMatches[i].homeTeam.id;
           const crest = this.eplTable.filter(o => o.team.id === homeId)[0].team.crestUrl; 
-          this.lfcMatches[i].homeTeam.crest = crest;
+          this.lfcMatches[i].homeTeam.crestUrl = crest;
           // away team
-          
+          const awayId = this.lfcMatches[i].awayTeam.id;
+          const crest2 = this.eplTable.filter(o => o.team.id === awayId)[0].team.crestUrl; 
+          this.lfcMatches[i].awayTeam.crestUrl = crest2;
         }
         console.log(this.lfcMatches);
 

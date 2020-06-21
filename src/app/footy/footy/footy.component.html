@@ -26,10 +26,26 @@
     </li>
 </ul>
 
-<ul>
-<li class="tableRow" *ngFor="let item of lfcMatches;">
-    {{ item.awayTeam.name }} v
-    {{ item.homeTeam.name }}
-    {{ item.utcDate | date }}
-</li>
-</ul>
+<!-- LFC upcoming Matches -->
+
+<div class="lfcGames"  *ngFor="let item of lfcMatches;">
+
+    <div class="upcomingMatches">
+
+        <ng-container *ngIf="item.homeTeam.id !== 64">
+            <div><img [src]="item.homeTeam.crestUrl" width="50" height="50" [title]="item.homeTeam.name" /></div>
+        </ng-container> 
+
+        <ng-container *ngIf="item.awayTeam.id !== 64">
+            <div><img [src]="item.awayTeam.crestUrl" width="50" height="50" [title]="item.awayTeam.name" /></div>
+        </ng-container>
+
+        <div class="matchDay">
+            <div>{{ item.utcDate | date: 'EEEE' }}</div>
+            <div>{{ item.utcDate | date: 'MMMM d' }}</div>
+            <div>{{ item.utcDate | date: 'h:mm a':'MT' }}</div>
+        </div>
+
+    </div>
+    
+</div>
