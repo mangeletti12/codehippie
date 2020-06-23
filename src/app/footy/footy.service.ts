@@ -25,9 +25,7 @@ export class FootyService {
 
   getEplTable() {
     const base = '/v2/competitions';
-
     // premeir league = 2072
-
     const url = `${this._footyUrl}${base}/PL/standings`;
 
     httpOptions.headers = new HttpHeaders({
@@ -39,7 +37,6 @@ export class FootyService {
       catchError(this.handleError('getAllTeams', []))
     );
 
-
   }
 
   getLfcUpcomingMatches() {
@@ -49,10 +46,25 @@ export class FootyService {
       'X-Auth-Token': this._publicKey
     });
 
-  
     return this.http.get<any>(url, httpOptions)
     .pipe(
       catchError(this.handleError('getLfcUpcomingMatches', []))
+    );
+
+  }
+
+  getTeam() {
+    const base = '/v2/teams';
+    // LFC = 64
+    const url = `${this._footyUrl}${base}/64`;
+
+    httpOptions.headers = new HttpHeaders({
+      'X-Auth-Token': this._publicKey
+    });
+
+    return this.http.get<any>(url, httpOptions)
+    .pipe(
+      catchError(this.handleError('getTeam', []))
     );
 
   }

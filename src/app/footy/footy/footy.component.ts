@@ -1,14 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { FootyService } from '../footy.service';
+import { transition, animate, trigger, style, state } from '@angular/animations';
+
 
 @Component({
   selector: 'app-footy',
   templateUrl: './footy.component.html',
-  styleUrls: ['./footy.component.scss']
+  styleUrls: ['./footy.component.scss'],
+  animations: [
+    trigger('carouselSlider', [
+      state('left', 
+        style({ 
+          transform: 'translateX(150px)' 
+        }),
+        
+      ),
+
+      state('right', 
+        style({ 
+          transform: 'translateX(-150px)' 
+        }),
+
+      ),
+
+      transition('* => right', 
+        animate('200ms')
+      ),
+      transition('* => left', 
+        animate('200ms')
+      ),
+    ])
+  ],
 })
 export class FootyComponent implements OnInit {
   eplTable: any[] = [];
   lfcMatches: any[] = [];
+  // carousel
+  @ViewChild('carousel', {static: true}) carousel: ElementRef;
+  @ViewChild('carouselSlider', {static: true}) carouselSlider: ElementRef;
+  carouselWidth;
+  slideHolderWith;
+  slideItemWidth = 150;
+  carouselState;
 
   constructor(
     private footyService: FootyService,
@@ -17,11 +50,38 @@ export class FootyComponent implements OnInit {
   ngOnInit(): void {
     //
     this.getEplTable();
-    
+    this.getTeam();
+    //
+    this.setCarousel();
 
   }
 
-  getEplTable() {
+  // Listen for window resize
+  @HostListener('window:resize', ['$event'])
+  onResize(e) {
+    const vp = e.target.innerWidth;
+    this.setCarousel();
+  }
+
+  setCarousel() {
+    // math
+    this.carouselWidth = (this.carousel.nativeElement as HTMLElement).offsetWidth;
+    const numberOfSlidesDisplayed = Math.floor(this.carouselWidth/this.slideItemWidth);
+    this.slideHolderWith = (numberOfSlidesDisplayed*this.slideItemWidth) - 150;
+  }
+
+  carouselSlide(slide) {
+    console.log('carouselSlide', slide);
+    // if(slide === 'left') {
+    //   this.carouselState = 'right';
+    // } else {
+    //   this.carouselState = 'left';
+    // }
+    this.carouselState = slide;
+  }
+
+  // Get EPL Table
+  getEplTable() { 
 
     //
     this.footyService.getEplTable().subscribe(
@@ -43,7 +103,7 @@ export class FootyComponent implements OnInit {
   }
 
 
-
+  //
   getLfcUpcomingMatches() {
 
     //
@@ -65,6 +125,25 @@ export class FootyComponent implements OnInit {
           this.lfcMatches[i].awayTeam.crestUrl = crest2;
         }
         console.log(this.lfcMatches);
+
+      }, error => {
+
+      }, () => {
+        // complete
+      }
+
+    );
+
+  }
+
+  //
+  getTeam() {
+
+    //
+    this.footyService.getTeam().subscribe(
+      data => {
+        
+        console.log('Team', data.body);
 
       }, error => {
 

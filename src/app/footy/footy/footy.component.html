@@ -1,3 +1,44 @@
+{{ this.carouselWidth }} - 
+{{ this.slideHolderWith }}
+<div #carousel class="carousel">
+    <div class="carousel-button bLeft">
+        <button (click)="carouselSlide('left')">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </div>
+    <div #carouselSlider [@carouselSlider]="carouselState" class="carousel-slide-mask" [style.width.px]="slideHolderWith" >
+   
+        <!-- LFC upcoming Matches -->
+        <div class="lfcGames" *ngFor="let item of lfcMatches;">
+
+            <div class="upcomingMatches">
+
+                <ng-container *ngIf="item.homeTeam.id !== 64">
+                    <div><img [src]="item.homeTeam.crestUrl" width="50" height="50" [title]="item.homeTeam.name" /></div>
+                </ng-container> 
+
+                <ng-container *ngIf="item.awayTeam.id !== 64">
+                    <div><img [src]="item.awayTeam.crestUrl" width="50" height="50" [title]="item.awayTeam.name" /></div>
+                </ng-container>
+
+                <div class="matchDay">
+                    <div>{{ item.utcDate | date: 'EEEE' }}</div>
+                    <div>{{ item.utcDate | date: 'MMMM d' }}</div>
+                    <div>{{ item.utcDate | date: 'h:mm a':'MT' }}</div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+    <div class="carousel-button bRight">
+        <button (click)="carouselSlide('right')">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>  
+</div>
+
 <ul class="tableFooty" >
     <li class="tableRow tableHead">
         <span></span>
@@ -26,26 +67,4 @@
     </li>
 </ul>
 
-<!-- LFC upcoming Matches -->
 
-<div class="lfcGames"  *ngFor="let item of lfcMatches;">
-
-    <div class="upcomingMatches">
-
-        <ng-container *ngIf="item.homeTeam.id !== 64">
-            <div><img [src]="item.homeTeam.crestUrl" width="50" height="50" [title]="item.homeTeam.name" /></div>
-        </ng-container> 
-
-        <ng-container *ngIf="item.awayTeam.id !== 64">
-            <div><img [src]="item.awayTeam.crestUrl" width="50" height="50" [title]="item.awayTeam.name" /></div>
-        </ng-container>
-
-        <div class="matchDay">
-            <div>{{ item.utcDate | date: 'EEEE' }}</div>
-            <div>{{ item.utcDate | date: 'MMMM d' }}</div>
-            <div>{{ item.utcDate | date: 'h:mm a':'MT' }}</div>
-        </div>
-
-    </div>
-    
-</div>
