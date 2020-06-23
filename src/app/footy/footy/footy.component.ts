@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular
 import { FootyService } from '../footy.service';
 import { transition, animate, trigger, style, state } from '@angular/animations';
 
+// https://www.positronx.io/understanding-angular-7-animations/
 
 @Component({
   selector: 'app-footy',
@@ -9,39 +10,35 @@ import { transition, animate, trigger, style, state } from '@angular/animations'
   styleUrls: ['./footy.component.scss'],
   animations: [
     trigger('carouselSlider', [
-      state('left', 
+      state('slide', 
         style({ 
-          transform: 'translateX(150px)' 
-        }),
-        
+          transform: 'translateX({{distance}}px)' 
+        }), {params: {distance: 150}}
       ),
 
-      state('right', 
-        style({ 
-          transform: 'translateX(-150px)' 
-        }),
-
+      transition('* => *', 
+        animate('900ms')
       ),
 
-      transition('* => right', 
-        animate('200ms')
-      ),
-      transition('* => left', 
-        animate('200ms')
-      ),
     ])
   ],
 })
 export class FootyComponent implements OnInit {
+  epl: any;
   eplTable: any[] = [];
   lfcMatches: any[] = [];
+  
   // carousel
   @ViewChild('carousel', {static: true}) carousel: ElementRef;
   @ViewChild('carouselSlider', {static: true}) carouselSlider: ElementRef;
+  totalSlides;
+  slideCounter = 0;
+  numberOfSlidesDisplayed;
   carouselWidth;
-  slideHolderWith;
+  slideHolderWidth;
   slideItemWidth = 150;
   carouselState;
+  slideDistance;
 
   constructor(
     private footyService: FootyService,
@@ -64,21 +61,25 @@ export class FootyComponent implements OnInit {
   }
 
   setCarousel() {
-    // math
+    // Set carousel width and slides displayed count
     this.carouselWidth = (this.carousel.nativeElement as HTMLElement).offsetWidth;
-    const numberOfSlidesDisplayed = Math.floor(this.carouselWidth/this.slideItemWidth);
-    this.slideHolderWith = (numberOfSlidesDisplayed*this.slideItemWidth) - 150;
+    this.numberOfSlidesDisplayed = Math.floor(this.carouselWidth/this.slideItemWidth) - 1; //-1 for btn spacing
+    this.slideHolderWidth = (this.numberOfSlidesDisplayed*this.slideItemWidth);
   }
 
   carouselSlide(slide) {
-    console.log('carouselSlide', slide);
-    // if(slide === 'left') {
-    //   this.carouselState = 'right';
-    // } else {
-    //   this.carouselState = 'left';
-    // }
-    this.carouselState = slide;
+    // console.log('carouselSlide', slide);
+    console.log('numberOfSlidesDisplayed', this.numberOfSlidesDisplayed);
+    if(slide === 'right') {
+      this.slideCounter++;
+    } else {
+      this.slideCounter--;
+    }
+    console.log('slideCounter', this.slideCounter);
+    this.slideDistance = (this.slideCounter*this.slideItemWidth);
+    this.carouselState = 'slide';
   }
+
 
   // Get EPL Table
   getEplTable() { 
@@ -86,7 +87,7 @@ export class FootyComponent implements OnInit {
     //
     this.footyService.getEplTable().subscribe(
       data => {
-        
+        this.epl = data.body;
         this.eplTable = data.body.standings[0].table;
 
       }, error => {
@@ -103,7 +104,7 @@ export class FootyComponent implements OnInit {
   }
 
 
-  //
+  // Get upcoming LFC matches
   getLfcUpcomingMatches() {
 
     //
@@ -125,6 +126,7 @@ export class FootyComponent implements OnInit {
           this.lfcMatches[i].awayTeam.crestUrl = crest2;
         }
         console.log(this.lfcMatches);
+        this.totalSlides = this.lfcMatches.length;
 
       }, error => {
 
@@ -136,7 +138,7 @@ export class FootyComponent implements OnInit {
 
   }
 
-  //
+  // get LFC
   getTeam() {
 
     //

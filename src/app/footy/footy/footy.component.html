@@ -1,70 +1,107 @@
-{{ this.carouselWidth }} - 
-{{ this.slideHolderWith }}
+<!-- {{ slideCounter }} === {{ (numberOfSlidesDisplayed-totalSlides) }}  -->
 <div #carousel class="carousel">
     <div class="carousel-button bLeft">
-        <button (click)="carouselSlide('left')">
+        <button (click)="carouselSlide('left')" [disabled]="slideCounter === (numberOfSlidesDisplayed-totalSlides)">
             <mat-icon>keyboard_arrow_left</mat-icon>
         </button>
     </div>
-    <div #carouselSlider [@carouselSlider]="carouselState" class="carousel-slide-mask" [style.width.px]="slideHolderWith" >
+    <div  class="carousel-slide-mask" [style.width.px]="slideHolderWidth" >
    
-        <!-- LFC upcoming Matches -->
-        <div class="lfcGames" *ngFor="let item of lfcMatches;">
+        <div class="carousel-slider" #carouselSlider [@carouselSlider]="{value: carouselState, params: {distance: slideDistance}}">
+            <!-- LFC upcoming Matches -->
+            <div class="lfcGames" *ngFor="let item of lfcMatches;">
 
-            <div class="upcomingMatches">
+                <div class="upcomingMatches">
 
-                <ng-container *ngIf="item.homeTeam.id !== 64">
-                    <div><img [src]="item.homeTeam.crestUrl" width="50" height="50" [title]="item.homeTeam.name" /></div>
-                </ng-container> 
+                    <ng-container *ngIf="item.homeTeam.id !== 64">
+                        <div><img [src]="item.homeTeam.crestUrl" width="50" height="50" [matTooltip]="item.homeTeam.name" #homeTeam="matTooltip" (click)="homeTeam.toggle()" /></div>
+                    </ng-container> 
 
-                <ng-container *ngIf="item.awayTeam.id !== 64">
-                    <div><img [src]="item.awayTeam.crestUrl" width="50" height="50" [title]="item.awayTeam.name" /></div>
-                </ng-container>
+                    <ng-container *ngIf="item.awayTeam.id !== 64">
+                        <div><img [src]="item.awayTeam.crestUrl" width="50" height="50" [matTooltip]="item.awayTeam.name" #awayTeam="matTooltip" (click)="awayTeam.toggle()" /></div>
+                    </ng-container>
 
-                <div class="matchDay">
-                    <div>{{ item.utcDate | date: 'EEEE' }}</div>
-                    <div>{{ item.utcDate | date: 'MMMM d' }}</div>
-                    <div>{{ item.utcDate | date: 'h:mm a':'MT' }}</div>
+                    <div class="matchDay">
+                        <div>{{ item.utcDate | date: 'EEEE' }}</div>
+                        <div>{{ item.utcDate | date: 'MMMM d' }}</div>
+                        <div>{{ item.utcDate | date: 'h:mm a':'MT' }}</div>
+                    </div>
+
                 </div>
-
+                
             </div>
-            
         </div>
 
     </div>
     <div class="carousel-button bRight">
-        <button (click)="carouselSlide('right')">
+        <button (click)="carouselSlide('right')" [disabled]="slideCounter === 0">
             <mat-icon>keyboard_arrow_right</mat-icon>
         </button>
     </div>  
 </div>
 
-<ul class="tableFooty" >
-    <li class="tableRow tableHead">
-        <span></span>
-        <span></span>
-        <span>MP</span>
-        <span>W</span>
-        <span>D</span>
-        <span>L</span>
-        <span>GF</span>
-        <span>GA</span>
-        <span>GD</span>
-        <span>Pts</span>
-    </li>
-    <li class="tableRow" *ngFor="let item of eplTable;">
-        <span>{{ item.position }}</span>
-        <!-- <span>{{ item.team.name }}</span> -->
-        <span><img [src]="item.team.crestUrl" width="30" height="30" [title]="item.team.name" /></span>
-        <span>{{ item.playedGames }}</span>
-        <span>{{ item.won }}</span>
-        <span>{{ item.draw }}</span>
-        <span>{{ item.lost }}</span>
-        <span>{{ item.goalsFor }}</span>
-        <span>{{ item.goalsAgainst }}</span>
-        <span>{{ item.goalDifference }}</span>
-        <span>{{ item.points }}</span>
-    </li>
-</ul>
+<div class="wrapper">
 
+    <mat-card class="epl-table" *ngIf="eplTable">
+        <div class="table-header">
+            <div>
+                <!-- viewBox="0 0 131.1 166.7" -->
+                <svg class="epl-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  style="enable-background:new 0 0 131.1 166.7;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0{fill:#ffffff;}
+                    </style>
+                    <path class="st0" d="M28.8,18.8c6.8,3.2,11.3,7.1,12.1,7.7c-0.3-1.8-1.7-10.3-2.6-15.5c3.9,2.7,13.3,9.2,16.3,11.3
+                    C55.8,18.5,60.2,6,60.2,6s7.8,12.5,9,14.6C70.9,19,80.1,8.6,82.5,6c0.5,5.9,0.9,14.5,1.1,15.7c0.5-0.6,4.1-5.6,10-10.3
+                    c-2.6,5.1-3.8,12.1-4.4,17.8c-5.9-1.7-12.1-2.6-18.4-2.6c-12.2,0-23.8,3.2-33.8,8.9C35.3,30,32.6,23.2,28.8,18.8z M122.6,126.2
+                    l-5.4-6c-1.5,16.1-9.5,29.9-24,39.5l-2.3-8.7c-12.4,8.9-33.5,14.6-51.7,4.4c2.3-11.5,4.2-23.2,0-37.2c-10.1,15.5-19,21.7-19,21.7
+                    c-6.8-11.5-6.2-34.4-4.2-41.2l-11.3,3.5c0-7.7,5.6-24,13.6-33.2l-6.9-1.1c4.8-9.8,11.9-18.2,20.8-24.7c-2.7,4.4-2.7,14.6,5,18.5
+                    c-3.3-5.7-3.6-12.8-0.3-16.6c3.5-3.8,9.2-2.4,12.8,0.5c-1.1-3.2-4.4-7.2-9-7.5c9-4.7,19.5-7.2,30.3-7.2c2.1,0,4.1,0.2,6,0.3
+                    c3.2,1.2,7.8,5.7,10,8.6c0,0,0.2-3.3-1.7-7.2c11.8,2.9,17.5,7.7,19.8,10c0.5,5.1,2,8.1,4.1,13c-3.8-4.2-13.4-11.2-18.1-12.8
+                    c0,0-0.5,4.4-2,6.5c-9.2-6.6-13.6-8.3-13.6-8.3C65.3,42,59,46,55.4,49l3,2.6c-6,1.8-10,7.1-10,7.1c0,0.2,5.4,0.9,5.4,0.9
+                    s-0.6,6.3,7.4,10.3c6.8,3.3,16.4-0.8,25.6,2.9c-6-6.9-10.1-10.1-10.1-10.1s-2.4-0.5-4.1-0.5c-2.1,0-5.3,0.5-8.6-0.9
+                    c-1.7-0.6-3.6-1.8-5-2.7c0,0,4.2-4.4,10.4-5.3c0,0,5.6,1.5,10,4.8c2.9-2.9,6-2.7,6-2.7s-3,2.9-2.1,6.2c4.4,3.9,9.2,9.5,9.2,9.5
+                    c4.8-2.7,15.4-2.1,17.6,0.5c-2.7-3.6-6.8-6.5-9.8-9c-0.3-1.4-3.8-6-4.2-6.5c0,0,3.2,1.1,6,3.5c0.8-1.2,2.4-2.4,4.4-2.9
+                    c2.1,1.8,2.6,4.5,2.4,5c-0.9,1.2-2,1.7-2,1.7l5.1,5.6l0.5-4.1C124.4,81.8,130.9,101.5,122.6,126.2z M100.2,89.7v-8.7
+                    c0,0-3.9-1.2-8.1-4.5c-8.4,1.2-18.5,9.7-18.5,9.7s3.5,6.5,7.2,13.6C87.4,100.5,97.2,92.3,100.2,89.7z M108.6,105.5
+                    c0,0-0.6-3.6-3.6-6.9l-6.5,0.2c0,0-8.9,7.5-14.2,7.7c0,0,3,5.6,4.5,8.4c3-0.6,8.1-3,10.3-5.4c0,0,1.4,4.5,1.1,9.8
+                    C103.2,117.4,107.3,112.8,108.6,105.5z M111.3,76.7c-3.3,2.7-6,4.4-6,4.4v8.7c2.4,2.6,4.7,4.8,6.5,8.7
+                    C115.1,92.7,114.3,84,111.3,76.7z"></path>
+                </svg>
+            </div>
+            <div class="table-meta">
+                <h3>{{ epl.competition.name }}</h3>
+                <span>{{ epl.season.startDate | date }}</span> - <span>{{ epl.season.endDate | date }}</span><br>
+                <span>Match day: {{ epl.season.currentMatchday}}</span>
+            </div>
+        </div>
 
+        <ul class="tableFooty" >
+            <li class="tableRow tableHead">
+                <span></span>
+                <span></span>
+                <span>MP</span>
+                <span>W</span>
+                <span>D</span>
+                <span>L</span>
+                <span>GF</span>
+                <span>GA</span>
+                <span>GD</span>
+                <span>Pts</span>
+            </li>
+            <li class="tableRow" *ngFor="let item of eplTable;">
+                <span>{{ item.position }}</span>
+                <!-- <span>{{ item.team.name }}</span> -->
+                <span><img [src]="item.team.crestUrl" width="30" height="30" [matTooltip]="item.team.name" #teamName="matTooltip" (click)="teamName.toggle()" /></span>
+                <span>{{ item.playedGames }}</span>
+                <span>{{ item.won }}</span>
+                <span>{{ item.draw }}</span>
+                <span>{{ item.lost }}</span>
+                <span>{{ item.goalsFor }}</span>
+                <span>{{ item.goalsAgainst }}</span>
+                <span>{{ item.goalDifference }}</span>
+                <span>{{ item.points }}</span>
+            </li>
+        </ul>
+    </mat-card>
+
+</div>

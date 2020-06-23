@@ -1,3 +1,40 @@
+.epl-table {
+    max-width: 400px;
+    padding: 0;
+    margin: 6px;
+}
+
+.table-header {
+    display: flex;
+    background: #3F1052;
+    color: #fcfcfc;
+    text-transform: uppercase;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+.table-header h3 {
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: .04em;
+    line-height: 1.25;
+}
+
+.epl-logo {
+    width: 150px;
+    height: 118px;
+}
+
+.table-meta span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
 .tableFooty {
     list-style-type: none;
     margin: 0;
@@ -37,7 +74,6 @@ width: 36px;
     padding: 5px;
     margin: 2px;
     width: 146px;
-    
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -67,13 +103,17 @@ width: 36px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: orange;
     height: 64px;
+    background-color: #ccc;
 }
 
 .carousel-slide-mask {
     background-color: palegreen;
     overflow: hidden;
+}
+
+.carousel-slider {
+    display: inline-flex;
 }
 
 .carousel-button {
@@ -91,7 +131,7 @@ width: 36px;
 
 .carousel-button button {
     position: relative;
-    color: #000;
+    // color: #000;
     background: #FFBF00;
     display: flex;
     justify-content: center;
@@ -104,4 +144,8 @@ width: 36px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+}
+
+.carousel-button button:disabled {
+    opacity: 0.5;
 }
