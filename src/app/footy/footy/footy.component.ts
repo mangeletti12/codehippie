@@ -25,8 +25,8 @@ import { transition, animate, trigger, style, state } from '@angular/animations'
 })
 export class FootyComponent implements OnInit {
   epl: any;
-  eplTable: any[] = [];
-  lfcMatches: any[] = [];
+  eplTable: any;
+  lfcMatches: any;
   
   // carousel
   @ViewChild('carousel', {static: true}) carousel: ElementRef;
