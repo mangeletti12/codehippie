@@ -147,7 +147,28 @@ export class FootyComponent implements OnInit {
     this.footyService.getTeam().subscribe(
       data => {
         this.lfcTeam = data.body;
+        const squadLength = this.lfcTeam.squad.length;
+        for(let i = 0; i < squadLength; i++) {
+          // position
+          let abbrPosition;
+          if (this.lfcTeam.squad[i].position === 'Goalkeeper') {
+            abbrPosition = 'GK';
+          }
+          else if (this.lfcTeam.squad[i].position === 'Defender') {
+            abbrPosition = 'Def';
+          }
+          else if (this.lfcTeam.squad[i].position === 'Midfielder') {
+            abbrPosition = 'Mid';
+          }
+          else if (this.lfcTeam.squad[i].position === 'Attacker') {
+            abbrPosition = 'Att';
+          }
+
+          this.lfcTeam.squad[i].pos = abbrPosition;
+        }
+
         console.log('Team', this.lfcTeam);
+
 
       }, error => {
 
