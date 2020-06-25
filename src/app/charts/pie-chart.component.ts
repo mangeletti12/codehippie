@@ -15,7 +15,7 @@ export class PieChartComponent implements OnInit {
     maintainAspectRatio: false,
     legend: {
       display: true,
-      position: 'left',
+      position: 'bottom',
     }
   };
   public pieChartLabels: Label[] = [
@@ -29,7 +29,6 @@ export class PieChartComponent implements OnInit {
     'Manchester United',
     'Juventus',
     'Benfica'
-
   ];
   public pieChartData: SingleDataSet = [13, 7, 6, 5, 5, 4, 3, 3, 2, 2];
   public pieChartType: ChartType = 'pie';

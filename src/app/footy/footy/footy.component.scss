@@ -1,20 +1,24 @@
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.lfc-table {
-    // flex-grow: 1;
+.lfc-table, .epl-table, .charts-table {
     padding: 0;
-    margin: 6px;
-    margin-left: 3px;
-    width: 380px;
+    margin: 3px;
+    width: 366px;
+    overflow: hidden;
 }
 
-.epl-table {
-    width: 380px;
-    padding: 0;
-    margin: 6px;
-    margin-right: 3px;
+.chart-holder {
+    margin-top: 25px !important;
+    overflow: hidden;
+}
+
+.chart-holder span {
+    text-align: center;
+    display: block;
 }
 
 .lfc-table .table-header {
@@ -44,8 +48,12 @@
 }
 
 .epl-logo, .lfc-logo {
-    width: 150px;
+    width: 140px;
     height: 118px;
+    overflow: hidden;
+}
+.lfc-logo {
+    width: 175px;
 }
 
 .table-meta span {
@@ -112,7 +120,6 @@
 }
 
 
-
 /* LFC Upcoming Matches */ 
 
 .lfcGames {
@@ -151,11 +158,11 @@
     flex-direction: row;
     justify-content: center;
     height: 64px;
-    background-color: #ccc;
+    // background-color: #ccc;
 }
 
 .carousel-slide-mask {
-    background-color: palegreen;
+    // background-color: palegreen;
     overflow: hidden;
 }
 
@@ -165,7 +172,6 @@
 
 .carousel-button {
     align-self: center;
-    background-color: pink;
 }
 
 // .bRight {
@@ -178,8 +184,6 @@
 
 .carousel-button button {
     position: relative;
-    // color: #000;
-    background: #FFBF00;
     display: flex;
     justify-content: center;
     align-items: center;

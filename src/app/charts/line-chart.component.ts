@@ -72,13 +72,13 @@ export class LineChartComponent implements OnInit {
       borderColor: 'black',
       borderWidth: 0,
       pointBorderWidth: 0,
-      pointRadius: 10,
+      pointRadius: 5,
       pointBorderColor: 'rgba(255,0,0,1)',
       backgroundColor: 'rgba(255,0,0,0.28)',
     },
   ];
 
-  lineChartLegend = true;
+  lineChartLegend = false;
   lineChartPlugins = [];
   lineChartType = 'line';
 

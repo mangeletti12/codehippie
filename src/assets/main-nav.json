@@ -42,6 +42,18 @@
               ]
             },
             {
+              "Text": "Footy",
+              "Claim": "http://rootssoftware.com/module/footy",
+              "icon": "fa-futbol",
+              "MenuItem": [
+                {
+                  "Text": "Dashboard",
+                  "Url": "/footy",
+                  "Claim": "Nav_Footy"
+                }
+              ]
+            },
+            {
               "Text": "Heroes",
               "Claim": "http://rootssoftware.com/module/projectmanagement",
               "icon": "fa-mask",
@@ -83,28 +95,6 @@
                   "Text": "List",
                   "Url": "/list",
                   "Claim": "Nav_List"
-                }
-              ]
-            },
-            {
-              "Text": "Charts",
-              "Claim": "http://rootssoftware.com/module/charts",
-              "icon": "fa-chart-bar",
-              "MenuItem": [
-                {
-                  "Text": "Line",
-                  "Url": "/line-chart",
-                  "Claim": "Nav_Line-Chart"
-                },
-                {
-                  "Text": "Bar",
-                  "Url": "/bar-chart",
-                  "Claim": "Nav_Bar-Chart"
-                },
-                {
-                  "Text": "Pie",
-                  "Url": "/pie-chart",
-                  "Claim": "Nav_Bar-Chart"
                 }
               ]
             },
