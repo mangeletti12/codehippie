@@ -16,7 +16,7 @@ import { transition, animate, trigger, style, state } from '@angular/animations'
         }), {params: {distance: 150}}
       ),
 
-      transition('* => *', 
+      transition('* <=> *', 
         animate('900ms')
       ),
 
@@ -27,6 +27,7 @@ export class FootyComponent implements OnInit {
   epl: any;
   eplTable: any;
   lfcMatches: any;
+  lfcTeam: any;
   
   // carousel
   @ViewChild('carousel', {static: true}) carousel: ElementRef;
@@ -49,7 +50,7 @@ export class FootyComponent implements OnInit {
     this.getEplTable();
     this.getTeam();
     //
-    this.setCarousel();
+    
 
   }
 
@@ -132,6 +133,7 @@ export class FootyComponent implements OnInit {
 
       }, () => {
         // complete
+        this.setCarousel();
       }
 
     );
@@ -144,8 +146,8 @@ export class FootyComponent implements OnInit {
     //
     this.footyService.getTeam().subscribe(
       data => {
-        
-        console.log('Team', data.body);
+        this.lfcTeam = data.body;
+        console.log('Team', this.lfcTeam);
 
       }, error => {
 

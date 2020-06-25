@@ -104,4 +104,35 @@
         </ul>
     </mat-card>
 
+
+    <!-- LFC team details-->
+    <mat-card class="lfc-table" *ngIf="lfcTeam">
+
+        <div class="table-header">
+            <div>
+                <img [src]="lfcTeam.crestUrl" class="lfc-logo" />
+            </div>
+            <div class="table-meta">
+                <h3>{{ lfcTeam.name }}</h3>
+                <span>{{ lfcTeam.founded }}</span><br>
+                <span>{{ lfcTeam.venue }}</span>
+            </div>
+        </div>
+
+        <ul class="tableFooty" >
+            <li class="tableRow tableHead">
+                <span></span>
+                <span>Squad</span>
+     
+            </li>
+            <li class="tableRow2" *ngFor="let item of lfcTeam.squad;">
+                <span>{{ item.shirtNumber }}</span>
+                <span>{{ item.name }}</span>
+                <span>{{ item.nationality | truncate:15 }}</span>
+                <span>{{ item.position }}</span>
+            </li>
+        </ul>
+
+    </mat-card>
+
 </div>
