@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { httpOptions } from '../http-options';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
@@ -73,14 +73,11 @@ export class SuperheroesService {
 
 
   getAllHeroes(searchCriteria: any) {
-    // https://developer.marvel.com/documentation/entity_types
-
-    // httpOptions.headers = new HttpHeaders({
-    //   // 'Access-Control-Allow-Origin': 'true',
-    //   // 'Accept': '*/*',
-    //   'Content-Type': 'application/json',
-    //   // 'Authorization': '0'
-    // });
+    // reset
+    httpOptions.headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    httpOptions.params = null;
 
     const timeStamp = this.getTimeStamp();
     const hash = this.getHash(timeStamp);
@@ -102,6 +99,12 @@ export class SuperheroesService {
   }
 
   getHero(id) {
+    // reset
+    httpOptions.headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    httpOptions.params = null;
+
     const timeStamp = this.getTimeStamp();
     const hash = this.getHash(timeStamp);
     const url = this._marvelCharacterUrl + "/" + id + "?&ts=" + timeStamp + "&apikey=" + this._publicKey + "&hash=" + hash;
@@ -113,6 +116,12 @@ export class SuperheroesService {
   }
 
   getDetails(resourceURI) {
+    // reset
+    httpOptions.headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    httpOptions.params = null;
+
     // http://gateway.marvel.com/v1/public/characters/1010699
     const timeStamp = this.getTimeStamp();
     const hash = this.getHash(timeStamp);

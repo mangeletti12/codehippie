@@ -24,13 +24,16 @@ export class FootyService {
 
 
   getEplTable() {
+    // reset
+    httpOptions.headers = new HttpHeaders({
+      // 'Content-Type': 'application/json',
+      'X-Auth-Token': this._publicKey
+    });
+    httpOptions.params = null; 
+
     const base = '/v2/competitions';
     // premeir league = 2072
     const url = `${this._footyUrl}${base}/PL/standings`;
-
-    httpOptions.headers = new HttpHeaders({
-      'X-Auth-Token': this._publicKey
-    });
 
     return this.http.get<any>(url, httpOptions)
     .pipe(
@@ -40,11 +43,14 @@ export class FootyService {
   }
 
   getLfcUpcomingMatches() {
-    const url = 'https://api.football-data.org/v2/teams/64/matches?status=SCHEDULED';
-
+    // reset
     httpOptions.headers = new HttpHeaders({
+      // 'Content-Type': 'application/json',
       'X-Auth-Token': this._publicKey
     });
+    httpOptions.params = null;
+
+    const url = 'https://api.football-data.org/v2/teams/64/matches?status=SCHEDULED';
 
     return this.http.get<any>(url, httpOptions)
     .pipe(
@@ -54,13 +60,16 @@ export class FootyService {
   }
 
   getTeam() {
+    // reset
+    httpOptions.headers = new HttpHeaders({
+      // 'Content-Type': 'application/json',
+      'X-Auth-Token': this._publicKey
+    });
+    httpOptions.params = null;
+
     const base = '/v2/teams';
     // LFC = 64
     const url = `${this._footyUrl}${base}/64`;
-
-    httpOptions.headers = new HttpHeaders({
-      'X-Auth-Token': this._publicKey
-    });
 
     return this.http.get<any>(url, httpOptions)
     .pipe(
