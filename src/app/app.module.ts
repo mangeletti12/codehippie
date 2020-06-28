@@ -108,6 +108,7 @@ import { AlertsComponent } from './dashboard/alerts.component';
 import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
 import { FootyComponent } from './footy/footy/footy.component';
+import { GridComponent } from './grid/grid.component';
 
 
 @NgModule({
@@ -161,6 +162,7 @@ import { FootyComponent } from './footy/footy/footy.component';
     AlertsComponent,
     CounterComponent,
     FootyComponent,
+    GridComponent,
   ],
   imports: [
     BrowserModule,

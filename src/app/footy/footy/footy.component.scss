@@ -6,7 +6,7 @@
 
 .lfc-table, .epl-table, .charts-table {
     padding: 0;
-    margin: 3px;
+    margin: 3px 6px;
     width: 366px;
     overflow: hidden;
 }
@@ -67,8 +67,22 @@
     padding: 0;
 }
 
+// .tableFooty span:nth-child(2) { background-color: lime; }
+.tableFooty span:nth-child(3) { 
+    display: none;
+    flex-grow: 1;
+    text-align: left;
+    // background-color: yellow;
+}
+.tableFooty .tableRow2 span:nth-child(3) { 
+    display: inline-block;
+    text-align: right;
+}
+
+
 .tableHead {
-    font-weight: bold;
+    //font-weight: bold;
+    font-size: 12px;
 }
 
 .tableRow, .tableRow2 {
@@ -84,6 +98,7 @@
 }
 
 .tableRow span {
+    // display: inline-block;
     margin: 0;
     width: 36px;
     padding: 2px;
@@ -107,11 +122,11 @@
     flex-grow: 1;
 }
 
-.tableRow2 span:nth-child(3) {
-    width: 90px;
-    white-space: nowrap;
-    text-align: left;
-}
+// .tableRow2 span:nth-child(3) {
+//     width: 90px;
+//     white-space: nowrap;
+//     text-align: left;
+// }
 
 .tableRow2 span:nth-child(4) {
     text-align: right;
@@ -158,7 +173,7 @@
     flex-direction: row;
     justify-content: center;
     height: 64px;
-    // background-color: #ccc;
+    margin-top: 3px;
 }
 
 .carousel-slide-mask {
@@ -199,4 +214,15 @@
 
 .carousel-button button:disabled {
     opacity: 0.5;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 1055px) {
+    .tableFooty span:nth-child(3) {
+        display: inherit;
+    }
+    .wrapper mat-card {
+        width: 100%;
+    }
 }

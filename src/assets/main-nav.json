@@ -87,9 +87,9 @@
                   "Claim": "Nav_Movies"
                 },
                 {
-                  "Text": "Dashboard",
-                  "Url": "/dashboard",
-                  "Claim": "Nav_Dashboard"
+                  "Text": "Rocket",
+                  "Url": "/rocket",
+                  "Claim": "Nav_Rocket"
                 },
                 {
                   "Text": "List",

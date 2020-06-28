@@ -76,8 +76,9 @@
 
         <ul class="tableFooty" >
             <li class="tableRow tableHead">
-                <span></span>
-                <span></span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
                 <span>MP</span>
                 <span>W</span>
                 <span>D</span>
@@ -88,9 +89,9 @@
                 <span>Pts</span>
             </li>
             <li class="tableRow" *ngFor="let item of eplTable;">
-                <span>{{ item.position }}</span>
-                <!-- <span>{{ item.team.name }}</span> -->
+                <span>{{ item.position }}</span>  
                 <span><img [src]="item.team.crestUrl" width="30" height="30" [matTooltip]="item.team.name" #teamName="matTooltip" (click)="teamName.toggle()" /></span>
+                <span>{{ item.team.name }}</span>
                 <span>{{ item.playedGames }}</span>
                 <span>{{ item.won }}</span>
                 <span>{{ item.draw }}</span>

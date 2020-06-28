@@ -35,6 +35,7 @@ import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FootyComponent } from './footy/footy/footy.component';
+import { GridComponent } from './grid/grid.component';
 
 
 // export const PUBLIC_ROUTES: Routes = [
@@ -136,10 +137,17 @@ export const SECURE_ROUTES: Routes = [
     resolve: { comp: ResolverService },
   },
   {
-    path: 'dashboard',
+    path: 'grid',
+    component: GridComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Grid',},
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'rocket',
     component: DashboardComponent,
     //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Dashboard',},
+    data: { breadcrumb: 'Rocket',},
     resolve: { comp: ResolverService },
   },
   {
