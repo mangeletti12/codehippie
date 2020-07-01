@@ -19,6 +19,7 @@ export class GridComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.test();
     this.setGrid();
   }
 
@@ -68,5 +69,19 @@ export class GridComponent implements OnInit {
   squareSelect(item) {
     console.log('squareSelect', item);
   }
+
+  test() {
+    let array1 = [1,2,3];
+    let cArray = [...array1]; // copy array
+    array1.push(4);
+    console.log('cArray', cArray); // [1,2,3]
+    let combineArray = [...cArray, ...array1]; // combine
+    console.log('combineArray', combineArray); // [1, 2, 3, 1, 2, 3, 4]
+
+    const addMoreArray = [...array1, 5,6];
+    console.log('addMoreArray', addMoreArray); // [1, 2, 3, 4, 5, 6]
+
+  }
+
 
 }

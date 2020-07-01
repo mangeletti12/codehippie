@@ -10,11 +10,48 @@
   // justify-content: center;
 }
 
+.down4 {
+  position: relative;
+  z-index: 4;
+  animation: 500ms ease-out .5s 1 slideDown;
+  animation-fill-mode: both;
+}
+.intro div.down3 {
+  position: relative;
+  z-index: 3;
+  animation: 500ms ease-out 1s 1 slideDown;
+  animation-fill-mode: both;
+}
+.down2 {
+  position: relative;
+  z-index: 2;
+  animation: 500ms ease-out 1.5s 1 slideDown;
+  animation-fill-mode: both;
+}
+.down1 {
+  position: relative;
+  z-index: 1;
+  animation: 500ms ease-out 2s 1 slideDown;
+  animation-fill-mode: both;
+}
+//
+@-webkit-keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+@-moz-keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+
 .center-all {
   width: 100%;
   text-align: center;
-  // height: 200px;
-  // font-family: sans-serif;
 }
 
 .imgLFC { margin: 10px; }
@@ -27,6 +64,7 @@
   letter-spacing: -3px;
   line-height: 1em;
   padding: 10px;
+  height: 50px;
   // animation: flipInX; /* referring directly to the animation's @keyframe declaration */
   // animation-duration: 2s; /* don't forget to set a duration! */
   // animation-delay: 2s;
@@ -92,5 +130,4 @@
   width: 250px;
   line-height: 18px;
   overflow: hidden;
-
 }
