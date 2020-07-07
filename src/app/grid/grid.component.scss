@@ -1,9 +1,22 @@
 .floor { 
     display: flex;
     flex-wrap: wrap;
+    
     align-content: flex-start;
-    border: 1px solid pink; margin: 5px; 
-    height: calc(100vh - 105px);
+    // border: 2px solid pink; 
+    overflow: scroll;
+    margin: 5px; 
+    height: calc(100vh - 122px);
+}
+
+.floor.floor-set {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.floor-row {
+    display: flex;
+    // width: 100%;
 }
 
 .square {
@@ -11,6 +24,45 @@
     border-bottom: 0;
     border-right: 0;
     font-size: 10px;
+    overflow: hidden;
+}
+
+// .rotate_1 {
+
+// }
+.rotate_2 {
+    transform: rotate(90deg); 
+}
+.rotate_3 {
+    transform: rotate(180deg); 
+}
+.rotate_4 {
+    transform: rotate(270deg); 
+}
+
+
+.floor-row .square {
+    border-color: #ccc;
+}
+
+.floor-row .square.selected {
+    background-color: lime;
+}
+
+.floor-row .square:last-child {
+    border-right: 1px solid #ccc;
+}
+
+.floor-row:last-child .square {
+    border-bottom: 1px solid #ccc;
+}
+
+.bot {
+    // background-image: url('../../assets/images/cap.png');
+    // background-repeat: no-repeat;
+    // background-position: 4px 10px;
+    // background-size: 42px 24px;
+    // display: inline-block;
 }
 
 mat-slider {
