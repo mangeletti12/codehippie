@@ -5,6 +5,7 @@ interface Tile {
   column: string;
   bot: string;
   botDirection: number;
+  botPath: string[];
 }
 
 class TileMaker {
@@ -25,11 +26,11 @@ export class GridComponent implements OnInit {
   gridColumns;
   gridRows;
   cells: any[] = [];
+  tile;
   square = 20;
   floorGrid = [];
   isFloorSet = false;
-  isBotSet = false;
-  tile;
+  isPathSetting = false;
 
   constructor() { }
 
@@ -47,13 +48,15 @@ export class GridComponent implements OnInit {
   // }
 
   setGrid() {
-    // Set carousel width and slides displayed count
     this.floorWidth = (this.floor.nativeElement as HTMLElement).offsetWidth;
     this.floorHeight = (this.floor.nativeElement as HTMLElement).offsetHeight;
     // console.log(this.floorWidth + ' - ' + this.floorHeight);
+
+    // Default / starter grid
+    this.calcGrid(20);
   }
 
-  //
+  // 
   calcGrid(value) {
     this.cells = [];
     this.square = value;
@@ -72,7 +75,7 @@ export class GridComponent implements OnInit {
     // console.log('cells', this.cells);
   }
 
-  // slider change
+  // Slider change
   onSliderChange(e) {
     // console.log('slide', e.value);
     this.calcGrid(e.value);
@@ -125,6 +128,9 @@ export class GridComponent implements OnInit {
 
   // Select a square from floor
   squareSelect(item) {
+
+    console.log('squareSelect isPathSetting', this.isPathSetting);
+
     // only one
     this.floorGrid.forEach(row => {
       row.forEach(element => {
@@ -157,7 +163,6 @@ export class GridComponent implements OnInit {
       });
 
     });
-
     
   }
 
@@ -171,6 +176,14 @@ export class GridComponent implements OnInit {
 
     console.log('turnBot', this.tile);
   }
+
+  // Set bot path
+  setPath() {
+    console.log('setPath', this.tile);
+    this.isPathSetting = true;
+  }
+
+
 
 
 

@@ -1,17 +1,18 @@
-<!-- w:{{ floorWidth }}, h:{{ floorHeight }}, -->
-<!-- c:{{ gridColumns }}, r:{{ gridRows }} -->
 <mat-slider min="20" max="80" step="10" value="20" (input)="onSliderChange($event)"></mat-slider> 
-<button *ngIf="!isFloorSet" (click)="createGrid()">set floor</button>&nbsp;
-<button *ngIf="isFloorSet" (click)="setBot()">set bot</button>&nbsp;
-<button *ngIf="isFloorSet && tile && tile.bot" (click)="turnBot()">turn bot</button>
+<button mat-stroked-button *ngIf="!isFloorSet" (click)="createGrid()">set floor</button>&nbsp;
+<button mat-stroked-button *ngIf="isFloorSet" (click)="setBot()">set bot</button>&nbsp;
+<button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot" (click)="turnBot()">turn bot</button>&nbsp;
+<button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot" (click)="setPath()">set path</button>&nbsp;
 <!-- {{ tile | json }} -->
 
-<div class="floor" [class.floor-set]="isFloorSet" #floor>
+<div class="floor" [class.floor-set]="isFloorSet" [class.path-setting]="isPathSetting" #floor>
+    
     <ng-container *ngFor="let item of cells;">
         <div *ngIf="!isFloorSet" class="square" [style.width.px]="square" [style.height.px]="square"></div>
     </ng-container>
     
-    <div class="floor-row" *ngFor="let row of floorGrid; let i = index">
+    <div class="floor-row" [style.height.px]="square" [style.min-height.px]="square" *ngFor="let row of floorGrid; let i = index">
+
         <div class="column square" 
         [class.selected]="item.selected" 
         [style.width.px]="square" 
@@ -27,6 +28,7 @@
             </div>
 
         </div>
+
     </div>
 
 </div>

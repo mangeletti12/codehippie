@@ -16,7 +16,6 @@
 
 .floor-row {
     display: flex;
-    // width: 100%;
 }
 
 .square {
@@ -27,26 +26,13 @@
     overflow: hidden;
 }
 
-// .rotate_1 {
-
-// }
-.rotate_2 {
-    transform: rotate(90deg); 
-}
-.rotate_3 {
-    transform: rotate(180deg); 
-}
-.rotate_4 {
-    transform: rotate(270deg); 
-}
+.rotate_2 { transform: rotate(90deg); }
+.rotate_3 { transform: rotate(180deg); }
+.rotate_4 { transform: rotate(270deg); }
 
 
 .floor-row .square {
     border-color: #ccc;
-}
-
-.floor-row .square.selected {
-    background-color: lime;
 }
 
 .floor-row .square:last-child {
@@ -57,12 +43,13 @@
     border-bottom: 1px solid #ccc;
 }
 
-.bot {
-    // background-image: url('../../assets/images/cap.png');
-    // background-repeat: no-repeat;
-    // background-position: 4px 10px;
-    // background-size: 42px 24px;
-    // display: inline-block;
+.floor-row .square.selected {
+    background-color: lime;
+}
+
+//
+.path-setting .floor-row .square.selected {
+    background-color: orange;
 }
 
 mat-slider {
