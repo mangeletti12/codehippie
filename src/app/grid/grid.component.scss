@@ -1,3 +1,7 @@
+.bot-bar button {
+    margin: 0 2px;
+}
+
 .floor { 
     display: flex;
     flex-wrap: wrap;
@@ -48,7 +52,7 @@
 }
 
 //
-.path-setting .floor-row .square.selected {
+.floor-row .square.path {
     background-color: orange;
 }
 

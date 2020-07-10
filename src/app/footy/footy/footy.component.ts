@@ -9,19 +9,27 @@ import { transition, animate, trigger, style, state } from '@angular/animations'
   templateUrl: './footy.component.html',
   styleUrls: ['./footy.component.scss'],
   animations: [
-    trigger('carouselSlider', [
-      state('slide', 
-        style({ 
-          transform: 'translateX({{distance}}px)' 
-        }), {params: {distance: 150}}
+    trigger("carouselSlider", [
+      state(
+        "initial",
+        style({
+          transform: "translateX({{offset}}px)"
+        }),
+        { params: { offset: 0 } }
+      ),
+      state(
+        "slide",
+        style({
+          transform: "translateX({{distance}}px)"
+        }),
+        { params: { distance: 150 } }
       ),
 
-      transition('* <=> *', 
-        animate('900ms')
-      ),
-
+      transition("initial => slide", animate("400ms")),
+      transition("slide => initial", animate("0ms"))
+  
     ])
-  ],
+  ]
 })
 export class FootyComponent implements OnInit {
   epl: any;
@@ -31,15 +39,16 @@ export class FootyComponent implements OnInit {
   
   // carousel
   @ViewChild('carousel', {static: true}) carousel: ElementRef;
-  @ViewChild('carouselSlider', {static: true}) carouselSlider: ElementRef;
+  // @ViewChild('carouselSlider', {static: true}) carouselSlider: ElementRef;
   totalSlides;
   slideCounter = 0;
   numberOfSlidesDisplayed;
   carouselWidth;
   slideHolderWidth;
   slideItemWidth = 150;
+  offset = 0;
   carouselState;
-  slideDistance;
+  slideDistance = 0;
 
   constructor(
     private footyService: FootyService,
@@ -65,20 +74,42 @@ export class FootyComponent implements OnInit {
     // Set carousel width and slides displayed count
     this.carouselWidth = (this.carousel.nativeElement as HTMLElement).offsetWidth;
     this.numberOfSlidesDisplayed = Math.floor(this.carouselWidth/this.slideItemWidth) - 1; //-1 for btn spacing
+    // season almost over
+    // not enough slides so fix
+    if (this.totalSlides < this.numberOfSlidesDisplayed) {
+      this.numberOfSlidesDisplayed = this.totalSlides;
+    }
+
     this.slideHolderWidth = (this.numberOfSlidesDisplayed*this.slideItemWidth);
+    //
+    // console.log('totalSlides', this.totalSlides);
+    // console.log('numberOfSlidesDisplayed', this.numberOfSlidesDisplayed);
+    // console.log('lfcMatches', this.lfcMatches);
   }
 
+  //
   carouselSlide(slide) {
     // console.log('carouselSlide', slide);
-    console.log('numberOfSlidesDisplayed', this.numberOfSlidesDisplayed);
+    // console.log('numberOfSlidesDisplayed', this.numberOfSlidesDisplayed);
+
     if(slide === 'right') {
       this.slideCounter++;
     } else {
       this.slideCounter--;
     }
-    console.log('slideCounter', this.slideCounter);
-    this.slideDistance = (this.slideCounter*this.slideItemWidth);
+    // console.log('slideCounter', this.slideCounter);
+
+    this.slideDistance = (this.slideCounter * this.slideItemWidth);
     this.carouselState = 'slide';
+  }
+
+  // https://angular.io/guide/transition-and-triggers#animation-callbacks
+  onAnimationDone() {
+    // the setTimeout is needed to defer the update or else you will get ExpressionChangedAfterItHasBeenCheckedError
+    setTimeout(() => {
+      this.offset = this.slideDistance;
+      this.carouselState = 'initial';
+    });
   }
 
 
@@ -114,7 +145,7 @@ export class FootyComponent implements OnInit {
         
         this.lfcMatches = data.body.matches;
         
-        console.log('table', this.eplTable);
+        // console.log('table', this.eplTable);
         // get crest now
         for(let i = 0; i < this.lfcMatches.length; i++) {
           // home team
@@ -126,7 +157,7 @@ export class FootyComponent implements OnInit {
           const crest2 = this.eplTable.filter(o => o.team.id === awayId)[0].team.crestUrl; 
           this.lfcMatches[i].awayTeam.crestUrl = crest2;
         }
-        console.log(this.lfcMatches);
+        // console.log('upcoming', this.lfcMatches);
         this.totalSlides = this.lfcMatches.length;
 
       }, error => {
@@ -167,8 +198,7 @@ export class FootyComponent implements OnInit {
           this.lfcTeam.squad[i].pos = abbrPosition;
         }
 
-        console.log('Team', this.lfcTeam);
-
+        // console.log('Team', this.lfcTeam);
 
       }, error => {
 

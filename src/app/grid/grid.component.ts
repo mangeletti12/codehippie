@@ -6,6 +6,7 @@ interface Tile {
   bot: string;
   botDirection: number;
   botPath: string[];
+  isPathShown: false;
 }
 
 class TileMaker {
@@ -31,6 +32,7 @@ export class GridComponent implements OnInit {
   floorGrid = [];
   isFloorSet = false;
   isPathSetting = false;
+  pathingArray = [];
 
   constructor() { }
 
@@ -129,18 +131,25 @@ export class GridComponent implements OnInit {
   // Select a square from floor
   squareSelect(item) {
 
-    console.log('squareSelect isPathSetting', this.isPathSetting);
-
-    // only one
-    this.floorGrid.forEach(row => {
-      row.forEach(element => {
-        element.selected = false;
+    if (!this.isPathSetting) {
+      // only one
+      this.floorGrid.forEach(row => {
+        row.forEach(element => {
+          element.selected = false;
+        });
       });
-    });
 
-    item.selected = !item.selected;
-    this.tile = item;
+      item.selected = !item.selected;
+      this.tile = item;
 
+    } else {
+      // Set path for bot
+      item.path = !item.path;
+      this.tile.isPathShown = true;
+      // Add to path array
+      this.pathingArray.push(item);
+    }
+ 
     console.log('squareSelect', item);
   }
 
@@ -156,8 +165,7 @@ export class GridComponent implements OnInit {
           //
           this.tile.bot = 'r2';
           this.tile.botDirection = 1; 
-          console.log('setBot', this.tile);
-    
+          // console.log('setBot', this.tile);
         }
 
       });
@@ -174,14 +182,92 @@ export class GridComponent implements OnInit {
       this.tile.botDirection = 1;
     }
 
-    console.log('turnBot', this.tile);
+    // console.log('turnBot', this.tile);
   }
 
   // Set bot path
   setPath() {
-    console.log('setPath', this.tile);
+    // console.log('setPath', this.tile);
     this.isPathSetting = true;
   }
+
+  // Stop setting path
+  endPath() {
+    // const path = [];
+    // // get all selected
+    // this.floorGrid.forEach(row => {
+    //   row.forEach(element => {
+    //     // FIX BUG == newPath
+    //     if(element.path) {
+    //       //
+    //       const pathCell = {
+    //         row: element.row,
+    //         column: element.column,
+    //       };
+    //       path.push(pathCell);
+    //       // Set path to false now, since done
+    //       element.path = false;
+    //     }
+
+    //   });
+    // });
+    
+    this.tile.botPath = this.pathingArray;
+    this.isPathSetting = false;
+    this.pathingArray = [];
+    console.log('endPath', this.tile);
+  }
+
+  // Show path
+  showPath() {
+    this.tile.isPathShown = true;
+    console.log('showPath', this.tile);
+    //
+    this.tile.botPath.forEach(box => {
+      //
+      // console.log('box', box);
+      this.floorGrid.forEach(row => {
+
+        row.forEach(element => {
+          //
+          if(element.row === box.row && element.column === box.column) {
+            //
+            element.path = true;
+            // console.log('element2 ', element);
+          }
+        });
+      });
+    });
+
+  }
+
+  //
+  hidePath() {
+    this.tile.isPathShown = false;
+    console.log('hidePath', this.tile);
+    //
+    this.tile.botPath.forEach(box => {
+      //
+      // console.log('box', box);
+      this.floorGrid.forEach(row => {
+
+        row.forEach(element => {
+          // 
+          if(element.row === box.row && element.column === box.column) {
+            //
+            element.path = false;
+            // console.log('element2 ', element);
+          }
+        });
+      });
+    });
+
+
+  }
+
+
+
+
 
 
 
@@ -200,8 +286,6 @@ export class GridComponent implements OnInit {
     const addMoreArray = [...array1, 5,6];
     console.log('addMoreArray', addMoreArray); // [1, 2, 3, 4, 5, 6]
   }
-
-
 
 
 }

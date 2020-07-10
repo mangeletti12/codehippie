@@ -6,7 +6,10 @@
     </div>
     <div  class="carousel-slide-mask" [style.width.px]="slideHolderWidth" >
    
-        <div class="carousel-slider" #carouselSlider [@carouselSlider]="{value: carouselState, params: {distance: slideDistance}}">
+        <div class="carousel-slider" 
+           
+            (@carouselSlider.done)="onAnimationDone()"
+            [@carouselSlider]="{value: carouselState, params: {distance: slideDistance, offset: offset}}">
             <!-- LFC upcoming Matches -->
             <div class="lfcGames" *ngFor="let item of lfcMatches;">
 
