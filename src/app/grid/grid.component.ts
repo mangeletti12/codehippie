@@ -187,31 +187,11 @@ export class GridComponent implements OnInit {
 
   // Set bot path
   setPath() {
-    // console.log('setPath', this.tile);
     this.isPathSetting = true;
   }
 
   // Stop setting path
-  endPath() {
-    // const path = [];
-    // // get all selected
-    // this.floorGrid.forEach(row => {
-    //   row.forEach(element => {
-    //     // FIX BUG == newPath
-    //     if(element.path) {
-    //       //
-    //       const pathCell = {
-    //         row: element.row,
-    //         column: element.column,
-    //       };
-    //       path.push(pathCell);
-    //       // Set path to false now, since done
-    //       element.path = false;
-    //     }
-
-    //   });
-    // });
-    
+  endPath() {   
     this.tile.botPath = this.pathingArray;
     this.isPathSetting = false;
     this.pathingArray = [];
