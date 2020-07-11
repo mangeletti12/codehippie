@@ -242,9 +242,12 @@ export class GridComponent implements OnInit {
       });
     });
 
-
   }
 
+  // Delete Path
+  deletePath() {
+    console.log('deletePath', this.tile);
+  }
 
 
 

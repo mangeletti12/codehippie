@@ -59,3 +59,17 @@
 mat-slider {
     width: 300px;
 }
+
+.bot {
+    // background-image: url(../../assets/images/robot.svg);
+    // background-repeat: no-repeat;
+    // background-position: center;
+    
+    -webkit-mask: url(../../assets/images/robot.svg) no-repeat center / contain;
+    mask: url(../../assets/images/robot.svg) no-repeat center / contain;
+    background-color: #000;
+}
+
+.bot-has-path .bot {
+    background-color: orange;
+}

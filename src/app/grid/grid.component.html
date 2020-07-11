@@ -3,7 +3,9 @@
     <button mat-stroked-button *ngIf="!isFloorSet" (click)="createGrid()">Set Floor</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot === null" (click)="setBot()">Set Bot</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot" (click)="turnBot()">Turn Bot</button>
-    <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && !isPathSetting" (click)="setPath()">Start Path</button>
+    <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && tile.botPath" (click)="deletePath()">Delete Path</button>
+   
+    <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && !isPathSetting && !tile.botPath" (click)="setPath()">Start Path</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && isPathSetting" (click)="endPath()">End Path</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.botPath && !tile.isPathShown" (click)="showPath()">Show path</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.botPath && tile.isPathShown" (click)="hidePath()">Hide Path</button>
@@ -28,8 +30,8 @@
         *ngFor="let item of row;" 
         (click)="squareSelect(item)">
             <!-- {{ item.row }}:{{ item.column }} -->
-            <div *ngIf="item.bot" class="bot rotate_{{item.botDirection}}" >
-                <img src="../../assets/images/robot.svg" [style.height.px]="square" [style.width.px]="square" />
+            <div *ngIf="item.bot" class="rotate_{{item.botDirection}}" [class.bot-has-path]="item.botPath" >
+                <div class="bot" [style.background-size.px]="square" [style.height.px]="square" [style.width.px]="square" ></div>
             </div>
 
         </div>
