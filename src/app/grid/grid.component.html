@@ -4,7 +4,6 @@
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot === null" (click)="setBot()">Set Bot</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot" (click)="turnBot()">Turn Bot</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && tile.botPath" (click)="deletePath()">Delete Path</button>
-   
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && !isPathSetting && !tile.botPath" (click)="setPath()">Start Path</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.bot && isPathSetting" (click)="endPath()">End Path</button>
     <button mat-stroked-button *ngIf="isFloorSet && tile && tile.botPath && !tile.isPathShown" (click)="showPath()">Show path</button>
@@ -14,9 +13,11 @@
 
 <div class="floor" [class.floor-set]="isFloorSet" [class.path-setting]="isPathSetting" #floor>
 
+    <!-- 
     <ng-container *ngFor="let item of cells;">
         <div *ngIf="!isFloorSet" class="square" [style.width.px]="square" [style.height.px]="square"></div>
-    </ng-container>
+    </ng-container> 
+    -->
     
     <div class="floor-row" [style.height.px]="square" [style.min-height.px]="square" *ngFor="let row of floorGrid; let i = index">
 

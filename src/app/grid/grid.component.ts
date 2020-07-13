@@ -1,8 +1,8 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
 
 interface Tile {
-  row: string;
-  column: string;
+  row: number;
+  column: number;
   bot: string;
   botDirection: number;
   botPath: string[];
@@ -10,7 +10,7 @@ interface Tile {
 }
 
 class TileMaker {
-  static create(row: string, column: string) {
+  static create(row: number, column: number) {
     return { row: row, column: column, bot: null, botDirection: null };
   }
 }
@@ -38,7 +38,6 @@ export class GridComponent implements OnInit {
 
   ngOnInit(): void {
     // this.test();
-    
     this.setGrid();
   }
 
@@ -73,14 +72,11 @@ export class GridComponent implements OnInit {
         this.cells.push(row +':'+ column);
       }
     }
-
     // console.log('cells', this.cells);
-  }
-
-  // Slider change
-  onSliderChange(e) {
-    // console.log('slide', e.value);
-    this.calcGrid(e.value);
+    // create the grid now?
+    if (!this.isFloorSet) {
+      this.createGrid();
+    }
   }
 
   // Take the cells and create rows
@@ -94,8 +90,8 @@ export class GridComponent implements OnInit {
     arr.forEach((data) => {
 
       let array = data.split(':');
-      let row = array[0];
-      let column = array[1];
+      let row: number = +array[0];
+      let column: number = +array[1];
       
       // create tile
       const tile = TileMaker.create(row, column);
@@ -117,7 +113,7 @@ export class GridComponent implements OnInit {
     });
     //
     newArr.push(localArr);
-    console.log(newArr);
+    // console.log(newArr);
     return newArr;
   }
 
@@ -126,6 +122,12 @@ export class GridComponent implements OnInit {
     this.floorGrid = this.gridArrayRows(this.cells);
     this.isFloorSet = true;
     // console.log('createGrid', this.floorGrid);
+  }
+
+  // Slider change
+  onSliderChange(e) {
+    // console.log('slide', e.value);
+    this.calcGrid(e.value);
   }
 
   // Select a square from floor
@@ -187,7 +189,23 @@ export class GridComponent implements OnInit {
 
   // Set bot path
   setPath() {
+    console.log('setPath', this.tile);
+    console.log('floorGrid', this.floorGrid);
     this.isPathSetting = true;
+    // Check available paths
+    // Above
+    // -1 for array starts at zero but row starts at 1
+    // -1 for row above
+    const row = this.floorGrid[this.tile.row -2];
+    const sqaure = row.filter(r => r.column === this.tile.column)[0];
+    console.log('sqaure', sqaure);
+    sqaure.path = true;
+
+    // Below
+
+    // Left
+
+    // Right
   }
 
   // Stop setting path
@@ -247,6 +265,25 @@ export class GridComponent implements OnInit {
   // Delete Path
   deletePath() {
     console.log('deletePath', this.tile);
+    //
+    this.tile.botPath.forEach(box => {
+      //
+      // console.log('box', box);
+      this.floorGrid.forEach(row => {
+
+        row.forEach(element => {
+          // 
+          if(element.row === box.row && element.column === box.column) {
+            //
+            element.path = false;
+            // console.log('element2 ', element);
+          }
+        });
+      });
+    });
+
+    // Remove bot path
+    this.tile.botPath = null;
   }
 
 
