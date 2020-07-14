@@ -46,11 +46,15 @@
 .floor-row:last-child .square {
     border-bottom: 1px solid #ccc;
 }
-
+//
 .floor-row .square.selected {
     background-color: lime;
 }
-
+//
+.floor-row .square.can-path {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
 //
 .floor-row .square.path {
     background-color: orange;
