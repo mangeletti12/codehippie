@@ -32,6 +32,7 @@ export class GridComponent implements OnInit {
   floorGrid = [];
   isFloorSet = false;
   isPathSetting = false;
+  pathTile;
   pathingArray = [];
   canPathArray = [];
 
@@ -127,17 +128,17 @@ export class GridComponent implements OnInit {
 
   // Slider change
   onSliderChange(e) {
-    // console.log('slide', e.value);
     this.calcGrid(e.value);
   }
 
   // Select a square from floor
+  ///////////////////
   squareSelect(item) {
     console.log('squareSelect isPathSetting', this.isPathSetting);
 
-    //
+    // Not path setting, so select square
     if (!this.isPathSetting) {
-      // only one
+      // only one selected square at a time
       this.floorGrid.forEach(row => {
         row.forEach(element => {
           element.selected = false;
@@ -146,6 +147,8 @@ export class GridComponent implements OnInit {
 
       item.selected = !item.selected;
       this.tile = item;
+      // Set pathTile too!
+      this.pathTile = item;
 
     } else {
       //
@@ -157,9 +160,10 @@ export class GridComponent implements OnInit {
         // Add to path array
         this.pathingArray.push(item);
 
-        // Set > can path now
+        // Set can path now
         console.log('squareSelect item', item);
-        this.tile = item;
+        // LOOK @
+        this.pathTile = item;
         this.setPath();
       }
 
@@ -202,50 +206,54 @@ export class GridComponent implements OnInit {
 
   // Set bot path
   setPath() {
-    console.log('setPath', this.tile);
-    // console.log('floorGrid', this.floorGrid);
+    
     this.isPathSetting = true;
+    // LOOK @
+    // They deleted the path without moving (selecting)
+    // so default to this.tile
+    if (this.pathTile === null) {
+      this.pathTile = this.tile;
+    }
+    console.log('setPath', this.pathTile);
 
-    // TODO: Clear old can paths, before new up
-    // console.log('canPathArray', this.canPathArray);
+    // Clear old can paths, before new 
     if (this.canPathArray.length > 0) {
       this.canPathArray.forEach(row => {
         row.canPath = false;
       })
     }
 
-
     // Check available paths
+
     // Above
     // -1 for array starts at zero but row starts at 1
     // -1 for row above
-    const rowA = this.floorGrid[this.tile.row -2];
-    const sqaureA = rowA.filter(r => r.column === this.tile.column)[0];
-    // console.log('sqaureA', sqaureA);
-    sqaureA.canPath = true;
-    this.canPathArray.push(sqaureA);
+    const rowA = this.floorGrid[this.pathTile.row -2];
+    const squareA = rowA.filter(r => r.column === this.pathTile.column)[0];
+    // console.log('squareA', squareA);
+    squareA.canPath = true;
+    this.canPathArray.push(squareA);
 
     // Below
-    const rowB = this.floorGrid[this.tile.row];
-    const sqaureB = rowB.filter(r => r.column === this.tile.column)[0];
-    // console.log('sqaureB', sqaureB);
-    sqaureB.canPath = true;
-    this.canPathArray.push(sqaureB);
+    const rowB = this.floorGrid[this.pathTile.row];
+    const squareB = rowB.filter(r => r.column === this.pathTile.column)[0];
+    // console.log('squareB', squareB);
+    squareB.canPath = true;
+    this.canPathArray.push(squareB);
 
     // Left
-    const rowL = this.floorGrid[this.tile.row -1];
-    const sqaureL = rowL.filter(r => r.column === this.tile.column -1)[0];
-    // console.log('sqaureL', sqaureL);
-    sqaureL.canPath = true;
-    this.canPathArray.push(sqaureL);
+    const rowL = this.floorGrid[this.pathTile.row -1];
+    const squareL = rowL.filter(r => r.column === this.pathTile.column -1)[0];
+    // console.log('squareL', squareL);
+    squareL.canPath = true;
+    this.canPathArray.push(squareL);
 
     // Right
-    const rowR = this.floorGrid[this.tile.row -1];
-    const sqaureR = rowR.filter(r => r.column === this.tile.column +1)[0];
-    // console.log('sqaureR', sqaureR);
-    sqaureR.canPath = true;
-    this.canPathArray.push(sqaureR);
-
+    const rowR = this.floorGrid[this.pathTile.row -1];
+    const squareR = rowR.filter(r => r.column === this.pathTile.column +1)[0];
+    // console.log('squareR', squareR);
+    squareR.canPath = true;
+    this.canPathArray.push(squareR);
     
   }
 
@@ -255,6 +263,16 @@ export class GridComponent implements OnInit {
     this.isPathSetting = false;
     this.pathingArray = [];
     console.log('endPath', this.tile);
+    // Remove canPaths now!
+    if (this.canPathArray.length > 0) {
+      this.canPathArray.forEach(row => {
+        row.canPath = false;
+      })
+      // Empty array
+      this.canPathArray = [];
+      this.pathTile = null;
+    }
+
   }
 
   // Show path

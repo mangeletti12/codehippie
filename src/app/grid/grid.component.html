@@ -12,32 +12,32 @@
 </div>
 
 <div class="floor" [class.floor-set]="isFloorSet" [class.path-setting]="isPathSetting" #floor>
-
     <!-- 
     <ng-container *ngFor="let item of cells;">
         <div *ngIf="!isFloorSet" class="square" [style.width.px]="square" [style.height.px]="square"></div>
     </ng-container> 
     -->
-    
-    <div class="floor-row" [style.height.px]="square" [style.min-height.px]="square" *ngFor="let row of floorGrid; let i = index">
+    <ng-container *ngIf="isFloorSet">
+        <div class="floor-row" [style.height.px]="square" [style.min-height.px]="square" *ngFor="let row of floorGrid; let i = index">
 
-        <div class="column square" 
-        [class.selected]="item.selected"
-        [class.path]="item.path"
-        [class.can-path]="item.canPath"
-        [style.width.px]="square" 
-        [style.min-width.px]="square" 
-        [style.height.px]="square"
-        [style.min-height.px]="square"
-        *ngFor="let item of row;" 
-        (click)="squareSelect(item)">
-           
-            <div *ngIf="item.bot" class="rotate_{{item.botDirection}}" [class.bot-has-path]="item.botPath" >
-                <div class="bot" [style.background-size.px]="square" [style.height.px]="square" [style.width.px]="square" ></div>
+            <div class="column square" 
+            [class.selected]="item.selected"
+            [class.path]="item.path"
+            [class.can-path]="item.canPath"
+            [style.width.px]="square" 
+            [style.min-width.px]="square" 
+            [style.height.px]="square"
+            [style.min-height.px]="square"
+            *ngFor="let item of row;" 
+            (click)="squareSelect(item)">
+            
+                <div *ngIf="item.bot" class="rotate_{{item.botDirection}}" [class.bot-has-path]="item.botPath" >
+                    <div class="bot" [style.background-size.px]="square" [style.height.px]="square" [style.width.px]="square" ></div>
+                </div>
+
             </div>
 
         </div>
-
-    </div>
+    </ng-container>
 
 </div>
