@@ -80,9 +80,12 @@ export class QaComponent implements OnInit {
       data => {
         console.log('getQuestionsByUser', data);
 
+        var colorPicker = this.setRandomNoRepeats(this.colors);
         // set a random color and date
         for (let i = 0; i < data.length; i++) {
-          const color = this.setRandomColor();
+          //const color = this.setRandomColor();
+          const color = colorPicker();
+          
           data[i].data['color'] = color;
           data[i].data['lightColor'] = this.LightenDarkenColor(color, -40);
           data[i].data['formattedDate'] = this.timeConverter(data[i].data.date.seconds);
@@ -97,7 +100,21 @@ export class QaComponent implements OnInit {
 
   // Get random color from array
   setRandomColor() {
-    return this.colors[Math.floor(Math.random() * this.colors.length)]
+    const color = this.colors[Math.floor(Math.random() * this.colors.length)];
+    // console.log('random color', color);
+    return color;
+  }
+  
+  //
+  setRandomNoRepeats(array) {
+    var copy = array.slice(0);
+    return function() {
+      if (copy.length < 1) { copy = array.slice(0); }
+      var index = Math.floor(Math.random() * copy.length);
+      var item = copy[index];
+      copy.splice(index, 1);
+      return item;
+    };
   }
 
   // Lighten or Darken color

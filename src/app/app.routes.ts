@@ -140,7 +140,7 @@ export const SECURE_ROUTES: Routes = [
     path: 'grid',
     component: GridComponent,
     //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Grid',},
+    data: { breadcrumb: 'Bots',},
     resolve: { comp: ResolverService },
   },
   {

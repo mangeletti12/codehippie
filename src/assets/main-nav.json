@@ -92,6 +92,11 @@
                   "Claim": "Nav_Rocket"
                 },
                 {
+                  "Text": "Bots",
+                  "Url": "/grid",
+                  "Claim": "Nav_Bots"
+                },
+                {
                   "Text": "List",
                   "Url": "/list",
                   "Claim": "Nav_List"

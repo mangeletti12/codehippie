@@ -230,31 +230,43 @@ export class GridComponent implements OnInit {
     // -1 for row above
     const rowA = this.floorGrid[this.pathTile.row -2];
     const squareA = rowA.filter(r => r.column === this.pathTile.column)[0];
-    // console.log('squareA', squareA);
-    squareA.canPath = true;
-    this.canPathArray.push(squareA);
+    if (squareA.path || squareA.bot) {
+      squareA.canPath = false;
+    } else {
+      squareA.canPath = true;
+      this.canPathArray.push(squareA);
+    }
 
     // Below
     const rowB = this.floorGrid[this.pathTile.row];
     const squareB = rowB.filter(r => r.column === this.pathTile.column)[0];
-    // console.log('squareB', squareB);
-    squareB.canPath = true;
-    this.canPathArray.push(squareB);
+    if (squareB.path || squareB.bot) {
+      squareB.canPath = false;
+    } else {
+      squareB.canPath = true;
+      this.canPathArray.push(squareB);
+    }
 
     // Left
     const rowL = this.floorGrid[this.pathTile.row -1];
     const squareL = rowL.filter(r => r.column === this.pathTile.column -1)[0];
-    // console.log('squareL', squareL);
-    squareL.canPath = true;
-    this.canPathArray.push(squareL);
+    if (squareL.path || squareL.bot) {
+      squareL.canPath = false;
+    } else {
+      squareL.canPath = true;
+      this.canPathArray.push(squareL);
+    }
 
     // Right
     const rowR = this.floorGrid[this.pathTile.row -1];
     const squareR = rowR.filter(r => r.column === this.pathTile.column +1)[0];
-    // console.log('squareR', squareR);
-    squareR.canPath = true;
-    this.canPathArray.push(squareR);
-    
+    if (squareR.path || squareR.bot) {
+      squareR.canPath = false;
+    } else {
+      squareR.canPath = true;
+      this.canPathArray.push(squareR);
+    }
+
   }
 
   // Stop setting path

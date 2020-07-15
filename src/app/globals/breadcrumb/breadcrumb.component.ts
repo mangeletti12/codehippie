@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { BreadCrumb} from './breadcrumb';
 import { distinctUntilChanged, filter } from 'rxjs/operators';
-import { isNullOrUndefined } from 'util';
+// import { isNullOrUndefined } from 'util';
 
 // https://medium.com/applantic/https-medium-com-applantic-how-to-implement-breadcrumb-navigation-in-angular-and-primeng-52573e49b97a
 
@@ -58,7 +58,7 @@ export class BreadcrumbComponent implements OnInit {
       // If the route is dynamic route such as ':id'
       // check are we update of create?
       const id = child.snapshot.params['id'];
-      if(!isNullOrUndefined(id)) {
+      if(id !== null && id !== undefined) {
         if (id === '0') {
           label = 'Create';
         }
@@ -67,11 +67,11 @@ export class BreadcrumbComponent implements OnInit {
         }
       }
 
-      if (!isNullOrUndefined(label)) {
+      if (label !== null && label !== undefined) {
         if (label !== 'home') {
           breadcrumbs.push({label, url});
         }
-      } else if(isNullOrUndefined(label) && url === '') {
+      } else if(label !== null && label !== undefined && url === '') {
         // Home route
         let label = 'home';
         let url = '/';
