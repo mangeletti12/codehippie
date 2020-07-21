@@ -66,12 +66,13 @@ export class BreadcrumbComponent implements OnInit {
           label = 'Update';
         }
       }
-
+      //
       if (label !== null && label !== undefined) {
+       
         if (label !== 'home') {
           breadcrumbs.push({label, url});
         }
-      } else if(label !== null && label !== undefined && url === '') {
+      } else if((label === null || label === undefined) && url === '') {
         // Home route
         let label = 'home';
         let url = '/';

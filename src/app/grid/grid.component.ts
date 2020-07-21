@@ -40,6 +40,7 @@ export class GridComponent implements OnInit {
 
   ngOnInit(): void {
     // this.test();
+    // this.multiples(10);
     this.setGrid();
   }
 
@@ -360,12 +361,18 @@ export class GridComponent implements OnInit {
 
 
 
-
-
-
-
-
-
+  // return the sum of all the muliples of 3 or 5 below the number passed in
+  // note: if a number is a multiple of both 3 and 5 only count it once
+  multiples(num: number) {
+    let sum = 0;
+    for(var i = 0; i < num; i++) {
+      // console.log('mod ' + i, i % 5);
+      if(i % 3 === 0 || i % 5 === 0) {
+        sum = sum + i;
+      }
+    }
+    // console.log('sum', sum);
+  }
 
   // Testing
   test() {
