@@ -11,6 +11,21 @@ export class PracticeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    const test1 = "2 4 7 8 10";
+    const test2 = "1 2 2";
+
+    const iq1 = this.iqTest(test1);
+    console.log('ig1', iq1);
+    const iq2 = this.iqTest(test2);
+    console.log('ig2', iq2);
+    // this.notes();
+  }
+
+  //
+  notes() {
+    /////////
+    // Practice
+
     // var has function scope
     // var gets hoisted
     // let has block scope
@@ -30,7 +45,7 @@ export class PracticeComponent implements OnInit {
       console.log('cName', cName);
     }
 
-    console.log('v', v);
+    console.log('v2', v);
     // let AND const can only be accessed within the code block it was instantiated in
     // console.log('l', l);
     // console.log('cName', cName);
@@ -41,8 +56,12 @@ export class PracticeComponent implements OnInit {
     // == compares value only
     // === compares type too
     // if ('1' == 1) {
-
+    //   console.log('==', 'pass');
     // }
+    // if ('1' === 1) {
+    //   console.log('===', 'fail');
+    // }
+
 
 
     ///////////////
@@ -112,6 +131,74 @@ export class PracticeComponent implements OnInit {
     jillsRoom.cleanTable('jill soap');
     johnsRoom.cleanTable('john soap');
 
+  }
+
+
+
+  // IQ Test
+  // find out which one of the given numbers differs from the others
+  // given numbers finds one that is different in evenness, and return a position of this number.
+  iqTest(numbers: string): number {
+
+    let numsArray: number[] = numbers.split(' ').map(n => +n % 2);
+    // console.log('numsArray', numsArray);
+
+    var selectedCard = numsArray[0];
+    var same = [];
+    var diff = [];
+    // is this your card?
+    for (var n = 0; n < numsArray.length; n++) {
+      if(numsArray[n] === selectedCard) {
+        same.push(n+1);
+      } else {
+        diff.push(n+1);
+      }
+    }
+    // console.log('same', same);
+    // console.log('diff', diff);
+
+    if (same.length === 1) { return same[0]; }
+    if (diff.length === 1) { return diff[0]; }
+
+    return 0;
+
+
+    // var positions = [[], []];
+
+    // for (var i = 0; i < nums.length; i++) {
+    //     positions[+nums[i] % 2].push(i + 1);
+    // }
+    // console.log('positions', positions);
+
+    // if (positions[0].length === 1) return positions[0][0];
+    // if (positions[1].length === 1) return positions[1][0];
+  }
+
+
+  // return the sum of all the muliples of 3 or 5 below the number passed in
+  // note: if a number is a multiple of both 3 and 5 only count it once
+  multiples(num: number) {
+    let sum = 0;
+    for(var i = 0; i < num; i++) {
+      // console.log('mod ' + i, i % 5);
+      if(i % 3 === 0 || i % 5 === 0) {
+        sum = sum + i;
+      }
+    }
+    // console.log('sum', sum);
+  }
+
+  // Testing
+  test() {
+    let array1 = [1,2,3];
+    let cArray = [...array1]; // copy array
+    array1.push(4);
+    console.log('cArray', cArray); // [1,2,3]
+    let combineArray = [...cArray, ...array1]; // combine
+    console.log('combineArray', combineArray); // [1, 2, 3, 1, 2, 3, 4]
+
+    const addMoreArray = [...array1, 5,6];
+    console.log('addMoreArray', addMoreArray); // [1, 2, 3, 4, 5, 6]
   }
 
 
