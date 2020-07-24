@@ -58,6 +58,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // pipes
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { TypePipe } from './practice/type.pipe';
 ////////////////////////////////////////////
 // Below will be lazyloaded at some point
 ////////////////////////////////////////////
@@ -150,6 +151,7 @@ import { GridComponent } from './grid/grid.component';
     ResumeComponent,
     SearchBarComponent,
     TruncatePipe,
+    TypePipe,
     MusicComponent,
     QaComponent,
     HelpComponent,

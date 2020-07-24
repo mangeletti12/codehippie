@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-practice',
@@ -22,6 +23,48 @@ export class PracticeComponent implements OnInit, OnChanges {
     {type: 'testing', value: 'testing1'},
     {type: 'deployment', value: 'deployment1'},
   ];
+
+  // fruits = [
+  //   {type: 'apple', id: '1'},
+  //   {type: 'apple', id: '2'},
+  //   {type: 'apple', id: '3'},
+  //   {type: 'orange', id: '4'},
+  //   {type: 'orange', id: '5'},
+  //   {type: 'banana', id: '6'},
+  // ];
+  
+  /*
+  fruits$ = new Subject([
+    {
+      type: 'apple',
+      id: '1'
+    },
+    {
+      type: 'apple',
+      id: '2'
+    },
+    {
+      type: 'apple',
+      id: '3'
+    },
+    {
+      type: 'orange',
+      id: '4'
+    },
+    {
+      type: 'orange',
+      id: '5'
+    },
+    {
+      type: 'banana',
+      id: '6'
+    },
+    {
+      type: 'banana',
+      id: '7'
+    },
+  ]);
+  */
   
   ngOnChanges(e) {
     const newIdeaValue = e.newIdeaer.currentValue;
@@ -41,14 +84,13 @@ export class PracticeComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-
-
+    //
     this.ideas = this.listItems.filter(i => i.type === 'idea');
     this.developments = this.listItems.filter(i => i.type === 'development');
     this.testings = this.listItems.filter(i => i.type === 'testing');
     this.deployments = this.listItems.filter(i => i.type === 'deployment');
 
-
+    //////
     const roman1 = this.romanEncoder(1986);
     // console.log('roman1', roman1);
     const roman2 = this.romanEncoder(1000);
@@ -319,28 +361,27 @@ export class PracticeComponent implements OnInit, OnChanges {
 
 
   onLeftClick(item) {
-    console.log('onLeftClick1', item);
+    // console.log('onLeftClick1', item);
 
      switch(item.type) {
       case 'idea':
         item.type = "development";
-        let i = this.ideas.findIndex(i => i.type === item.type && i.value === item.value);
-        console.log('index', i);
         this.developments.push(item);
+        let i = this.ideas.findIndex(i => i.type === item.type && i.value === item.value);
         this.ideas.splice(i, 1);
 
         break;
       case 'development':
         item.type = "testing";
-        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.testings.push(item);
+        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.developments.splice(d, 1);
 
         break;
       case 'testing':
         item.type = "deployment";
-        let t = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.deployments.push(item);
+        let t = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.testings.splice(t, 1);
 
         break;
@@ -354,9 +395,9 @@ export class PracticeComponent implements OnInit, OnChanges {
  
     }
      
-    //  console.log('onLeftClick2', item);
-    //  console.log('this.listItems', this.listItems);
-    //return false;
+    // console.log('onLeftClick2', item);
+    console.log('this.listItems', this.listItems);
+
   }
   //
   onRightClick(item) {
@@ -370,22 +411,22 @@ export class PracticeComponent implements OnInit, OnChanges {
         break;
       case 'development':
         item.type = "idea";
-        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.ideas.push(item);
+        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
         this.developments.splice(d, 1);
 
         break;
       case 'testing':
         item.type = "development";
-        let t = this.testings.findIndex(i => i.type === item.type && i.value === item.value);
         this.developments.push(item);
+        let t = this.testings.findIndex(i => i.type === item.type && i.value === item.value);
         this.testings.splice(t, 1);
 
         break;
       case 'deployment':
         item.type = "testing";
-        let dep = this.deployments.findIndex(i => i.type === item.type && i.value === item.value);
         this.testings.push(item);
+        let dep = this.deployments.findIndex(i => i.type === item.type && i.value === item.value);
         this.deployments.splice(dep, 1);
 
         break;
