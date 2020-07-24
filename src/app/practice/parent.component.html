@@ -1,0 +1,17 @@
+<input #addIdea 
+       name="addIdea"
+       placeholder="add idea"
+       (keyup.enter)="getInputData($event)" >
+
+<!-- Note: changes made to this file won't affect the
+     test suite; this file only impacts Web Preview 
+-->
+<app-practice
+  [stages]="[
+    'Idea', 
+    'Development', 
+    'Testing', 
+    'Deployment'
+  ]"
+  [newIdeaer]="newIdeaer"
+></app-practice>

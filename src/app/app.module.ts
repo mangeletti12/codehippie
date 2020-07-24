@@ -100,6 +100,7 @@ import { NgwWowModule } from 'ngx-wow';
 import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
+import { ParentComponent } from './practice/parent.component';
 import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -109,6 +110,7 @@ import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
 import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
+
 
 
 @NgModule({
@@ -155,6 +157,7 @@ import { GridComponent } from './grid/grid.component';
     InspirationComponent,
     ContactComponent,
     P5Component,
+    ParentComponent,
     PracticeComponent,
     TddComponent,
     DashboardComponent,
@@ -163,6 +166,7 @@ import { GridComponent } from './grid/grid.component';
     CounterComponent,
     FootyComponent,
     GridComponent,
+  
   ],
   imports: [
     BrowserModule,

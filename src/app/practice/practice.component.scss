@@ -1,0 +1,16 @@
+.list-holder {
+    display: flex;
+  }
+  
+.list-holder ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+    width: 150px;
+}
+
+.list-holder button { 
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}

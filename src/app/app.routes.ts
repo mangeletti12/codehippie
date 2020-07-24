@@ -31,6 +31,7 @@ import { MusicComponent } from './music/music.component';
 import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
+import { ParentComponent } from './practice/parent.component';
 import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -173,7 +174,7 @@ export const SECURE_ROUTES: Routes = [
   },
   {
     path: 'practice',
-    component: PracticeComponent,
+    component: ParentComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Practice' },
     resolve: { comp: ResolverService },

@@ -1,23 +1,76 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
   styleUrls: ['./practice.component.scss']
 })
-export class PracticeComponent implements OnInit {
+export class PracticeComponent implements OnInit, OnChanges {
+  @Input() stages: string[];
+  @Input() newIdeaer: string;
+
+  ideas: any[] = [];
+  developments: any[] = [];
+  testings: any[] = [];
+  deployments: any[] = [];
+
+  listItems = [
+    {type: 'idea', value: 'idea1'},
+    {type: 'idea', value: 'idea2'},
+    {type: 'development', value: 'develpoment1'},
+    {type: 'development', value: 'develpoment2'},
+    {type: 'testing', value: 'testing1'},
+    {type: 'deployment', value: 'deployment1'},
+  ];
+  
+  ngOnChanges(e) {
+    const newIdeaValue = e.newIdeaer.currentValue;
+    console.log('ngOnChanges', e );
+    if (newIdeaValue !== undefined) {
+      const newIdea = {
+        type: 'idea',
+        value: newIdeaValue
+      }
+
+      this.ideas.push(newIdea);
+    }
+    
+    
+  }
 
   constructor() { }
 
   ngOnInit(): void {
 
-    const test1 = "2 4 7 8 10";
-    const test2 = "1 2 2";
 
+    this.ideas = this.listItems.filter(i => i.type === 'idea');
+    this.developments = this.listItems.filter(i => i.type === 'development');
+    this.testings = this.listItems.filter(i => i.type === 'testing');
+    this.deployments = this.listItems.filter(i => i.type === 'deployment');
+
+
+    const roman1 = this.romanEncoder(1986);
+    // console.log('roman1', roman1);
+    const roman2 = this.romanEncoder(1000);
+    // console.log('roman2', roman2);
+
+    //////
+    const camelCaseString1 = "hello world";
+    const camelResult = this.camelCase(camelCaseString1);
+    // console.log('camelResult', camelResult);
+
+    //////
+    const test1 = "2 4 7 8 10";
     const iq1 = this.iqTest(test1);
-    console.log('ig1', iq1);
+    // console.log('ig1', iq1);
+    const test2 = "1 2 2";
     const iq2 = this.iqTest(test2);
-    console.log('ig2', iq2);
+    // console.log('ig2', iq2);
+
+    //////
+
+
+
     // this.notes();
   }
 
@@ -85,7 +138,7 @@ export class PracticeComponent implements OnInit {
     }
 
     profile.setName('bob marley');
-    console.log(profile.firstName);
+    console.log(profile.firstName + ' ' + profile.lastName);
 
     //
     //////////////////////////
@@ -133,6 +186,66 @@ export class PracticeComponent implements OnInit {
 
   }
 
+
+
+
+  // Create a function taking a positive integer as its parameter and 
+  // returning a string containing the Roman Numeral representation of that integer.
+  // Remember that there can't be more than 3 identical symbols in a row.
+  romanEncoder(num: number): string {
+    // convert the number to a roman numeral
+    // 1986 = M CM LXXX VI
+    // MCMLXXXVI
+
+    const romanize = {
+      M: 1000,
+      CM: 900,
+      D: 500,
+      CD: 400,
+      C: 100,
+      XC: 90,
+      L: 50,
+      XL: 40,
+      X: 10,
+      IX: 9,
+      V: 5,
+      IV: 4,
+      I: 1
+    };
+
+    // const numHolder = num.toString().split('').map(n => +n);
+    // console.log('numHolder', numHolder);
+    // for (var x = 0; x < numHolder.length; x++ ) {
+
+    // }
+    var str = '';
+    for (var i of Object.keys(romanize)) {
+      //
+      var q = Math.floor(num / romanize[i]);
+      // console.log('q >', q);
+
+      num -= q * romanize[i];
+      // console.log('num >', num);
+
+      // str += i.repeat(q);
+      for (var x = 0; x < q; x++) {
+        str += i;
+      }
+      // console.log('str >', str);
+    }
+    
+    return str;
+  } 
+
+
+
+  // All words must have their first letter capitalized without spaces.
+  // camelCase("hello case"); // => "HelloCase"
+  camelCase(str: string): string {
+    const strArray: string = str.split(' ').map(l => l.charAt(0).toUpperCase() + l.substr(1)).join('');
+    // console.log('strArray', strArray);
+    return strArray;
+  }
 
 
   // IQ Test
@@ -203,5 +316,83 @@ export class PracticeComponent implements OnInit {
 
 
 
+
+
+  onLeftClick(item) {
+    console.log('onLeftClick1', item);
+
+     switch(item.type) {
+      case 'idea':
+        item.type = "development";
+        let i = this.ideas.findIndex(i => i.type === item.type && i.value === item.value);
+        console.log('index', i);
+        this.developments.push(item);
+        this.ideas.splice(i, 1);
+
+        break;
+      case 'development':
+        item.type = "testing";
+        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
+        this.testings.push(item);
+        this.developments.splice(d, 1);
+
+        break;
+      case 'testing':
+        item.type = "deployment";
+        let t = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
+        this.deployments.push(item);
+        this.testings.splice(t, 1);
+
+        break;
+      case 'deployment':
+        // delete
+        let del = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
+        this.deployments.splice(del, 1);
+
+        break;
+      default:
+ 
+    }
+     
+    //  console.log('onLeftClick2', item);
+    //  console.log('this.listItems', this.listItems);
+    //return false;
+  }
+  //
+  onRightClick(item) {
+    console.log('onRightClick', item);
+    
+    switch(item.type) {
+      case 'idea':
+        let i = this.ideas.findIndex(i => i.type === item.type && i.value === item.value);
+        this.ideas.splice(i, 1);
+
+        break;
+      case 'development':
+        item.type = "idea";
+        let d = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
+        this.ideas.push(item);
+        this.developments.splice(d, 1);
+
+        break;
+      case 'testing':
+        item.type = "development";
+        let t = this.testings.findIndex(i => i.type === item.type && i.value === item.value);
+        this.developments.push(item);
+        this.testings.splice(t, 1);
+
+        break;
+      case 'deployment':
+        item.type = "testing";
+        let dep = this.deployments.findIndex(i => i.type === item.type && i.value === item.value);
+        this.testings.push(item);
+        this.deployments.splice(dep, 1);
+
+        break;
+      default:
+    }
+
+    return false;
+  }
 
 }

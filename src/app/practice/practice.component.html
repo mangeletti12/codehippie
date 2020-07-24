@@ -1,1 +1,83 @@
-<p>practice works!</p>
+<div class="list-holder">
+        <!--
+        <div >
+            <span>Ideas</span>
+            <ul class="list" >
+                <li *ngFor="let item of listItems;" >
+                    <button *ngIf="(item.type == 'idea')" (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+                </li>
+            </ul>
+        </div>
+  
+
+        <div>
+            <span>Development</span>
+            <ul >
+            <li *ngFor="let item of listItems;">
+                <button *ngIf="(item.type == 'development')" (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+            </li>
+            </ul>
+        </div>
+
+        <div>
+            <span>Testing</span>
+            <ul >
+            <li *ngFor="let item of listItems;"  >
+                <button *ngIf="(item.type == 'testing')" (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+            </li>
+            </ul>
+        </div>
+ 
+        <div>
+            <span>Deployment</span>
+            <ul >
+            <li *ngFor="let item of listItems;"  >
+                <button *ngIf="(item.type == 'deployment')" (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+            </li>
+            </ul>
+        </div>
+    
+        -->
+
+
+
+
+
+    <div>
+      <span>Ideas</span>
+      <ul>
+        <li *ngFor="let item of ideas;">
+          <button (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+        </li>
+      </ul>
+    </div>
+  
+    <div>
+      <span>Developments</span>
+      <ul>
+        <li *ngFor="let item of developments;" >
+          <button (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+        </li>
+      </ul>
+    </div>
+  
+    <div>
+      <span>Testing</span>
+      <ul>
+        <li *ngFor="let item of testings;" >
+          <button (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+        </li>
+      </ul>
+    </div>
+  
+    <div>
+      <span>Deployments</span>
+      <ul>
+        <li *ngFor="let item of deployments;" >
+          <button (click)="onLeftClick(item)" (contextmenu)="onRightClick(item)">{{ item.value }}</button>
+        </li>
+      </ul>
+    </div>
+    
+    
+  </div>  
