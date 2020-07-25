@@ -111,6 +111,7 @@ import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
 import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
+import { JobComponent } from './resume/job.component';
 
 
 
@@ -168,6 +169,7 @@ import { GridComponent } from './grid/grid.component';
     CounterComponent,
     FootyComponent,
     GridComponent,
+    JobComponent,
   
   ],
   imports: [

@@ -24,6 +24,16 @@ export class PracticeComponent implements OnInit, OnChanges {
     {type: 'deployment', value: 'deployment1'},
   ];
 
+  merch = [
+    { name: 'bike', price: 100 },
+    { name: 'TV', price: 200 },
+    { name: 'Album', price: 10 },
+    { name: 'Book', price: 5 },
+    { name: 'Phone', price: 500 },
+    { name: 'Computer', price: 1000 },
+    { name: 'keyboard', price: 25 }
+  ]
+
   // fruits = [
   //   {type: 'apple', id: '1'},
   //   {type: 'apple', id: '2'},
@@ -78,7 +88,6 @@ export class PracticeComponent implements OnInit, OnChanges {
       this.ideas.push(newIdea);
     }
     
-    
   }
 
   constructor() { }
@@ -89,6 +98,8 @@ export class PracticeComponent implements OnInit, OnChanges {
     this.developments = this.listItems.filter(i => i.type === 'development');
     this.testings = this.listItems.filter(i => i.type === 'testing');
     this.deployments = this.listItems.filter(i => i.type === 'deployment');
+
+    this.arrayPlay();
 
     //////
     const roman1 = this.romanEncoder(1986);
@@ -229,6 +240,44 @@ export class PracticeComponent implements OnInit, OnChanges {
   }
 
 
+  //
+  arrayPlay() {
+    // filter
+    const filtered = this.merch.filter(i => i.price <= 100);
+    console.log('filtered', filtered);
+    // map
+    const justNames = this.merch.map(i => i.name);
+    console.log('justNames', justNames);
+    // map
+    const twoPercent = this.merch.map(i => {
+      var percentToGet = 2;
+      var percentAsDecimal = (percentToGet / 100);
+      var percent = percentAsDecimal * i.price;
+      return i.price + percent;
+    
+    });
+    console.log('twoPercent', twoPercent);
+
+
+    // find
+    const findItem = this.merch.find(i => i.name === 'Book');
+    console.log('findItem', findItem);
+    // foreach
+    this.merch.forEach(i => {
+      // console.log(i);
+    });
+    // some
+    const hasTenDollarItem = this.merch.some(i => i.price === 10);
+    console.log('hasTenDollarItem', hasTenDollarItem);
+    // reduce
+    const total = this.merch.reduce((currentTotal, i) => {
+      return i.price + currentTotal;
+    }, 0);
+    console.log('total', total);
+
+
+
+  }
 
 
   // Create a function taking a positive integer as its parameter and 
@@ -381,7 +430,7 @@ export class PracticeComponent implements OnInit, OnChanges {
       case 'testing':
         item.type = "deployment";
         this.deployments.push(item);
-        let t = this.developments.findIndex(i => i.type === item.type && i.value === item.value);
+        let t = this.testings.findIndex(i => i.type === item.type && i.value === item.value);
         this.testings.splice(t, 1);
 
         break;
