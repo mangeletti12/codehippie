@@ -1,0 +1,26 @@
+.elysium {
+    // background-image: url(../../../assets/images/soccer-field.jpg);
+
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: calc(100vh - 65px);
+    // width: 100vw;
+    // overflow: scroll;
+ 
+
+    .quote1 {
+        position: absolute;
+        z-index: 1;
+        font-family: Raleway, Arial, sans-serif;
+        letter-spacing: -1px;
+        font-size: 42px;
+        padding: 35px;
+        line-height: 50px;
+    }
+
+    img {
+        width: 100vw;
+    }
+}
+

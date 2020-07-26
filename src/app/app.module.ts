@@ -112,6 +112,7 @@ import { CountUpModule } from 'ngx-countup';
 import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
 import { JobComponent } from './resume/job.component';
+import { ElysiumComponent } from './footy/elysium/elysium.component';
 
 
 
@@ -170,6 +171,7 @@ import { JobComponent } from './resume/job.component';
     FootyComponent,
     GridComponent,
     JobComponent,
+    ElysiumComponent,
   
   ],
   imports: [

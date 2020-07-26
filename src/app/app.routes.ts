@@ -32,13 +32,12 @@ import { QaComponent } from './qa/qa.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
 import { ParentComponent } from './practice/parent.component';
-import { PracticeComponent } from './practice/practice.component';
+// import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FootyComponent } from './footy/footy/footy.component';
+import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
-
-
 // export const PUBLIC_ROUTES: Routes = [
 
 // ];
@@ -135,6 +134,13 @@ export const SECURE_ROUTES: Routes = [
     component: FootyComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Footy',},
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'elysium',
+    component: ElysiumComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Elysium',},
     resolve: { comp: ResolverService },
   },
   {
