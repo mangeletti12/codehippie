@@ -1,0 +1,49 @@
+
+
+.flexify {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+  
+.flexify div:nth-child(1) { flex-grow: 1; }
+
+.years {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    margin-bottom: -14px;
+    letter-spacing: -1px;
+  }
+  
+.company {
+    margin: 20px;
+    text-align: left;
+    text-transform: uppercase;
+}
+  
+.title {
+    font-family: Raleway-Bold, Arial, sans-serif;
+    font-size: 2em;
+    letter-spacing: -3px;
+    display: block;
+    line-height: .8em;
+}
+
+.name {
+    height: 20px;
+    line-height: 20px;
+}
+
+.line {
+    background-color: black;
+    height: 2px;
+    max-height: 2px;
+    margin: 2px;
+}
+
+.desc {
+    width: 250px;
+    line-height: 18px;
+    overflow: hidden;
+}
+  

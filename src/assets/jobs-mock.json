@@ -1,0 +1,55 @@
+{
+  "Jobs" : [
+    {
+      "company": "Katerra",
+      "start": "2018",
+      "end": "2020",
+      "title": "Senior Software Developer",
+      "description": "Engaged in all phases of the software development lifecycle, including gathering requirements, creating wireframes, designing, developing and supporting"
+    },
+    {
+      "company": "Eberl Claims Service",
+      "start": "2010",
+      "end": "2018",
+      "title": "Lead Frontend Developer",
+      "description": "Leveraged modern UI technologies and UX concepts to build the frontend of a cloud based application"
+    },
+    {
+      "company": "GlobalScholar",
+      "start": "2009",
+      "end": "2010",
+      "title": "Senior Sofware Engineer",
+      "description": "Developed a wide range of products related to education, which supported all aspects of managing education at K-12 schools, including a gradebook, learning management system, teacher development and more"
+    },
+    {
+      "company": "Malenke Barnhart",
+      "start": "2008",
+      "end": "2009",
+      "title": "Web Developer",
+      "description": "Created corporate websites using modern UI technologies and UX concepts to build responsive, cross-browser friendly websites/software"
+    },
+    {
+      "company": "Imerica",
+      "start": "2007",
+      "end": "2008",
+      "title": "Software Developer",
+      "description": "Developed software using incremental or iterative life cycle process. Utilized an Agile / Scrum software methodology throughout the software life cycle"
+    },
+    {
+      "company": "JPMA Inc",
+      "start": "2001",
+      "end": "2007",
+      "title": "Software Developer",
+      "description": "Web development specializing in web standards, accessibility, and usability"
+    },
+    {
+      "company": "New Horizons Computer Training Center",
+      "start": "1997",
+      "end": "2000",
+      "title": "Principal Instructor",
+      "description": "Trained individuals on a vast array of computer languages and applications"
+    }
+
+    
+  ]
+}

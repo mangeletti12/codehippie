@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { NgwWowService } from 'ngx-wow';
-import { Subscription }   from 'rxjs';
+import { Subscription } from 'rxjs';
 import { Router, Event, NavigationEnd } from '@angular/router';
-
+import { ResumeService } from './resume.service';
 
 
 @Component({
@@ -12,6 +12,8 @@ import { Router, Event, NavigationEnd } from '@angular/router';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit, OnDestroy  {
+  subscription: Subscription;
+  jobs: any[] = [];
 
   // https://animate.style/#documentation
   // https://wowjs.uk/docs.html
@@ -26,7 +28,8 @@ export class ResumeComponent implements OnInit, OnDestroy  {
 
   constructor(
     private router: Router,
-    private wowService: NgwWowService
+    private wowService: NgwWowService,
+    private resumeService: ResumeService,
   ) {
 
     this.wowService.init();
@@ -52,11 +55,25 @@ export class ResumeComponent implements OnInit, OnDestroy  {
         console.log('wow item', item);
       });
 
+    // get jobs
+    this.getJobs();
   }
 
   ngOnDestroy() {
     // unsubscribe (if necessary) to WOW observable to prevent memory leaks
     this.wowSubscription.unsubscribe();
+    this.subscription.unsubscribe();
+  }
+
+  getJobs() {
+
+    this.subscription = this.resumeService.getJobs().subscribe(
+      data => {
+        // console.log('getJobs', data.body.Jobs);
+        this.jobs = data.body.Jobs;
+      }
+    )
+
   }
 
 }

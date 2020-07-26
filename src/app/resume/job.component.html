@@ -1,1 +1,14 @@
-<p>job works!</p>
+<div class="company">
+    <div class="years">{{ jobDetails.start }} - {{ jobDetails.end }}</div>
+    <div class="line"></div>
+    <div class="flexify">
+      <div>
+        <div class="title">{{ jobDetails.title }}</div>
+        <div class="name">@ {{ jobDetails.company }}</div>
+      </div>
+
+      <div class="desc">
+        {{ jobDetails.description }}
+      </div>
+    </div>
+  </div>
