@@ -14,6 +14,7 @@ import { ResumeService } from './resume.service';
 export class ResumeComponent implements OnInit, OnDestroy  {
   subscription: Subscription;
   jobs: any[] = [];
+  jobEmitter: any;
 
   // https://animate.style/#documentation
   // https://wowjs.uk/docs.html
@@ -69,11 +70,15 @@ export class ResumeComponent implements OnInit, OnDestroy  {
 
     this.subscription = this.resumeService.getJobs().subscribe(
       data => {
-        // console.log('getJobs', data.body.Jobs);
+        console.log('getJobs', data.body.Jobs);
         this.jobs = data.body.Jobs;
       }
     )
 
+  }
+
+  jobEmitterHandler(e: any) {
+    console.log(e);
   }
 
 }

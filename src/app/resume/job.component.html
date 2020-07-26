@@ -1,4 +1,4 @@
-<div class="company">
+<div class="company" *ngIf="jobDetails" (click)="showJobDetails(jobDetails)">
     <div class="years">{{ jobDetails.start }} - {{ jobDetails.end }}</div>
     <div class="line"></div>
     <div class="flexify">

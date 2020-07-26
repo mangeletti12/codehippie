@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-job',
@@ -7,7 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class JobComponent implements OnInit {
   // get jobDetails from parent
-  @Input() jobDetails: string;
+  @Input() jobDetails: any;
+
+  // Emit to partent
+  @Output() jobEmitter = new EventEmitter<any>()
 
   constructor() { }
 
@@ -15,5 +18,12 @@ export class JobComponent implements OnInit {
     // console.log('jobDetails', this.jobDetails);
 
   }
+
+  showJobDetails(job) {
+    // console.log('showJobDetails', job);
+    this.jobEmitter.emit(job.description);
+
+  }
+
 
 }
