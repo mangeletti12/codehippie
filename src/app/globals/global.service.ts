@@ -47,6 +47,7 @@ export class GlobalService {
       );
   }
 
+  // Nav collapsed or open
   get change(): Observable<boolean> {
     return this._change.asObservable();
   }

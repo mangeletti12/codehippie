@@ -1,13 +1,11 @@
 .elysium {
     // background-image: url(../../../assets/images/soccer-field.jpg);
-
     // background-position: center center;
     // background-repeat: no-repeat;
     // background-size: cover;
     // height: calc(100vh - 65px);
     // width: 100vw;
     // overflow: scroll;
- 
 
     .quote1 {
         position: absolute;
@@ -20,7 +18,15 @@
     }
 
     img {
-        width: 100vw;
+       width: calc(100vw - 285px);
+    }
+
+
+}
+
+.elysium.navSmall {
+    img {
+        width: calc(100vw - 115px);
     }
 }
 
