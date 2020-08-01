@@ -50,6 +50,11 @@
                   "Text": "Dashboard",
                   "Url": "/footy",
                   "Claim": "Nav_Footy"
+                },
+                {
+                  "Text": "Elysium",
+                  "Url": "/elysium",
+                  "Claim": "Nav_Elysium"
                 }
               ]
             },
