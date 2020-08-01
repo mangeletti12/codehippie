@@ -51,12 +51,6 @@ export const SECURE_ROUTES: Routes = [
     resolve: { comp: ResolverService },
   },
   { path: 'about', redirectTo: '', pathMatch: 'full' },
-  // {
-  //   path: 'about',
-  //   component: AboutComponent,
-  //   //canActivate: [AuthGuard],
-  //   data: { breadcrumb: 'About' },
-  // },
   {
     path: 'buffet',
     component: BuffetComponent,
@@ -233,7 +227,7 @@ export const SECURE_ROUTES: Routes = [
     resolve: { comp: ResolverService },
   },
 
-  //Lazyloading
+  // Lazy loading
   { path: 'superheroes',
     data: { breadcrumb: null },
     loadChildren: () => import('./superheroes/superheroes.module').then(mod => mod.SuperheroesModule)
