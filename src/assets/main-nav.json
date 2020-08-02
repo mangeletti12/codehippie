@@ -32,12 +32,8 @@
                   "Text": "Q & A",
                   "Url": "/qa",
                   "Claim": "Nav_QA"
-                },
-                {
-                  "Text": "Buffet",
-                  "Url": "/buffet",
-                  "Claim": "Nav_Buffet"
                 }
+ 
 
               ]
             },
