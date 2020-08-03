@@ -2,7 +2,18 @@
 
     <div class="b-container theme-dark-font">
 
-        <mat-card class="box" [routerLink]="'/superheroes/heroes'">
+        <ng-container *ngFor="let pattern of patterns">
+            <mat-card class="box" (click)="boxSelect(pattern)" [class.box-large]="pattern.selected">
+                <div class="icon">{{ pattern.id }}</div>
+                <div class="content">
+                    <h3>{{ pattern.name }}</h3>
+                    <p>{{ pattern.description }}</p>
+                </div>
+            </mat-card>
+        </ng-container>  
+
+        <!--
+        <mat-card class="box" (click)="boxSelect($event)">
           <div class="icon">01</div>
           <div class="content">
               <h3>Heroes</h3>
@@ -13,7 +24,7 @@
           </div>
         </mat-card>
 
-        <mat-card class="box" [routerLink]="['/movies']">
+        <mat-card class="box" (click)="boxSelect($event)">
             <div class="icon">02</div>
             <div class="content">
                 <h3>Movies</h3>
@@ -23,7 +34,7 @@
             </div>
         </mat-card>
 
-        <mat-card class="box" [routerLink]="['/qa']">
+        <mat-card class="box" (click)="boxSelect(3)">
             <div class="icon">03</div>
             <div class="content">
 
@@ -33,7 +44,7 @@
             </div>
         </mat-card>
 
-        <mat-card class="box" [routerLink]="['/trails']">
+        <mat-card class="box" >
             <div class="icon">04</div>
             <div class="content">
                 <h3>Happy Trails</h3>
@@ -49,7 +60,6 @@
              <h3>Jedi Master or Sith Lord?</h3>
                 <p>Test your Star Wars knowledge! Drag-and-drop each character to either the Dark-Side or the Light-Side. Your choice!
                 </p>
-
             </div>
         </mat-card>
 
@@ -81,7 +91,6 @@
                 <p>This example uses recursion. There is an unknown number of line-items. Each line-item can be nested
                   to the nth-level. So we use recursion to create a nested hierarchy of line-items and all their children.
                 </p>
-                <!-- <button mat-raised-button [routerLink]="'/estimates'">Go Now!</button> -->
             </div>
         </mat-card>
 
@@ -92,9 +101,10 @@
                 <p>This is a hierarchical-tree-view that allows users to select items. The tree can have nth-level of children.
                     Once selected the item is brought over into a grid. The heirarchy of parent/child/grand-children is maintained.
                 </p>
-                <!-- <button mat-raised-button [routerLink]="'/tree'">Go Now!</button> -->
             </div>
         </mat-card>
+
+        -->
 
     </div>
 

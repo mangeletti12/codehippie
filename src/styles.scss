@@ -837,10 +837,9 @@ mat-footer-row mat-footer-cell {
 }
 
 .animation-fade-out {
-  -webkit-animation: ANIMATION-FADE-OUT 1s ease-in; /* Safari 4+ */
-  -moz-animation:    ANIMATION-FADE-OUT 1s ease-in; /* Fx 5+ */
-  -o-animation:      ANIMATION-FADE-OUT 1s ease-in; /* Opera 12+ */
-  animation:         ANIMATION-FADE-OUT 1s ease-in; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-FADE-OUT 1.5s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-FADE-OUT 1.5s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-FADE-OUT 1.5s ease-in; /* IE 10+, Fx 29+ */
 }
 
 /* fade-out trans */
@@ -859,10 +858,9 @@ mat-footer-row mat-footer-cell {
 
 
 .animation-fade-in {
-  -webkit-animation: ANIMATION-FADE-IN 2s ease-out; /* Safari 4+ */
-  -moz-animation:    ANIMATION-FADE-IN 2s ease-out; /* Fx 5+ */
-  -o-animation:      ANIMATION-FADE-IN 2s ease-out; /* Opera 12+ */
-  animation:         ANIMATION-FADE-IN 2s ease-out; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-FADE-IN 2.5s ease-out; /* Safari 4+ */
+  -moz-animation:    ANIMATION-FADE-IN 2.5s ease-out; /* Fx 5+ */
+  animation:         ANIMATION-FADE-IN 2.5s ease-out; /* IE 10+, Fx 29+ */
 }
 
 /* fade-in trans */
@@ -871,10 +869,6 @@ mat-footer-row mat-footer-cell {
   100% { opacity: 1; }
 }
 @-moz-keyframes ANIMATION-FADE-IN {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes ANIMATION-FADE-IN {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }

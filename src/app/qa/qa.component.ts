@@ -78,8 +78,7 @@ export class QaComponent implements OnInit {
     //
     this.qaService.getUsersAnswers(me).subscribe(
       data => {
-        console.log('getQuestionsByUser', data);
-
+        
         var colorPicker = this.setRandomNoRepeats(this.colors);
         // set a random color and date
         for (let i = 0; i < data.length; i++) {
@@ -90,9 +89,12 @@ export class QaComponent implements OnInit {
           data[i].data['lightColor'] = this.LightenDarkenColor(color, -40);
           data[i].data['formattedDate'] = this.timeConverter(data[i].data.date.seconds);
         }
+        // console.log('getQuestionsByUser', data);
+        // sort date
+        const sorted = data.sort((a, b) => b.data.date.seconds - a.data.date.seconds);
+        console.log('sorted', sorted);
 
-        // Attach a random color
-        this.qAndA = data;
+        this.qAndA = sorted;
       }
     );
 

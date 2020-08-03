@@ -1,0 +1,35 @@
+{
+  "Patterns" : [
+    {
+      "id": "01",
+      "name": "Heroes",
+      "description": "Here we consume the Marvel API to retreive Earth's mighties heroes... and villians. The data is then presented in a table with standard pagination, sorting and searching. You may also select heroes and add them to a team."
+    },
+    {
+      "id": "02",
+      "name": "Movies",
+      "description": "This page features infinite-scrolling that we use to continuously consume the The Movie DB API.It also includes a search feature to help you find your favorite flix."
+    },
+    {
+      "id": "03",
+      "name": "Q & A",
+      "description": "This page uses Google's Firebase. Cloud Firestore is a NoSQL document database that lets you easily store, sync, and query data for your mobile and web apps - at global scale."
+    },
+    {
+      "id": "04",
+      "name": "Happy Trails",
+      "description": "This page uses the Google Cloud Platform and its mapping API to display some of my favorite hiking trails around Littleton."
+    },
+    {
+      "id": "05",
+      "name": "Star Wars",
+      "description": "Test your Star Wars knowledge! Drag-and-drop each character to either the Dark-Side or the Light-Side. Your choice!"
+    },
+    {
+      "id": "06",
+      "name": "Settings",
+      "description": "A theme is the set of colors that will be applied to the Angular Material components. You can also choose a route-transition. These transitions are then used when switching routes."
+    }
+    
+  ]
+}
