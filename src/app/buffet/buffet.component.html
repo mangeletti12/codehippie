@@ -3,7 +3,7 @@
     <div class="b-container theme-dark-font">
 
         <ng-container *ngFor="let pattern of patterns">
-            <mat-card class="box" (click)="boxSelect(pattern)" [class.box-large]="pattern.selected">
+            <mat-card class="box" (click)="boxSelect(pattern)" [class.box-in]="pattern.selected" [class.box-out]="pattern.selected === false" [class.box-reset]="pattern.selected === null">
                 <div class="icon">{{ pattern.id }}</div>
                 <div class="content">
                     <h3>{{ pattern.name }}</h3>

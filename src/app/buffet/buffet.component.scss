@@ -159,32 +159,72 @@
   margin-bottom: 7px;
 }
 
-.box-large {
+.box-in {
   position: relative !important;
   z-index: 3;
-  border: 2px solid red;
+
   // height: calc(100vh - 70px);
   // width: calc(100vw - 225px) !important;
   // width: 300px;
   // height: 300px;
-  // animation-fill-mode: forwards;
-  -webkit-animation: ANIMATION-BOX-IN 1.5s ease-out forwards; /* Safari 4+ */
-  -moz-animation:    ANIMATION-BOX-IN 1.5s ease-out forwards; /* Fx 5+ */
-  animation:         ANIMATION-BOX-IN 1.5s ease-out forwards; /* IE 10+, Fx 29+ */
+
+  -webkit-animation: ANIMATION-BOX-IN 1.5s ease-out .5s forwards; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BOX-IN 1.5s ease-out .5s forwards; /* Fx 5+ */
+  animation:         ANIMATION-BOX-IN 1.5s ease-out .5s forwards; /* IE 10+, Fx 29+ */
 }
 
 /* fade-in trans */
 @-webkit-keyframes ANIMATION-BOX-IN {
   0%   {  }
-  //100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
-  100% { transform: scale(1.5); }
+  100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
 }
 @-moz-keyframes ANIMATION-BOX-IN {
   0%   {  }
-  //100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
-  100% { transform: scale(1.5); }
+  100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
 }
 @keyframes ANIMATION-BOX-IN {
   0%   {  }
-  100% { height: calc(100vh - 70px); }
+  100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
+}
+
+//
+.box-out {
+  -webkit-animation: ANIMATION-BOX-OUT .5s ease-out forwards; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BOX-OUT .5s ease-out forwards; /* Fx 5+ */
+  animation:         ANIMATION-BOX-OUT .5s ease-out forwards; /* IE 10+, Fx 29+ */
+}
+
+/* box small trans */
+@-webkit-keyframes ANIMATION-BOX-OUT {
+  0%   {  }
+  //100% { height: calc(100vh - 70px); width: calc(100vw - 225px) !important; }
+  100% { transform: scale(0); }
+}
+@-moz-keyframes ANIMATION-BOX-OUT {
+  0%   {  }
+  100% { transform: scale(0); }
+}
+@keyframes ANIMATION-BOX-OUT {
+  0%   {  }
+  100% { transform: scale(0);  }
+}
+
+.box-reset {
+  -webkit-animation: ANIMATION-BOX-RESET .5s ease-out forwards; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BOX-RESET .5s ease-out forwards; /* Fx 5+ */
+  animation:         ANIMATION-BOX-RESET .5s ease-out forwards; /* IE 10+, Fx 29+ */
+}
+
+/* box reset trans */
+@-webkit-keyframes ANIMATION-BOX-RESET {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+@-moz-keyframes ANIMATION-BOX-RESET {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+@keyframes ANIMATION-BOX-RESET {
+  0%   { transform: scale(0); }
+  100% { transform: scale(1); }
 }

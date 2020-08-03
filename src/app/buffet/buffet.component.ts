@@ -41,7 +41,17 @@ export class BuffetComponent implements OnInit, OnDestroy {
 
   boxSelect(pattern) {
     console.log('boxSelect', pattern);
-    pattern.selected = !pattern.selected;
+    if (pattern.selected) {
+      pattern.selected = false;
+      this.patterns.forEach(i => { i.selected = null; });
+      
+    } else {
+
+      // Mark all non-selecetd, before mark the new selected
+      this.patterns.forEach(i => { i.selected = false; });
+
+      pattern.selected = !pattern.selected;
+    }
 
   }
 
