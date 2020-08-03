@@ -44,7 +44,7 @@ export class BuffetComponent implements OnInit, OnDestroy {
     if (pattern.selected) {
       pattern.selected = false;
       this.patterns.forEach(i => { i.selected = null; });
-      
+
     } else {
 
       // Mark all non-selecetd, before mark the new selected
