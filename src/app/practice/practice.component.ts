@@ -1,6 +1,95 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Subject } from 'rxjs';
 
+// an interface is a virtual structure that only exists within the context of TypeScript, not JavaScript
+// The TypeScript compiler uses interfaces solely for type-checking purposes.
+// interface is a structural contract
+
+export interface iPizza {
+  name: string;
+  toppings: string[];
+}
+
+// TypeScript shorthand to define class properties from arguments of the contructor.
+export class Pizza {
+  constructor(public name: string, public toppings: string[]) {}
+}
+
+// Class
+export class PizzaMaker {
+  //
+  static create(event: iPizza) {
+    return new Pizza(event.name, event.toppings);
+  }
+
+}
+
+// Abstract classes are mainly for inheritance where other classes may derive from them
+// We cannot create an instance of an abstract class.
+abstract class Person {
+  public firstName: string;
+  public lastName: string;
+  public age: number;
+  private ssn: string;
+
+  constructor(firstName:string, lastName: string, age: number, ssn: string) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.ssn = ssn;
+  }
+
+  public getSSN() {
+    return this.ssn;
+  }
+
+  abstract doWork(): void;
+}
+//
+class Employee extends Person {
+  skills: string[];
+
+  doWork(): void {
+    console.log(`${this.lastName}, ${this.firstName} doing work...`);
+  }
+
+}
+//
+class Pirate extends Person {
+  public weapon: string;
+
+  setWeapon(attackingWith) {
+    this.weapon = attackingWith;
+  }
+
+  doWork(): void {
+    console.log(`${this.lastName}, ${this.firstName} doing work...`);
+  }
+
+  attack() {
+    return "attack with " + this.weapon;
+  }
+}
+//
+class Ninja extends Person {
+  public weapon: string;
+
+  doWork(): void {
+    console.log(`${this.lastName}, ${this.firstName} doing work...`);
+  }
+
+  constructor(firstName:string, lastName: string, age: number, ssn: string, weapon: string) {
+      super(firstName, lastName, age, ssn);
+      this.weapon = weapon;
+  }
+
+  attack() {
+    return "attack with " + this.weapon;
+  }
+}
+
+
+
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
@@ -10,10 +99,10 @@ export class PracticeComponent implements OnInit, OnChanges {
   @Input() stages: string[];
   @Input() newIdeaer: string;
 
-  ideas: any[] = [];
-  developments: any[] = [];
-  testings: any[] = [];
-  deployments: any[] = [];
+  public ideas: any[] = [];
+  public developments: any[] = [];
+  public testings: any[] = [];
+  public deployments: any[] = [];
 
   listItems = [
     {type: 'idea', value: 'idea1'},
@@ -43,38 +132,6 @@ export class PracticeComponent implements OnInit, OnChanges {
   //   {type: 'banana', id: '6'},
   // ];
   
-  /*
-  fruits$ = new Subject([
-    {
-      type: 'apple',
-      id: '1'
-    },
-    {
-      type: 'apple',
-      id: '2'
-    },
-    {
-      type: 'apple',
-      id: '3'
-    },
-    {
-      type: 'orange',
-      id: '4'
-    },
-    {
-      type: 'orange',
-      id: '5'
-    },
-    {
-      type: 'banana',
-      id: '6'
-    },
-    {
-      type: 'banana',
-      id: '7'
-    },
-  ]);
-  */
   
   ngOnChanges(e) {
     const newIdeaValue = e.newIdeaer.currentValue;
@@ -99,7 +156,7 @@ export class PracticeComponent implements OnInit, OnChanges {
     this.testings = this.listItems.filter(i => i.type === 'testing');
     this.deployments = this.listItems.filter(i => i.type === 'deployment');
 
-    this.arrayPlay();
+    // this.arrayPlay();
 
     //////
     const roman1 = this.romanEncoder(1986);
@@ -121,10 +178,38 @@ export class PracticeComponent implements OnInit, OnChanges {
     // console.log('ig2', iq2);
 
     //////
-
+    this.pizzaPlay();
 
 
     // this.notes();
+  }
+
+  //
+  pizzaPlay() {
+
+    const pizza1 = PizzaMaker.create({
+      name: 'Inferno',
+      toppings: ['cheese', 'peppers'],
+    });
+
+    console.log('pizzaPlay', pizza1);
+
+    // const pizzaMaker = new Pizza('MKA Pie', ['cheese', 'pepperoni']);
+    // console.log('pizzaMaker', pizzaMaker);
+
+    // var p = new Person("Mario", "Super", 29, "123-90-4567");
+    // console.log("Last name: " + p.lastName + " SSN: " + p.getSSN());
+    // 
+    var e = new Employee("Luke", "Skywalker", 43, "555-34-3333");
+    // console.log(e.talk('Did you hear...'));
+    //
+    var n = new Ninja('Bruce', 'Lee', 22, '663-23-555', 'knife');
+    console.log('Ninja', n);
+    //
+    let p = new Pirate('Black', 'Baerd', 66, '344-34-555');
+    p.setWeapon('cannon');
+    console.log('Pirate', p);
+
   }
 
   //

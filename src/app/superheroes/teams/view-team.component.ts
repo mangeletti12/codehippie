@@ -20,7 +20,7 @@ export class ViewTeamComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedTeam = this.data.selectedTeam;
-    // console.log('dialog selectedTeam', this.selectedTeam);
+    console.log('>> dialog selectedTeam', this.selectedTeam);
   }
 
   details(hero, e) {

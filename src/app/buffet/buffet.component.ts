@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { ExternalService } from './external.service';
 import { PatternsService } from './patterns.service';
 import { Subscription } from 'rxjs';
+//
+import { PizzaMaker, Pizza } from '../practice/practice.component';
 
 @Component({
   selector: 'app-buffet',
@@ -41,8 +43,9 @@ export class BuffetComponent implements OnInit, OnDestroy {
 
   boxSelect(pattern) {
     console.log('boxSelect', pattern);
+    //
     if (pattern.selected) {
-      pattern.selected = false;
+      // pattern.selected = true;
       this.patterns.forEach(i => { i.selected = null; });
 
     } else {
@@ -55,6 +58,20 @@ export class BuffetComponent implements OnInit, OnDestroy {
 
   }
 
+  // remove later
+  pizzaPlay() {
+
+    const pizza1 = PizzaMaker.create({
+      name: 'Inferno',
+      toppings: ['cheese', 'peppers'],
+    });
+
+    console.log('pizzaPlay', pizza1);
+
+
+    // const pizzaMaker = new Pizza('MKA Pie', ['cheese', 'pepperoni']);
+    // console.log('pizzaMaker', pizzaMaker);
+  }
 
 
 
