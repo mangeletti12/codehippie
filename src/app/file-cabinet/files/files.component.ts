@@ -65,7 +65,7 @@ export class FilesComponent implements OnInit {
 
   constructor(
     private filesService: FilesService,
-    private uploadService: UploadService,
+    // private uploadService: UploadService,
   ) { }
 
   ngOnInit(): void {

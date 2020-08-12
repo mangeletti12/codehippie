@@ -180,6 +180,11 @@ export class PracticeComponent implements OnInit, OnChanges {
     //////
     this.pizzaPlay();
 
+    //////
+    const array1 = [1,6,3,5,8,9,4,10,2];
+    this.findMedian(array1);
+    const array2 = [1,6,3,5,8,9,4,10,2,7];
+    this.findMedian(array2);
 
     // this.notes();
   }
@@ -322,6 +327,28 @@ export class PracticeComponent implements OnInit, OnChanges {
     jillsRoom.cleanTable('jill soap');
     johnsRoom.cleanTable('john soap');
 
+  }
+
+  // Find Array
+  findMedian(arr) {
+    if (arr.length === 0) { return 0; }
+
+    arr.sort((a, b) => a-b);
+
+    const halfway = arr.length / 2;
+
+    // is array odd or even?
+    const isEven =  halfway % 1 == 0; 
+    // console.log('isEven', isEven);
+    let median;
+    if (isEven) {
+      // If even, the median is the average of the two numbers on both sides of the halfway.
+      median = (arr[halfway - 1] + arr[halfway]) / 2 ;
+    } else {
+      // If odd, get the middle number
+      median = arr[Math.floor(halfway)];
+    }
+    console.log('median', median);
   }
 
 

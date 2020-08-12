@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { SoccerService } from './soccer.service';
 import { Color, Label } from 'ng2-charts';
 
 @Component({
@@ -12,7 +11,6 @@ export class BarChartComponent implements OnInit {
 
 
   constructor(
-    private soccerService: SoccerService,
 
   ) {
 
@@ -75,25 +73,10 @@ export class BarChartComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // this.getAllTeams();
   }
 
 
-  getAllTeams() {
 
-    // console.log('searchCriteria', searchCriteria);
-    this.soccerService.getLiverpool().subscribe(
-      data => {
-        //const heroes = data.body.data;
-        console.log('teams', data);
-
-      },
-      error => {
-
-      }
-    );
-
-  }
 
 
 }

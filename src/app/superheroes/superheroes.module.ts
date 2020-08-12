@@ -12,6 +12,8 @@ import { HeroComponent } from './heroes/hero.component';
 import { AddToTeamComponent } from './teams/add-to-team.component';
 import { ViewTeamComponent } from './teams/view-team.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
     imports: [
@@ -20,6 +22,7 @@ import { ViewTeamComponent } from './teams/view-team.component';
         MaterialModule,
         ReactiveFormsModule,
         FormsModule,
+        BrowserAnimationsModule,
     ],
     exports: [
       RouterModule

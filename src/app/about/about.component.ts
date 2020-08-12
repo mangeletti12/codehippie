@@ -10,6 +10,7 @@ export class AboutComponent implements OnInit {
   mySkills: any[] = [];
   selectedType = 'all';
   cardFront = true;
+  author = 'Mark Angeletti';
   pic: any;
   myPics = [
     {image: 'flc.jpg', details: 'Fort Lewis College, Durango 2017'},

@@ -124,8 +124,8 @@ export class ContactsComponent implements OnInit {
     this.getAllContacts();
 
     //Defaults
-    this.sort.direction = 'asc';
-    this.sort.active = 'contactName';
+    // this.sort.direction = 'asc';
+    // this.sort.active = 'contactName';
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }

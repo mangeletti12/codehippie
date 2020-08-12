@@ -1,30 +1,36 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
-// Http testing module and mocking controller
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-// Other imports
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+// 
+import { DashboardService } from './dashboard.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
+
+class MocksService {
+
+  getContacts() {
+    return of({
+      contacts: [
+        { level: 5, selected: true, skill: "Angular", type: "frontend" },
+      ],
+    });
+  }
+}
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
-  //
-  let httpClient: HttpClient;
-  let httpTestingController: HttpTestingController;
+  let fixture: ComponentFixture<DashboardComponent>
   
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [ DashboardComponent ],
       imports: [ HttpClientTestingModule ],
-      declarations: [ DashboardComponent ]
+      providers: [{ provide: DashboardService, useClass: MocksService }]
     })
     .compileComponents();
 
 
-    // Inject the http service and test controller for each test
-    httpClient = TestBed.get(HttpClient);
-    httpTestingController = TestBed.get(HttpTestingController);
   }));
 
   beforeEach(() => {

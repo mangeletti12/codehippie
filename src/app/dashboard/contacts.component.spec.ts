@@ -1,6 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactsComponent } from './contacts.component';
+// 
+import { DashboardService } from './dashboard.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { By } from '@angular/platform-browser';
+import { of } from 'rxjs';
+
+class MocksService {
+
+  getContacts() {
+    return of({
+      contacts: [
+        { level: 5, selected: true, skill: "Angular", type: "frontend" },
+      ],
+    });
+  }
+}
 
 describe('ContactsComponent', () => {
   let component: ContactsComponent;
@@ -8,7 +24,9 @@ describe('ContactsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactsComponent ]
+      declarations: [ ContactsComponent ],
+      providers: [{ provide: DashboardService, useClass: MocksService }]
+
     })
     .compileComponents();
   }));

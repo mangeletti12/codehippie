@@ -12,6 +12,8 @@ import { UserTwoComponent } from './user/user-two.component';
 import { UsersComponent } from './users.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
     imports: [
@@ -20,6 +22,7 @@ import { UsersListComponent } from './users-list/users-list.component';
         MaterialModule,
         ReactiveFormsModule,
         FormsModule,
+        BrowserAnimationsModule,
     ],
     exports: [
       RouterModule
