@@ -74,7 +74,7 @@ import { ListService } from './list/list.service';
 import { IScrollComponent } from './iscroll/iscroll.component';
 import { IScrollService} from './iscroll/iscroll.service';
 
-import { FlexComponent } from './flex/flex.component';
+// import { FlexComponent } from './flex/flex.component';
 import { environment } from '../environments/environment';
 import { BreadcrumbComponent } from './globals/breadcrumb/breadcrumb.component';
 import { ProfileComponent } from './globals/profile/profile.component';
@@ -138,7 +138,7 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
     SettingsComponent,
     FileNotFoundComponent,
     ModalComponent,
-    FlexComponent,
+    // FlexComponent,
     BreadcrumbComponent,
     ProfileComponent,
     NotificationsComponent,

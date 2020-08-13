@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ElysiumComponent } from './elysium.component';
+//
+import { GlobalService } from 'src/app/globals/global.service';
+import { of, Observable } from 'rxjs';
+
+class MocksService {
+  
+  get change(): Observable<boolean> {
+    return of(true);
+  }
+
+}
 
 describe('ElysiumComponent', () => {
   let component: ElysiumComponent;
@@ -8,7 +19,8 @@ describe('ElysiumComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ElysiumComponent ]
+      declarations: [ ElysiumComponent ],
+      providers: [{ provide: GlobalService, useClass: MocksService }]
     })
     .compileComponents();
   }));
