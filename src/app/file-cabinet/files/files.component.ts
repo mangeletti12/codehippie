@@ -90,7 +90,7 @@ export class FilesComponent implements OnInit {
   }
 
   /** Get Files using filter and search criteria */
-  /*
+  
   getFiles( searchCriteria ) {
     this.searching = true;
 
@@ -120,7 +120,7 @@ export class FilesComponent implements OnInit {
        }
     );
   }
-  */
+  
 
   /** Sets up the search criteria */
   searchCriteria() {
@@ -161,7 +161,7 @@ export class FilesComponent implements OnInit {
     //   Filters: filters,
     // };
 
-    // this.getFiles( searchCriteria );
+    this.getFiles( searchCriteria );
   }
 
   // Select a folder or file

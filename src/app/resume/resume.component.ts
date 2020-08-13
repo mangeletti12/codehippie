@@ -62,7 +62,7 @@ export class ResumeComponent implements OnInit, OnDestroy  {
 
   ngOnDestroy() {
     // unsubscribe (if necessary) to WOW observable to prevent memory leaks
-    this.wowSubscription.unsubscribe();
+    // this.wowSubscription.unsubscribe();
     this.subscription.unsubscribe();
   }
 
