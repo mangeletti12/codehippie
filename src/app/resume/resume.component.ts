@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { NgwWowService } from 'ngx-wow';
+// import { NgwWowService } from 'ngx-wow';
 import { Subscription } from 'rxjs';
-import { Router, Event, NavigationEnd } from '@angular/router';
+// import { Router, Event, NavigationEnd } from '@angular/router';
 import { ResumeService } from './resume.service';
 
 
@@ -28,12 +28,12 @@ export class ResumeComponent implements OnInit, OnDestroy  {
   private wowSubscription: Subscription;
 
   constructor(
-    private router: Router,
-    private wowService: NgwWowService,
+    // private router: Router,
+    // private wowService: NgwWowService,
     private resumeService: ResumeService,
   ) {
 
-    this.wowService.init();
+    // his.wowService.init();
     //////////////////////////////
     // Router event subscription
     // router.events.subscribe((event: Event) => {
@@ -50,11 +50,11 @@ export class ResumeComponent implements OnInit, OnDestroy  {
 
   ngOnInit(): void {
     // you can subscribe to WOW observable to react when an element is revealed
-    this.wowSubscription = this.wowService.itemRevealed$.subscribe(
-      (item:HTMLElement) => {
-        // do whatever you want with revealed element
-        console.log('wow item', item);
-      });
+    // this.wowSubscription = this.wowService.itemRevealed$.subscribe(
+    //   (item:HTMLElement) => {
+    //     // do whatever you want with revealed element
+    //     console.log('wow item', item);
+    //   });
 
     // get jobs
     this.getJobs();

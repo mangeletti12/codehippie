@@ -14,29 +14,29 @@ export class MusicComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.loginSpotify();
+    // this.loginSpotify();
   }
 
-  loginSpotify() {
-    //
-    this.musicService.loginSpotify().subscribe(
-      data => {
-        console.log('loginSpotify', data);
+  // loginSpotify() {
+  //   //
+  //   this.musicService.loginSpotify().subscribe(
+  //     data => {
+  //       console.log('loginSpotify', data);
 
-      }
-    );
+  //     }
+  //   );
 
-  }
+  // }
 
-  getPlaylist() {
-    //
-    this.musicService.getPlaylist().subscribe(
-      data => {
-        console.log('getPlaylist', data);
+  // getPlaylist() {
+  //   //
+  //   this.musicService.getPlaylist().subscribe(
+  //     data => {
+  //       console.log('getPlaylist', data);
 
-      }
-    );
+  //     }
+  //   );
 
-  }
+  // }
 
 }

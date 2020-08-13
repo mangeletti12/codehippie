@@ -28,17 +28,11 @@ export class MusicService {
     this.handleError = httpErrorHandler.createHandleError('MusicService');
   }
 
+/*
   loginSpotify() {
-    // app.get('/login', function(req, res) {
 
-    //   var scopes = 'user-read-private user-read-email';
+    
 
-    //   res.redirect('https://accounts.spotify.com/authorize' +
-    //     '?response_type=code' +
-    //     '&client_id=' + my_client_id +
-    //     (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-    //     '&redirect_uri=' + encodeURIComponent(redirect_uri));
-    //   });
 
     const scopes = 'user-read-private user-read-email';
 
@@ -54,24 +48,6 @@ export class MusicService {
       );
 
   }
-
-  getPlaylist() {
-
-    const url = "https://api.spotify.com/v1/playlists/59ZbFPES4DQwEjBpWHzrtC";
-
-    httpOptions.headers = new HttpHeaders({
-      // 'Access-Control-Allow-Origin': 'true',
-      // 'Accept': '*/*',
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + this.my_client_id
-    });
-
-   return this.http.get<any>(url, httpOptions)
-    .pipe(
-      catchError(this.handleError('getPlaylist', []))
-    );
-
-  }
-
+*/
 
 }

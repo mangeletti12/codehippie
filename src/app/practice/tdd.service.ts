@@ -21,10 +21,10 @@ export class TddService {
 
     const url = 'assets/contacts.json';
 
-    // return this.http.get<any>(url, httpOptions)
-    //   .pipe(
-    //     catchError(this.handleError('getContacts', []))
-    //   );
+    return this.http.get<any>(url, httpOptions)
+      .pipe(
+        catchError(this.handleError('getContacts', []))
+      );
   }
 
   getAlerts() {
