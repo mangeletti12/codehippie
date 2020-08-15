@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 import { MaterialModule } from "../material/material.module";
+// https://medium.com/@johncol/test-driven-development-and-angular-9110d62ce7ec
 // 
 import { AboutService } from './about.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -22,6 +23,8 @@ class MocksService {
 describe('AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
+  //
+  let service: MocksService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -37,6 +40,8 @@ describe('AboutComponent', () => {
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    //
+    service = new MocksService();
   });
 
 
@@ -52,15 +57,26 @@ describe('AboutComponent', () => {
     const quote = fixture.debugElement.query(By.css('.quote')).nativeElement;
 
     expect(quote.innerHTML).not.toBeNull();
-    // console.log(quote.innerHTML)
+    console.log('>> ', quote.innerHTML);
     expect(quote.innerHTML.length).toBeGreaterThan(0);
   });
 
   it('should have YNWA', () => {
-    const btn = fixture.debugElement.nativeElement.querySelector('#ynwa');
-    expect(btn.innerHTML).toBe(`You'll never walk alone!`);
+    const lfc = fixture.debugElement.nativeElement.querySelector('#ynwa');
+    expect(lfc.innerHTML).toBe(`You'll never walk alone!`);
   });
 
-  // const spy = spyOn(aboutService, 'getSkills').and.returnValue(of({...});
+  it('should return a list of skills asynchronously', (done: DoneFn) => {
+
+    service.getSkills().subscribe({
+      //
+      next: (skills) => {
+        console.log('>> ', skills);
+        expect(skills).toBeTruthy();
+        done();
+      }
+    });
+
+  });
 
 });
