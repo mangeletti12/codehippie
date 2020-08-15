@@ -113,6 +113,7 @@ import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
 import { JobComponent } from './resume/job.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -172,6 +173,7 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
     GridComponent,
     JobComponent,
     ElysiumComponent,
+    RxjsComponent,
   
   ],
   imports: [

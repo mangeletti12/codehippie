@@ -38,6 +38,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FootyComponent } from './footy/footy/footy.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 // export const PUBLIC_ROUTES: Routes = [
 
 // ];
@@ -177,6 +178,13 @@ export const SECURE_ROUTES: Routes = [
     component: ParentComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Practice' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'rxjs',
+    component: RxjsComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'RxJS Practice' },
     resolve: { comp: ResolverService },
   },
   {
