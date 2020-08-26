@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { QaService } from './qa.service';
+//
+import { ContactComponent } from '../contact/contact.component';
+
+// modal
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+// import { ModalComponent } from '../modal/modal.component';
+import { Overlay } from '@angular/cdk/overlay';
 
 
 @Component({
@@ -51,6 +58,8 @@ export class QaComponent implements OnInit {
 
   constructor(
     private qaService: QaService,
+    public matDialog: MatDialog,
+    public overlay: Overlay,
   ) { }
 
   ngOnInit(): void {
@@ -160,6 +169,41 @@ export class QaComponent implements OnInit {
     var sec = a.getSeconds();
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
     return time;
+  }
+
+
+  openContactForm() {
+
+    console.log('openContactForm');
+
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = false;
+    dialogConfig.id = "modal-component";
+    // dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
+    dialogConfig.height = "400px";
+    dialogConfig.width = "600px";
+    dialogConfig.data = {
+      type: "confirm",
+      title: "Remove",
+      message: 'Are you sure you want to remove this item?'
+    }
+    // // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(ContactComponent, dialogConfig);
+
+    modalDialog.afterClosed().subscribe(
+      data => {
+        // console.log(`Dialog result: ${data}`);
+        // if yes/true
+        if (data) {
+   
+        }
+        modalDialog.close();
+      }
+    );
+
+
   }
 
 }

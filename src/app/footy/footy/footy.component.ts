@@ -22,7 +22,7 @@ import { transition, animate, trigger, style, state } from '@angular/animations'
         style({
           transform: "translateX({{distance}}px)"
         }),
-        { params: { distance: 150 } }
+        { params: { distance: 160 } }
       ),
 
       transition("initial => slide", animate("400ms")),
@@ -45,7 +45,7 @@ export class FootyComponent implements OnInit {
   numberOfSlidesDisplayed;
   carouselWidth;
   slideHolderWidth;
-  slideItemWidth = 150;
+  slideItemWidth = 160;
   offset = 0;
   carouselState;
   slideDistance = 0;

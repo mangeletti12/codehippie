@@ -40,12 +40,7 @@ export class ContactComponent implements OnInit {
     if (this.form.valid) {
       var id = this.form.get('$key').value;
 
-      // email: "mark.angeletti@gmail.com"
-      // formDataNameOrder: "["name","message","email"]"
-      // formGoogleSendEmail: "example@email.net"
-      // formGoogleSheetName: "responses"
-      // message: "testing"
-      // name: "mark"
+      console.log('id', id);
 
       // Insert
       if (!id) {
@@ -68,8 +63,6 @@ export class ContactComponent implements OnInit {
             console.log('gmail', data);
           }
         );
-
-
 
       } else {
         // Update

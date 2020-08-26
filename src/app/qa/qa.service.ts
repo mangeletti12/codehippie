@@ -29,8 +29,9 @@ export class QaService {
         return actions.map(a => {
           const data = a.payload.doc.data();
           const id = a.payload.doc.id;
-
-          return { 'id': id, 'firstName': data.firstName, 'lastName': data.lastName };
+          const user = { 'id': id, 'firstName': data.firstName, 'lastName': data.lastName };
+          // console.log('user', user);
+          return user;
         });
       })
     );
@@ -60,7 +61,9 @@ export class QaService {
             data['question'] = ref['question'];
           });
 
-          return { 'id': id, data };
+          const qDocs = { 'id': id, data };
+          // console.log('qDocs', qDocs);
+          return qDocs;
 
         });
       })
