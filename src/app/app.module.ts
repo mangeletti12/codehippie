@@ -97,7 +97,7 @@ import { QaComponent } from './qa/qa.component';
 import { HelpComponent } from './globals/help/help.component';
 import { SearchComponent } from './globals/search/search.component';
 //
-import { NgwWowModule } from 'ngx-wow';
+// import { NgwWowModule } from 'ngx-wow';
 import { InspirationComponent } from './inspiration/inspiration.component';
 import { ContactComponent } from './contact/contact.component';
 import { P5Component } from './p5/p5.component';
@@ -114,7 +114,8 @@ import { GridComponent } from './grid/grid.component';
 import { JobComponent } from './resume/job.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-
+//
+import { ResizableModule } from './resizable/resizable.module';
 
 
 @NgModule({
@@ -191,8 +192,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ScrollingModule,
     NgScrollbarModule,
     InfiniteScrollModule,
-    NgwWowModule,
+    // NgwWowModule,
     CountUpModule,
+    ResizableModule,
 
     //Firebase
     AngularFireModule.initializeApp(environment.firebase),

@@ -27,7 +27,16 @@ export class ParentComponent implements OnInit {
   isUserBlackListed = false;
   allowBlackListedUsers = false;
 
-  
+  //
+  readonly rows = [
+    ["King Arthur", "-", "Arrested"],
+    ["Sir Bedevere", "The Wise", "Arrested"],
+    ["Sir Lancelot", "The Brave", "Arrested"],
+    ["Sir Galahad", "The Chaste", "Killed"],
+    ["Sir Robin", "The Not-Quite-So-Brave-As-Sir-Lancelot", "Killed"],
+  ];
+
+
   constructor() { }
 
   ngOnInit(): void {
