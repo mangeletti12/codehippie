@@ -116,6 +116,9 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 //
 import { ResizableModule } from './resizable/resizable.module';
+//
+import { StoreModule } from '@ngrx/store';
+import { superheroesReducer } from './superheroes/state/superheroes.reducers'
 
 
 @NgModule({
@@ -196,10 +199,14 @@ import { ResizableModule } from './resizable/resizable.module';
     CountUpModule,
     ResizableModule,
 
-    //Firebase
+    // Firebase
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    // NgRx store (root)
+    StoreModule.forRoot({ 
+      hero: superheroesReducer 
+    }),
   ],
   providers: [
     HttpErrorHandler,

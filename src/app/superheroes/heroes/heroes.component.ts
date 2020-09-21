@@ -10,9 +10,14 @@ import { AlertService } from 'src/app/alert/alert.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ModalComponent } from '../../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
-//animation
+// animation
 import { transition, animate, trigger, style } from '@angular/animations';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+// ngrx
+import { Superheroes } from '../models/superheroes';
+import { Store, select } from '@ngrx/store';
+import { appendHero, deleteHero,  } from '../state/superheroes.actions';
+
 
 
 @Component({
@@ -61,7 +66,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class HeroesComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
-  // heroes: any;
+  superheroes: Superheroes;
   displayedColumns: string[] = ['select', 'name', 'modified', 'comics', 'details', 'actions' ];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -115,10 +120,11 @@ export class HeroesComponent implements OnInit {
     )
     .subscribe(
       data => {
-        const heroes = data.body.data;
-        // console.log('heroes', heroes);
-        this.dataSource = new MatTableDataSource(heroes.results);
-        this.totalRows = heroes.total;
+        //
+        this.superheroes = data.body;
+        console.log('superheroes', this.superheroes);
+        this.dataSource = new MatTableDataSource(this.superheroes.data.results);
+        this.totalRows = this.superheroes.data.total;
       },
       error => {
 
