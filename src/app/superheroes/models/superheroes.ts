@@ -7,6 +7,11 @@ export class Superheroes {
     data: SuperheroesData;
     etag: string;
     status: string;
+
+    //
+    constructor(init?: Partial<Superheroes>) {
+        Object.assign(this, init);
+    }
 }
 
 export class SuperheroesData {

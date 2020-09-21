@@ -205,7 +205,7 @@ import { superheroesReducer } from './superheroes/state/superheroes.reducers'
     AngularFirestoreModule,
     // NgRx store (root)
     StoreModule.forRoot({ 
-      hero: superheroesReducer 
+      // hero: superheroesReducer 
     }),
   ],
   providers: [

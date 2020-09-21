@@ -17,6 +17,8 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Superheroes } from '../models/superheroes';
 import { Store, select } from '@ngrx/store';
 import { appendHero, deleteHero,  } from '../state/superheroes.actions';
+// import { AppState } from '../../app.state';
+import { State } from '../state/superheroes.state';
 
 
 
@@ -67,6 +69,9 @@ import { appendHero, deleteHero,  } from '../state/superheroes.actions';
 export class HeroesComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
   superheroes: Superheroes;
+  // ngrx
+  sups$ = this.store.pipe(select(state => state.superheroes));
+
   displayedColumns: string[] = ['select', 'name', 'modified', 'comics', 'details', 'actions' ];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -85,6 +90,8 @@ export class HeroesComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     public matDialog: MatDialog,
     public overlay: Overlay,
+    //
+    private store: Store<State>,
   ) {
 
   }
@@ -96,6 +103,9 @@ export class HeroesComponent implements OnInit {
     this.sort.direction = 'asc';
     this.sort.active = 'name';
     this.dataSource.sort = this.sort;
+
+
+    console.log('sups$', this.sups$);
   }
 
   getAllHeroes() {
