@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Hero } from '../models/superheroes';
+import { Hero, Superheroes } from '../models/superheroes';
 
 // Defined actions to express events.
 
@@ -14,9 +14,22 @@ export const appendHero = createAction('[Superheroes] Append', props<{ hero: Her
 export const deleteHero = createAction('[Superheroes] Delete', props<{ heroId: number }>());
 export const cancelHero = createAction('[Superheroes] Cancel');
 
-export const getAllHeroes = createAction(`[${superheroesActionLabel}] GetAllHeroes`,
-    props<{  }>()
+export const getAllHeroes = createAction(
+    `[${superheroesActionLabel}] GetAllHeroes`,
+    props<{ searchCriteria: any }>()
 );
+
+export const getAllHeroesSucceeded = createAction(
+    `[${superheroesActionLabel}] getAllHeroesSucceeded`,
+    props<{ superheroes: Superheroes }>()
+);
+
+export const getAllHeroesFailed = createAction(
+    `[${superheroesActionLabel}] getAllHeroesFailed`,
+    props<{ error: Error }>()
+);
+
+
 
 /*
 ts: 1600698050698

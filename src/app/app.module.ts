@@ -116,10 +116,11 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 //
 import { ResizableModule } from './resizable/resizable.module';
-//
+// ngrx
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
-import { superheroesReducer } from './superheroes/state/superheroes.reducers'
-
+import { EffectsModule } from '@ngrx/effects';
+import { metaReducers, reducers } from './app.state';
 
 @NgModule({
   declarations: [
@@ -204,9 +205,10 @@ import { superheroesReducer } from './superheroes/state/superheroes.reducers'
     AngularFireAuthModule,
     AngularFirestoreModule,
     // NgRx store (root)
-    StoreModule.forRoot({ 
-      // hero: superheroesReducer 
-    }),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot(),
+    // 
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [
     HttpErrorHandler,

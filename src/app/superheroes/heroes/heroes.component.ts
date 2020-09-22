@@ -16,9 +16,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 // ngrx
 import { Superheroes } from '../models/superheroes';
 import { Store, select } from '@ngrx/store';
-import { appendHero, deleteHero,  } from '../state/superheroes.actions';
-// import { AppState } from '../../app.state';
+import { appendHero, deleteHero, getAllHeroes, } from '../state/superheroes.actions';
 import { State } from '../state/superheroes.state';
+import { reducers } from 'src/app/app.state';
 
 
 
@@ -104,8 +104,6 @@ export class HeroesComponent implements OnInit {
     this.sort.active = 'name';
     this.dataSource.sort = this.sort;
 
-
-    console.log('sups$', this.sups$);
   }
 
   getAllHeroes() {
@@ -122,7 +120,8 @@ export class HeroesComponent implements OnInit {
       searchCriteria['nameStartsWith'] = this.searchKey.trim();
     }
 
-    // console.log('searchCriteria', searchCriteria);
+    console.log('searchCriteria', searchCriteria);
+    /*
     this.superheroesService.getAllHeroes(searchCriteria)
     .pipe(
       debounceTime(500),     // wait N ms after each keystroke before considering the term
@@ -140,6 +139,22 @@ export class HeroesComponent implements OnInit {
 
       }
     );
+    */
+
+
+    // ngrx 
+    this.store.dispatch(getAllHeroes({ searchCriteria: searchCriteria }));
+    // store state
+    // console.log('sups$', this.sups$);
+
+    this.sups$.subscribe(data => {
+      console.log('foo', data.superheroes.data);
+      //
+      if (data.superheroes.data) {
+        this.dataSource = new MatTableDataSource(data.superheroes.data.results);
+        this.totalRows = data.superheroes.data.total;
+      }
+    });
 
   }
 

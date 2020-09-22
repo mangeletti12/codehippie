@@ -15,7 +15,9 @@ import { ViewTeamComponent } from './teams/view-team.component';
 //
 import { FeatureName } from './state/superheroes.state';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { superheroesReducer } from './state/superheroes.reducers'
+import { SuperheroesEffects } from './state/superheroes.effects'
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { superheroesReducer } from './state/superheroes.reducers'
     FormsModule,
     // ngrx
     StoreModule.forFeature(FeatureName, superheroesReducer),
-    // EffectsModule.forFeature([ReviewsEffects]),
+    EffectsModule.forFeature([SuperheroesEffects]),
   ],
   exports: [
     RouterModule
