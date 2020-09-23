@@ -6,12 +6,12 @@ export const FeatureName = 'superheroes';
 
 export interface SuperheroesState {
   superheroes: Superheroes;
-  heroId: number;
+  // heroId: number;
 }
 
 export const initialState: SuperheroesState = {
     superheroes: new Superheroes(),
-    heroId: null,
+    // heroId: null,
 }
 
 export interface State extends AppState {

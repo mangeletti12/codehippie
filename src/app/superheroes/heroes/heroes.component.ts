@@ -141,11 +141,10 @@ export class HeroesComponent implements OnInit {
     );
     */
 
-
+    //----------
     // ngrx 
     this.store.dispatch(getAllHeroes({ searchCriteria: searchCriteria }));
-    // store state
-    // console.log('sups$', this.sups$);
+    // get state
 
     this.sups$.subscribe(data => {
       console.log('foo', data.superheroes.data);
