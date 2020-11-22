@@ -59,7 +59,9 @@ export class FootyService {
 
   }
 
-  getTeam() {
+
+  getTeam(teamId: number) {
+    // console.log('teamId', teamId);
     // reset
     httpOptions.headers = new HttpHeaders({
       // 'Content-Type': 'application/json',
@@ -69,7 +71,7 @@ export class FootyService {
 
     const base = '/v2/teams';
     // LFC = 64
-    const url = `${this._footyUrl}${base}/64`;
+    const url = `${this._footyUrl}${base}/${teamId}`;
 
     return this.http.get<any>(url, httpOptions)
     .pipe(
