@@ -39,6 +39,9 @@ import { FootyComponent } from './footy/footy/footy.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { DoorsComponent } from './doors/doors.component';
+import { ResolverDoorsService } from './resolver-doors.service';
+
 // export const PUBLIC_ROUTES: Routes = [
 
 // ];
@@ -160,6 +163,13 @@ export const SECURE_ROUTES: Routes = [
     resolve: { comp: ResolverService },
   },
   {
+    path: 'doors',
+    component: DoorsComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Doors' },
+    resolve: { resolved: ResolverDoorsService },
+  },
+  {
     path: 'cards',
     component: IScrollComponent,
     //canActivate: [AuthGuard],
@@ -278,7 +288,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

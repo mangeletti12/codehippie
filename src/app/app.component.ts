@@ -48,7 +48,9 @@ export class AppComponent implements OnInit, OnDestroy {
       router.events.subscribe((event: Event) => {
 
         if (event instanceof NavigationStart) {
-
+          // this allows us to stop/cancel the loading screen
+          // should they click another link
+          this._globalService.toggleDoors(null);
         }
 
         if (event instanceof NavigationEnd) {

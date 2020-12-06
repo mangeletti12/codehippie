@@ -30,16 +30,6 @@ export class ResolverService implements Resolve<any> {
     // console.log('Resolver route', route);
     // console.log('Resolver state', state.url);
 
-    // console.log('Doors', !this.isDoorOpen);
-    // if (!this.isDoorOpen) {
-    //   return new Observable((observer) => {
-    //     // stop route
-    //     observer.complete();
-    //     this._globalService.toggleDoors('closeDoors');
-
-    //   });
-    // }
-
     // move scrollbar to top
     window.scrollTo(0, 0);
 

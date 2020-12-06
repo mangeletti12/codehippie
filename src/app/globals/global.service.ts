@@ -15,7 +15,7 @@ export class GlobalService {
   private _changeRoute: BehaviorSubject<string> = new BehaviorSubject<string>('default');
   private _changeTransition: BehaviorSubject<string> = new BehaviorSubject<string>('fader');
   private _changeNavSide: BehaviorSubject<string> = new BehaviorSubject<string>('left');
-  private _loadingDoors = new BehaviorSubject<any>(null);
+  private _loadingDoors = new BehaviorSubject<boolean>(null);
   private _slideOut = new BehaviorSubject<string>('close');
 
   constructor(
@@ -94,12 +94,12 @@ export class GlobalService {
   }
 
   // Listener
-  get doorsTransition(): Observable<string> {
+  get doorsTransition(): Observable<boolean> {
     return this._loadingDoors.asObservable();
   }
   // Toggle Doors
-  toggleDoors(door) {
-    this._loadingDoors.next(door);
+  toggleDoors(action: boolean) {
+    this._loadingDoors.next(action);
   }
 
   // Listener

@@ -1,18 +1,60 @@
-.doorTop {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 9;
+#global-content.loading-doors {
+  overflow: hidden;
 }
 
-.door-open {
-  background: pink;
-  height: 50vh;
-  -webkit-animation: openDoor .5s ease-in; /* Safari 4+ */
-  -moz-animation:    openDoor .5s ease-in; /* Fx 5+ */
-  -o-animation:      openDoor .5s ease-in; /* Opera 12+ */
-  animation:         openDoor .5s ease-in; /* IE 10+, Fx 29+ */
+#loading-bay {
+  position: absolute;
+  top: -435px; // +65px for header -500px for height
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  background-color: slateblue;
+  overflow: hidden;
 }
+
+#loading-bay.loading-main {
+  -webkit-animation: ANIMATION-BLUR-IN .5s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-IN .5s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-IN .5s ease-in; /* IE 10+, Fx 29+ */
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes ANIMATION-BLUR-IN {
+  0%   { }
+  100% { top: calc(50% - 500px) }
+}
+@-moz-keyframes ANIMATION-BLUR-IN {
+  0%   { }
+  100% { top: calc(50% - 500px) }
+}
+@keyframes ANIMATION-BLUR-IN {
+  0%   { }
+  100% { top: calc(50% - 500px) }
+}
+/* done */
+#loading-bay.loading-main-out {
+  // background-color: seagreen;
+  -webkit-animation: ANIMATION-BLUR-OUT .5s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-OUT .5s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-OUT .5s ease-in; /* IE 10+, Fx 29+ */
+  animation-fill-mode: forwards;
+}
+/* animations */
+@-webkit-keyframes ANIMATION-BLUR-OUT {
+  0%   { top: calc(50% - 500px) }
+  100% { }
+}
+@-moz-keyframes ANIMATION-BLUR-OUT {
+  0%   { top: calc(50% - 500px) }
+  100% { }
+}
+@keyframes ANIMATION-BLUR-OUT {
+  0%   { top: calc(50% - 500px) }
+  100% { }
+}
+
 
 
 .theme-holder {
@@ -50,19 +92,3 @@
   height: 25px;
 }
 
-@-webkit-keyframes openDoor {
-  0%   { height: 0px; }
-  100% { height: 50vh; }
-}
-@-moz-keyframes openDoor {
-  0%   { height: 0px; }
-  100% { height: 50vh; }
-}
-@-o-keyframes openDoor {
-  0%   { height: 0px; }
-  100% { height: 50vh; }
-}
-@keyframes openDoor {
-  0%   { height: 0px; }
-  100% { height: 50vh; }
-}

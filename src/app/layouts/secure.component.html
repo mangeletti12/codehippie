@@ -21,8 +21,6 @@
     <app-notifications></app-notifications>
   </div>
 
-
-
 </div>
 
 <div id="flex-parent">
@@ -60,9 +58,11 @@
     <div id="nav-buffer" [class.small-nav]="isOpen"></div>
   </div>
 
-  <div id="global-content" [class.small-nav]="isOpen">
+  <div id="global-content" [class.small-nav]="isOpen" [class.loading-doors]="isDoorOpen" >
     <main-header></main-header>
-    <!-- <div class="doorTop" [class.door-open]="isDoorOpen" ></div> -->
+    <!-- loading doors -->
+    <div id="loading-bay" [class.loading-main]="isDoorOpen" [class.loading-main-out]="isDoorOpen === false" >
+    </div>
 
     <div class="global-routed" [@fader]="prepareRoute(outlet)" *ngIf="animationTrigger == 'fader'">
       <router-outlet #outlet="outlet"></router-outlet>
@@ -77,11 +77,5 @@
     </div>
 
   </div>
-
-  <!-- <div id="global-filler">
-    <div>fill
-
-    </div>
-  </div> -->
 
 </div>

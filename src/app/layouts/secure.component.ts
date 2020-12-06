@@ -4,6 +4,7 @@ import { fader, slideLeft } from '../route-animations';
 import { Subscription } from 'rxjs';
 import { HTTPStatus } from '../interceptors/loader.interceptor';
 import { RouterOutlet } from '@angular/router';
+import { delay } from 'rxjs/operators';
 
 export class SlideItem {
   id: number;
@@ -23,7 +24,7 @@ export class SlideItem {
 export class SecureComponent implements OnInit, OnDestroy {
   // nav bar open or small
   isOpen = true;
-  isDoorOpen = false;
+  isDoorOpen = null;
   animationTrigger = 'slideLeft'; // default slideLeft
   subscription: Subscription;
   isSlideOutOpen = false;
@@ -48,18 +49,15 @@ export class SecureComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     // Listen for Doors Open/Close
-    // this.subscription = this._globalService.doorsTransition.subscribe(
-    //   data => {
-
-    //     if (data === 'closeDoors') {
-    //       console.log('DOORS BITCH!', data);
-    //       this.isDoorOpen = true;
-    //     }
-    //     if (data === 'openDoors') {
-    //       console.log('DOORS BITCH!', data);
-    //       this.isDoorOpen = false;
-    //     }
-    // });
+    this.subscription = this._globalService.doorsTransition.pipe(
+      delay(0)
+    )    
+    .subscribe(
+      data => {
+        console.log('doors >', data);
+        this.isDoorOpen = data;
+      }
+    );
 
     // Listen for route trans change
     this.subscription = this._globalService.changeTransition.subscribe(

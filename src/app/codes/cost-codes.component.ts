@@ -29,8 +29,7 @@ export class CostCodesComponent implements OnInit {
       data => {
         this.costCodes = data.body.line_items;
         // console.log('- getParentCostCodes', this.costCodes);
-        // Open doors now!
-        this._globalService.toggleDoors('openDoors');
+
 
       },
       err => {

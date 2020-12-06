@@ -96,6 +96,11 @@
     "selected": true
   },
   {
+    "skill": "NgRx",
+    "level": 4,
+    "type": "frontend"
+  },
+  {
     "skill": "npm",
     "level": 3,
     "type": "app"

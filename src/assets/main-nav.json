@@ -101,7 +101,13 @@
                   "Text": "List",
                   "Url": "/list",
                   "Claim": "Nav_List"
+                },
+                {
+                  "Text": "Doors",
+                  "Url": "/doors",
+                  "Claim": "Nav_Doors"
                 }
+
               ]
             },
             {
