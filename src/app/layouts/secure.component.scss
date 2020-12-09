@@ -3,9 +3,9 @@
 }
 
 #loading-bay {
-  position: absolute;
+  position: fixed;
   top: -435px; // +65px for header -500px for height
-  width: 100%;
+  width: 1200px;
   height: 500px;
   display: flex;
   justify-content: center;
@@ -23,19 +23,18 @@
 }
 @-webkit-keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px) }
+  100% { top: calc(50% - 500px + 32.5px) } // 32.5 for header
 }
 @-moz-keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px) }
+  100% { top: calc(50% - 500px + 32.5px) }
 }
 @keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px) }
+  100% { top: calc(50% - 500px + 32.5px) }
 }
 /* done */
 #loading-bay.loading-main-out {
-  // background-color: seagreen;
   -webkit-animation: ANIMATION-BLUR-OUT .5s ease-in; /* Safari 4+ */
   -moz-animation:    ANIMATION-BLUR-OUT .5s ease-in; /* Fx 5+ */
   animation:         ANIMATION-BLUR-OUT .5s ease-in; /* IE 10+, Fx 29+ */
@@ -54,6 +53,86 @@
   0%   { top: calc(50% - 500px) }
   100% { }
 }
+
+/* bottom */
+#loading-bay-bottom {
+  position: fixed;
+  bottom: -575px; // -500px for height, 75px for half-circle
+  width: calc(100% - 285px);
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 201;
+  background-color: salmon;
+  // overflow: hidden;
+}
+#global-content.small-nav #loading-bay-bottom {
+  width: calc(100% - 115px);
+}
+
+#loading-bay-bottom.loading-main {
+  -webkit-animation: ANIMATION-BLUR-IN-2 .5s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-IN-2 .5s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-IN-2 .5s ease-in; /* IE 10+, Fx 29+ */
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes ANIMATION-BLUR-IN-2 {
+  0%   { }
+  100% { bottom: calc(50% - 500px - 32.5px) } // 32.5 for header
+}
+@-moz-keyframes ANIMATION-BLUR-IN-2 {
+  0%   { }
+  100% { bottom: calc(50% - 500px - 32.5px) }
+}
+@keyframes ANIMATION-BLUR-IN-2 {
+  0%   { }
+  100% { bottom: calc(50% - 500px - 32.5px) }
+}
+/* done */
+#loading-bay-bottom.loading-main-out {
+  -webkit-animation: ANIMATION-BLUR-OUT-2 .5s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-OUT-2 .5s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-OUT-2 .5s ease-in; /* IE 10+, Fx 29+ */
+  animation-fill-mode: forwards;
+}
+/* animations */
+@-webkit-keyframes ANIMATION-BLUR-OUT-2 {
+  0%   { bottom: calc(50% - 500px) }
+  100% { }
+}
+@-moz-keyframes ANIMATION-BLUR-OUT-2 {
+  0%   { bottom: calc(50% - 500px) }
+  100% { }
+}
+@keyframes ANIMATION-BLUR-OUT-2 {
+  0%   { bottom: calc(50% - 500px) }
+  100% { }
+}
+
+/* circle bottom */
+.partial-circle {
+  position: relative;
+  top: -287px;
+  height: 75px;
+  width: 200px;
+  overflow: hidden;
+}
+.partial-circle:before {
+  content: '';
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  top: 5px;
+  background: salmon;
+
+  box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, 0.75);
+}
+
 
 
 

@@ -228,6 +228,7 @@ body.dark-theme {
   flex: 1;
   order: 2;
   max-width: 1200px;
+  // background: skyblue;
 }
 
 #global-filler {
@@ -249,21 +250,20 @@ body.dark-theme {
   padding-top: 65px;
 }
 
-
-
 /*Header*/
 header {
   position: fixed;
-  right: 0;
+  // right: 0;
   z-index: 201;
   height: 65px;
-  width: calc(100% - 285px);
+  // width: calc(100% - 285px);
+  width: 100%;
   background: #f1f1f1;
   border-bottom: 1px solid #e8e8e8;
 }
-#global-content.small-nav header {
-  width: calc(100% - 115px);
-}
+// #global-content.small-nav header {
+//  width: calc(100% - 115px);
+// }
 
 .dark-theme header {
   background: #353535;

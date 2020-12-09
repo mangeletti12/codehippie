@@ -43,7 +43,7 @@
   },
   {
     "skill": "Git/GitHub",
-    "level": 3,
+    "level": 4,
     "type": "app",
     "selected": true
   },
@@ -100,11 +100,7 @@
     "level": 4,
     "type": "frontend"
   },
-  {
-    "skill": "npm",
-    "level": 3,
-    "type": "app"
-  },
+
   {
     "skill": "Postman",
     "level": 2,

@@ -63,6 +63,9 @@
     <!-- loading doors -->
     <div id="loading-bay" [class.loading-main]="isDoorOpen" [class.loading-main-out]="isDoorOpen === false" >
     </div>
+    <div id="loading-bay-bottom" [class.loading-main]="isDoorOpen" [class.loading-main-out]="isDoorOpen === false" >
+      <div class="partial-circle"></div>
+    </div>
 
     <div class="global-routed" [@fader]="prepareRoute(outlet)" *ngIf="animationTrigger == 'fader'">
       <router-outlet #outlet="outlet"></router-outlet>
