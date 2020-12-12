@@ -20,6 +20,7 @@ export const createSuperheroesReducer = createReducer(
       return {
         ...state,
         superheroes: action.superheroes,
+        total: action.total
       }
     }
   ),

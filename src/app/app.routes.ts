@@ -39,8 +39,6 @@ import { FootyComponent } from './footy/footy/footy.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { DoorsComponent } from './doors/doors.component';
-import { ResolverDoorsService } from './resolver-doors.service';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -161,13 +159,6 @@ export const SECURE_ROUTES: Routes = [
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'List' },
     resolve: { comp: ResolverService },
-  },
-  {
-    path: 'doors',
-    component: DoorsComponent,
-    //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Doors' },
-    resolve: { resolved: ResolverDoorsService },
   },
   {
     path: 'cards',

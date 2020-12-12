@@ -5,6 +5,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroComponent } from './heroes/hero.component';
 //
 import { ResolverService } from '../resolver.service';
+import { DoorsComponent } from './doors/doors.component';
+import { ResolverDoorsService } from '../resolver-doors.service';
 
 export const SuperheroesRoutes: Routes = [
 
@@ -22,6 +24,12 @@ export const SuperheroesRoutes: Routes = [
         component: TeamsComponent,
         data: { breadcrumb: 'Teams' },
         resolve: { comp: ResolverService },
+      },
+      {
+        path: 'doors',
+        component: DoorsComponent,
+        data: { breadcrumb: 'Doors' },
+        resolve: { resolved: ResolverDoorsService },
       },
       {
         path: 'heroes',

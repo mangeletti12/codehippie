@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SuperheroesService } from '../superheroes.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,14 +11,12 @@ import { ModalComponent } from '../../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
 // animation
 import { transition, animate, trigger, style } from '@angular/animations';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { tap, filter, take } from 'rxjs/operators';
 // ngrx
-import { Superheroes } from '../models/superheroes';
-import { Store, select } from '@ngrx/store';
-import { appendHero, deleteHero, getAllHeroes, } from '../state/superheroes.actions';
+import { Store } from '@ngrx/store';
 import { State } from '../state/superheroes.state';
-import { reducers } from 'src/app/app.state';
-
+import * as HeroActions  from '../state/superheroes.actions';
+import * as HeroSelectors from '../state/superheroes.selectors';
 
 
 @Component({
@@ -68,9 +65,9 @@ import { reducers } from 'src/app/app.state';
 })
 export class HeroesComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
-  superheroes: Superheroes;
+  // superheroes: Superheroes;
   // ngrx
-  sups$ = this.store.pipe(select(state => state.superheroes));
+  // sups$ = this.store.pipe(select(state => state.superheroes));
 
   displayedColumns: string[] = ['select', 'name', 'modified', 'comics', 'details', 'actions' ];
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -84,7 +81,6 @@ export class HeroesComponent implements OnInit {
   searchKey: string;
 
   constructor(
-    private superheroesService: SuperheroesService,
     private alertService: AlertService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -97,13 +93,12 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.getAllHeroes();
     //Defaults
     this.sort.direction = 'asc';
     this.sort.active = 'name';
     this.dataSource.sort = this.sort;
 
+    this.getAllHeroes();
   }
 
   getAllHeroes() {
@@ -119,9 +114,11 @@ export class HeroesComponent implements OnInit {
     if (this.searchKey !== null && this.searchKey !== undefined && this.searchKey !== '') {
       searchCriteria['nameStartsWith'] = this.searchKey.trim();
     }
-
     console.log('searchCriteria', searchCriteria);
-    /*
+
+
+    //----------
+    /* NON NgRx way
     this.superheroesService.getAllHeroes(searchCriteria)
     .pipe(
       debounceTime(500),     // wait N ms after each keystroke before considering the term
@@ -142,18 +139,38 @@ export class HeroesComponent implements OnInit {
     */
 
     //----------
-    // ngrx 
-    this.store.dispatch(getAllHeroes({ searchCriteria: searchCriteria }));
-    // get state
+    // NgRx 
+    // return an Observable stream from the store
+    this.store
+      // selecting the state using a feature selector
+      .select(HeroSelectors.getAllHeroes).pipe(
+        
+        // the .tap() operator allows for a side effect, at this
+        // point, I'm checking if the superhereos property exists on my
+        // Store slice of state
+        tap((data: any) => {
+          // if there are no items, dispatch an action to hit the backend
+          if (!data.superheroes.length) {
+            console.log('DB >', data);
+            this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
+          }
+        }),
+        // filter out data.superheroes, no length === empty!
+        filter((data: any) => data.superheroes.length),
+        // which if empty, we will never .take()
+        // this is the same as .first() which will only
+        // take 1 value from the Observable then complete
+        // which does our unsubscribing.
+        take(1),
+      ).subscribe(
+        data => {
+          console.log('-->', data);
+          this.dataSource = new MatTableDataSource(data.superheroes);
+          this.totalRows = data.total;
+        }
+      );
 
-    this.sups$.subscribe(data => {
-      console.log('foo', data.superheroes.data);
-      //
-      if (data.superheroes.data) {
-        this.dataSource = new MatTableDataSource(data.superheroes.data.results);
-        this.totalRows = data.superheroes.data.total;
-      }
-    });
+
 
   }
 

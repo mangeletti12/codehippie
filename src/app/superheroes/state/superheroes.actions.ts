@@ -21,22 +21,10 @@ export const getAllHeroes = createAction(
 
 export const getAllHeroesSucceeded = createAction(
     `[${superheroesActionLabel}] getAllHeroesSucceeded`,
-    props<{ superheroes: Superheroes }>()
+    props<{ superheroes: Superheroes[], total: number }>()
 );
 
 export const getAllHeroesFailed = createAction(
     `[${superheroesActionLabel}] getAllHeroesFailed`,
     props<{ error: Error }>()
 );
-
-
-
-/*
-ts: 1600698050698
-apikey: 9285e370921040c25d101324e5943c31
-hash: b5e3666240fc8f6fcca1d43c4c7a8773
-orderBy: name
-limit: 25
-offset: 0
-nameStartsWith: string
-*/

@@ -121,7 +121,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { metaReducers, reducers } from './app.state';
-import { DoorsComponent } from './doors/doors.component';
+
 
 @NgModule({
   declarations: [
@@ -180,7 +180,6 @@ import { DoorsComponent } from './doors/doors.component';
     JobComponent,
     ElysiumComponent,
     RxjsComponent,
-    DoorsComponent,
   
   ],
   imports: [

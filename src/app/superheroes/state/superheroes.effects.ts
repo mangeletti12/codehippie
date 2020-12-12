@@ -4,7 +4,6 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { SuperheroesService } from '../superheroes.service';
-// import { SuperheroesState } from './superheroes.state';
 import { getAllHeroes, getAllHeroesSucceeded, getAllHeroesFailed } from './superheroes.actions';
 
 @Injectable()
@@ -24,7 +23,12 @@ export class SuperheroesEffects {
             switchMap((action) =>
                 // call service API
                 this.superheroesService.getAllHeroes(action.searchCriteria).pipe(
-                    map(data => getAllHeroesSucceeded({ superheroes: data.body }) ),
+                    map(data => getAllHeroesSucceeded(
+                        { 
+                            superheroes: data.body.data.results,
+                            total: data.body.data.total                    
+                        }
+                        ) ),
                     catchError(error => of(getAllHeroesFailed({ error })) )
                 )
             )

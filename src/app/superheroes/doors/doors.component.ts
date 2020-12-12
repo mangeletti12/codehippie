@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GlobalService } from '../globals/global.service';
+import { GlobalService } from '../../globals/global.service';
 import { Subscription } from 'rxjs';
 
 @Component({

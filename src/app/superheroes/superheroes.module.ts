@@ -11,7 +11,7 @@ import { SuperheroesComponent } from './superheroes.component';
 import { HeroComponent } from './heroes/hero.component';
 import { AddToTeamComponent } from './teams/add-to-team.component';
 import { ViewTeamComponent } from './teams/view-team.component';
-
+import { DoorsComponent } from './doors/doors.component';
 //
 import { FeatureName } from './state/superheroes.state';
 import { StoreModule } from '@ngrx/store';
@@ -28,6 +28,7 @@ import { SuperheroesEffects } from './state/superheroes.effects'
     HeroComponent,
     AddToTeamComponent,
     ViewTeamComponent,
+    DoorsComponent,
   ],
   imports: [
     CommonModule,
