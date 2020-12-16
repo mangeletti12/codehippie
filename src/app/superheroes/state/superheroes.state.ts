@@ -1,6 +1,6 @@
 import { AppState } from '../../app.state';
 
-import { Superheroes } from '../models/superheroes';
+import { Hero } from '../models/superheroes';
 import { createFeatureSelector } from '@ngrx/store';
 
 export const FeatureName = 'superheroes';
@@ -11,15 +11,19 @@ export const selectHeroState = createFeatureSelector<State, SuperheroesState>(
 );
 
 export interface SuperheroesState {
-  superheroes: Superheroes[];
+  superheroes: Hero[];
   total: number;
-  loaded: boolean;
+  loading: boolean;
+  allLoaded: boolean;
+  error: Error;
 }
 
 export const initialState: SuperheroesState = {
-  superheroes: new Array<Superheroes>(),
-  total: null,
-  loaded: false,
+  superheroes: new Array<Hero>(),
+  total: 0,
+  loading: false,
+  allLoaded: false,
+  error: null,
 }
 
 export interface State extends AppState {

@@ -38,7 +38,7 @@
       <button mat-menu-item>Text/SMS</button> -->
     </mat-menu>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="pageSize" [length]="totalRows" (page)="pageChanged($event)"></mat-paginator>
+    <mat-paginator [hidePageSize]="true" [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="pageSize" [length]="totalRows" (page)="pageChanged($event)"></mat-paginator>
 
   </mat-toolbar-row>
 </mat-toolbar>

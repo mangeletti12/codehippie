@@ -98,9 +98,9 @@
   {
     "skill": "NgRx",
     "level": 4,
-    "type": "frontend"
+    "type": "frontend",
+    "selected": true
   },
-
   {
     "skill": "Postman",
     "level": 2,

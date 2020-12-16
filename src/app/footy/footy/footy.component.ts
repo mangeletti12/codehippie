@@ -62,9 +62,6 @@ export class FootyComponent implements OnInit {
     // lfc = 64
     const lfc = 64;
     this.getTeam(lfc);
-    //
-    
-
   }
 
   // Listen for window resize
@@ -77,6 +74,7 @@ export class FootyComponent implements OnInit {
   setCarousel() {
     // Set carousel width and slides displayed count
     this.carouselWidth = (this.carousel.nativeElement as HTMLElement).offsetWidth;
+    console.log('carouselWidth', this.carouselWidth);
     this.numberOfSlidesDisplayed = Math.floor(this.carouselWidth/this.slideItemWidth) - 1; //-1 for btn spacing
     // season almost over
     // not enough slides so fix
@@ -174,11 +172,8 @@ export class FootyComponent implements OnInit {
         if (this.uniqueTeamsToLookup.length !== 0) {
           this.getOtherTeams();
         }
-        else {
-          console.log('>>>>>>>> setCarousel');
-          this.setCarousel();
-        }
-
+        
+        this.setCarousel();
         this.totalSlides = this.lfcMatches.length;
 
       }, error => {

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AddToTeamComponent } from '../teams/add-to-team.component';
@@ -11,12 +11,13 @@ import { ModalComponent } from '../../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
 // animation
 import { transition, animate, trigger, style } from '@angular/animations';
-import { tap, filter, take } from 'rxjs/operators';
+import { tap, filter, take, distinctUntilChanged, map } from 'rxjs/operators';
 // ngrx
 import { Store } from '@ngrx/store';
 import { State } from '../state/superheroes.state';
 import * as HeroActions  from '../state/superheroes.actions';
 import * as HeroSelectors from '../state/superheroes.selectors';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -63,15 +64,15 @@ import * as HeroSelectors from '../state/superheroes.selectors';
 
   ]
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, OnDestroy {
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  
+  displayedColumns: string[] = ['select', 'name', 'modified', 'comics', 'details', 'actions' ];
   dataSource = new MatTableDataSource<any>();
   // superheroes: Superheroes;
   // ngrx
   // sups$ = this.store.pipe(select(state => state.superheroes));
-
-  displayedColumns: string[] = ['select', 'name', 'modified', 'comics', 'details', 'actions' ];
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   sortField = 'name';
   sortOrder = 'asc';
   pageNumber = 0;
@@ -79,6 +80,8 @@ export class HeroesComponent implements OnInit {
   totalRows = 0;
   bulkCheckbox = false;
   searchKey: string;
+  isLoading: boolean;
+  private subs: Subscription; 
 
   constructor(
     private alertService: AlertService,
@@ -94,11 +97,58 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit(): void {
     //Defaults
-    this.sort.direction = 'asc';
     this.sort.active = 'name';
+    this.sort.direction = 'asc';
     this.dataSource.sort = this.sort;
 
-    this.getAllHeroes();
+    //------
+    // Set selectors (streams)
+
+    // isLoading
+    this.subs = this.store.select(HeroSelectors.selectHeroesLoading).pipe(
+      ).subscribe(
+        data => {
+          console.log('selectHeroesLoading', data);
+          this.isLoading = data;
+        }
+      );
+    // totals
+    this.subs = this.store.select(HeroSelectors.selectHeroesTotal).pipe(
+      ).subscribe(
+        data => {
+          console.log('selectHeroesTotal', data);
+          this.totalRows = data;
+        }
+      );
+    // get all
+    this.subs = this.store.select(HeroSelectors.selectAllHeroes).pipe(
+      distinctUntilChanged(),
+      ).subscribe(
+        data => {
+          console.log('selectAllHeroes', data);
+          if (data.length) {
+            this.dataSource = new MatTableDataSource(data);
+          }
+          else {
+            //
+            this.getAllHeroes();
+          }
+
+        }
+      );
+    // error
+    this.subs = this.store.select(HeroSelectors.selectHeroesError).pipe(
+      ).subscribe(
+        data => {
+          console.log('selectHeroesError', data);
+        }
+      );
+
+ 
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
   getAllHeroes() {
@@ -108,7 +158,6 @@ export class HeroesComponent implements OnInit {
       orderBy: orderBy,
       limit: this.pageSize,
       offset: (this.pageNumber * this.pageSize),
-      // offset: (this.pageNumber - 1) * this.pageSize + 1,
     };
 
     if (this.searchKey !== null && this.searchKey !== undefined && this.searchKey !== '') {
@@ -116,41 +165,26 @@ export class HeroesComponent implements OnInit {
     }
     console.log('searchCriteria', searchCriteria);
 
+    console.log('DB ----->', this.pageNumber);
+    this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
 
-    //----------
-    /* NON NgRx way
-    this.superheroesService.getAllHeroes(searchCriteria)
-    .pipe(
-      debounceTime(500),     // wait N ms after each keystroke before considering the term
-      distinctUntilChanged() // ignore if next search term is same as previous
-    )
-    .subscribe(
-      data => {
-        //
-        this.superheroes = data.body;
-        console.log('superheroes', this.superheroes);
-        this.dataSource = new MatTableDataSource(this.superheroes.data.results);
-        this.totalRows = this.superheroes.data.total;
-      },
-      error => {
-
-      }
-    );
-    */
-
+    /*
     //----------
     // NgRx 
     // return an Observable stream from the store
     this.store
       // selecting the state using a feature selector
-      .select(HeroSelectors.getAllHeroes).pipe(
+      .select(HeroSelectors.selectHeroesDetails).pipe(
         
         // the .tap() operator allows for a side effect, at this
         // point, I'm checking if the superhereos property exists on my
         // Store slice of state
         tap((data: any) => {
+          console.log('tap >', data);
+
           // if there are no items, dispatch an action to hit the backend
-          if (!data.superheroes.length) {
+          // if (!data.superheroes.length) {
+          if (!data.loading) {
             console.log('DB >', data);
             this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
           }
@@ -169,8 +203,7 @@ export class HeroesComponent implements OnInit {
           this.totalRows = data.total;
         }
       );
-
-
+    */
 
   }
 
@@ -208,8 +241,6 @@ export class HeroesComponent implements OnInit {
   // Pagination
   // https://material.angular.io/components/paginator/overview
   pageChanged(e) {
-    //{previousPageIndex: 2, pageIndex: 1, pageSize: 2, length: 10}
-    //
     this.pageNumber = e.pageIndex;
     this.pageSize = e.pageSize;
     // console.log(this.pageNumber + '---' + this.pageSize);
@@ -249,8 +280,17 @@ export class HeroesComponent implements OnInit {
   onEdit(row, e){
     e.stopPropagation();
 
-    // console.log('edit', row);
-    this.router.navigate([row.id], { relativeTo: this.activatedRoute });
+    console.log('edit', row.id);
+    // get single hero
+    this.subs = this.store.select(HeroSelectors.selectHero(row.id)).pipe(
+      // map((func) => func(row.id))
+      ).subscribe(
+        data => {
+          console.log('selectHero', data);
+        }
+      );
+
+    // this.router.navigate([row.id], { relativeTo: this.activatedRoute });
   }
 
   //Delete

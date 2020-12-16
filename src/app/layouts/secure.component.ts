@@ -54,7 +54,7 @@ export class SecureComponent implements OnInit, OnDestroy {
     )    
     .subscribe(
       data => {
-        console.log('doors >', data);
+        // console.log('doors >', data);
         this.isDoorOpen = data;
       }
     );

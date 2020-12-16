@@ -20,16 +20,16 @@ export class SuperheroesEffects {
     loadHeroes$ = createEffect(() =>
         this.actions$.pipe(
             ofType(getAllHeroes),
-            switchMap((action) =>
+            switchMap((params) =>
                 // call service API
-                this.superheroesService.getAllHeroes(action.searchCriteria).pipe(
+                this.superheroesService.getAllHeroes(params.searchCriteria).pipe(
                     map(data => getAllHeroesSucceeded(
                         { 
                             superheroes: data.body.data.results,
                             total: data.body.data.total                    
                         }
                         ) ),
-                    catchError(error => of(getAllHeroesFailed({ error })) )
+                    catchError(error => of(getAllHeroesFailed(error)))
                 )
             )
         )
