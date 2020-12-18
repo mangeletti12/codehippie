@@ -19,7 +19,8 @@ export const createSuperheroesReducer = createReducer(
     getAllHeroes, (state, action) => {
       return {
         ...state,
-        loading: true
+        loading: true,
+        page: action.searchCriteria.page,
       }
     }
   ),
@@ -27,7 +28,13 @@ export const createSuperheroesReducer = createReducer(
     getAllHeroesSucceeded, (state, action) => {
       return {
         ...state,
-        superheroes: action.superheroes,
+        superheroes: [...state.superheroes, action.superheroes ],
+        // superheroes: state.superheroes.map(h => {
+        //   return {
+        //     ...h,
+        //     page: 'mka'
+        //   }
+        // }),
         total: action.total,
         loading: false
       }

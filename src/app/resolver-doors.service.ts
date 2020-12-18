@@ -71,7 +71,7 @@ export class ResolverDoorsService implements Resolve<any> {
     // return an Observable stream from the store
     return this.store
       // selecting the state using a feature selector
-      .select(HeroSelectors.selectAllHeroes).pipe(
+      .select(HeroSelectors.selectAllHeroes(0)).pipe(
         
         // the .tap() operator allows for a side effect, at this
         // point, I'm checking if the superhereos property exists on my

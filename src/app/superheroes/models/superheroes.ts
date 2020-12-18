@@ -29,6 +29,11 @@ export class Hero {
     comics: number;
 }
 
+export class HeroResponse {
+    data: any[];
+    page: number;
+}
+
 // export class SuperheroesResults {
 
 // }

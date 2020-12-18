@@ -87,8 +87,10 @@ export class SuperheroesService {
     let httpParams = new HttpParams();
 
     for (var key in searchCriteria) {
-      var value = searchCriteria[key];
-      httpParams = httpParams.append(key, value);
+      if (key !== 'page') {
+        var value = searchCriteria[key];
+        httpParams = httpParams.append(key, value);
+      }
     }
     httpOptions.params = httpParams;
 

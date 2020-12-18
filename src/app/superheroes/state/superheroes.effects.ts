@@ -6,6 +6,8 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { SuperheroesService } from '../superheroes.service';
 import { getAllHeroes, getAllHeroesSucceeded, getAllHeroesFailed } from './superheroes.actions';
 
+import { Hero, HeroResponse } from '../models/superheroes';
+
 @Injectable()
 export class SuperheroesEffects {
 

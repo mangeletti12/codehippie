@@ -120,22 +120,6 @@ export class HeroesComponent implements OnInit, OnDestroy {
           this.totalRows = data;
         }
       );
-    // get all
-    this.subs = this.store.select(HeroSelectors.selectAllHeroes).pipe(
-      distinctUntilChanged(),
-      ).subscribe(
-        data => {
-          console.log('selectAllHeroes', data);
-          if (data.length) {
-            this.dataSource = new MatTableDataSource(data);
-          }
-          else {
-            //
-            this.getAllHeroes();
-          }
-
-        }
-      );
     // error
     this.subs = this.store.select(HeroSelectors.selectHeroesError).pipe(
       ).subscribe(
@@ -144,7 +128,7 @@ export class HeroesComponent implements OnInit, OnDestroy {
         }
       );
 
- 
+      this.getAllHeroes();
   }
 
   ngOnDestroy(): void {
@@ -158,15 +142,32 @@ export class HeroesComponent implements OnInit, OnDestroy {
       orderBy: orderBy,
       limit: this.pageSize,
       offset: (this.pageNumber * this.pageSize),
+      page: this.pageNumber 
     };
 
     if (this.searchKey !== null && this.searchKey !== undefined && this.searchKey !== '') {
       searchCriteria['nameStartsWith'] = this.searchKey.trim();
     }
     console.log('searchCriteria', searchCriteria);
+  
+    // get all
+    this.subs = this.store.select(HeroSelectors.selectAllHeroes(this.pageNumber)).pipe(
+      distinctUntilChanged(),
+      ).subscribe(
+        data => {
+          console.log('selectAllHeroes', data);
+          if (data !== undefined ) {
+            this.dataSource = new MatTableDataSource(data);
+          }
+          else {
+            //
+            console.log('DB ----->', this.pageNumber);
+            this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
+          }
 
-    console.log('DB ----->', this.pageNumber);
-    this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
+        }
+      );
+    
 
     /*
     //----------
@@ -282,13 +283,13 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
     console.log('edit', row.id);
     // get single hero
-    this.subs = this.store.select(HeroSelectors.selectHero(row.id)).pipe(
-      // map((func) => func(row.id))
-      ).subscribe(
-        data => {
-          console.log('selectHero', data);
-        }
-      );
+    // this.subs = this.store.select(HeroSelectors.selectHero(row.id)).pipe(
+    //   // map((func) => func(row.id))
+    //   ).subscribe(
+    //     data => {
+    //       console.log('selectHero', data);
+    //     }
+    //   );
 
     // this.router.navigate([row.id], { relativeTo: this.activatedRoute });
   }

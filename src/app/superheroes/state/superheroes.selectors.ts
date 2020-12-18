@@ -7,15 +7,20 @@ export const selectHeroesDetails = createSelector(
     (state): any => state
 );
 
-export const selectAllHeroes = createSelector(
+export const selectAllHeroes = (index: number) => createSelector(
     selectHeroState,
-    (state): Hero[] => state.superheroes
+    (state): any => state.superheroes[index]
 );
 
-export const selectHero = (id: number) => createSelector(
-    selectHeroState,
-    (state): any => state.superheroes.filter(h => h.id === id)
-);
+// export const selectAllHeroes = createSelector(
+//     selectHeroState,
+//     (state): any => state.superheroes
+// );
+
+// export const selectHero = (id: number) => createSelector(
+//     selectHeroState,
+//     (state): any => state.superheroes.filter(h => h.id === id)
+// );
 
 export const selectHeroesLoading = createSelector(
     selectHeroState,

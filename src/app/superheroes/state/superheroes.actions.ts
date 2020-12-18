@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { Hero } from '../models/superheroes';
+import { Hero, HeroResponse } from '../models/superheroes';
 
 // Defined actions to express events.
 
@@ -21,7 +21,7 @@ export const getAllHeroes = createAction(
 
 export const getAllHeroesSucceeded = createAction(
     `[${superheroesActionLabel}] getAllHeroesSucceeded`,
-    props<{ superheroes: Hero[], total: number }>()
+    props<{ superheroes: HeroResponse, total: number }>()
 );
 
 export const getAllHeroesFailed = createAction(

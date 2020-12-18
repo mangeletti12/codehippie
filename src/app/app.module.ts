@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -8,27 +9,27 @@ import { AppRoutingModule } from './app.routes';
 import { DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayModule } from '@angular/cdk/overlay';
-//All materials in module
+// All materials in module
 import { MaterialModule } from "./material/material.module";
 import { ModalComponent } from './modal/modal.component';
 
-//https://material.angular.io/cdk/drag-drop/overview
+// https://material.angular.io/cdk/drag-drop/overview
 import { DragDropModule } from '@angular/cdk/drag-drop';
-//Scroll for infinity and beyond
+// Scroll for infinity and beyond
 import { ScrollingModule } from '@angular/cdk/scrolling';
 //////
-//https://www.npmjs.com/package/ngx-scrollbar
+// https://www.npmjs.com/package/ngx-scrollbar
 import { NgScrollbarModule } from 'ngx-scrollbar';
-//https://www.npmjs.com/package/ngx-infinite-scroll
+// https://www.npmjs.com/package/ngx-infinite-scroll
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-//Main app
+// Main app
 import { AppComponent } from './app.component';
-//Security and interceptors
+// Security and interceptors
 import { AuthGuard } from './security/auth.guard';
 import { httpInterceptorProviders } from './interceptors/index';
 import { HTTPStatus } from './interceptors/loader.interceptor';
-//Claims (may not be used)
+// Claims (may not be used)
 import { Claims } from './constants/claims';
 //
 import { GlobalService } from './globals/global.service';
@@ -107,8 +108,6 @@ import { TddComponent } from './practice/tdd.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './dashboard/contacts.component';
 import { AlertsComponent } from './dashboard/alerts.component';
-import { CounterComponent } from './widgets/counter.component';
-import { CountUpModule } from 'ngx-countup';
 import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
 import { JobComponent } from './resume/job.component';
@@ -116,6 +115,9 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 //
 import { ResizableModule } from './resizable/resizable.module';
+import { CounterComponent } from './widgets/counter.component';
+import { CountUpModule } from 'ngx-countup';
+import { CircleProgressModule } from './widgets/circle-progress/circle-progress.module';
 // ngrx
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
@@ -200,6 +202,7 @@ import { metaReducers, reducers } from './app.state';
     // NgwWowModule,
     CountUpModule,
     ResizableModule,
+    CircleProgressModule,
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),
@@ -208,7 +211,6 @@ import { metaReducers, reducers } from './app.state';
     // NgRx store (root)
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(),
-    // 
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -226,6 +228,7 @@ import { metaReducers, reducers } from './app.state';
     Claims,
   ],
   bootstrap: [AppComponent],
-  entryComponents:[ModalComponent]
+  entryComponents:[ModalComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
