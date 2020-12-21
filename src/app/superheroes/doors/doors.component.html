@@ -1,1 +1,139 @@
-<p>doors works!</p>
+<div class="list-holder" cdkDropListGroup>
+
+  <!-- one -->
+  <div id="list-one" class="list-wrapper">
+
+    <div class="list-header">
+      <h3>One</h3>
+    </div>
+
+    <div class="scroller">
+
+      <div class="list"
+        cdkDropList
+        #listOne="cdkDropList"
+        [cdkDropListData]="listSource"
+        [cdkDropListConnectedTo]="[listTwo]"
+        (cdkDropListDropped)="onDrop($event)"
+        >
+      
+        <div class="list-cards">
+
+          <mat-card
+            *ngFor="let item of listSource; let i = index; let last = last"
+            class="list-card"
+            [class.selectedCard]="item.selected"
+            (click)="selectItem(item)"
+            cdkDrag
+            @items
+            >
+            <div class="custom-placeholder" *cdkDragPlaceholder></div>
+
+            <div class="card-head">
+              <h3 class="card-title theme-alt-font1">{{ item.name }}</h3>
+              <span class="iNumber">{{ i + 1 }}</span>
+            </div>
+      
+            <div class="card-content">
+              Modified: {{ item.modified | date }}<br />
+              Comics: {{ item.comics.available }}<br />
+              Events: {{ item.events.available }}<br />
+              Series: {{ item.series.available }}<br />
+              Stories: {{ item.stories.available }}<br />
+            </div>
+      
+            <div class="card-actions">
+              <button mat-icon-button matTooltip="details" #Details="matTooltip" (click)="Details.toggle()" ><i class="far fa-address-card"></i></button>
+              <button mat-icon-button matTooltip="delete" #Delete="matTooltip" (click)="Delete.toggle()" (click)="remove(i, $event)"><i class="far fa-trash-alt"></i></button>
+              <!-- <button mat-icon-button title="edit" ><mat-icon>launch</mat-icon></button> -->
+            </div>
+          </mat-card>
+
+          <!-- this is an anchor for (infinite-scroll) -->
+          <div class="list-card infinite-scroll-loading" #anchor>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="list-footer">
+      {{ itemsFetchedCount }} of {{ itemsTotalCount }}
+    </div>
+
+  </div>
+
+
+  <!-- two -->
+  <div id="list-two" class="list-wrapper">
+
+    <div class="list-header">
+      <h3>Two</h3>
+    </div>
+
+    <div class="scroller">
+
+      <div class="list"
+        cdkDropList
+        #listTwo="cdkDropList"
+        [cdkDropListData]="listSource2"
+        [cdkDropListConnectedTo]="[listOne]"
+        (cdkDropListDropped)="onDrop($event)"
+        >
+
+        <div class="list-cards">
+
+          <mat-card
+            *ngFor="let item of listSource2; let i = index; let last = last"
+            class="list-card"
+            [class.selectedCard]="item.selected"
+            (click)="selectItem(item)"
+            cdkDrag
+            @items
+            >
+            <div class="custom-placeholder" *cdkDragPlaceholder>
+              THIS IS PLACE
+            </div>
+
+            <div class="card-head">
+              <h3 class="card-title theme-alt-font1">{{ item.name }}</h3>
+              <span class="iNumber">{{ i + 1 }}</span>
+            </div>
+      
+            <div class="card-content">
+              Modified: {{ item.modified | date }}<br />
+              Comics: {{ item.comics.available }}<br />
+              Events: {{ item.events.available }}<br />
+              Series: {{ item.series.available }}<br />
+              Stories: {{ item.stories.available }}<br />
+            </div>
+      
+            <div class="card-actions">
+              <button mat-icon-button matTooltip="details" #Details="matTooltip" (click)="Details.toggle()" ><i class="far fa-address-card"></i></button>
+              <button mat-icon-button matTooltip="delete" #Delete="matTooltip" (click)="Delete.toggle()" (click)="remove(i, $event)"><i class="far fa-trash-alt"></i></button>
+              <!-- <button mat-icon-button title="edit" ><mat-icon>launch</mat-icon></button> -->
+            </div>
+          </mat-card>
+
+          <!-- this is an anchor for (infinite-scroll) -->
+          <div class="list-card infinite-scroll-loading" #anchor>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="list-footer">
+      <!-- {{ itemsFetchedCount }} of {{ itemsTotalCount }} -->
+      items
+    </div>
+
+  </div>
+
+</div>

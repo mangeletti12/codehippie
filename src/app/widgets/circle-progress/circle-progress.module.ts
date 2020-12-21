@@ -22,7 +22,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       showSubtitle: false,
       showUnits: false,
       titleFontSize: "12",
-
+      lazy: false
     })
   ],
   

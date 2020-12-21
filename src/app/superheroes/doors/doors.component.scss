@@ -1,0 +1,102 @@
+.list-holder {
+    display: flex;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.185);
+    padding-right: 2px;
+
+    border-radius: 4px;
+  
+    height: -moz-calc(100vh - 75px);
+    height: -webkit-calc(100vh - 75px);
+    height: calc(100vh - 75px);
+  }
+
+.list { height: 100vh; } // for the drop zone
+
+.scroller {
+    overflow-y: scroll;
+}
+
+.list-card {
+    margin: 5px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.iNumber { position: absolute; top: 0; right: 5px; font-size: 10px; }
+
+.card-title {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 3px;
+}
+
+.list-wrapper .mat-card-content {
+    margin-bottom: 4px !important;
+}
+
+.list-wrapper .mat-card-actions {
+    padding: 0 !important;
+}
+
+
+// .list-holder #list-one mat-card, .list-holder #list-two mat-card{
+//     // background-color: rgba(6, 165, 6, 0.8);
+//     -webkit-animation: FADEOUT 1s ease-out; /* Safari 4+ */
+//     -moz-animation:    FADEOUT 1s ease-out; /* Fx 5+ */
+//     animation:         FADEOUT 1s ease-out; /* IE 10+, Fx 29+ */
+//     animation-fill-mode: forwards;
+// }
+// /* ANIMATIONS */
+// @-webkit-keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+// @-moz-keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+// @keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+
+//
+/* CDK Drag */
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+//   .example-box:last-child {
+//     border: none;
+//   }
+
+.list.cdk-drop-list-dragging .list-card:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.custom-placeholder {
+    background: pink !important;
+    border: dotted 3px red;
+    height: 200px;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

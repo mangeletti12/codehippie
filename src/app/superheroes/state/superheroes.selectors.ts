@@ -1,20 +1,29 @@
 import { createSelector } from '@ngrx/store';
 import { selectHeroState } from './superheroes.state';
 import { Superheroes, Hero } from '../models/superheroes';
+import { state } from '@angular/animations';
 
 export const selectHeroesDetails = createSelector(
     selectHeroState,
     (state): any => state
 );
 
-export const selectAllHeroes = (index: number) => createSelector(
+export const selectAllHeroes = createSelector(
+    selectHeroState,
+    (state): any => state.superheroes
+);
+
+export const selectHeroes = (index: number) => createSelector(
     selectHeroState,
     (state): any => state.superheroes[index]
 );
 
-// export const selectAllHeroes = createSelector(
-//     selectHeroState,
-//     (state): any => state.superheroes
+// export const selectHeroes = (index: number) => createSelector(
+//     selectAllHeroes,
+//     selectHeroesTotal,
+//     (hereos: any, totals: any) => {
+//         return { heroes: hereos[index], total: totals }
+//     }
 // );
 
 // export const selectHero = (id: number) => createSelector(

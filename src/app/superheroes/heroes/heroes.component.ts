@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort, Sort } from '@angular/material/sort';
+import { MatSort, SortDirection } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AddToTeamComponent } from '../teams/add-to-team.component';
@@ -18,6 +18,7 @@ import { State } from '../state/superheroes.state';
 import * as HeroActions  from '../state/superheroes.actions';
 import * as HeroSelectors from '../state/superheroes.selectors';
 import { Subscription } from 'rxjs';
+import { SuperheroesService } from '../superheroes.service';
 
 
 @Component({
@@ -74,14 +75,20 @@ export class HeroesComponent implements OnInit, OnDestroy {
   // ngrx
   // sups$ = this.store.pipe(select(state => state.superheroes));
   sortField = 'name';
-  sortOrder = 'asc';
+  sortOrder: SortDirection = 'asc';
+  //Defaults
+  private defaultSortField = this.sortField;
+  private defaultSortOrder = this.sortOrder;
   pageNumber = 0;
   pageSize = 25;
   totalRows = 0;
   bulkCheckbox = false;
   searchKey: string;
   isLoading: boolean;
-  private subs: Subscription; 
+  allHeroes = 0;
+  filteredHeroes = 0;
+  private subs: Subscription;
+  public isSortOrFilter = false;
 
   constructor(
     private alertService: AlertService,
@@ -89,16 +96,16 @@ export class HeroesComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     public matDialog: MatDialog,
     public overlay: Overlay,
-    //
     private store: Store<State>,
+    private heroService: SuperheroesService,
   ) {
 
   }
 
   ngOnInit(): void {
-    //Defaults
-    this.sort.active = 'name';
-    this.sort.direction = 'asc';
+    // Set sort defaults
+    this.sort.active = this.defaultSortField;
+    this.sort.direction = this.defaultSortOrder;
     this.dataSource.sort = this.sort;
 
     //------
@@ -117,14 +124,14 @@ export class HeroesComponent implements OnInit, OnDestroy {
       ).subscribe(
         data => {
           console.log('selectHeroesTotal', data);
-          this.totalRows = data;
+          this.allHeroes = data;
         }
       );
     // error
     this.subs = this.store.select(HeroSelectors.selectHeroesError).pipe(
       ).subscribe(
         data => {
-          console.log('selectHeroesError', data);
+          // console.log('selectHeroesError', data);
         }
       );
 
@@ -135,6 +142,7 @@ export class HeroesComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
+  // Get Heroes
   getAllHeroes() {
     const orderBy = (this.sortOrder === 'asc') ? this.sortField : '-' + this.sortField;
 
@@ -148,26 +156,45 @@ export class HeroesComponent implements OnInit, OnDestroy {
     if (this.searchKey !== null && this.searchKey !== undefined && this.searchKey !== '') {
       searchCriteria['nameStartsWith'] = this.searchKey.trim();
     }
-    console.log('searchCriteria', searchCriteria);
+    // console.log('searchCriteria', searchCriteria);
   
-    // get all
-    this.subs = this.store.select(HeroSelectors.selectAllHeroes(this.pageNumber)).pipe(
-      distinctUntilChanged(),
+    if (!this.isSortOrFilter) {
+      // NgRx
+      //-----
+      this.subs = this.store.select(HeroSelectors.selectHeroes(this.pageNumber)).pipe(
+        distinctUntilChanged(),
+        ).subscribe(
+          data => {
+            console.log('->', data);
+            if (data) {
+              this.dataSource = new MatTableDataSource(data);
+              this.totalRows = this.allHeroes;
+            }
+            else {
+              //
+              console.log('DB ----->', this.pageNumber);
+              this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
+            }
+
+          }
+        );
+        
+    }
+    else {
+      // call service for search, not NgRx
+      //-----
+      this.heroService.getAllHeroes(searchCriteria).pipe(
+        take(1),
       ).subscribe(
         data => {
-          console.log('selectAllHeroes', data);
-          if (data !== undefined ) {
-            this.dataSource = new MatTableDataSource(data);
-          }
-          else {
-            //
-            console.log('DB ----->', this.pageNumber);
-            this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
-          }
-
+          console.log('service', data.body.data);
+          this.dataSource.data = data.body.data.results;
+          this.filteredHeroes = data.body.data.total;
+          this.totalRows = this.filteredHeroes;
         }
       );
-    
+
+    }
 
     /*
     //----------
@@ -208,35 +235,54 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   }
 
+  // Search
   search(e) {
+    if (e.key === "Enter") {
 
-    //if (e.key === "Enter") {
-      // console.log('SEARCH', e);
-      //
-      this.pageNumber = 0;
-      this.paginator.pageIndex = 0;
-      this.dataSource = null;
-      this.getAllHeroes();
-    //}
+      if (!this.searchKey) {
+        // console.log('empty');
+        this.clearSearch();
+      }
+      else {
+        this.pageNumber = 0;
+        this.paginator.pageIndex = 0;
+        this.dataSource.data = null;
+        this.isSortOrFilter = true;
+        this.getAllHeroes();
+      }
 
+    }
   }
 
+  /// Clear search
   clearSearch() {
     this.searchKey = '';
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    this.dataSource = null;
+    this.dataSource.data = null; // dataSource.data
+    this.isSortOrFilter = false;
     this.getAllHeroes();
   }
 
   // Sort
   sortChanged(e) {
     // console.log(e);
-    this.dataSource = null;
-    //
-    this.sortOrder = e.direction;
-    this.sortField = e.active;
-    this.getAllHeroes();
+    if (e.direction) {
+      this.pageNumber = 0;
+      this.paginator.pageIndex = 0;
+      this.dataSource.data = null; // dataSource.data
+      this.sortOrder = e.direction;
+      this.sortField = e.active;
+      this.isSortOrFilter = true;
+      // sorting by what's in the store, so can use NgRx?
+      if (e.active === this.defaultSortField &&
+        e.direction === this.defaultSortOrder) {
+          console.log('store sort');
+          this.isSortOrFilter = false;
+        }
+      
+      this.getAllHeroes();
+    }
   }
 
   // Pagination

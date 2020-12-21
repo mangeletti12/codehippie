@@ -18,7 +18,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { superheroesReducer } from './state/superheroes.reducers'
 import { SuperheroesEffects } from './state/superheroes.effects'
-
+// https://material.angular.io/cdk/drag-drop/overview
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { SuperheroesEffects } from './state/superheroes.effects'
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    DragDropModule,
     // ngrx
     StoreModule.forFeature(FeatureName, superheroesReducer),
     EffectsModule.forFeature([SuperheroesEffects]),

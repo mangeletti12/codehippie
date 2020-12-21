@@ -229,6 +229,6 @@ import { metaReducers, reducers } from './app.state';
   ],
   bootstrap: [AppComponent],
   entryComponents:[ModalComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA] // what is this?
 })
 export class AppModule { }
