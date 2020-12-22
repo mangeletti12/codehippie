@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ElysiumComponent } from './elysium.component';
 //
@@ -17,7 +17,7 @@ describe('ElysiumComponent', () => {
   let component: ElysiumComponent;
   let fixture: ComponentFixture<ElysiumComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ElysiumComponent ],
       providers: [{ provide: GlobalService, useClass: MocksService }]

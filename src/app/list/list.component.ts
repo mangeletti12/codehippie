@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 //
 import { ListService } from './list.service';
-import { NgScrollbar } from 'ngx-scrollbar';
+// import { NgScrollbar } from 'ngx-scrollbar';
 
 @Component({
   selector: 'list',

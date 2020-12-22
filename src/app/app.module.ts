@@ -19,7 +19,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 //////
 // https://www.npmjs.com/package/ngx-scrollbar
-import { NgScrollbarModule } from 'ngx-scrollbar';
+// import { NgScrollbarModule } from 'ngx-scrollbar';
+
 // https://www.npmjs.com/package/ngx-infinite-scroll
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -124,6 +125,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { metaReducers, reducers } from './app.state';
 
+// import { ResizeObserver } from './resize-observer-polyfill';
 
 @NgModule({
   declarations: [
@@ -197,7 +199,7 @@ import { metaReducers, reducers } from './app.state';
     HttpClientModule,
     ChartsModule,
     ScrollingModule,
-    NgScrollbarModule,
+    // NgScrollbarModule,
     InfiniteScrollModule,
     // NgwWowModule,
     CountUpModule,
