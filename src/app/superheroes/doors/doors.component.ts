@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag } from '@angular/cdk/drag-drop';
 
 import { ActivatedRoute } from '@angular/router';
 import { GlobalService } from '../../globals/global.service';
@@ -8,6 +8,10 @@ import { SuperheroesService } from '../superheroes.service';
 import { take } from 'rxjs/operators';
 // animation
 import { transition, animate, trigger, state, style } from '@angular/animations';
+// modal
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalComponent } from '../../modal/modal.component';
+import { Overlay } from '@angular/cdk/overlay';
 
 
 @Component({
@@ -95,6 +99,8 @@ export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
     private route: ActivatedRoute,
     private _globalService: GlobalService,
     private heroService: SuperheroesService,
+    public matDialog: MatDialog,
+    public overlay: Overlay,
   ) { }
 
   ngOnInit(): void {
@@ -250,23 +256,75 @@ export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
   // Drop event
   onDrop(event: CdkDragDrop<any[]>) {
     console.log('onDrop', event);
+    console.log('>', event.previousContainer.data[event.previousIndex]);
 
     //
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex, 
-        event.currentIndex);
+    if (event.container.id === "listOne" && event.previousContainer.id === "listTwo") {
+      console.log('moving LEFT!');
+    }
+    if (event.container.id === "listTwo" && event.previousContainer.id === "listOne") {
+      console.log('moving RIGHT!');
     }
 
+    //
+    // if (event.previousContainer === event.container) {
+    //   moveItemInArray(event.container.data,
+    //     event.previousIndex,
+    //     event.currentIndex);
+    // } else {
+    //   transferArrayItem(event.previousContainer.data,
+    //     event.container.data,
+    //     event.previousIndex, 
+    //     event.currentIndex);
+    // }
+
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
+    dialogConfig.height = "200px";
+    dialogConfig.width = "400px";
+    dialogConfig.data = {
+      type: "confirm",
+      title: "Remove",
+      message: `Are you sure?`
+    }
+    // // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
+
+    modalDialog.afterClosed().subscribe(
+      data => {
+        // ßconsole.log(`Dialog result: ${data}`);
+        // if yes/true
+        if (data) {
+          //
+          if (event.previousContainer === event.container) {
+            moveItemInArray(event.container.data,
+              event.previousIndex,
+              event.currentIndex);
+          } else {
+            transferArrayItem(event.previousContainer.data,
+              event.container.data,
+              event.previousIndex, 
+              event.currentIndex);
+          }
+
+        }
+        modalDialog.close();
+      }
+    );
 
 
-    
   }
+
+  /** Predicate function that only allows even numbers to be dropped into a list. */
+  // evenPredicate(item: CdkDrag<any>) {
+  //   console.log('evenPredicate', item);
+
+  //   // return item.data % 2 === 0;
+  // }
 
   // Select a card
   selectItem(item) {

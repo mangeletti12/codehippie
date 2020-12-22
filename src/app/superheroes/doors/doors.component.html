@@ -9,7 +9,7 @@
 
     <div class="scroller">
 
-      <div class="list"
+      <div class="list" id="listOne"
         cdkDropList
         #listOne="cdkDropList"
         [cdkDropListData]="listSource"
@@ -76,14 +76,14 @@
 
     <div class="scroller">
 
-      <div class="list"
+      <div class="list" id="listTwo"
         cdkDropList
         #listTwo="cdkDropList"
         [cdkDropListData]="listSource2"
         [cdkDropListConnectedTo]="[listOne]"
         (cdkDropListDropped)="onDrop($event)"
         >
-
+  
         <div class="list-cards">
 
           <mat-card
