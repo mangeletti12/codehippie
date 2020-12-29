@@ -33,7 +33,7 @@ export class AboutComponent implements OnInit {
         this.mySkills = data.body;
         // console.log('skills', this.mySkills);
       }
-    )
+    );
   }
 
   //

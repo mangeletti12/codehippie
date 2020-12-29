@@ -20,6 +20,9 @@ import { superheroesReducer } from './state/superheroes.reducers'
 import { SuperheroesEffects } from './state/superheroes.effects'
 // https://material.angular.io/cdk/drag-drop/overview
 import { DragDropModule } from '@angular/cdk/drag-drop';
+// pipes
+import { PipesModule } from '../pipes/pipes.module';
+import { CircleProgressModule } from '../widgets/circle-progress/circle-progress.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ReactiveFormsModule,
     FormsModule,
     DragDropModule,
+    PipesModule,
+    CircleProgressModule,
     // ngrx
     StoreModule.forFeature(FeatureName, superheroesReducer),
     EffectsModule.forFeature([SuperheroesEffects]),

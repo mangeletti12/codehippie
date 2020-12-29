@@ -25,6 +25,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       lazy: false
     })
   ],
+  exports: [
+    NgCircleProgressModule
+  ]
   
 })
 export class CircleProgressModule { }

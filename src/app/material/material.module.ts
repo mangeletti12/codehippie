@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import * as Material from '@angular/material';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -22,6 +21,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSliderModule } from '@angular/material/slider';
+//
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
 
 @NgModule({
   imports: [
@@ -45,7 +48,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCardModule,
     MatMenuModule,
     MatTooltipModule,
-    MatSliderModule
+    MatSliderModule,
+    DragDropModule
   ],
   exports: [
     MatToolbarModule,
@@ -67,7 +71,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCardModule,
     MatMenuModule,
     MatTooltipModule,
-    MatSliderModule
+    MatSliderModule,
+    DragDropModule
   ],
   declarations: []
 })

@@ -59,7 +59,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // pipes
-import { TruncatePipe } from './pipes/truncate.pipe';
+// import { TruncatePipe } from './pipes/truncate.pipe';
+import { PipesModule } from './pipes/pipes.module';
 import { TypePipe } from './practice/type.pipe';
 ////////////////////////////////////////////
 // Below will be lazyloaded at some point
@@ -119,13 +120,13 @@ import { ResizableModule } from './resizable/resizable.module';
 import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
 import { CircleProgressModule } from './widgets/circle-progress/circle-progress.module';
+
 // ngrx
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { metaReducers, reducers } from './app.state';
 
-// import { ResizeObserver } from './resize-observer-polyfill';
 
 @NgModule({
   declarations: [
@@ -163,7 +164,6 @@ import { metaReducers, reducers } from './app.state';
     TrailsComponent,
     ResumeComponent,
     SearchBarComponent,
-    TruncatePipe,
     TypePipe,
     MusicComponent,
     QaComponent,
@@ -205,6 +205,7 @@ import { metaReducers, reducers } from './app.state';
     CountUpModule,
     ResizableModule,
     CircleProgressModule,
+    PipesModule,
 
     // Firebase
     AngularFireModule.initializeApp(environment.firebase),

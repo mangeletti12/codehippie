@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   lastRoute: any;
   routeSearch: any;
   subscription: Subscription;
+  
 
   constructor(
     private authService: AuthenticationService,

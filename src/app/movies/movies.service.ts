@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError} from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
-
+//
+import { httpOptions } from '../http-options';
 
 @Injectable()
 export class MoviesService {
@@ -38,7 +39,7 @@ export class MoviesService {
         urlType = 'search';
         filter += `&query=${filters.search}`;
       }
-      const urlBase =  `https://api.themoviedb.org/3/${urlType}/movie?api_key=${this.apiKeyV3}`
+      const urlBase =  `https://api.themoviedb.org/3/${urlType}/movie?api_key=${this.apiKeyV3}`;
 
       // filter by year
       // console.log('filters', filters);
@@ -77,32 +78,79 @@ export class MoviesService {
 
     //
     getGenres() {
-
       let url = 'https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=' + this.apiKeyV3;
 
       return this.http.get(url)
         .pipe(
             catchError(this.handleError('GetGenres', []))
         );
-
     }
 
 
     // Call Service to get keywords
     getKeywords(keyword: any) {
-      // console.log("GetKeywords");
-      //var page = '&page=1';
-
-      //let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
-      //let options = new RequestOptions({ headers: headers }); // Create a request option
-
       let url = 'https://api.themoviedb.org/3/search/keyword?query=' + keyword + '&api_key=' + this.apiKeyV3;
 
       return this.http.get(url)
         .pipe(
             catchError(this.handleError('GetKeywords', []))
         );
+    }
 
+
+    // https://developers.themoviedb.org/3/tv/get-popular-tv-shows
+    // https://www.themoviedb.org/tv
+    getPopularTV(filters) {
+      console.log('getPopularTV', filters);
+
+      //filter
+      let filter = '&language=en-US&include_adult=false';
+      // if posting form
+      // const formData = new FormData();
+      // formData.append('page', filters.page);
+
+      // sort
+      if (filters.sort) {
+        filter += `&sort_by=${filters.sort}`;
+        // formData.append('sort_by', filters.sort);
+      }
+
+      // Are we Search or Discover?
+      let urlType= 'discover';
+      if (filters.search !== undefined && filters.search !== null) {
+        urlType = 'search';
+        filter += `&query=${filters.search}`;
+      }
+      const urlBase =  `https://api.themoviedb.org/3/${urlType}/tv?api_key=${this.apiKeyV3}`;
+
+      // filter by keyword
+      // A comma separated list of keyword ID's. Only include movies that have one of the ID's added as a keyword.
+      /*
+      var keywordIds = this.keywordsArray.map(a => a.id);
+      var strArrayKeywords = keywordIds.join(", ");
+      this.filterByKeywords = '&with_keywords=' + encodeURIComponent(strArrayKeywords);
+      */
+
+      // page
+      const page = '&page=' + filters.page;
+      const url = urlBase + filter + page;
+
+      // return this.http.post(url, formData)
+      return this.http.get(url)
+        .pipe(
+            catchError(this.handleError('getPopularTV', []))
+        );
+
+    }
+
+    // my favs
+    getMyTV() {
+      const url = 'assets/tv.json';
+
+      return this.http.get<any>(url, httpOptions)
+        .pipe(
+          catchError(this.handleError('getMyTV', []))
+        );
     }
 
 
