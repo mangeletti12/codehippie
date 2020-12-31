@@ -1,25 +1,22 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, delay } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 // animation
 import { transition, animate, trigger, style } from '@angular/animations';
 // modal
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ModalComponent } from '../../modal/modal.component';
+import { ModalComponent } from '../modal/modal.component';
 import { Overlay } from '@angular/cdk/overlay';
 // service
 import { MoviesService } from 'src/app/movies/movies.service';
 import { HelperService } from 'src/app/helpers/helper.sevice';
 import { MatTableDataSource } from '@angular/material/table';
-import { GlobalService } from 'src/app/globals/global.service';
-import { ActivatedRoute } from '@angular/router';
-
 
 @Component({
-  selector: 'app-doors',
-  templateUrl: './doors.component.html',
-  styleUrls: ['./doors.component.scss'],
+  selector: 'app-tv',
+  templateUrl: './tv.component.html',
+  styleUrls: ['./tv.component.scss'],
   animations: [
     // trigger('hideShowItems', [
     //   state('showItems', style({
@@ -70,12 +67,11 @@ import { ActivatedRoute } from '@angular/router';
   ]
 
 })
-export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
+export class TvComponent implements OnInit, OnDestroy, AfterViewInit {
   listSource: any[] = [];
   listSource2: any[] = [];
   // Defaults
   myTvSelected = 'vote_average~ZA';
-  // pageNumber = 0; // marvel API starts at 0
   pageNumber = 1; // movies API starts at 1
   pageSize = 20;
   totalRows = 0;
@@ -123,20 +119,17 @@ export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
     private moviesService: MoviesService,
     public matDialog: MatDialog,
     public overlay: Overlay,
-    private _globalService: GlobalService,
-    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
 
+    /*
     // from resolver-doors.service.ts
     const routeData = this.route.snapshot.data;
     console.log('routeData', routeData.resolved);
 
     // Open doors now!
-    this.subs = this._globalService.doorsTransition.pipe(
-      delay(2000)
-    ).subscribe(
+    this.subs = this._globalService.doorsTransition.subscribe(
       data => {
         // Toggle done with loading, if true, else no need
         if (data) {
@@ -144,14 +137,18 @@ export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
         }
       }
     );
-    
+    */
 
-    // this.getPopularTV();
-    // this.getMyTV();
+    //
+
+
+    // this.getAllHeroes();
+    this.getPopularTV();
+    this.getMyTV();
   }
 
   ngAfterViewInit() {
-    // this.infiniteScrollListener();
+    this.infiniteScrollListener();
   }
 
   ngOnDestroy(): void {

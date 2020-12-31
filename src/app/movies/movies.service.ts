@@ -101,7 +101,7 @@ export class MoviesService {
     // https://developers.themoviedb.org/3/tv/get-popular-tv-shows
     // https://www.themoviedb.org/tv
     getPopularTV(filters) {
-      console.log('getPopularTV', filters);
+      // console.log('getPopularTV', filters);
 
       //filter
       let filter = '&language=en-US&include_adult=false';

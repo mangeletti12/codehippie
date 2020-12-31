@@ -114,6 +114,7 @@ import { FootyComponent } from './footy/footy/footy.component';
 import { GridComponent } from './grid/grid.component';
 import { JobComponent } from './resume/job.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
+import { TvComponent } from './tv/tv.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 //
 import { ResizableModule } from './resizable/resizable.module';
@@ -150,7 +151,7 @@ import { metaReducers, reducers } from './app.state';
     SettingsComponent,
     FileNotFoundComponent,
     ModalComponent,
-    // FlexComponent,
+    TvComponent,
     BreadcrumbComponent,
     ProfileComponent,
     NotificationsComponent,
@@ -199,9 +200,7 @@ import { metaReducers, reducers } from './app.state';
     HttpClientModule,
     ChartsModule,
     ScrollingModule,
-    // NgScrollbarModule,
     InfiniteScrollModule,
-    // NgwWowModule,
     CountUpModule,
     ResizableModule,
     CircleProgressModule,

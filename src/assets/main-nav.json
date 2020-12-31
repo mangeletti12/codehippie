@@ -32,8 +32,12 @@
                   "Text": "Q & A",
                   "Url": "/qa",
                   "Claim": "Nav_QA"
+                },
+                {
+                  "Text": "TV Favs",
+                  "Url": "/tv",
+                  "Claim": "Nav_TV"
                 }
- 
 
               ]
             },

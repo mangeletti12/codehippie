@@ -4,9 +4,9 @@
 
 #loading-bay {
   position: fixed;
-  top: -435px; // +65px for header -500px for height
+  top: calc(100vh - 100vh - 100%);
   width: 1200px;
-  height: 500px;
+  height: calc(100vh - 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,51 +16,51 @@
 }
 
 #loading-bay.loading-main {
-  -webkit-animation: ANIMATION-BLUR-IN .5s ease-in; /* Safari 4+ */
-  -moz-animation:    ANIMATION-BLUR-IN .5s ease-in; /* Fx 5+ */
-  animation:         ANIMATION-BLUR-IN .5s ease-in; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-BLUR-IN .9s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-IN .9s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-IN .9s ease-in; /* IE 10+, Fx 29+ */
   animation-fill-mode: forwards;
 }
 @-webkit-keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px + 32.5px) } // 32.5 for header
+  100% { top: calc(100vh - 100vh) }
 }
 @-moz-keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px + 32.5px) }
+  100% { top: calc(100vh - 100vh) }
 }
 @keyframes ANIMATION-BLUR-IN {
   0%   { }
-  100% { top: calc(50% - 500px + 32.5px) }
+  100% { top: calc(100vh - 100vh) }
 }
 /* done */
 #loading-bay.loading-main-out {
-  -webkit-animation: ANIMATION-BLUR-OUT .5s ease-in; /* Safari 4+ */
-  -moz-animation:    ANIMATION-BLUR-OUT .5s ease-in; /* Fx 5+ */
-  animation:         ANIMATION-BLUR-OUT .5s ease-in; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-BLUR-OUT .9s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-OUT .9s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-OUT .9s ease-in; /* IE 10+, Fx 29+ */
   animation-fill-mode: forwards;
 }
 /* animations */
 @-webkit-keyframes ANIMATION-BLUR-OUT {
-  0%   { top: calc(50% - 500px) }
+  0%   { top: calc(100vh - 100vh) }
   100% { }
 }
 @-moz-keyframes ANIMATION-BLUR-OUT {
-  0%   { top: calc(50% - 500px) }
+  0%   { top: calc(100vh - 100vh) }
   100% { }
 }
 @keyframes ANIMATION-BLUR-OUT {
-  0%   { top: calc(50% - 500px) }
+  0%   { top: calc(100vh - 100vh) }
   100% { }
 }
 
 /* bottom */
 #loading-bay-bottom {
   position: fixed;
-  bottom: -575px; // -500px for height, 75px for half-circle
+  bottom: calc(100vh - 100vh - 100%);;
   width: calc(100% - 285px);
   max-width: 1200px;
-  height: 500px;
+  height: calc(100vh - 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,48 +73,48 @@
 }
 
 #loading-bay-bottom.loading-main {
-  -webkit-animation: ANIMATION-BLUR-IN-2 .5s ease-in; /* Safari 4+ */
-  -moz-animation:    ANIMATION-BLUR-IN-2 .5s ease-in; /* Fx 5+ */
-  animation:         ANIMATION-BLUR-IN-2 .5s ease-in; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-BLUR-IN-2 .9s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-IN-2 .9s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-IN-2 .9s ease-in; /* IE 10+, Fx 29+ */
   animation-fill-mode: forwards;
 }
 @-webkit-keyframes ANIMATION-BLUR-IN-2 {
   0%   { }
-  100% { bottom: calc(50% - 500px - 32.5px) } // 32.5 for header
+  100% { bottom: calc(100vh - 100vh) }
 }
 @-moz-keyframes ANIMATION-BLUR-IN-2 {
   0%   { }
-  100% { bottom: calc(50% - 500px - 32.5px) }
+  100% { bottom: calc(100vh - 100vh) }
 }
 @keyframes ANIMATION-BLUR-IN-2 {
   0%   { }
-  100% { bottom: calc(50% - 500px - 32.5px) }
+  100% { bottom: calc(100vh - 100vh) }
 }
 /* done */
 #loading-bay-bottom.loading-main-out {
-  -webkit-animation: ANIMATION-BLUR-OUT-2 .5s ease-in; /* Safari 4+ */
-  -moz-animation:    ANIMATION-BLUR-OUT-2 .5s ease-in; /* Fx 5+ */
-  animation:         ANIMATION-BLUR-OUT-2 .5s ease-in; /* IE 10+, Fx 29+ */
+  -webkit-animation: ANIMATION-BLUR-OUT-2 .9s ease-in; /* Safari 4+ */
+  -moz-animation:    ANIMATION-BLUR-OUT-2 .9s ease-in; /* Fx 5+ */
+  animation:         ANIMATION-BLUR-OUT-2 .9s ease-in; /* IE 10+, Fx 29+ */
   animation-fill-mode: forwards;
 }
 /* animations */
 @-webkit-keyframes ANIMATION-BLUR-OUT-2 {
-  0%   { bottom: calc(50% - 500px) }
+  0%   { bottom: calc(100vh - 100vh) }
   100% { }
 }
 @-moz-keyframes ANIMATION-BLUR-OUT-2 {
-  0%   { bottom: calc(50% - 500px) }
+  0%   { bottom: calc(100vh - 100vh) }
   100% { }
 }
 @keyframes ANIMATION-BLUR-OUT-2 {
-  0%   { bottom: calc(50% - 500px) }
+  0%   { bottom: calc(100vh - 100vh) }
   100% { }
 }
 
 /* circle bottom */
 .partial-circle {
-  position: relative;
-  top: -287px;
+  position: absolute;
+  top: -70px;
   height: 75px;
   width: 200px;
   overflow: hidden;

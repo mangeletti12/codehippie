@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GlobalService } from './globals/global.service';
-import { map, delay, tap, filter, take } from 'rxjs/operators';
+import { tap, filter, take } from 'rxjs/operators';
 //
 // ngrx
 import { Store } from '@ngrx/store';
@@ -33,13 +33,13 @@ export class ResolverDoorsService implements Resolve<any> {
     window.scrollTo(0, 0);
 
     // console.log('Resolver route', route);
-    console.log('Resolver state', state.url);
+    // console.log('Resolver state', state.url);
 
     if (state.url === '/superheroes/doors') {
       // close doors
       this._globalService.toggleDoors(true);
 
-      // return this.getFromStoreOrAPI();
+      return this.getFromStoreOrAPI();
 
       /*
       return this._footyService.getEplTable().pipe(
@@ -65,7 +65,6 @@ export class ResolverDoorsService implements Resolve<any> {
       orderBy: orderBy,
       limit: this.pageSize,
       offset: (this.pageNumber * this.pageSize),
-      // offset: (this.pageNumber - 1) * this.pageSize + 1,
     };
     // console.log('getFromStoreOrAPI', searchCriteria);
     // return an Observable stream from the store
@@ -77,14 +76,15 @@ export class ResolverDoorsService implements Resolve<any> {
         // point, I'm checking if the superhereos property exists on my
         // Store slice of state
         tap((data: any) => {
+          // console.log('>>>', data);
           // if there are no items, dispatch an action to hit the backend
-          if (!data.superheroes.length) {
-            console.log('DB >', data);
+          if (!data) {
+            // console.log('DB >', data);
             this.store.dispatch(HeroActions.getAllHeroes({ searchCriteria }));
           }
         }),
         // filter out data.superheroes, no length === empty!
-        filter((data: any) => data.superheroes.length),
+        filter((data: any) => data),
         // which if empty, we will never .take()
         // this is the same as .first() which will only
         // take 1 value from the Observable then complete

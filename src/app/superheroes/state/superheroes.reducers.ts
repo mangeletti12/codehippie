@@ -29,12 +29,6 @@ export const createSuperheroesReducer = createReducer(
       return {
         ...state,
         superheroes: [...state.superheroes, action.superheroes ],
-        // superheroes: state.superheroes.map(h => {
-        //   return {
-        //     ...h,
-        //     page: 'mka'
-        //   }
-        // }),
         total: action.total,
         loading: false
       }

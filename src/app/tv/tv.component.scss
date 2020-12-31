@@ -1,0 +1,281 @@
+.list-holder {
+    display: flex;
+}
+
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.185);
+    padding-right: 2px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  
+    height: -moz-calc(100vh - 75px);
+    height: -webkit-calc(100vh - 75px);
+    height: calc(100vh - 75px);
+}
+
+.list-header {
+    height: 150px;
+    // background: pink;
+    padding: 5px;
+}
+
+.list-header .mat-form-field { width: 100%; }
+
+::ng-deep .list-header .mat-form-field-wrapper { padding-bottom: 0; }
+
+.list { // for the drop zone
+    min-height: 100vh;
+}
+
+.scroller {
+    overflow-y: scroll;
+}
+
+.list-card {
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+
+    margin: 5px;
+    // height: 278px;
+    width: 350px;
+    overflow: hidden;
+}
+.list-card.mat-card { padding: 0 !important; }
+
+.card-flex {
+    display: flex;
+
+}
+
+.iNumber { position: absolute; top: 0; right: 5px; font-size: 10px; }
+
+.card-title {
+    font-size: 1em;
+    line-height: 1em;
+    margin-bottom: 3px;
+}
+
+.list-card img {
+    height: 278px;
+    width: 185px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+.list-wrapper .mat-card-content {
+    margin-bottom: 4px !important;
+}
+
+.list-wrapper .mat-card-actions {
+    padding: 0 !important;
+}
+
+mat-card { 
+    // border: 2px solid transparent; 
+    cursor: pointer; 
+}
+mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
+
+.name {
+    font-weight: bold;
+    padding: 5px;
+    line-height: 17px;
+}
+
+.air-date {
+    padding-left: 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.overview {
+    line-height: 16px;
+    padding: 5px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+// footer
+.list-footer { 
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 40px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.list-selected {
+    flex-grow: 2;
+    line-height: 12px;
+    padding: 4px 6px;
+}
+.list-selected span {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-color: rgba(73, 232, 73, 0.75);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.list-counts {
+    line-height: 12px;
+    padding: 4px 6px;
+    background-color: rgba(0, 0, 0, 0.1);; 
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.progress-circle {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+}
+
+// .list-holder #list-one mat-card, .list-holder #list-two mat-card{
+//     // background-color: rgba(6, 165, 6, 0.8);
+//     -webkit-animation: FADEOUT 1s ease-out; /* Safari 4+ */
+//     -moz-animation:    FADEOUT 1s ease-out; /* Fx 5+ */
+//     animation:         FADEOUT 1s ease-out; /* IE 10+, Fx 29+ */
+//     animation-fill-mode: forwards;
+// }
+// /* ANIMATIONS */
+// @-webkit-keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+// @-moz-keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+// @keyframes FADEOUT {
+//     0%   { opacity: 0; }
+//     100% { opacity: 1; }
+// }
+
+//
+/* CDK Drag */
+// .cdk-drag-preview {
+//     box-sizing: border-box;
+//     border-radius: 4px;
+//     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+//     0 8px 10px 1px rgba(0, 0, 0, 0.14),
+//     0 3px 14px 2px rgba(0, 0, 0, 0.12);
+//   }
+  
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.list.cdk-drop-list-dragging .list-card:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder, .custom-placeholder {
+    // height: 200px;
+    opacity: .5;
+    transition: transform 500ms ease;
+}
+
+.btns-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 125px;
+    padding-top: 5px;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.085);
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+  
+    height: -moz-calc(100vh - 75px);
+    height: -webkit-calc(100vh - 75px);
+    height: calc(100vh - 75px);
+}
+
+.btns-wrapper .btns {
+    display: flex;
+    justify-content: center;
+    flex-grow: 2;
+    align-items: center;
+}
+
+.btns-wrapper .btns button {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    // box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+::ng-deep .default-theme .btns-wrapper .btns button {
+    // border: 5px solid #fafafa;
+    background-color: #fafafa;
+}
+::ng-deep .dark-theme .btns-wrapper .btns button {
+    // border: 5px solid #303030;
+    background-color: #303030;
+}
+  
+.btns-wrapper .btns button .mat-icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+}
+.btns-wrapper .btns button .mat-icon .material-icons {
+    font-size: 40px;
+}
+
+.btns-wrapper .blurp-one {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.075);
+    text-transform: uppercase;
+    font-size: 11px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.btns-wrapper .blurp-two {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.075);
+    text-transform: uppercase;
+    font-size: 11px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+// .btns-wrapper .blurp-one span:nth-child(1), .btns-wrapper .blurp-two span:nth-child(2)   {
+//     // background-color: pink;
+// }

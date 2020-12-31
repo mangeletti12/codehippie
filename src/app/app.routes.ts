@@ -39,6 +39,7 @@ import { FootyComponent } from './footy/footy/footy.component';
 import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { TvComponent } from './tv/tv.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -79,6 +80,12 @@ export const SECURE_ROUTES: Routes = [
     component: TrailsComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Happy Trails' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'tv',
+    component: TvComponent,
+    data: { breadcrumb: 'TV' },
     resolve: { comp: ResolverService },
   },
   {

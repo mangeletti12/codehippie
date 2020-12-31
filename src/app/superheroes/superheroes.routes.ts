@@ -29,7 +29,7 @@ export const SuperheroesRoutes: Routes = [
         path: 'doors',
         component: DoorsComponent,
         data: { breadcrumb: 'Doors' },
-        // resolve: { resolved: ResolverDoorsService },
+        resolve: { resolved: ResolverDoorsService },
       },
       {
         path: 'heroes',
