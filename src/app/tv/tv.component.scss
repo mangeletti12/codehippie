@@ -22,7 +22,6 @@
 
 .list-header {
     height: 150px;
-    // background: pink;
     padding: 5px;
 }
 
@@ -39,15 +38,11 @@
 }
 
 .list-card {
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-between;
     box-sizing: border-box;
     cursor: move;
 
     margin: 5px;
-    // height: 278px;
+    height: 278px;
     width: 350px;
     overflow: hidden;
 }
@@ -55,10 +50,9 @@
 
 .card-flex {
     display: flex;
-
 }
 
-.iNumber { position: absolute; top: 0; right: 5px; font-size: 10px; }
+// .iNumber { position: absolute; top: 0; right: 5px; font-size: 10px; }
 
 .card-title {
     font-size: 1em;
@@ -109,12 +103,15 @@ mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
 
 // footer
 .list-footer { 
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 40px;
-    padding: 5px;
+    height: 30px;
     font-size: 12px;
+    padding: 5px;
+}
+
+.footer-bar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
 }
 
 .list-selected {
@@ -148,38 +145,7 @@ mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
     bottom: 2px;
 }
 
-// .list-holder #list-one mat-card, .list-holder #list-two mat-card{
-//     // background-color: rgba(6, 165, 6, 0.8);
-//     -webkit-animation: FADEOUT 1s ease-out; /* Safari 4+ */
-//     -moz-animation:    FADEOUT 1s ease-out; /* Fx 5+ */
-//     animation:         FADEOUT 1s ease-out; /* IE 10+, Fx 29+ */
-//     animation-fill-mode: forwards;
-// }
-// /* ANIMATIONS */
-// @-webkit-keyframes FADEOUT {
-//     0%   { opacity: 0; }
-//     100% { opacity: 1; }
-// }
-// @-moz-keyframes FADEOUT {
-//     0%   { opacity: 0; }
-//     100% { opacity: 1; }
-// }
-// @keyframes FADEOUT {
-//     0%   { opacity: 0; }
-//     100% { opacity: 1; }
-// }
-
-//
-/* CDK Drag */
-// .cdk-drag-preview {
-//     box-sizing: border-box;
-//     border-radius: 4px;
-//     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-//     0 8px 10px 1px rgba(0, 0, 0, 0.14),
-//     0 3px 14px 2px rgba(0, 0, 0, 0.12);
-//   }
-  
-
+/////
 .cdk-drag-animating {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
@@ -275,7 +241,3 @@ mat-card.selectedCard { border: 2px solid rgba(73, 232, 73, 0.75) }
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-
-// .btns-wrapper .blurp-one span:nth-child(1), .btns-wrapper .blurp-two span:nth-child(2)   {
-//     // background-color: pink;
-// }

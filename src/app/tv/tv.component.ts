@@ -244,74 +244,68 @@ export class TvComponent implements OnInit, OnDestroy, AfterViewInit {
   // Drop event
   onDrop(event: CdkDragDrop<any[]>) {
     // console.log('onDrop', event);
-    console.log('item >', event.previousContainer.data[event.previousIndex]);
+    const card = event.previousContainer.data[event.previousIndex];
+    console.log('item >', card);
     let isSwitchingLanes = false;
+    let moveDirection = 'left';
 
     if (event.container.id === "listOne" && event.previousContainer.id === "listTwo") {
-      // console.log('moving LEFT!');
       isSwitchingLanes = true;
+      moveDirection = 'left';
     }
     if (event.container.id === "listTwo" && event.previousContainer.id === "listOne") {
-      // console.log('moving RIGHT!');
       isSwitchingLanes = true;
+      moveDirection = 'right';
     }
+    // console.log('direction', moveDirection);
+    //
+    if (event.previousContainer === event.container) {
+      // console.log('SAME LANE');
+      moveItemInArray(event.container.data,
+        event.previousIndex,
+        event.currentIndex);
 
-    // Are we moving lanes?
-    if (isSwitchingLanes) {
-      const dialogConfig = new MatDialogConfig();
-      // The user can't close the dialog by clicking outside its body
-      dialogConfig.disableClose = true;
-      dialogConfig.id = "modal-component";
-      dialogConfig.panelClass = 'confirm-dialog-container';
-      dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
-      dialogConfig.height = "200px";
-      dialogConfig.width = "400px";
-      dialogConfig.data = {
-        type: "confirm",
-        title: "Remove",
-        message: `Are you sure?`
-      }
-      // // https://material.angular.io/components/dialog/overview
-      const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
-
-      modalDialog.afterClosed().subscribe(
+    } else {
+      // console.log('DIFF LANE!');
+      // pop modal
+      this.confirmMove().subscribe(
         data => {
-          // console.log(`Dialog result: ${data}`);
-          // if yes/true
+          // console.log('confirmChoice', data);
           if (data) {
-            //
-            if (event.previousContainer === event.container) {
-              moveItemInArray(event.container.data,
-                event.previousIndex,
-                event.currentIndex);
-            } else {
-              transferArrayItem(event.previousContainer.data,
-                event.container.data,
-                event.previousIndex, 
-                event.currentIndex);
-            }
+            // unselect card on lane change
+            card.selected = false;
+            this.setSelectedCards();
 
+            transferArrayItem(event.previousContainer.data,
+              event.container.data,
+              event.previousIndex, 
+              event.currentIndex);
           }
-          modalDialog.close();
         }
       );
-
-    }
-    else {
-      //
-      if (event.previousContainer === event.container) {
-        moveItemInArray(event.container.data,
-          event.previousIndex,
-          event.currentIndex);
-      } else {
-        transferArrayItem(event.previousContainer.data,
-          event.container.data,
-          event.previousIndex, 
-          event.currentIndex);
-      }
+           
     }
 
+  }
 
+  // confirm modal
+  confirmMove() {
+    const dialogConfig = new MatDialogConfig();
+    // The user can't close the dialog by clicking outside its body
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.panelClass = 'confirm-dialog-container';
+    dialogConfig.scrollStrategy = this.overlay.scrollStrategies.noop();
+    dialogConfig.height = "200px";
+    dialogConfig.width = "400px";
+    dialogConfig.data = {
+      type: "confirm",
+      title: "Remove",
+      message: `Are you sure?`
+    }
+    // // https://material.angular.io/components/dialog/overview
+    const modalDialog = this.matDialog.open(ModalComponent, dialogConfig);
+    return modalDialog.afterClosed();
   }
 
   // Select a card
@@ -321,14 +315,13 @@ export class TvComponent implements OnInit, OnDestroy, AfterViewInit {
     // this.heroes.forEach(i => { i.selected = false; });
     item.selected = !item.selected;
     // this.selectedItem = item;
-    this.getSelectedCards();
+    this.setSelectedCards();
   }
   // Get selected cards
-  getSelectedCards() {
+  setSelectedCards() {
     this.selectedItemsListOne = this.listSource.filter(i => i.selected);
     this.selectedItemsListTwo = this.listSource2.filter(i => i.selected);
   }
-
 
   // Sort change handler
   onSortChange(e) {

@@ -64,7 +64,14 @@
     <div id="loading-bay" [class.loading-main]="isDoorOpen" [class.loading-main-out]="isDoorOpen === false" >
     </div>
     <div id="loading-bay-bottom" [class.loading-main]="isDoorOpen" [class.loading-main-out]="isDoorOpen === false" >
-      <div class="partial-circle"></div>
+      <div class="loading-circle">
+        <div class="partial-circle"></div>
+        <div class="inner-circle">
+          <div class="inner-circle-logo">
+
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="global-routed" [@fader]="prepareRoute(outlet)" *ngIf="animationTrigger == 'fader'">
