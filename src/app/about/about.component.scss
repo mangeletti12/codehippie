@@ -93,7 +93,8 @@
 .skill {
   display: flex;
   align-items: center;
-  padding: 2px 10px 3px 10px;
+  padding: 2px 12px;
+  height: 20px;
   margin: 2px;
   color: #fff;
   font-size: 12px;
@@ -114,6 +115,10 @@
   -o-animation:      SKILL-ANIMATION 1s ease-in-out; /* Opera 12+ */
   animation:         SKILL-ANIMATION 1s ease-in-out; /* IE 10+, Fx 29+ */
   transform-origin: left;
+}
+
+.skill span { 
+  display: inline-block;
 }
 
 .quote {
