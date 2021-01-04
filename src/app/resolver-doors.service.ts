@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GlobalService } from './globals/global.service';
-import { tap, filter, take } from 'rxjs/operators';
+import { tap, filter, take, delay } from 'rxjs/operators';
 //
 // ngrx
 import { Store } from '@ngrx/store';
@@ -39,8 +39,11 @@ export class ResolverDoorsService implements Resolve<any> {
       // close doors
       this._globalService.toggleDoors(true);
 
+      // return setTimeout(() => {
+      //   this.getFromStoreOrAPI();
+      // }, 3000);
       return this.getFromStoreOrAPI();
-
+      
       /*
       return this._footyService.getEplTable().pipe(
         //tap((data: any) => {
@@ -89,7 +92,9 @@ export class ResolverDoorsService implements Resolve<any> {
         // this is the same as .first() which will only
         // take 1 value from the Observable then complete
         // which does our unsubscribing.
+        delay(3000),
         take(1),
+        
       );
   }
 

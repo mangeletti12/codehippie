@@ -135,7 +135,7 @@ export class DoorsComponent implements OnInit, OnDestroy, AfterViewInit {
 
     // Open doors now!
     this.subs = this._globalService.doorsTransition.pipe(
-      delay(3000)
+      // delay(3000)
     ).subscribe(
       data => {
         // Toggle done with loading, if true, else no need
