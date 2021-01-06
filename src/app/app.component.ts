@@ -2,9 +2,10 @@ import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AuthenticationService } from './security/auth.service';
 import { AppUserAuth } from './security/app-user-auth';
-import { RouterOutlet, Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
+import { RouterOutlet, Router, Event, NavigationStart, NavigationEnd, NavigationError, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GlobalService } from './globals/global.service';
+import { Title } from '@angular/platform-browser';
 // import { login } from './route-animations';
 
 @Component({
@@ -26,7 +27,8 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private renderer: Renderer2,
     private router: Router,
-    // private route: ActivatedRoute,
+    private route: ActivatedRoute,
+    private titleService: Title,
     ) {
 
 
@@ -57,6 +59,10 @@ export class AppComponent implements OnInit, OnDestroy {
         if (event instanceof NavigationEnd) {
             this.lastRoute = event.url;
             this._globalService.toggleRoute(event.url);
+
+            let bc = this.getBreadcrumb(this.route);
+            // console.log('TITLE > ', bc);
+            this.titleService.setTitle('Mark Angeletti - Freelance Designer/Developer in Colorado: ' + bc);
         }
 
         if (event instanceof NavigationError) {
@@ -65,6 +71,20 @@ export class AppComponent implements OnInit, OnDestroy {
       });
 
 
+  }
+
+  getBreadcrumb(route: any) {
+    let child = route.firstChild;
+
+    while (child) {
+        if (child.firstChild) {
+          child = child.firstChild;
+        } else if (child.snapshot.data && child.snapshot.data['breadcrumb']) {
+          return child.snapshot.data['breadcrumb'];
+        } else {
+          return  null;
+        }
+    }
   }
 
   ngOnInit() {

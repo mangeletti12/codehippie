@@ -102,19 +102,19 @@ export const SECURE_ROUTES: Routes = [
   },
   {
     path: 'cors',
-    data: { breadcrumb: 'Change Order Request' },
+    data: { breadcrumb: null },
     children: [
       {
         path: '',
         component: CorsListComponent,
         // canActivate: [AuthGuard],
-        data: { breadcrumb: null },
+        data: { breadcrumb: 'Change Order Request' },
       },
       {
         path: ':id',
         component: CorComponent,
         // canActivate: [AuthGuard],
-        data: { breadcrumb: 'create/update' },
+        data: { breadcrumb: 'Create/Update' },
       },
     ]
   },

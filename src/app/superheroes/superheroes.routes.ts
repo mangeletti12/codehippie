@@ -33,13 +33,12 @@ export const SuperheroesRoutes: Routes = [
       },
       {
         path: 'heroes',
-        data: { breadcrumb: 'Heroes' },
+        data: { breadcrumb: null },
         children: [
           {
             path: '',
             component: HeroesComponent,
-            // canActivate: [AuthGuard],
-            data: { breadcrumb: null },
+            data: { breadcrumb: 'Heroes' },
             resolve: { comp: ResolverService },
           },
           {
