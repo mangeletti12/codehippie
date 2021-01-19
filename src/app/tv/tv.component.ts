@@ -268,10 +268,10 @@ export class TvComponent implements OnInit, OnDestroy, AfterViewInit {
     } else {
       // console.log('DIFF LANE!');
       // pop modal
-      this.confirmMove().subscribe(
-        data => {
-          // console.log('confirmChoice', data);
-          if (data) {
+      // this.confirmMove().subscribe(
+      //   data => {
+      //     // console.log('confirmChoice', data);
+      //     if (data) {
             // unselect card on lane change
             card.selected = false;
             this.setSelectedCards();
@@ -280,9 +280,9 @@ export class TvComponent implements OnInit, OnDestroy, AfterViewInit {
               event.container.data,
               event.previousIndex, 
               event.currentIndex);
-          }
-        }
-      );
+      //     }
+      //   }
+      // );
            
     }
 

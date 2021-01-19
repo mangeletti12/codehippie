@@ -1,7 +1,7 @@
 <div class="list-holder" cdkDropListGroup>
 
   <!-- one -->
-  <div id="list-one" class="list-wrapper">
+  <div id="list-one" class="list-wrapper my-shadow">
 
     <div class="list-header">
 
@@ -35,57 +35,62 @@
       
         <div class="list-cards">
 
-          <mat-card
+          <!-- flip card -->
+          <div class="flip-card "
             *ngFor="let item of listSource; let i = index; let last = last"
-            class="list-card"
+            
             [class.selectedCard]="item.selected"
             (click)="selectItem(item)"
             cdkDrag
             @items
-            >
-            <!-- <div class="custom-placeholder cdk-drag-placeholder" *cdkDragPlaceholder>
-            </div> -->
-
-            <!-- <div class="card-head">
-              <h3 class="card-title theme-alt-font1">{{ item.title }}</h3>
-              <span class="iNumber">{{ i + 1 }}</span>
-            </div> -->
-            <div class="card-flex">
-
-              <div>
-                <div *ngIf="item.poster_path != null; then truthyTemplate else falsyTemplate"></div>
-    
-                <ng-template #truthyTemplate >
-                  <img class="imgThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}">
-                </ng-template>
-    
-                <ng-template #falsyTemplate>
-                  <img class="imgThumbnail" src="assets/images/no-image.jpg">
-                </ng-template>
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front" >
+                
+                <div class="card-flex">
+   
+                  <div *ngIf="item.poster_path != null; then truthyTemplate else falsyTemplate"></div>
+      
+                  <ng-template #truthyTemplate >
+                    <img class="imgThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}">
+                  </ng-template>
+      
+                  <ng-template #falsyTemplate>
+                    <img class="imgThumbnail" src="assets/images/no-image.jpg">
+                  </ng-template>
+          
+                  <circle-progress
+                    class="progress-circle"
+                    [percent]="item.vote_average * 10"
+                    backgroundColor="#000000"
+                    backgroundPadding="2"
+                    backgroundOpacity="0.5"
+                    backgroundStrokeWidth="0"
+                    backgroundStroke="#000000"
+                    outerStrokeWidth="3"
+                    innerStrokeWidth="0"
+                    titleColor="#ffffff"
+                    showInnerStroke="false"
+                  ></circle-progress>
+                </div>
+                
               </div>
-        
-              <div class="card-content">
-                <div class="name">{{ item.name }}</div>
-                <div class="air-date">{{ item.first_air_date | date:"mediumDate" }}</div>
-                <div class="overview">{{ item.overview | truncate:275 }}</div>
+              <div class="flip-card-back" >
+                
+                <div class="card-content">
+                  <div class="name">{{ item.name }}</div>
+                  <div class="air-date">{{ item.first_air_date | date:"mediumDate" }}</div>
+                  <div class="overview">{{ item.overview | truncate:275 }}</div>
+                </div>
 
-                <circle-progress
-                  class="progress-circle"
-                  [percent]="item.vote_average * 10"
-                ></circle-progress>
               </div>
+              <!-- both sides -->
 
             </div>
-      
-            <!-- <div class="card-actions">
-              <button mat-icon-button matTooltip="details" #Details="matTooltip" (click)="Details.toggle()" ><i class="far fa-address-card"></i></button>
-              <button mat-icon-button matTooltip="delete" #Delete="matTooltip" (click)="Delete.toggle()" (click)="remove(i, $event)"><i class="far fa-trash-alt"></i></button>
-            </div> -->
-          </mat-card>
+          </div> <!-- end flip card -->
 
           <!-- this is an anchor for (infinite-scroll) -->
           <div class="list-card infinite-scroll-loading" #anchor>
-            
           </div>
 
         </div>
@@ -103,7 +108,7 @@
 
   </div>
 
-  <div class="btns-wrapper">
+  <div class="btns-wrapper my-shadow-inset">
     <div class="blurp-one">
       <span class="material-icons">
         arrow_back
@@ -129,7 +134,7 @@
   </div>
 
   <!-- two -->
-  <div id="list-two" class="list-wrapper">
+  <div id="list-two" class="list-wrapper my-shadow">
 
     <div class="list-header">
      
@@ -163,54 +168,60 @@
   
         <div class="list-cards">
 
-          <mat-card
+          <!-- flip card -->
+          <div class="flip-card "
             *ngFor="let item of listSource2; let i = index; let last = last"
-            class="list-card"
+            
             [class.selectedCard]="item.selected"
             (click)="selectItem(item)"
             cdkDrag
             @items
-            >
-            <!-- <div class="custom-placeholder cdk-drag-placeholder" *cdkDragPlaceholder>
-            </div> -->
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front" >
+                
+                <div class="card-flex">
+                
+                  <div *ngIf="item.poster_path != null; then truthyTemplate else falsyTemplate"></div>
+      
+                  <ng-template #truthyTemplate >
+                    <img class="imgThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}">
+                  </ng-template>
+      
+                  <ng-template #falsyTemplate>
+                    <img class="imgThumbnail" src="assets/images/no-image.jpg">
+                  </ng-template>
 
-            <!-- <div class="card-head">
-              <h3 class="card-title theme-alt-font1">{{ item.title }}</h3>
-              <span class="iNumber">{{ i + 1 }}</span>
-            </div> -->
-            <div class="card-flex">
-
-              <div>
-                <div *ngIf="item.poster_path != null; then truthyTemplate else falsyTemplate"></div>
-    
-                <ng-template #truthyTemplate >
-                  <img class="imgThumbnail" src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{item.poster_path}}">
-                </ng-template>
-    
-                <ng-template #falsyTemplate>
-                  <img class="imgThumbnail" src="assets/images/no-image.jpg">
-                </ng-template>
+                  <circle-progress
+                    class="progress-circle"
+                    [percent]="item.vote_average * 10"
+                    backgroundColor="#000000"
+                    backgroundPadding="2"
+                    backgroundOpacity="0.5"
+                    backgroundStrokeWidth="0"
+                    backgroundStroke="#000000"
+                    outerStrokeWidth="3"
+                    innerStrokeWidth="0"
+                    titleColor="#ffffff"
+                    showInnerStroke="false"
+                  ></circle-progress>
+                </div>
+                
               </div>
-        
-              <div class="card-content">
-                <div class="name">{{ item.name }}</div>
-                <div class="air-date">{{ item.first_air_date | date:"mediumDate" }}</div>
-                <div class="overview">{{ item.overview | truncate:275 }}</div>
+              <div class="flip-card-back" >
+                
+                <div class="card-content">
+                  <div class="name">{{ item.name }}</div>
+                  <div class="air-date">{{ item.first_air_date | date:"mediumDate" }}</div>
+                  <div class="overview">{{ item.overview | truncate:275 }}</div>
+                </div>
 
-                <circle-progress
-                  class="progress-circle"
-                  [percent]="item.vote_average * 10"
-                ></circle-progress>
               </div>
+              <!-- both sides -->
 
             </div>
+          </div> <!-- end flip card -->
       
-            <!-- <div class="card-actions">
-              <button mat-icon-button matTooltip="details" #Details="matTooltip" (click)="Details.toggle()" ><i class="far fa-address-card"></i></button>
-              <button mat-icon-button matTooltip="delete" #Delete="matTooltip" (click)="Delete.toggle()" (click)="remove(i, $event)"><i class="far fa-trash-alt"></i></button>
-            </div> -->
-          </mat-card>
-
           <!-- this is an anchor for (infinite-scroll) -->
           <div class="list-card infinite-scroll-loading" #anchor>
             

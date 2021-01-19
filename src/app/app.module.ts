@@ -121,12 +121,13 @@ import { ResizableModule } from './resizable/resizable.module';
 import { CounterComponent } from './widgets/counter.component';
 import { CountUpModule } from 'ngx-countup';
 import { CircleProgressModule } from './widgets/circle-progress/circle-progress.module';
-
+import { AngularSplitModule } from 'angular-split';
 // ngrx
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { metaReducers, reducers } from './app.state';
+
 
 
 @NgModule({
@@ -204,6 +205,7 @@ import { metaReducers, reducers } from './app.state';
     CountUpModule,
     ResizableModule,
     CircleProgressModule,
+    AngularSplitModule,
     PipesModule,
 
     // Firebase
