@@ -1,0 +1,170 @@
+{
+"results": [
+    {
+        "name": "Jedi Knight",
+        "platform": "platform one",
+        "entitlement": "Member of the Order ",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": true },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": true },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": false },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": true },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": null },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": true },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": true },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": false },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": true },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": null },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+
+        ]
+    },
+    {
+        "name": "Dual Wielding",
+        "platform": "platform one",
+        "entitlement": "Utlizing two lightsabers in combat",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": false },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": null },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": true },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": null },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": null },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": null },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": true },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": null },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": false },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": false },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+        ]
+    },
+    {
+        "name": "Force Push",
+        "platform": "platform one",
+        "entitlement": "Ability to push objects",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": null },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": false },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": null },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": true },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": false },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": null },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": false },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": true },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": true },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": false },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+        ]
+    },
+    {
+        "name": "Force Pull",
+        "platform": "platform one",
+        "entitlement": "Ability to pull objects",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": true },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": true },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": false },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": true },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": null },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": true },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": true },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": false },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": true },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": false },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+        ]
+    },
+    {
+        "name": "Force Heal",
+        "platform": "platform one",
+        "entitlement": "Ability to heal oneself",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": false },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": null },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": true },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": null },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": null },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": null },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": true },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": null },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": false },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": false },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+        ]
+    },
+    {
+        "name": "Electrify",
+        "platform": "platform one",
+        "entitlement": "Ability to shoot lightning",
+        "perms": [
+            { "standardId": 1, "firstName": "Luke", "lastName": "Skywalker", "permission": null },
+            { "standardId": 2, "firstName": "Han", "lastName": "Solo", "permission": false },
+            { "standardId": 3, "firstName": "Ahsoka", "lastName": "Tano", "permission": null },
+            { "standardId": 4, "firstName": "Mara", "lastName": "Jade", "permission": true },
+            { "standardId": 5, "firstName": "Anakin", "lastName": "Skywalker", "permission": false },
+            { "standardId": 6, "firstName": "Mace", "lastName": "Windu", "permission": false },
+            { "standardId": 7, "firstName": "Qui-Gon", "lastName": "Jinn", "permission": false },
+            { "standardId": 8, "firstName": "Obi-Wan", "lastName": "Kenobi", "permission": null },
+            { "standardId": 9, "firstName": "Kylo", "lastName": "Ren", "permission": false },
+            { "standardId": 10, "firstName": "Boba", "lastName": "Fett", "permission": true },
+            { "standardId": 11, "firstName": "Lando", "lastName": "Calrissian", "permission": true },
+            { "standardId": 12, "firstName": "Sheev", "lastName": "Palpatine", "permission": false },
+            { "standardId": 13, "firstName": "Wilhuff", "lastName": "Tarkin", "permission": false },
+            { "standardId": 14, "firstName": "Wedge", "lastName": "Antilles", "permission": false },
+            { "standardId": 15, "firstName": "Cal", "lastName": "Kestis", "permission": false },
+            { "standardId": 16, "firstName": "Bail", "lastName": "Organa", "permission": false },
+            { "standardId": 17, "firstName": "Asajj", "lastName": "Ventress", "permission": true },
+            { "standardId": 18, "firstName": "Aurra", "lastName": "Sing", "permission": false },
+            { "standardId": 19, "firstName": "Biggs", "lastName": "Darkligher", "permission": false },
+            { "standardId": 20, "firstName": "Cad", "lastName": "Bane", "permission": null }
+        ]
+    }
+
+
+]
+
+}

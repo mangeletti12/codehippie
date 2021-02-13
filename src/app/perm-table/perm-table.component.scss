@@ -1,0 +1,260 @@
+
+
+::ng-deep #perms mat-card {
+    padding: 0;
+    overflow-x: auto;
+    height: calc(100vh - 380px);
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+::ng-deep #perms mat-card > .content-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 100%;
+}
+
+.users { 
+    display: flex;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-link:hover {
+    color: #009900;
+    cursor: pointer;
+}
+
+.rotate {
+    height: 58px;
+    white-space: nowrap;
+}
+
+.rotate > div {
+    transform-origin: bottom left;
+    transform: translate(25px, 51px) rotate(315deg); /* 45 is really 360 - 45 */
+    width: 50px;
+    position: relative;
+    left: -3px;
+    padding-left: 20px;
+}
+.rotate > div > span {
+    padding: 0px;
+    font-size: 13px;
+    display: block;
+    line-height: 12px;
+}
+.rotate > div > span:nth-child(1) {
+    width: 100px;
+    margin-left: 5px;
+    padding: 4px 3px 1px 3px;
+    background-color: #f5f5f5;
+}
+.rotate > div > span:nth-child(2) {
+    position: relative;
+    z-index: 1;
+    margin-left: 19px;
+    border-bottom: 1px solid #ccc;
+    width: 100px;
+    padding-bottom: 5px;
+    background-color: #f5f5f5;
+}
+
+.user-perm {
+    position: relative;
+    z-index: 2;
+}
+
+//
+.my-head {
+    display: flex;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-weight: bold;
+    font-family: "Trebuchet MS";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.c-field {
+    position: relative;
+}
+
+.c-field div {
+    position: absolute;
+    padding: 0 0 5px 5px;
+    bottom: 0;
+}
+
+.c-field, .body-cell {
+    width: 150px;
+}
+
+.c-field div.bulk-all-checkbox {
+    position: absolute;
+    padding: 0 0 7px 17px;
+    bottom: 0;
+}
+
+.my-body {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+.body-row:nth-of-type(odd) {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.body-cell {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 70px;
+    font-size: 0.8rem;
+}
+
+.perm-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    min-width: 50px;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.bulk-actions .perm-btn {
+    border: 0;
+}
+.bulk-actions {
+    padding-left: 7px;
+}
+
+.redBtn {
+    background-color: #990000;
+}
+.greyBtn {
+    background-color: #999999;
+}
+.greenBtn {
+    background-color: #009900;
+}
+
+.cell-details {
+    line-height: 13px;
+}
+.details-platform {
+    padding: 0 5px;
+    color: #555555;
+}
+.details-name {
+    font-weight: bold;
+    padding: 0 5px;
+    color: #000
+}
+.details-desc {
+    font-size: 13px;
+    padding: 0 5px;
+    color: #000;
+    white-space: nowrap;
+}
+
+
+.sticky-col-first {
+    align-self: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: #eee;
+    left: 0px;
+    width: 100px;
+    min-width: 100px;
+    z-index: 1;
+    
+}
+.c-field.sticky-col-first {
+    background-color: inherit;
+}
+
+.sticky-col0 {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: #eee;
+    left: 100px;
+    width: 200px;
+    min-width: 200px;
+    z-index: 1;
+}
+.c-field.sticky-col0 {
+    background-color: inherit;
+}
+.sticky-col1 {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: #eee;
+    left: 300px;
+    width: 170px;
+    min-width: 170px;
+    z-index: 1;
+}
+.c-field.sticky-col1 {
+    background-color: inherit;
+}
+.sticky-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+
+}
+
+.filler {
+    background-color: #eaeaea;
+    width: 70px;
+}
+
+.meta-data {
+    display: flex;
+    height: 0;
+    white-space: normal;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+}
+
+.meta-data.showMeta {
+    border-top: 1px solid #444;
+    box-shadow: inset 0 -7px 9px -7px rgba(0,0,0,0.4);
+    background-color: #888;
+    height: 150px;
+    transition: height 200ms ease-out;
+}
+
+.meta-desc {
+    display: none;
+    color: #ffffff;
+    padding: 15px;
+    position: -webkit-sticky;
+    position: sticky;
+    left: 50px;
+}
+
+.meta-data.showMeta .meta-desc {
+    display: flex;
+}
+
+/* meta bar */
+// .meta-bar {
+
+// }
+

@@ -1,0 +1,112 @@
+<div id="perms" class="wrapper">
+
+    <mat-card>
+
+        <!-- column headings -->
+        <div class="my-head" *ngIf="headerColumns">
+   
+          <div class="c-field sticky-col-first">
+            <div>Actions</div>
+          </div>
+    
+          <div class="c-field sticky-col{{i}}" *ngFor="let column of headerColumns.fields; let i = index;">
+            <div>{{ column }}</div>
+          </div>
+
+          <!-- bulk action btns -->
+    
+          <div class="c-field sticky-col">
+            <div>Bulk Actions</div>
+          </div>
+        
+          <!-- users -->
+          <div class="users" >
+              <div class="user" *ngFor="let user of headerColumns.users;">
+                  <div class="rotate">
+                      <div><span>{{ user.firstName }}</span> <span>{{ user.lastName }}</span></div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- body -->
+        <div class="my-body">
+            <div *ngFor="let item of dataSource; ">
+
+              <div class="body-row" >
+                <div class="body-cell sticky-col-first">
+                  <mat-checkbox ></mat-checkbox>
+                  <button mat-icon-button (click)="details($event, item)"><i class="far fa-address-card"></i></button>
+
+                </div>
+
+                <ng-container *ngFor="let key of item | keyvalue: asIsOrder; let i = index;">
+      
+                    <ng-container *ngIf="key.key !== 'perms'">
+                      <div class="body-cell sticky-col{{i}}">{{ key.value }}</div>
+                    </ng-container>
+    
+                    <ng-container *ngIf="key.key === 'perms'">
+                      <!-- bulk actions -->
+                      <div class="bulk-actions">
+                        <div class="body-cell sticky-col">
+                          <button mat-mini-fab >+</button>
+                          <button mat-mini-fab >-</button>
+                          <button mat-mini-fab >x</button>
+                        </div>
+                      </div>
+      
+
+                      <ng-container *ngFor="let perm of key.value">
+                        <div class="body-cell perm-btn"><button mat-mini-fab color="primary">{{ perm.permission  }}</button></div>
+                      </ng-container >
+                    </ng-container>
+                    
+                </ng-container>
+              </div>
+              
+              <div class="meta-data" [hidden]="!item.showMeta">
+                meta data...
+              </div>
+            </div>
+        </div>
+
+    </mat-card>
+
+
+    <mat-table [dataSource]="dataSource" *ngIf="false">
+      <!-- Name Definition -->
+      <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>Name</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Definition -->
+      <ng-container matColumnDef="platform">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>platform</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.platform}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Definition -->
+      <ng-container matColumnDef="entitlement">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>entitlement</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.entitlement}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Definition -->
+      <ng-container matColumnDef="perm_0">
+          <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>p1</span></div></div></mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.perm_0}} </mat-cell>
+      </ng-container>
+  
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <!--
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && totalRows==0)}"></mat-footer-row>
+      -->
+    </mat-table>
+
+</div>
+

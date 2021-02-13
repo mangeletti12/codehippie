@@ -1,0 +1,137 @@
+<div id="perms" class="wrapper">
+
+    <mat-card>
+      <div class="content-wrapper">
+
+        <!-- column headings -->
+        <div class="my-head sticky-head" *ngIf="headerColumns">
+   
+          <div class="c-field sticky-col-first">
+            <div class="bulk-all-checkbox">
+              <!-- all checkbox -->
+              <mat-checkbox (change)="toggleSelectAll()" [checked]="bulkCheckbox"></mat-checkbox>
+            </div>
+          </div>
+    
+          <div class="c-field sticky-col{{i}}" *ngFor="let column of headerColumns.fields; let i = index;">
+            <div>{{ column }}</div>
+          </div>
+
+          <!-- bulk action btns -->
+          <!-- <div class="c-field sticky-col1">
+            <div>Bulk Actions</div>
+          </div> -->
+        
+          <!-- users -->
+          <div class="users" >
+            <div class="user" *ngFor="let user of headerColumns.users;">
+              <div class="rotate">
+                <div class="user-link" (click)="userSelected(user)"><span>{{ user.firstName }}</span> <span>{{ user.lastName }}</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- body -->
+        <div class="my-body">
+            <div *ngFor="let item of dataSource; ">
+
+              <div class="body-row" >
+                <div class="body-cell sticky-col-first">
+                  <div class="perm-btn">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="selectRow(item)" [checked]="item.selected"></mat-checkbox>
+                  </div>
+                  <div class="perm-btn">
+                    <button mat-icon-button (click)="details($event, item)">
+                      <i class="far fa-address-card"></i>
+                    </button>
+                  </div>
+
+                </div>
+
+                <div class="body-cell sticky-col0">
+                  <div class="cell-details">
+                    <!-- <div class="details-platform">{{ item.platform }}</div> -->
+                    <div class="details-name">{{ item.name }}</div>
+                    <div class="details-desc">{{ item.entitlement | truncate:100 }}</div>
+                  </div>
+                </div>
+
+                <!-- bulk actions -->
+                  <!-- <div class="body-cell bulk-actions sticky-col1">
+                    <div class="perm-btn"><button mat-mini-fab class="redBtn" (click)="bulkAction(item, 'red')"><span class="material-icons">clear</span></button></div>
+                    <div class="perm-btn"><button mat-mini-fab class="greyBtn" (click)="bulkAction(item, 'grey')"><span ></span></button></div>
+                    <div class="perm-btn"><button mat-mini-fab class="greenBtn" (click)="bulkAction(item, 'green')"><span class="material-icons">done</span></button></div>
+                  </div>
+                  -->
+
+                  <!-- users -->
+                  <ng-container *ngFor="let perm of item.perms">
+                    <div class="body-cell perm-btn">
+                      <ng-container *ngIf="perm.permission !== ''">
+                        <button mat-mini-fab 
+                          [class.redBtn]="perm.permission === false" 
+                          [class.greyBtn]="perm.permission === null" 
+                          [class.greenBtn]="perm.permission === true"
+                          (click)="toggleAction(perm.standardId, item)"
+                          >
+                          <span class="material-icons" *ngIf="perm.permission === false">clear</span>
+                          <span *ngIf="perm.permission === null"></span>
+                          <span class="material-icons" *ngIf="perm.permission === true">done</span>
+                        </button>
+                      </ng-container>
+                    </div>
+                  </ng-container >
+                    
+              </div>
+              
+              <div class="meta-data" [class.showMeta]="item.showMeta">
+                <div class="meta-desc">{{ item.name }}: This is more data to describle the permission...</div>
+              </div>
+
+            </div>
+        </div>
+
+      </div>
+    </mat-card>
+
+
+
+
+    <mat-table [dataSource]="dataSource" *ngIf="false">
+      <!-- Name Definition -->
+      <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>Name</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Definition -->
+      <ng-container matColumnDef="platform">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>platform</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.platform}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Definition -->
+      <ng-container matColumnDef="entitlement">
+      <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>entitlement</span></div></div></mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.entitlement}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Definition -->
+      <ng-container matColumnDef="perm_0">
+          <mat-header-cell *matHeaderCellDef><div class="rotate"><div><span>p1</span></div></div></mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.perm_0}} </mat-cell>
+      </ng-container>
+  
+      <!-- Header and Row Declarations -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <!--
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource!=null && totalRows==0)}"></mat-footer-row>
+      -->
+    </mat-table>
+
+</div>
+

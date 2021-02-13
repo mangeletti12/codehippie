@@ -127,6 +127,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { metaReducers, reducers } from './app.state';
+import { PermTableComponent } from './perm-table/perm-table.component';
 
 
 
@@ -186,6 +187,7 @@ import { metaReducers, reducers } from './app.state';
     JobComponent,
     ElysiumComponent,
     RxjsComponent,
+    PermTableComponent,
   
   ],
   imports: [

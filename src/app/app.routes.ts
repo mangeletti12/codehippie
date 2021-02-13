@@ -40,6 +40,7 @@ import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { GridComponent } from './grid/grid.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { TvComponent } from './tv/tv.component';
+import { PermTableComponent } from './perm-table/perm-table.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -186,6 +187,13 @@ export const SECURE_ROUTES: Routes = [
     component: ParentComponent,
     //canActivate: [AuthGuard],
     data: { breadcrumb: 'Practice' },
+    resolve: { comp: ResolverService },
+  },
+  {
+    path: 'permissions',
+    component: PermTableComponent,
+    //canActivate: [AuthGuard],
+    data: { breadcrumb: 'Permissions' },
     resolve: { comp: ResolverService },
   },
   {
