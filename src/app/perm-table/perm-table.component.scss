@@ -2,8 +2,9 @@
 
 ::ng-deep #perms mat-card {
     padding: 0;
-    overflow-x: auto;
-    height: calc(100vh - 380px);
+    overflow: auto;
+    max-height: calc(100vh - 65px);
+    max-width: calc(100vw - 285px);
     background-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -141,14 +142,25 @@
     padding-left: 7px;
 }
 
-.redBtn {
+#perms .redBtn {
     background-color: #990000;
 }
-.greyBtn {
+#perms .greyBtn {
     background-color: #999999;
 }
-.greenBtn {
+#perms .greenBtn {
     background-color: #009900;
+}
+#perms .redBtn, #perms .greyBtn, #perms .greenBtn {
+    color: white;
+} 
+
+#perms .perm-btn {
+    color: black;
+}
+
+::ng-deep #perms .mat-checkbox-frame {
+    border-color: black;
 }
 
 .cell-details {
