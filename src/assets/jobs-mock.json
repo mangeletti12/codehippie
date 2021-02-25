@@ -1,6 +1,20 @@
 {
   "Jobs" : [
     {
+      "company": "Edward Jones",
+      "start": "2021",
+      "end": "Current",
+      "title": "Senior Front-end Dev/Mentor",
+      "description": "Provide technical leadership for front-end development. Bridge between UX designers and developers, and facilitate collaboration between everyone. Ensure ideas are technically feasible, and that we're delivering a rich experience for thousands of branch teams and clients."
+    },
+    {
+      "company": "Bank of America",
+      "start": "2020",
+      "end": "2021",
+      "title": "Senior Front-end Developer",
+      "description": "Using the newest version of Angular to build the front-end of the bank's entitlement application. "
+    },
+    {
       "company": "Katerra",
       "start": "2018",
       "end": "2020",

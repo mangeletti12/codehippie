@@ -193,7 +193,7 @@ export const SECURE_ROUTES: Routes = [
     path: 'permissions',
     component: PermTableComponent,
     //canActivate: [AuthGuard],
-    data: { breadcrumb: 'Permissions' },
+    data: { breadcrumb: 'Jedi Powers' },
     resolve: { comp: ResolverService },
   },
   {

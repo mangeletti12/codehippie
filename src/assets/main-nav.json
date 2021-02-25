@@ -106,6 +106,11 @@
                   "Claim": "Nav_Bots"
                 },
                 {
+                  "Text": "Jedi Powers",
+                  "Url": "/permissions",
+                  "Claim": "Nav_Perms"
+                },
+                {
                   "Text": "List",
                   "Url": "/list",
                   "Claim": "Nav_List"
