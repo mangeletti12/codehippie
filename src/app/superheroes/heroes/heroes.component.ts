@@ -337,7 +337,7 @@ export class HeroesComponent implements OnInit, OnDestroy {
     //     }
     //   );
 
-    // this.router.navigate([row.id], { relativeTo: this.activatedRoute });
+    this.router.navigate([row.id], { relativeTo: this.activatedRoute });
   }
 
   //Delete
