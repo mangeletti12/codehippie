@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { AboutService } from './about.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, OnDestroy {
   mySkills: any[] = [];
   selectedType = 'all';
   cardFront = true;
@@ -17,6 +19,7 @@ export class AboutComponent implements OnInit {
     {image: 'mka1.jpg', details: 'Red Rocks Amphitheater 2017'},
     {image: 'breck.jpg', details: 'Breckenridge 2017'},
   ];
+  subs: Subscription;
 
   constructor(
     private aboutService: AboutService,
@@ -27,8 +30,12 @@ export class AboutComponent implements OnInit {
     this.getRandomPic();
   }
 
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
+
   getSkills() {
-    this.aboutService.getSkills().subscribe(
+    this.subs = this.aboutService.getSkills().subscribe(
       data => {
         this.mySkills = data.body;
         // console.log('skills', this.mySkills);
