@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-// import { Observable } from 'rxjs';
+//import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class QaService {
-  usersCollection: AngularFirestoreCollection<any>;
-  answersCollection: AngularFirestoreCollection<any>;
+  // usersCollection: AngularFirestoreCollection<any>;
+  // answersCollection: AngularFirestoreCollection<any>;
 
   constructor(
-    private db: AngularFirestore,
+    // private db: AngularFirestore,
     ) {
   }
 
@@ -22,53 +20,55 @@ export class QaService {
 
     // snapshotChanges() differs from the previous method because in addition to providing you with the document data,
     // it also returns other metadata, which includes the ID. Seems like a lot of work just to get a single ID, huh?
-    this.usersCollection = this.db.collection('Users');
-    //
-    return this.usersCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          const user = { 'id': id, 'firstName': data.firstName, 'lastName': data.lastName };
-          // console.log('user', user);
-          return user;
-        });
-      })
-    );
+
+    // this.usersCollection = this.db.collection('Users');
+
+    // return this.usersCollection.snapshotChanges().pipe(
+    //   map(actions => {
+    //     return actions.map(a => {
+    //       const data = a.payload.doc.data();
+    //       const id = a.payload.doc.id;
+    //       const user = { 'id': id, 'firstName': data.firstName, 'lastName': data.lastName };
+    //       // console.log('user', user);
+    //       return user;
+    //     });
+    //   })
+    // );
+
+    return null;
 
   }
 
+
+
   // Get answers for user id
   getUsersAnswers(user) {
-    // User Questions with Answers
-    this.answersCollection = this.db.collection('Answers', ref => ref.where('userId', '==', user.id));
-    // console.log('answersCollection', this.answersCollection);
-    return this.answersCollection.snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          // const qId = data.questionId
-          // qId.get().then(doc => {
-          //   data['question'] = doc.data().question;
-          // });
 
-          // Get each question from the answers now
-          // bummer that this is a seperate request, very chatty
-          const questionsDoc = this.db.collection('Questions').doc(data.questionId);
+    // // User Questions with Answers
+    // this.answersCollection = this.db.collection('Answers', ref => ref.where('userId', '==', user.id));
+    // // console.log('answersCollection', this.answersCollection);
+    // return this.answersCollection.snapshotChanges().pipe(
+    //   map(actions => {
+    //     return actions.map(a => {
+    //       const data = a.payload.doc.data();
+    //       const id = a.payload.doc.id;
 
-          questionsDoc.valueChanges().subscribe(ref => {
-            data['question'] = ref['question'];
-          });
+    //       // Get each question from the answers now
+    //       // bummer that this is a seperate request, very chatty
+    //       const questionsDoc = this.db.collection('Questions').doc(data.questionId);
 
-          const qDocs = { 'id': id, data };
-          // console.log('qDocs', qDocs);
-          return qDocs;
+    //       questionsDoc.valueChanges().subscribe(ref => {
+    //         data['question'] = ref['question'];
+    //       });
 
-        });
-      })
-    );
+    //       const qDocs = { 'id': id, data };
+    //       // console.log('qDocs', qDocs);
+    //       return qDocs;
 
+    //     });
+    //   })
+    // );
+    return null;
 
   }
 

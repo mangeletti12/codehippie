@@ -1,15 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DashboardService } from './dashboard.service';
+import * as Chart from 'chart.js';
+
 //
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
+import { ChartOptions, ChartType } from 'chart.js';
+import { Color, Label, SingleDataSet, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { Component, OnInit, ViewChild } from '@angular/core';
 //
 import { animate, state, style, transition, trigger } from '@angular/animations';
+
+import { DashboardService } from './dashboard.service';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 //
-import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
-import * as Chart from 'chart.js';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface Contact {
   contactAzimuth: number;
@@ -37,19 +39,19 @@ export interface Contact {
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss'],
   animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-    trigger('tableCells', [
-      transition(':enter', [ // * => void
-        style({ opacity: 0 }),
-        animate('1s ease-in',
-          style({ opacity: 1 }))
-      ]),
+    // trigger('detailExpand', [
+    //   state('collapsed', style({height: '0px', minHeight: '0'})),
+    //   state('expanded', style({height: '*'})),
+    //   transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    // ]),
+    // trigger('tableCells', [
+    //   transition(':enter', [ // * => void
+    //     style({ opacity: 0 }),
+    //     animate('1s ease-in',
+    //       style({ opacity: 1 }))
+    //   ]),
 
-    ]),
+    // ]),
   ],
 
 })
@@ -77,13 +79,13 @@ export class ContactsComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: true,
-    legend: {
-      display: true,
-      position: 'right',
-      onClick: (e, legendItem) => {
-        this.filterByStatus(legendItem.text);
-      }
-    },
+    // legend: {
+    //   display: true,
+    //   position: 'right',
+    //   onClick: (e, legendItem) => {
+    //     this.filterByStatus(legendItem.text);
+    //   }
+    // },
     onClick: (e, legendItem) => {
       if (legendItem.length === 0) { return false; }
       this.filterByStatus(legendItem[0]['_view'].label);
@@ -192,14 +194,14 @@ export class ContactsComponent implements OnInit {
     }
     return results;
   }
-  
+
   //
   filterByStatus(status) {
     this.filterStatus = status.toLowerCase();
     // reset for filter
     this.pageNumber = 0;
     this.paginator.pageIndex = 0;
-    
+
     const filteredDs = this.getPaginatedSlice();
     // console.log('filteredDs', filteredDs);
     this.dataSource = new MatTableDataSource(filteredDs);
@@ -225,12 +227,12 @@ export class ContactsComponent implements OnInit {
 
   // Expand row
   expander(element) {
-    this.dataSource.data.forEach(i => 
-      { 
+    this.dataSource.data.forEach(i =>
+      {
         if(element.contactId === i.contactId) {
           element.expanded = !element.expanded;
         } else {
-          i.expanded = false; 
+          i.expanded = false;
         }
       }
     );
@@ -273,10 +275,10 @@ export class ContactsComponent implements OnInit {
         // property doesn't exist on either object
         return 0;
       }
-  
+
       const varA = (typeof a[key] === 'string') ? a[key].toUpperCase() : a[key];
       const varB = (typeof b[key] === 'string') ? b[key].toUpperCase() : b[key];
-  
+
       let comparison = 0;
       if (varA > varB) {
         comparison = 1;
