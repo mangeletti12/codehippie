@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { BuffetComponent } from './buffet/buffet.component';
 //
+// import { ChartsModule } from 'ng2-charts';
 import { ChartsModule } from 'ng2-charts';
 import { CircleProgressModule } from './widgets/circle-progress/circle-progress.module';
 // Claims (may not be used)
@@ -76,13 +77,6 @@ import { P5Component } from './p5/p5.component';
 import { ParentComponent } from './practice/parent.component';
 import { PermTableComponent } from './perm-table/perm-table.component';
 import { PieChartComponent } from './charts/pie-chart.component';
-// npm install firebase @angular/fire --save
-// Firebase services + enviorment module
-// import { AngularFireModule } from '@angular/fire';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
-// pipes
-// import { TruncatePipe } from './pipes/truncate.pipe';
 import { PipesModule } from './pipes/pipes.module';
 import { PracticeComponent } from './practice/practice.component';
 import { ProfileComponent } from './globals/profile/profile.component';
@@ -92,6 +86,7 @@ import { RegisterComponent } from './login/register.component';
 //
 import { ResizableModule } from './resizable/resizable.module';
 import { ResumeComponent } from './resume/resume.component';
+import { RouterModule } from '@angular/router';
 import { RxjsComponent } from './rxjs/rxjs.component';
 // Scroll for infinity and beyond
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -108,11 +103,20 @@ import { TddComponent } from './practice/tdd.component';
 import { TestAlertsComponent } from './test-alerts/test-alerts.component';
 import { TrailsComponent } from './trails/trails.component';
 import { TreeComponent } from './tree/tree.component';
+import { TruncatePipe } from './pipes/truncate.pipe'
 import { TvComponent } from './tv/tv.component';
 import { TypePipe } from './practice/type.pipe';
 // import { FlexComponent } from './flex/flex.component';
 import { environment } from '../environments/environment';
 import { httpInterceptorProviders } from './interceptors/index';
+
+// npm install firebase @angular/fire --save
+// Firebase services + enviorment module
+// import { AngularFireModule } from '@angular/fire';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
+// pipes
+
 
 //////
 // https://www.npmjs.com/package/ngx-scrollbar
@@ -175,6 +179,7 @@ import { httpInterceptorProviders } from './interceptors/index';
     ContactComponent,
     P5Component,
     ParentComponent,
+    PermTableComponent,
     PracticeComponent,
     TddComponent,
     DashboardComponent,
@@ -186,8 +191,6 @@ import { httpInterceptorProviders } from './interceptors/index';
     JobComponent,
     ElysiumComponent,
     RxjsComponent,
-    PermTableComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -199,12 +202,14 @@ import { httpInterceptorProviders } from './interceptors/index';
     ReactiveFormsModule,
     AppRoutingModule,
     // RouterModule.forRoot(routes, { enableTracing: false }), // enable tracing only for debugging routes
+    RouterModule,
     HttpClientModule,
     ChartsModule,
     ScrollingModule,
     InfiniteScrollModule,
     CountUpModule,
     ResizableModule,
+
     CircleProgressModule,
     AngularSplitModule,
     PipesModule,

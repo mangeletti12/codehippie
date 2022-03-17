@@ -4,14 +4,16 @@ import * as Chart from 'chart.js';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Color, Label, SingleDataSet, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 import { Component, OnInit, ViewChild } from '@angular/core';
-//
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 import { DashboardService } from './dashboard.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 //
 import { MatTableDataSource } from '@angular/material/table';
+
+//
+// import { animate, state, style, transition, trigger } from '@angular/animations';
+
 
 export interface Contact {
   contactAzimuth: number;

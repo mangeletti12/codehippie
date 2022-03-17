@@ -1,46 +1,47 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-// import { PublicComponent } from './layouts/public.component';
-import { SecureComponent } from './layouts/secure.component';
-//
-import { CorsListComponent } from './cors/cors-list.component';
-import { CorComponent } from './cors/cor/cor.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AboutComponent } from './about/about.component';
+import { AnswersComponent } from './answers/answers.component';
+import { BarChartComponent } from './charts/bar-chart.component';
 //
 // import { LoginComponent } from './login/login.component';
 // import { RegisterComponent } from './login/register.component';
 import { BuffetComponent } from './buffet/buffet.component';
-import { AnswersComponent } from './answers/answers.component';
-import { MoviesComponent } from './movies/movies.component';
-import { TestAlertsComponent } from './test-alerts/test-alerts.component';
-import { ListComponent } from './list/list.component';
-import { IScrollComponent } from './iscroll/iscroll.component';
-import { SettingsComponent } from './settings/settings.component';
+import { ContactComponent } from './contact/contact.component';
+import { CorComponent } from './cors/cor/cor.component';
+//
+import { CorsListComponent } from './cors/cors-list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ElysiumComponent } from './footy/elysium/elysium.component';
 import { FileNotFoundComponent } from './404/fileNotFound.component';
 import { FilesComponent } from './file-cabinet/files/files.component';
-// import { CostCodesComponent } from './codes/cost-codes.component';
-import { TreeComponent } from './tree/tree.component';
+import { FootyComponent } from './footy/footy/footy.component';
+import { GridComponent } from './grid/grid.component';
+import { IScrollComponent } from './iscroll/iscroll.component';
 import { LineChartComponent } from './charts/line-chart.component';
-import { PieChartComponent } from './charts/pie-chart.component';
-import { BarChartComponent } from './charts/bar-chart.component';
-//
-import { ResolverService } from './resolver.service';
-import { AboutComponent } from './about/about.component';
-import { TrailsComponent } from './trails/trails.component';
-import { ResumeComponent } from './resume/resume.component';
+import { ListComponent } from './list/list.component';
+import { MoviesComponent } from './movies/movies.component';
 import { MusicComponent } from './music/music.component';
-import { QaComponent } from './qa/qa.component';
-import { ContactComponent } from './contact/contact.component';
+import { NgModule } from '@angular/core';
 import { P5Component } from './p5/p5.component';
 import { ParentComponent } from './practice/parent.component';
+import { PermTableComponent } from './perm-table/perm-table.component';
+import { PieChartComponent } from './charts/pie-chart.component';
+import { QaComponent } from './qa/qa.component';
+//
+import { ResolverService } from './resolver.service';
+import { ResumeComponent } from './resume/resume.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+// import { PublicComponent } from './layouts/public.component';
+import { SecureComponent } from './layouts/secure.component';
+import { SettingsComponent } from './settings/settings.component';
 // import { PracticeComponent } from './practice/practice.component';
 import { TddComponent } from './practice/tdd.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FootyComponent } from './footy/footy/footy.component';
-import { ElysiumComponent } from './footy/elysium/elysium.component';
-import { GridComponent } from './grid/grid.component';
-import { RxjsComponent } from './rxjs/rxjs.component';
+import { TestAlertsComponent } from './test-alerts/test-alerts.component';
+import { TrailsComponent } from './trails/trails.component';
+// import { CostCodesComponent } from './codes/cost-codes.component';
+import { TreeComponent } from './tree/tree.component';
 import { TvComponent } from './tv/tv.component';
-import { PermTableComponent } from './perm-table/perm-table.component';
 
 // export const PUBLIC_ROUTES: Routes = [
 
@@ -263,6 +264,10 @@ export const SECURE_ROUTES: Routes = [
   { path: 'budgets',
     data: { breadcrumb: null },
     loadChildren: () => import('./budgets/budget.module').then(mod => mod.BudgetModule)
+  },
+  { path: 'library',
+    data: { breadcrumb: null },
+    loadChildren: () => import('./library/library.module').then(mod => mod.LibraryModule)
   },
   { path: 'estimates',
     data: { breadcrumb: null },
