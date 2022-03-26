@@ -24,10 +24,18 @@ export class DateMaskDirective {
     // paste bug
     // 13/33/2033
 
+    if (typeof initialInput !== 'string') {
+      return;
+    }
+
+    if (initialInput === filteredInput) {
+      return;
+    }
+
     // adjust cursor position
     pos += filteredInput.length - initialInput.length;
     pos = (pos >= 0) ? pos : 0;
-    // console.log('pos', pos);
+    console.log('pos', pos);
 
     this.inputElement.value = filteredInput;
     this.elementRef.nativeElement.setSelectionRange(pos, pos, 'none');
@@ -53,6 +61,7 @@ export class DateMaskDirective {
     // restrict to only 2 slashes
     filteredInput = filteredInput.replace(/(\/\d*\/\d*)(\/)/g, '$1');
 
+
     // prevent 00 month input and prevent slash on 0
     filteredInput = filteredInput.replace(/(^0)(0|\/)/, '$1');
 
@@ -71,7 +80,6 @@ export class DateMaskDirective {
     return filteredInput;
   }
 
-/*
   @HostListener('keydown.delete', ['$event'])
   @HostListener('keydown.backspace', ['$event'])
   private onKeyDown(event: KeyboardEvent): void {
@@ -79,7 +87,7 @@ export class DateMaskDirective {
     const inputValue: string = this.inputElement.value;
     const overflowCheck: boolean = 0 <= pos && inputValue.length > pos;
     const isDelete: boolean = event.key === 'Delete';
-    console.log(isDelete, overflowCheck);
+    console.log('onKeyDown', isDelete, overflowCheck);
 
     if (overflowCheck && inputValue[pos + (isDelete ? 0 : -1)] === '/') {
       pos += (isDelete) ? 1 : -1;
@@ -88,6 +96,6 @@ export class DateMaskDirective {
     }
 
   }
-*/
+
 
 }

@@ -11,7 +11,7 @@ export class InputValidateDirective {
   private allowSpecialkey : Array<string> = ['Backspace','ArrowLeft','ArrowRight', 'Tab'];  // for allow specail key
 
   constructor(private el: ElementRef) {
-    console.log('input validation directives');
+    // console.log('input validation directives');
   }
 
   /** it will fetch keyboard event when we enterd value in input field */

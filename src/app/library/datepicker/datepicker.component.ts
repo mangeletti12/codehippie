@@ -1,18 +1,39 @@
 import * as moment from 'moment';
 
 import { Component, OnInit } from '@angular/core';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+// import { DateFnsAdapter, MAT_DATE_FNS_FORMATS } from '@angular/material-date-fns-adapter';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { formatDate } from '@angular/common';
 
-//
-
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'MM/DD/YYYY',
+  },
+  display: {
+    dateInput: 'MM/DD/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.scss']
+  styleUrls: ['./datepicker.component.scss'],
+  providers: [
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter, //DateFnsAdapter,
+      deps: [MAT_DATE_LOCALE]
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+
+  ],
 })
 export class DatepickerComponent implements OnInit {
   form: FormGroup;
@@ -30,10 +51,9 @@ export class DatepickerComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
     this.form = this.fb.group( {
-      date: new FormControl(this.stringToDateFormat(this.exampleDateToSet), [Validators.required]),
+      date: new FormControl(this.stringToDateFormat(this.exampleDateToSet), Validators.required),
+
 
     } );
 
@@ -61,12 +81,16 @@ export class DatepickerComponent implements OnInit {
     console.log('fd', val);
   }
 
-  public getDateErrorMessage(pickerInput: string): void {
+  // Called from HTML template in mat-error
+  public getDateErrorMessage(pickerInput: string): string {
 
     const isValid = moment(pickerInput, 'MM/DD/YYYY', true).isValid();
-    console.log('getDateErrorMessage', isValid);
+    // console.log('getDateErrorMessage', pickerInput, isValid);
+    if (!isValid) {
+      return 'You date is not in a proper format';
+    }
 
-    // return validateDate();
+    return null;
   }
 
   stringToDateFormat(stringDate: string): Date {

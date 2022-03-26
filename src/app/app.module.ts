@@ -2,6 +2,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { metaReducers, reducers } from './app.state';
 
+// import { A11yModule } from '@angular/cdk/a11y';
 import { AboutComponent } from './about/about.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertsComponent } from './dashboard/alerts.component';
@@ -19,7 +20,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { BuffetComponent } from './buffet/buffet.component';
 //
-// import { ChartsModule } from 'ng2-charts';
 import { ChartsModule } from 'ng2-charts';
 import { CircleProgressModule } from './widgets/circle-progress/circle-progress.module';
 // Claims (may not be used)
@@ -71,6 +71,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MoviesService } from './movies/movies.service';
 import { MusicComponent } from './music/music.component';
 import { NavComponent } from './globals/nav.component';
+// import { NgChartsModule } from 'ng2-charts';
 import { NotificationsComponent } from './globals/notifications/notifications.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { P5Component } from './p5/p5.component';
@@ -106,7 +107,6 @@ import { TreeComponent } from './tree/tree.component';
 import { TruncatePipe } from './pipes/truncate.pipe'
 import { TvComponent } from './tv/tv.component';
 import { TypePipe } from './practice/type.pipe';
-// import { FlexComponent } from './flex/flex.component';
 import { environment } from '../environments/environment';
 import { httpInterceptorProviders } from './interceptors/index';
 
@@ -205,11 +205,12 @@ import { httpInterceptorProviders } from './interceptors/index';
     RouterModule,
     HttpClientModule,
     ChartsModule,
+    // NgChartsModule,
     ScrollingModule,
     InfiniteScrollModule,
     CountUpModule,
     ResizableModule,
-
+    // A11yModule,
     CircleProgressModule,
     AngularSplitModule,
     PipesModule,
